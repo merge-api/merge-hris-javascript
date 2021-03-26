@@ -15,21 +15,21 @@ import ApiClient from '../ApiClient';
 import MethodEnum from './MethodEnum';
 
 /**
- * The DataPassthrough model module.
- * @module model/DataPassthrough
+ * The DataPassthroughRequest model module.
+ * @module model/DataPassthroughRequest
  * @version 1.0
  */
-class DataPassthrough {
+class DataPassthroughRequest {
     /**
-     * Constructs a new <code>DataPassthrough</code>.
+     * Constructs a new <code>DataPassthroughRequest</code>.
      * # The DataPassthrough Object ### Description The &#x60;DataPassthrough&#x60; object is used to send information to an otherwise-unsupported third-party endpoint.  ### Usage Example Create a &#x60;DataPassthrough&#x60; to get team hierarchies from your Rippling integration.
-     * @alias module:model/DataPassthrough
+     * @alias module:model/DataPassthroughRequest
      * @param method {module:model/MethodEnum} 
      * @param path {String} 
      */
     constructor(method, path) { 
         
-        DataPassthrough.initialize(this, method, path);
+        DataPassthroughRequest.initialize(this, method, path);
     }
 
     /**
@@ -43,21 +43,24 @@ class DataPassthrough {
     }
 
     /**
-     * Constructs a <code>DataPassthrough</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>DataPassthroughRequest</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/DataPassthrough} obj Optional instance to populate.
-     * @return {module:model/DataPassthrough} The populated <code>DataPassthrough</code> instance.
+     * @param {module:model/DataPassthroughRequest} obj Optional instance to populate.
+     * @return {module:model/DataPassthroughRequest} The populated <code>DataPassthroughRequest</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new DataPassthrough();
+            obj = obj || new DataPassthroughRequest();
 
             if (data.hasOwnProperty('method')) {
                 obj['method'] = ApiClient.convertToType(data['method'], MethodEnum);
             }
             if (data.hasOwnProperty('path')) {
                 obj['path'] = ApiClient.convertToType(data['path'], 'String');
+            }
+            if (data.hasOwnProperty('base_url_override')) {
+                obj['base_url_override'] = ApiClient.convertToType(data['base_url_override'], 'String');
             }
             if (data.hasOwnProperty('data')) {
                 obj['data'] = ApiClient.convertToType(data['data'], {'String': Object});
@@ -75,27 +78,32 @@ class DataPassthrough {
 /**
  * @member {module:model/MethodEnum} method
  */
-DataPassthrough.prototype['method'] = undefined;
+DataPassthroughRequest.prototype['method'] = undefined;
 
 /**
  * @member {String} path
  */
-DataPassthrough.prototype['path'] = undefined;
+DataPassthroughRequest.prototype['path'] = undefined;
+
+/**
+ * @member {String} base_url_override
+ */
+DataPassthroughRequest.prototype['base_url_override'] = undefined;
 
 /**
  * @member {Object.<String, Object>} data
  */
-DataPassthrough.prototype['data'] = undefined;
+DataPassthroughRequest.prototype['data'] = undefined;
 
 /**
  * @member {Object.<String, Object>} headers
  */
-DataPassthrough.prototype['headers'] = undefined;
+DataPassthroughRequest.prototype['headers'] = undefined;
 
 
 
 
 
 
-export default DataPassthrough;
+export default DataPassthroughRequest;
 

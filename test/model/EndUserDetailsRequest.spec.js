@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new MergeHrisApi.CreateCompany();
+    instance = new MergeHrisApi.EndUserDetailsRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,28 +47,34 @@
       object[property] = value;
   }
 
-  describe('CreateCompany', function() {
-    it('should create an instance of CreateCompany', function() {
-      // uncomment below and update the code to test CreateCompany
-      //var instane = new MergeHrisApi.CreateCompany();
-      //expect(instance).to.be.a(MergeHrisApi.CreateCompany);
+  describe('EndUserDetailsRequest', function() {
+    it('should create an instance of EndUserDetailsRequest', function() {
+      // uncomment below and update the code to test EndUserDetailsRequest
+      //var instane = new MergeHrisApi.EndUserDetailsRequest();
+      //expect(instance).to.be.a(MergeHrisApi.EndUserDetailsRequest);
     });
 
-    it('should have the property legalName (base name: "legal_name")', function() {
-      // uncomment below and update the code to test the property legalName
-      //var instance = new MergeHrisApi.CreateCompany();
+    it('should have the property endUserEmailAddress (base name: "end_user_email_address")', function() {
+      // uncomment below and update the code to test the property endUserEmailAddress
+      //var instance = new MergeHrisApi.EndUserDetailsRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property displayName (base name: "display_name")', function() {
-      // uncomment below and update the code to test the property displayName
-      //var instance = new MergeHrisApi.CreateCompany();
+    it('should have the property endUserOrganizationName (base name: "end_user_organization_name")', function() {
+      // uncomment below and update the code to test the property endUserOrganizationName
+      //var instance = new MergeHrisApi.EndUserDetailsRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property eins (base name: "eins")', function() {
-      // uncomment below and update the code to test the property eins
-      //var instance = new MergeHrisApi.CreateCompany();
+    it('should have the property endUserOriginId (base name: "end_user_origin_id")', function() {
+      // uncomment below and update the code to test the property endUserOriginId
+      //var instance = new MergeHrisApi.EndUserDetailsRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property categories (base name: "categories")', function() {
+      // uncomment below and update the code to test the property categories
+      //var instance = new MergeHrisApi.EndUserDetailsRequest();
       //expect(instance).to.be();
     });
 

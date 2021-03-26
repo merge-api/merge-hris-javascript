@@ -48,16 +48,6 @@
   }
 
   describe('EmployeesApi', function() {
-    describe('employeesCreate', function() {
-      it('should call employeesCreate successfully', function(done) {
-        //uncomment below and update the code to test employeesCreate
-        //instance.employeesCreate(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('employeesList', function() {
       it('should call employeesList successfully', function(done) {
         //uncomment below and update the code to test employeesList

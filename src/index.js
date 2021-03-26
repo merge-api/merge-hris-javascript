@@ -20,16 +20,7 @@ import Benefit from './model/Benefit';
 import BenefitPlanTypeEnum from './model/BenefitPlanTypeEnum';
 import Company from './model/Company';
 import CountryEnum from './model/CountryEnum';
-import CreateBenefit from './model/CreateBenefit';
-import CreateCompany from './model/CreateCompany';
-import CreateEmployee from './model/CreateEmployee';
-import CreateEmployeePayrollRun from './model/CreateEmployeePayrollRun';
-import CreateEmployment from './model/CreateEmployment';
-import CreateLocation from './model/CreateLocation';
-import CreatePayrollRun from './model/CreatePayrollRun';
-import CreateTeam from './model/CreateTeam';
-import CreateTimeOff from './model/CreateTimeOff';
-import DataPassthrough from './model/DataPassthrough';
+import DataPassthroughRequest from './model/DataPassthroughRequest';
 import Deduction from './model/Deduction';
 import Earning from './model/Earning';
 import Employee from './model/Employee';
@@ -37,7 +28,7 @@ import EmployeePayrollRun from './model/EmployeePayrollRun';
 import Employment from './model/Employment';
 import EmploymentStatusEnum from './model/EmploymentStatusEnum';
 import EmploymentTypeEnum from './model/EmploymentTypeEnum';
-import EndUserDetails from './model/EndUserDetails';
+import EndUserDetailsRequest from './model/EndUserDetailsRequest';
 import EthnicityEnum from './model/EthnicityEnum';
 import FlsaStatusEnum from './model/FlsaStatusEnum';
 import GenderEnum from './model/GenderEnum';
@@ -61,7 +52,7 @@ import PayPeriodEnum from './model/PayPeriodEnum';
 import PayrollRun from './model/PayrollRun';
 import RemoteData from './model/RemoteData';
 import RemoteKey from './model/RemoteKey';
-import RemoteKeyForRegeneration from './model/RemoteKeyForRegeneration';
+import RemoteKeyForRegenerationRequest from './model/RemoteKeyForRegenerationRequest';
 import RemoteResponse from './model/RemoteResponse';
 import RequestTypeEnum from './model/RequestTypeEnum';
 import RunStateEnum from './model/RunStateEnum';
@@ -170,64 +161,10 @@ export {
     CountryEnum,
 
     /**
-     * The CreateBenefit model constructor.
-     * @property {module:model/CreateBenefit}
+     * The DataPassthroughRequest model constructor.
+     * @property {module:model/DataPassthroughRequest}
      */
-    CreateBenefit,
-
-    /**
-     * The CreateCompany model constructor.
-     * @property {module:model/CreateCompany}
-     */
-    CreateCompany,
-
-    /**
-     * The CreateEmployee model constructor.
-     * @property {module:model/CreateEmployee}
-     */
-    CreateEmployee,
-
-    /**
-     * The CreateEmployeePayrollRun model constructor.
-     * @property {module:model/CreateEmployeePayrollRun}
-     */
-    CreateEmployeePayrollRun,
-
-    /**
-     * The CreateEmployment model constructor.
-     * @property {module:model/CreateEmployment}
-     */
-    CreateEmployment,
-
-    /**
-     * The CreateLocation model constructor.
-     * @property {module:model/CreateLocation}
-     */
-    CreateLocation,
-
-    /**
-     * The CreatePayrollRun model constructor.
-     * @property {module:model/CreatePayrollRun}
-     */
-    CreatePayrollRun,
-
-    /**
-     * The CreateTeam model constructor.
-     * @property {module:model/CreateTeam}
-     */
-    CreateTeam,
-
-    /**
-     * The CreateTimeOff model constructor.
-     * @property {module:model/CreateTimeOff}
-     */
-    CreateTimeOff,
-
-    /**
-     * The DataPassthrough model constructor.
-     * @property {module:model/DataPassthrough}
-     */
-    DataPassthrough,
+    DataPassthroughRequest,
 
     /**
      * The Deduction model constructor.
@@ -272,10 +209,10 @@ export {
     EmploymentTypeEnum,
 
     /**
-     * The EndUserDetails model constructor.
-     * @property {module:model/EndUserDetails}
+     * The EndUserDetailsRequest model constructor.
+     * @property {module:model/EndUserDetailsRequest}
      */
-    EndUserDetails,
+    EndUserDetailsRequest,
 
     /**
      * The EthnicityEnum model constructor.
@@ -416,10 +353,10 @@ export {
     RemoteKey,
 
     /**
-     * The RemoteKeyForRegeneration model constructor.
-     * @property {module:model/RemoteKeyForRegeneration}
+     * The RemoteKeyForRegenerationRequest model constructor.
+     * @property {module:model/RemoteKeyForRegenerationRequest}
      */
-    RemoteKeyForRegeneration,
+    RemoteKeyForRegenerationRequest,
 
     /**
      * The RemoteResponse model constructor.

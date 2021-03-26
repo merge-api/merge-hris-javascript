@@ -4,67 +4,9 @@ All URIs are relative to *https://api.merge.dev/api/hris/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**locationsCreate**](LocationsApi.md#locationsCreate) | **POST** /locations | 
 [**locationsList**](LocationsApi.md#locationsList) | **GET** /locations | 
 [**locationsRetrieve**](LocationsApi.md#locationsRetrieve) | **GET** /locations/{id} | 
 
-
-
-## locationsCreate
-
-> Location locationsCreate(xAccountToken, opts)
-
-
-
-Creates a &#x60;Location&#x60; object with the given values.
-
-### Example
-
-```javascript
-import MergeHrisApi from 'merge_hris_api';
-let defaultClient = MergeHrisApi.ApiClient.instance;
-// Configure API key authorization: tokenAuth
-let tokenAuth = defaultClient.authentications['tokenAuth'];
-tokenAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//tokenAuth.apiKeyPrefix = 'Token';
-
-let apiInstance = new MergeHrisApi.LocationsApi();
-let xAccountToken = "xAccountToken_example"; // String | Token identifying the end user.
-let opts = {
-  'runAsync': true, // Boolean | Whether or not third-party updates should be run asynchronously.
-  'createLocation': new MergeHrisApi.CreateLocation() // CreateLocation | 
-};
-apiInstance.locationsCreate(xAccountToken, opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xAccountToken** | **String**| Token identifying the end user. | 
- **runAsync** | **Boolean**| Whether or not third-party updates should be run asynchronously. | [optional] 
- **createLocation** | [**CreateLocation**](CreateLocation.md)|  | [optional] 
-
-### Return type
-
-[**Location**](Location.md)
-
-### Authorization
-
-[tokenAuth](../README.md#tokenAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
-- **Accept**: application/json
 
 
 ## locationsList

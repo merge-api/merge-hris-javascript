@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new MergeHrisApi.RemoteKeyForRegeneration();
+    instance = new MergeHrisApi.RemoteKeyForRegenerationRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,16 +47,16 @@
       object[property] = value;
   }
 
-  describe('RemoteKeyForRegeneration', function() {
-    it('should create an instance of RemoteKeyForRegeneration', function() {
-      // uncomment below and update the code to test RemoteKeyForRegeneration
-      //var instane = new MergeHrisApi.RemoteKeyForRegeneration();
-      //expect(instance).to.be.a(MergeHrisApi.RemoteKeyForRegeneration);
+  describe('RemoteKeyForRegenerationRequest', function() {
+    it('should create an instance of RemoteKeyForRegenerationRequest', function() {
+      // uncomment below and update the code to test RemoteKeyForRegenerationRequest
+      //var instane = new MergeHrisApi.RemoteKeyForRegenerationRequest();
+      //expect(instance).to.be.a(MergeHrisApi.RemoteKeyForRegenerationRequest);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instance = new MergeHrisApi.RemoteKeyForRegeneration();
+      //var instance = new MergeHrisApi.RemoteKeyForRegenerationRequest();
       //expect(instance).to.be();
     });
 

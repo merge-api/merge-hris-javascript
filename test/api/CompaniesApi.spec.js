@@ -48,16 +48,6 @@
   }
 
   describe('CompaniesApi', function() {
-    describe('companiesCreate', function() {
-      it('should call companiesCreate successfully', function(done) {
-        //uncomment below and update the code to test companiesCreate
-        //instance.companiesCreate(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('companiesList', function() {
       it('should call companiesList successfully', function(done) {
         //uncomment below and update the code to test companiesList

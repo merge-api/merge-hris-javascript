@@ -48,16 +48,6 @@
   }
 
   describe('BenefitsApi', function() {
-    describe('benefitsCreate', function() {
-      it('should call benefitsCreate successfully', function(done) {
-        //uncomment below and update the code to test benefitsCreate
-        //instance.benefitsCreate(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('benefitsList', function() {
       it('should call benefitsList successfully', function(done) {
         //uncomment below and update the code to test benefitsList
