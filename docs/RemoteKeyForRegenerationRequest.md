@@ -1,9 +1,9 @@
-# MergeHrisApi.CreateTeam
+# MergeHrisApi.RemoteKeyForRegenerationRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** | The team&#39;s name. | [optional] 
+**name** | **String** |  | 
 
 

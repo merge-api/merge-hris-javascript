@@ -48,16 +48,6 @@
   }
 
   describe('TeamsApi', function() {
-    describe('teamsCreate', function() {
-      it('should call teamsCreate successfully', function(done) {
-        //uncomment below and update the code to test teamsCreate
-        //instance.teamsCreate(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('teamsList', function() {
       it('should call teamsList successfully', function(done) {
         //uncomment below and update the code to test teamsList

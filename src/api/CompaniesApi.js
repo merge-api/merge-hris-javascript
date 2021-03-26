@@ -14,7 +14,6 @@
 
 import ApiClient from "../ApiClient";
 import Company from '../model/Company';
-import CreateCompany from '../model/CreateCompany';
 import PaginatedCompanyList from '../model/PaginatedCompanyList';
 
 /**
@@ -37,53 +36,6 @@ export default class CompaniesApi {
 
 
     /**
-     * Callback function to receive the result of the companiesCreate operation.
-     * @callback module:api/CompaniesApi~companiesCreateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Company} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Creates a `Company` object with the given values.
-     * @param {String} xAccountToken Token identifying the end user.
-     * @param {Object} opts Optional parameters
-     * @param {Boolean} opts.runAsync Whether or not third-party updates should be run asynchronously.
-     * @param {module:model/CreateCompany} opts.createCompany 
-     * @param {module:api/CompaniesApi~companiesCreateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Company}
-     */
-    companiesCreate(xAccountToken, opts, callback) {
-      opts = opts || {};
-      let postBody = opts['createCompany'];
-      // verify the required parameter 'xAccountToken' is set
-      if (xAccountToken === undefined || xAccountToken === null) {
-        throw new Error("Missing the required parameter 'xAccountToken' when calling companiesCreate");
-      }
-
-      let pathParams = {
-      };
-      let queryParams = {
-        'run_async': opts['runAsync']
-      };
-      let headerParams = {
-        'X-Account-Token': xAccountToken
-      };
-      let formParams = {
-      };
-
-      let authNames = ['tokenAuth'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
-      let accepts = ['application/json'];
-      let returnType = Company;
-      return this.apiClient.callApi(
-        '/companies', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
      * Callback function to receive the result of the companiesList operation.
      * @callback module:api/CompaniesApi~companiesListCallback
      * @param {String} error Error message, if any.
@@ -93,6 +45,7 @@ export default class CompaniesApi {
 
     /**
      * Returns a list of `Company` objects.
+     * @param {String} authorization Should include 'Bearer ' followed by your production API Key.
      * @param {String} xAccountToken Token identifying the end user.
      * @param {Object} opts Optional parameters
      * @param {Date} opts.createdAfter If provided, will only return objects created after this datetime.
@@ -106,9 +59,13 @@ export default class CompaniesApi {
      * @param {module:api/CompaniesApi~companiesListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedCompanyList}
      */
-    companiesList(xAccountToken, opts, callback) {
+    companiesList(authorization, xAccountToken, opts, callback) {
       opts = opts || {};
       let postBody = null;
+      // verify the required parameter 'authorization' is set
+      if (authorization === undefined || authorization === null) {
+        throw new Error("Missing the required parameter 'authorization' when calling companiesList");
+      }
       // verify the required parameter 'xAccountToken' is set
       if (xAccountToken === undefined || xAccountToken === null) {
         throw new Error("Missing the required parameter 'xAccountToken' when calling companiesList");
@@ -127,6 +84,7 @@ export default class CompaniesApi {
         'remote_id': opts['remoteId']
       };
       let headerParams = {
+        'Authorization': authorization,
         'X-Account-Token': xAccountToken
       };
       let formParams = {
@@ -153,6 +111,7 @@ export default class CompaniesApi {
 
     /**
      * Returns a `Company` object with the given `id`.
+     * @param {String} authorization Should include 'Bearer ' followed by your production API Key.
      * @param {String} xAccountToken Token identifying the end user.
      * @param {String} id 
      * @param {Object} opts Optional parameters
@@ -160,9 +119,13 @@ export default class CompaniesApi {
      * @param {module:api/CompaniesApi~companiesRetrieveCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Company}
      */
-    companiesRetrieve(xAccountToken, id, opts, callback) {
+    companiesRetrieve(authorization, xAccountToken, id, opts, callback) {
       opts = opts || {};
       let postBody = null;
+      // verify the required parameter 'authorization' is set
+      if (authorization === undefined || authorization === null) {
+        throw new Error("Missing the required parameter 'authorization' when calling companiesRetrieve");
+      }
       // verify the required parameter 'xAccountToken' is set
       if (xAccountToken === undefined || xAccountToken === null) {
         throw new Error("Missing the required parameter 'xAccountToken' when calling companiesRetrieve");
@@ -179,6 +142,7 @@ export default class CompaniesApi {
         'include_remote_data': opts['includeRemoteData']
       };
       let headerParams = {
+        'Authorization': authorization,
         'X-Account-Token': xAccountToken
       };
       let formParams = {

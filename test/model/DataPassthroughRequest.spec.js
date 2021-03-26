@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new MergeHrisApi.CreateBenefit();
+    instance = new MergeHrisApi.DataPassthroughRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,40 +47,40 @@
       object[property] = value;
   }
 
-  describe('CreateBenefit', function() {
-    it('should create an instance of CreateBenefit', function() {
-      // uncomment below and update the code to test CreateBenefit
-      //var instane = new MergeHrisApi.CreateBenefit();
-      //expect(instance).to.be.a(MergeHrisApi.CreateBenefit);
+  describe('DataPassthroughRequest', function() {
+    it('should create an instance of DataPassthroughRequest', function() {
+      // uncomment below and update the code to test DataPassthroughRequest
+      //var instane = new MergeHrisApi.DataPassthroughRequest();
+      //expect(instance).to.be.a(MergeHrisApi.DataPassthroughRequest);
     });
 
-    it('should have the property employee (base name: "employee")', function() {
-      // uncomment below and update the code to test the property employee
-      //var instance = new MergeHrisApi.CreateBenefit();
+    it('should have the property method (base name: "method")', function() {
+      // uncomment below and update the code to test the property method
+      //var instance = new MergeHrisApi.DataPassthroughRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property providerName (base name: "provider_name")', function() {
-      // uncomment below and update the code to test the property providerName
-      //var instance = new MergeHrisApi.CreateBenefit();
+    it('should have the property path (base name: "path")', function() {
+      // uncomment below and update the code to test the property path
+      //var instance = new MergeHrisApi.DataPassthroughRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property benefitPlanType (base name: "benefit_plan_type")', function() {
-      // uncomment below and update the code to test the property benefitPlanType
-      //var instance = new MergeHrisApi.CreateBenefit();
+    it('should have the property baseUrlOverride (base name: "base_url_override")', function() {
+      // uncomment below and update the code to test the property baseUrlOverride
+      //var instance = new MergeHrisApi.DataPassthroughRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property employeeContribution (base name: "employee_contribution")', function() {
-      // uncomment below and update the code to test the property employeeContribution
-      //var instance = new MergeHrisApi.CreateBenefit();
+    it('should have the property data (base name: "data")', function() {
+      // uncomment below and update the code to test the property data
+      //var instance = new MergeHrisApi.DataPassthroughRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property companyContribution (base name: "company_contribution")', function() {
-      // uncomment below and update the code to test the property companyContribution
-      //var instance = new MergeHrisApi.CreateBenefit();
+    it('should have the property headers (base name: "headers")', function() {
+      // uncomment below and update the code to test the property headers
+      //var instance = new MergeHrisApi.DataPassthroughRequest();
       //expect(instance).to.be();
     });
 

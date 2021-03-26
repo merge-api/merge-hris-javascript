@@ -14,22 +14,22 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The EndUserDetails model module.
- * @module model/EndUserDetails
+ * The EndUserDetailsRequest model module.
+ * @module model/EndUserDetailsRequest
  * @version 1.0
  */
-class EndUserDetails {
+class EndUserDetailsRequest {
     /**
-     * Constructs a new <code>EndUserDetails</code>.
-     * @alias module:model/EndUserDetails
+     * Constructs a new <code>EndUserDetailsRequest</code>.
+     * @alias module:model/EndUserDetailsRequest
      * @param endUserEmailAddress {String} 
      * @param endUserOrganizationName {String} 
      * @param endUserOriginId {String} 
-     * @param categories {Array.<module:model/EndUserDetails.CategoriesEnum>} 
+     * @param categories {Array.<module:model/EndUserDetailsRequest.CategoriesEnum>} 
      */
     constructor(endUserEmailAddress, endUserOrganizationName, endUserOriginId, categories) { 
         
-        EndUserDetails.initialize(this, endUserEmailAddress, endUserOrganizationName, endUserOriginId, categories);
+        EndUserDetailsRequest.initialize(this, endUserEmailAddress, endUserOrganizationName, endUserOriginId, categories);
     }
 
     /**
@@ -45,15 +45,15 @@ class EndUserDetails {
     }
 
     /**
-     * Constructs a <code>EndUserDetails</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>EndUserDetailsRequest</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/EndUserDetails} obj Optional instance to populate.
-     * @return {module:model/EndUserDetails} The populated <code>EndUserDetails</code> instance.
+     * @param {module:model/EndUserDetailsRequest} obj Optional instance to populate.
+     * @return {module:model/EndUserDetailsRequest} The populated <code>EndUserDetailsRequest</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new EndUserDetails();
+            obj = obj || new EndUserDetailsRequest();
 
             if (data.hasOwnProperty('end_user_email_address')) {
                 obj['end_user_email_address'] = ApiClient.convertToType(data['end_user_email_address'], 'String');
@@ -77,22 +77,22 @@ class EndUserDetails {
 /**
  * @member {String} end_user_email_address
  */
-EndUserDetails.prototype['end_user_email_address'] = undefined;
+EndUserDetailsRequest.prototype['end_user_email_address'] = undefined;
 
 /**
  * @member {String} end_user_organization_name
  */
-EndUserDetails.prototype['end_user_organization_name'] = undefined;
+EndUserDetailsRequest.prototype['end_user_organization_name'] = undefined;
 
 /**
  * @member {String} end_user_origin_id
  */
-EndUserDetails.prototype['end_user_origin_id'] = undefined;
+EndUserDetailsRequest.prototype['end_user_origin_id'] = undefined;
 
 /**
- * @member {Array.<module:model/EndUserDetails.CategoriesEnum>} categories
+ * @member {Array.<module:model/EndUserDetailsRequest.CategoriesEnum>} categories
  */
-EndUserDetails.prototype['categories'] = undefined;
+EndUserDetailsRequest.prototype['categories'] = undefined;
 
 
 
@@ -103,7 +103,7 @@ EndUserDetails.prototype['categories'] = undefined;
  * @enum {String}
  * @readonly
  */
-EndUserDetails['CategoriesEnum'] = {
+EndUserDetailsRequest['CategoriesEnum'] = {
 
     /**
      * value: "hris"
@@ -120,5 +120,5 @@ EndUserDetails['CategoriesEnum'] = {
 
 
 
-export default EndUserDetails;
+export default EndUserDetailsRequest;
 

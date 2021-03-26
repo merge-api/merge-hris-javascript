@@ -14,20 +14,20 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The RemoteKeyForRegeneration model module.
- * @module model/RemoteKeyForRegeneration
+ * The RemoteKeyForRegenerationRequest model module.
+ * @module model/RemoteKeyForRegenerationRequest
  * @version 1.0
  */
-class RemoteKeyForRegeneration {
+class RemoteKeyForRegenerationRequest {
     /**
-     * Constructs a new <code>RemoteKeyForRegeneration</code>.
+     * Constructs a new <code>RemoteKeyForRegenerationRequest</code>.
      * # The RemoteResponse Object ### Description The &#x60;RemoteResponse&#x60; object is used to represent information returned from a third-party endpoint.  ### Usage Example View the &#x60;RemoteResponse&#x60; returned from your &#x60;DataPassthrough&#x60;.
-     * @alias module:model/RemoteKeyForRegeneration
+     * @alias module:model/RemoteKeyForRegenerationRequest
      * @param name {String} 
      */
     constructor(name) { 
         
-        RemoteKeyForRegeneration.initialize(this, name);
+        RemoteKeyForRegenerationRequest.initialize(this, name);
     }
 
     /**
@@ -40,15 +40,15 @@ class RemoteKeyForRegeneration {
     }
 
     /**
-     * Constructs a <code>RemoteKeyForRegeneration</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>RemoteKeyForRegenerationRequest</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RemoteKeyForRegeneration} obj Optional instance to populate.
-     * @return {module:model/RemoteKeyForRegeneration} The populated <code>RemoteKeyForRegeneration</code> instance.
+     * @param {module:model/RemoteKeyForRegenerationRequest} obj Optional instance to populate.
+     * @return {module:model/RemoteKeyForRegenerationRequest} The populated <code>RemoteKeyForRegenerationRequest</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new RemoteKeyForRegeneration();
+            obj = obj || new RemoteKeyForRegenerationRequest();
 
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -63,12 +63,12 @@ class RemoteKeyForRegeneration {
 /**
  * @member {String} name
  */
-RemoteKeyForRegeneration.prototype['name'] = undefined;
+RemoteKeyForRegenerationRequest.prototype['name'] = undefined;
 
 
 
 
 
 
-export default RemoteKeyForRegeneration;
+export default RemoteKeyForRegenerationRequest;
 

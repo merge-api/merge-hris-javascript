@@ -1,4 +1,4 @@
-# MergeHrisApi.EndUserDetails
+# MergeHrisApi.EndUserDetailsRequest
 
 ## Properties
 

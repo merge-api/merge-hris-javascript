@@ -48,16 +48,6 @@
   }
 
   describe('EmployeePayrollRunsApi', function() {
-    describe('employeePayrollRunsCreate', function() {
-      it('should call employeePayrollRunsCreate successfully', function(done) {
-        //uncomment below and update the code to test employeePayrollRunsCreate
-        //instance.employeePayrollRunsCreate(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('employeePayrollRunsList', function() {
       it('should call employeePayrollRunsList successfully', function(done) {
         //uncomment below and update the code to test employeePayrollRunsList

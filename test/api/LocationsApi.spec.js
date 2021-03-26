@@ -48,16 +48,6 @@
   }
 
   describe('LocationsApi', function() {
-    describe('locationsCreate', function() {
-      it('should call locationsCreate successfully', function(done) {
-        //uncomment below and update the code to test locationsCreate
-        //instance.locationsCreate(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('locationsList', function() {
       it('should call locationsList successfully', function(done) {
         //uncomment below and update the code to test locationsList

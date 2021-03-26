@@ -48,16 +48,6 @@
   }
 
   describe('TimeOffApi', function() {
-    describe('timeOffCreate', function() {
-      it('should call timeOffCreate successfully', function(done) {
-        //uncomment below and update the code to test timeOffCreate
-        //instance.timeOffCreate(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('timeOffList', function() {
       it('should call timeOffList successfully', function(done) {
         //uncomment below and update the code to test timeOffList

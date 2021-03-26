@@ -14,7 +14,7 @@
 
 import ApiClient from "../ApiClient";
 import RemoteKey from '../model/RemoteKey';
-import RemoteKeyForRegeneration from '../model/RemoteKeyForRegeneration';
+import RemoteKeyForRegenerationRequest from '../model/RemoteKeyForRegenerationRequest';
 
 /**
 * RegenerateKey service.
@@ -45,15 +45,15 @@ export default class RegenerateKeyApi {
 
     /**
      * Exchange remote keys.
-     * @param {module:model/RemoteKeyForRegeneration} remoteKeyForRegeneration 
+     * @param {module:model/RemoteKeyForRegenerationRequest} remoteKeyForRegenerationRequest 
      * @param {module:api/RegenerateKeyApi~regenerateKeyCreateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RemoteKey}
      */
-    regenerateKeyCreate(remoteKeyForRegeneration, callback) {
-      let postBody = remoteKeyForRegeneration;
-      // verify the required parameter 'remoteKeyForRegeneration' is set
-      if (remoteKeyForRegeneration === undefined || remoteKeyForRegeneration === null) {
-        throw new Error("Missing the required parameter 'remoteKeyForRegeneration' when calling regenerateKeyCreate");
+    regenerateKeyCreate(remoteKeyForRegenerationRequest, callback) {
+      let postBody = remoteKeyForRegenerationRequest;
+      // verify the required parameter 'remoteKeyForRegenerationRequest' is set
+      if (remoteKeyForRegenerationRequest === undefined || remoteKeyForRegenerationRequest === null) {
+        throw new Error("Missing the required parameter 'remoteKeyForRegenerationRequest' when calling regenerateKeyCreate");
       }
 
       let pathParams = {

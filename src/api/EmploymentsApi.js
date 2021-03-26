@@ -13,7 +13,6 @@
 
 
 import ApiClient from "../ApiClient";
-import CreateEmployment from '../model/CreateEmployment';
 import Employment from '../model/Employment';
 import PaginatedEmploymentList from '../model/PaginatedEmploymentList';
 
@@ -37,53 +36,6 @@ export default class EmploymentsApi {
 
 
     /**
-     * Callback function to receive the result of the employmentsCreate operation.
-     * @callback module:api/EmploymentsApi~employmentsCreateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Employment} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Creates an `Employment` object with the given values.
-     * @param {String} xAccountToken Token identifying the end user.
-     * @param {Object} opts Optional parameters
-     * @param {Boolean} opts.runAsync Whether or not third-party updates should be run asynchronously.
-     * @param {module:model/CreateEmployment} opts.createEmployment 
-     * @param {module:api/EmploymentsApi~employmentsCreateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Employment}
-     */
-    employmentsCreate(xAccountToken, opts, callback) {
-      opts = opts || {};
-      let postBody = opts['createEmployment'];
-      // verify the required parameter 'xAccountToken' is set
-      if (xAccountToken === undefined || xAccountToken === null) {
-        throw new Error("Missing the required parameter 'xAccountToken' when calling employmentsCreate");
-      }
-
-      let pathParams = {
-      };
-      let queryParams = {
-        'run_async': opts['runAsync']
-      };
-      let headerParams = {
-        'X-Account-Token': xAccountToken
-      };
-      let formParams = {
-      };
-
-      let authNames = ['tokenAuth'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
-      let accepts = ['application/json'];
-      let returnType = Employment;
-      return this.apiClient.callApi(
-        '/employments', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
      * Callback function to receive the result of the employmentsList operation.
      * @callback module:api/EmploymentsApi~employmentsListCallback
      * @param {String} error Error message, if any.
@@ -93,6 +45,7 @@ export default class EmploymentsApi {
 
     /**
      * Returns a list of `Employment` objects.
+     * @param {String} authorization Should include 'Bearer ' followed by your production API Key.
      * @param {String} xAccountToken Token identifying the end user.
      * @param {Object} opts Optional parameters
      * @param {Date} opts.createdAfter If provided, will only return objects created after this datetime.
@@ -107,9 +60,13 @@ export default class EmploymentsApi {
      * @param {module:api/EmploymentsApi~employmentsListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedEmploymentList}
      */
-    employmentsList(xAccountToken, opts, callback) {
+    employmentsList(authorization, xAccountToken, opts, callback) {
       opts = opts || {};
       let postBody = null;
+      // verify the required parameter 'authorization' is set
+      if (authorization === undefined || authorization === null) {
+        throw new Error("Missing the required parameter 'authorization' when calling employmentsList");
+      }
       // verify the required parameter 'xAccountToken' is set
       if (xAccountToken === undefined || xAccountToken === null) {
         throw new Error("Missing the required parameter 'xAccountToken' when calling employmentsList");
@@ -129,6 +86,7 @@ export default class EmploymentsApi {
         'remote_id': opts['remoteId']
       };
       let headerParams = {
+        'Authorization': authorization,
         'X-Account-Token': xAccountToken
       };
       let formParams = {
@@ -155,6 +113,7 @@ export default class EmploymentsApi {
 
     /**
      * Returns an `Employment` object with the given `id`.
+     * @param {String} authorization Should include 'Bearer ' followed by your production API Key.
      * @param {String} xAccountToken Token identifying the end user.
      * @param {String} id 
      * @param {Object} opts Optional parameters
@@ -162,9 +121,13 @@ export default class EmploymentsApi {
      * @param {module:api/EmploymentsApi~employmentsRetrieveCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Employment}
      */
-    employmentsRetrieve(xAccountToken, id, opts, callback) {
+    employmentsRetrieve(authorization, xAccountToken, id, opts, callback) {
       opts = opts || {};
       let postBody = null;
+      // verify the required parameter 'authorization' is set
+      if (authorization === undefined || authorization === null) {
+        throw new Error("Missing the required parameter 'authorization' when calling employmentsRetrieve");
+      }
       // verify the required parameter 'xAccountToken' is set
       if (xAccountToken === undefined || xAccountToken === null) {
         throw new Error("Missing the required parameter 'xAccountToken' when calling employmentsRetrieve");
@@ -181,6 +144,7 @@ export default class EmploymentsApi {
         'include_remote_data': opts['includeRemoteData']
       };
       let headerParams = {
+        'Authorization': authorization,
         'X-Account-Token': xAccountToken
       };
       let formParams = {

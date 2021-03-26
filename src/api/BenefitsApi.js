@@ -14,7 +14,6 @@
 
 import ApiClient from "../ApiClient";
 import Benefit from '../model/Benefit';
-import CreateBenefit from '../model/CreateBenefit';
 import PaginatedBenefitList from '../model/PaginatedBenefitList';
 
 /**
@@ -37,53 +36,6 @@ export default class BenefitsApi {
 
 
     /**
-     * Callback function to receive the result of the benefitsCreate operation.
-     * @callback module:api/BenefitsApi~benefitsCreateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Benefit} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Creates a `Benefit` object with the given values.
-     * @param {String} xAccountToken Token identifying the end user.
-     * @param {Object} opts Optional parameters
-     * @param {Boolean} opts.runAsync Whether or not third-party updates should be run asynchronously.
-     * @param {module:model/CreateBenefit} opts.createBenefit 
-     * @param {module:api/BenefitsApi~benefitsCreateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Benefit}
-     */
-    benefitsCreate(xAccountToken, opts, callback) {
-      opts = opts || {};
-      let postBody = opts['createBenefit'];
-      // verify the required parameter 'xAccountToken' is set
-      if (xAccountToken === undefined || xAccountToken === null) {
-        throw new Error("Missing the required parameter 'xAccountToken' when calling benefitsCreate");
-      }
-
-      let pathParams = {
-      };
-      let queryParams = {
-        'run_async': opts['runAsync']
-      };
-      let headerParams = {
-        'X-Account-Token': xAccountToken
-      };
-      let formParams = {
-      };
-
-      let authNames = ['tokenAuth'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
-      let accepts = ['application/json'];
-      let returnType = Benefit;
-      return this.apiClient.callApi(
-        '/benefits', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
      * Callback function to receive the result of the benefitsList operation.
      * @callback module:api/BenefitsApi~benefitsListCallback
      * @param {String} error Error message, if any.
@@ -93,12 +45,14 @@ export default class BenefitsApi {
 
     /**
      * Returns a list of `Benefit` objects.
+     * @param {String} authorization Should include 'Bearer ' followed by your production API Key.
      * @param {String} xAccountToken Token identifying the end user.
      * @param {Object} opts Optional parameters
      * @param {Date} opts.createdAfter If provided, will only return objects created after this datetime.
      * @param {Date} opts.createdBefore If provided, will only return objects created before this datetime.
      * @param {String} opts.cursor The pagination cursor value.
      * @param {String} opts.employeeId If provided, will only return time off for this employee.
+     * @param {module:model/String} opts.expand Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
      * @param {Boolean} opts.includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
      * @param {Date} opts.modifiedAfter If provided, will only return objects modified after this datetime.
      * @param {Date} opts.modifiedBefore If provided, will only return objects modified before this datetime.
@@ -107,9 +61,13 @@ export default class BenefitsApi {
      * @param {module:api/BenefitsApi~benefitsListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedBenefitList}
      */
-    benefitsList(xAccountToken, opts, callback) {
+    benefitsList(authorization, xAccountToken, opts, callback) {
       opts = opts || {};
       let postBody = null;
+      // verify the required parameter 'authorization' is set
+      if (authorization === undefined || authorization === null) {
+        throw new Error("Missing the required parameter 'authorization' when calling benefitsList");
+      }
       // verify the required parameter 'xAccountToken' is set
       if (xAccountToken === undefined || xAccountToken === null) {
         throw new Error("Missing the required parameter 'xAccountToken' when calling benefitsList");
@@ -122,6 +80,7 @@ export default class BenefitsApi {
         'created_before': opts['createdBefore'],
         'cursor': opts['cursor'],
         'employee_id': opts['employeeId'],
+        'expand': opts['expand'],
         'include_remote_data': opts['includeRemoteData'],
         'modified_after': opts['modifiedAfter'],
         'modified_before': opts['modifiedBefore'],
@@ -129,6 +88,7 @@ export default class BenefitsApi {
         'remote_id': opts['remoteId']
       };
       let headerParams = {
+        'Authorization': authorization,
         'X-Account-Token': xAccountToken
       };
       let formParams = {
@@ -155,16 +115,22 @@ export default class BenefitsApi {
 
     /**
      * Returns a `Benefit` object with the given `id`.
+     * @param {String} authorization Should include 'Bearer ' followed by your production API Key.
      * @param {String} xAccountToken Token identifying the end user.
      * @param {String} id 
      * @param {Object} opts Optional parameters
+     * @param {module:model/String} opts.expand Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
      * @param {Boolean} opts.includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
      * @param {module:api/BenefitsApi~benefitsRetrieveCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Benefit}
      */
-    benefitsRetrieve(xAccountToken, id, opts, callback) {
+    benefitsRetrieve(authorization, xAccountToken, id, opts, callback) {
       opts = opts || {};
       let postBody = null;
+      // verify the required parameter 'authorization' is set
+      if (authorization === undefined || authorization === null) {
+        throw new Error("Missing the required parameter 'authorization' when calling benefitsRetrieve");
+      }
       // verify the required parameter 'xAccountToken' is set
       if (xAccountToken === undefined || xAccountToken === null) {
         throw new Error("Missing the required parameter 'xAccountToken' when calling benefitsRetrieve");
@@ -178,9 +144,11 @@ export default class BenefitsApi {
         'id': id
       };
       let queryParams = {
+        'expand': opts['expand'],
         'include_remote_data': opts['includeRemoteData']
       };
       let headerParams = {
+        'Authorization': authorization,
         'X-Account-Token': xAccountToken
       };
       let formParams = {

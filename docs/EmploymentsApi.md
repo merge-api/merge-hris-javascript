@@ -4,72 +4,14 @@ All URIs are relative to *https://api.merge.dev/api/hris/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**employmentsCreate**](EmploymentsApi.md#employmentsCreate) | **POST** /employments | 
 [**employmentsList**](EmploymentsApi.md#employmentsList) | **GET** /employments | 
 [**employmentsRetrieve**](EmploymentsApi.md#employmentsRetrieve) | **GET** /employments/{id} | 
 
 
 
-## employmentsCreate
-
-> Employment employmentsCreate(xAccountToken, opts)
-
-
-
-Creates an &#x60;Employment&#x60; object with the given values.
-
-### Example
-
-```javascript
-import MergeHrisApi from 'merge_hris_api';
-let defaultClient = MergeHrisApi.ApiClient.instance;
-// Configure API key authorization: tokenAuth
-let tokenAuth = defaultClient.authentications['tokenAuth'];
-tokenAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//tokenAuth.apiKeyPrefix = 'Token';
-
-let apiInstance = new MergeHrisApi.EmploymentsApi();
-let xAccountToken = "xAccountToken_example"; // String | Token identifying the end user.
-let opts = {
-  'runAsync': true, // Boolean | Whether or not third-party updates should be run asynchronously.
-  'createEmployment': new MergeHrisApi.CreateEmployment() // CreateEmployment | 
-};
-apiInstance.employmentsCreate(xAccountToken, opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xAccountToken** | **String**| Token identifying the end user. | 
- **runAsync** | **Boolean**| Whether or not third-party updates should be run asynchronously. | [optional] 
- **createEmployment** | [**CreateEmployment**](CreateEmployment.md)|  | [optional] 
-
-### Return type
-
-[**Employment**](Employment.md)
-
-### Authorization
-
-[tokenAuth](../README.md#tokenAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
-- **Accept**: application/json
-
-
 ## employmentsList
 
-> PaginatedEmploymentList employmentsList(xAccountToken, opts)
+> PaginatedEmploymentList employmentsList(authorization, xAccountToken, opts)
 
 
 
@@ -87,6 +29,7 @@ tokenAuth.apiKey = 'YOUR API KEY';
 //tokenAuth.apiKeyPrefix = 'Token';
 
 let apiInstance = new MergeHrisApi.EmploymentsApi();
+let authorization = "authorization_example"; // String | Should include 'Bearer ' followed by your production API Key.
 let xAccountToken = "xAccountToken_example"; // String | Token identifying the end user.
 let opts = {
   'createdAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects created after this datetime.
@@ -99,7 +42,7 @@ let opts = {
   'pageSize': 56, // Number | Number of results to return per page.
   'remoteId': "remoteId_example" // String | The API provider's ID for the given object.
 };
-apiInstance.employmentsList(xAccountToken, opts, (error, data, response) => {
+apiInstance.employmentsList(authorization, xAccountToken, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -113,6 +56,7 @@ apiInstance.employmentsList(xAccountToken, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **authorization** | **String**| Should include &#39;Bearer &#39; followed by your production API Key. | 
  **xAccountToken** | **String**| Token identifying the end user. | 
  **createdAfter** | **Date**| If provided, will only return objects created after this datetime. | [optional] 
  **createdBefore** | **Date**| If provided, will only return objects created before this datetime. | [optional] 
@@ -140,7 +84,7 @@ Name | Type | Description  | Notes
 
 ## employmentsRetrieve
 
-> Employment employmentsRetrieve(xAccountToken, id, opts)
+> Employment employmentsRetrieve(authorization, xAccountToken, id, opts)
 
 
 
@@ -158,12 +102,13 @@ tokenAuth.apiKey = 'YOUR API KEY';
 //tokenAuth.apiKeyPrefix = 'Token';
 
 let apiInstance = new MergeHrisApi.EmploymentsApi();
+let authorization = "authorization_example"; // String | Should include 'Bearer ' followed by your production API Key.
 let xAccountToken = "xAccountToken_example"; // String | Token identifying the end user.
 let id = null; // String | 
 let opts = {
   'includeRemoteData': true // Boolean | Whether to include the original data Merge fetched from the third-party to produce these models.
 };
-apiInstance.employmentsRetrieve(xAccountToken, id, opts, (error, data, response) => {
+apiInstance.employmentsRetrieve(authorization, xAccountToken, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -177,6 +122,7 @@ apiInstance.employmentsRetrieve(xAccountToken, id, opts, (error, data, response)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **authorization** | **String**| Should include &#39;Bearer &#39; followed by your production API Key. | 
  **xAccountToken** | **String**| Token identifying the end user. | 
  **id** | [**String**](.md)|  | 
  **includeRemoteData** | **Boolean**| Whether to include the original data Merge fetched from the third-party to produce these models. | [optional] 
