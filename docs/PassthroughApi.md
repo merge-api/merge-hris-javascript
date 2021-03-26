@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## passthroughCreate
 
-> RemoteResponse passthroughCreate(authorization, xAccountToken, dataPassthroughRequest, opts)
+> RemoteResponse passthroughCreate(xAccountToken, dataPassthroughRequest, opts)
 
 
 
@@ -28,13 +28,12 @@ tokenAuth.apiKey = 'YOUR API KEY';
 //tokenAuth.apiKeyPrefix = 'Token';
 
 let apiInstance = new MergeHrisApi.PassthroughApi();
-let authorization = "authorization_example"; // String | Should include 'Bearer ' followed by your production API Key.
 let xAccountToken = "xAccountToken_example"; // String | Token identifying the end user.
 let dataPassthroughRequest = new MergeHrisApi.DataPassthroughRequest(); // DataPassthroughRequest | 
 let opts = {
   'includeRemoteData': true // Boolean | Whether to include the original data Merge fetched from the third-party to produce these models.
 };
-apiInstance.passthroughCreate(authorization, xAccountToken, dataPassthroughRequest, opts, (error, data, response) => {
+apiInstance.passthroughCreate(xAccountToken, dataPassthroughRequest, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -48,7 +47,6 @@ apiInstance.passthroughCreate(authorization, xAccountToken, dataPassthroughReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Should include &#39;Bearer &#39; followed by your production API Key. | 
  **xAccountToken** | **String**| Token identifying the end user. | 
  **dataPassthroughRequest** | [**DataPassthroughRequest**](DataPassthroughRequest.md)|  | 
  **includeRemoteData** | **Boolean**| Whether to include the original data Merge fetched from the third-party to produce these models. | [optional] 

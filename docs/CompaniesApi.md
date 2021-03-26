@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## companiesList
 
-> PaginatedCompanyList companiesList(authorization, xAccountToken, opts)
+> PaginatedCompanyList companiesList(xAccountToken, opts)
 
 
 
@@ -29,7 +29,6 @@ tokenAuth.apiKey = 'YOUR API KEY';
 //tokenAuth.apiKeyPrefix = 'Token';
 
 let apiInstance = new MergeHrisApi.CompaniesApi();
-let authorization = "authorization_example"; // String | Should include 'Bearer ' followed by your production API Key.
 let xAccountToken = "xAccountToken_example"; // String | Token identifying the end user.
 let opts = {
   'createdAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects created after this datetime.
@@ -41,7 +40,7 @@ let opts = {
   'pageSize': 56, // Number | Number of results to return per page.
   'remoteId': "remoteId_example" // String | The API provider's ID for the given object.
 };
-apiInstance.companiesList(authorization, xAccountToken, opts, (error, data, response) => {
+apiInstance.companiesList(xAccountToken, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -55,7 +54,6 @@ apiInstance.companiesList(authorization, xAccountToken, opts, (error, data, resp
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Should include &#39;Bearer &#39; followed by your production API Key. | 
  **xAccountToken** | **String**| Token identifying the end user. | 
  **createdAfter** | **Date**| If provided, will only return objects created after this datetime. | [optional] 
  **createdBefore** | **Date**| If provided, will only return objects created before this datetime. | [optional] 
@@ -82,7 +80,7 @@ Name | Type | Description  | Notes
 
 ## companiesRetrieve
 
-> Company companiesRetrieve(authorization, xAccountToken, id, opts)
+> Company companiesRetrieve(xAccountToken, id, opts)
 
 
 
@@ -100,13 +98,12 @@ tokenAuth.apiKey = 'YOUR API KEY';
 //tokenAuth.apiKeyPrefix = 'Token';
 
 let apiInstance = new MergeHrisApi.CompaniesApi();
-let authorization = "authorization_example"; // String | Should include 'Bearer ' followed by your production API Key.
 let xAccountToken = "xAccountToken_example"; // String | Token identifying the end user.
 let id = null; // String | 
 let opts = {
   'includeRemoteData': true // Boolean | Whether to include the original data Merge fetched from the third-party to produce these models.
 };
-apiInstance.companiesRetrieve(authorization, xAccountToken, id, opts, (error, data, response) => {
+apiInstance.companiesRetrieve(xAccountToken, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -120,7 +117,6 @@ apiInstance.companiesRetrieve(authorization, xAccountToken, id, opts, (error, da
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Should include &#39;Bearer &#39; followed by your production API Key. | 
  **xAccountToken** | **String**| Token identifying the end user. | 
  **id** | [**String**](.md)|  | 
  **includeRemoteData** | **Boolean**| Whether to include the original data Merge fetched from the third-party to produce these models. | [optional] 

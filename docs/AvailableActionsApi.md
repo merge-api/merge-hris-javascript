@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## availableActionsRetrieve
 
-> AvailableActions availableActionsRetrieve(authorization, xAccountToken, opts)
+> AvailableActions availableActionsRetrieve(xAccountToken, opts)
 
 
 
@@ -28,12 +28,11 @@ tokenAuth.apiKey = 'YOUR API KEY';
 //tokenAuth.apiKeyPrefix = 'Token';
 
 let apiInstance = new MergeHrisApi.AvailableActionsApi();
-let authorization = "authorization_example"; // String | Should include 'Bearer ' followed by your production API Key.
 let xAccountToken = "xAccountToken_example"; // String | Token identifying the end user.
 let opts = {
   'includeRemoteData': true // Boolean | Whether to include the original data Merge fetched from the third-party to produce these models.
 };
-apiInstance.availableActionsRetrieve(authorization, xAccountToken, opts, (error, data, response) => {
+apiInstance.availableActionsRetrieve(xAccountToken, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -47,7 +46,6 @@ apiInstance.availableActionsRetrieve(authorization, xAccountToken, opts, (error,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Should include &#39;Bearer &#39; followed by your production API Key. | 
  **xAccountToken** | **String**| Token identifying the end user. | 
  **includeRemoteData** | **Boolean**| Whether to include the original data Merge fetched from the third-party to produce these models. | [optional] 
 

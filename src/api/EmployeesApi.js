@@ -45,14 +45,12 @@ export default class EmployeesApi {
 
     /**
      * Returns a list of `Employee` objects.
-     * @param {String} authorization Should include 'Bearer ' followed by your production API Key.
      * @param {String} xAccountToken Token identifying the end user.
      * @param {Object} opts Optional parameters
      * @param {String} opts.companyId If provided, will only return employees for this company.
      * @param {Date} opts.createdAfter If provided, will only return objects created after this datetime.
      * @param {Date} opts.createdBefore If provided, will only return objects created before this datetime.
      * @param {String} opts.cursor The pagination cursor value.
-     * @param {module:model/String} opts.expand Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
      * @param {Boolean} opts.includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
      * @param {String} opts.managerId If provided, will only return employees for this manager.
      * @param {Date} opts.modifiedAfter If provided, will only return objects modified after this datetime.
@@ -64,13 +62,9 @@ export default class EmployeesApi {
      * @param {module:api/EmployeesApi~employeesListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedEmployeeList}
      */
-    employeesList(authorization, xAccountToken, opts, callback) {
+    employeesList(xAccountToken, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'authorization' is set
-      if (authorization === undefined || authorization === null) {
-        throw new Error("Missing the required parameter 'authorization' when calling employeesList");
-      }
       // verify the required parameter 'xAccountToken' is set
       if (xAccountToken === undefined || xAccountToken === null) {
         throw new Error("Missing the required parameter 'xAccountToken' when calling employeesList");
@@ -83,7 +77,6 @@ export default class EmployeesApi {
         'created_after': opts['createdAfter'],
         'created_before': opts['createdBefore'],
         'cursor': opts['cursor'],
-        'expand': opts['expand'],
         'include_remote_data': opts['includeRemoteData'],
         'manager_id': opts['managerId'],
         'modified_after': opts['modifiedAfter'],
@@ -94,7 +87,6 @@ export default class EmployeesApi {
         'work_location_id': opts['workLocationId']
       };
       let headerParams = {
-        'Authorization': authorization,
         'X-Account-Token': xAccountToken
       };
       let formParams = {
@@ -121,22 +113,16 @@ export default class EmployeesApi {
 
     /**
      * Returns an `Employee` object with the given `id`.
-     * @param {String} authorization Should include 'Bearer ' followed by your production API Key.
      * @param {String} xAccountToken Token identifying the end user.
      * @param {String} id 
      * @param {Object} opts Optional parameters
-     * @param {module:model/String} opts.expand Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
      * @param {Boolean} opts.includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
      * @param {module:api/EmployeesApi~employeesRetrieveCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Employee}
      */
-    employeesRetrieve(authorization, xAccountToken, id, opts, callback) {
+    employeesRetrieve(xAccountToken, id, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'authorization' is set
-      if (authorization === undefined || authorization === null) {
-        throw new Error("Missing the required parameter 'authorization' when calling employeesRetrieve");
-      }
       // verify the required parameter 'xAccountToken' is set
       if (xAccountToken === undefined || xAccountToken === null) {
         throw new Error("Missing the required parameter 'xAccountToken' when calling employeesRetrieve");
@@ -150,11 +136,9 @@ export default class EmployeesApi {
         'id': id
       };
       let queryParams = {
-        'expand': opts['expand'],
         'include_remote_data': opts['includeRemoteData']
       };
       let headerParams = {
-        'Authorization': authorization,
         'X-Account-Token': xAccountToken
       };
       let formParams = {

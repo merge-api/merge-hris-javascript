@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## employeesList
 
-> PaginatedEmployeeList employeesList(authorization, xAccountToken, opts)
+> PaginatedEmployeeList employeesList(xAccountToken, opts)
 
 
 
@@ -29,14 +29,12 @@ tokenAuth.apiKey = 'YOUR API KEY';
 //tokenAuth.apiKeyPrefix = 'Token';
 
 let apiInstance = new MergeHrisApi.EmployeesApi();
-let authorization = "authorization_example"; // String | Should include 'Bearer ' followed by your production API Key.
 let xAccountToken = "xAccountToken_example"; // String | Token identifying the end user.
 let opts = {
   'companyId': "companyId_example", // String | If provided, will only return employees for this company.
   'createdAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects created after this datetime.
   'createdBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects created before this datetime.
   'cursor': cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw, // String | The pagination cursor value.
-  'expand': employments,home_location,work_location,manager,team,company, // String | Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
   'includeRemoteData': true, // Boolean | Whether to include the original data Merge fetched from the third-party to produce these models.
   'managerId': "managerId_example", // String | If provided, will only return employees for this manager.
   'modifiedAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects modified after this datetime.
@@ -46,7 +44,7 @@ let opts = {
   'teamId': "teamId_example", // String | If provided, will only return employees for this team.
   'workLocationId': "workLocationId_example" // String | If provided, will only return employees for this location.
 };
-apiInstance.employeesList(authorization, xAccountToken, opts, (error, data, response) => {
+apiInstance.employeesList(xAccountToken, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -60,13 +58,11 @@ apiInstance.employeesList(authorization, xAccountToken, opts, (error, data, resp
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Should include &#39;Bearer &#39; followed by your production API Key. | 
  **xAccountToken** | **String**| Token identifying the end user. | 
  **companyId** | **String**| If provided, will only return employees for this company. | [optional] 
  **createdAfter** | **Date**| If provided, will only return objects created after this datetime. | [optional] 
  **createdBefore** | **Date**| If provided, will only return objects created before this datetime. | [optional] 
  **cursor** | **String**| The pagination cursor value. | [optional] 
- **expand** | **String**| Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces. | [optional] 
  **includeRemoteData** | **Boolean**| Whether to include the original data Merge fetched from the third-party to produce these models. | [optional] 
  **managerId** | **String**| If provided, will only return employees for this manager. | [optional] 
  **modifiedAfter** | **Date**| If provided, will only return objects modified after this datetime. | [optional] 
@@ -92,7 +88,7 @@ Name | Type | Description  | Notes
 
 ## employeesRetrieve
 
-> Employee employeesRetrieve(authorization, xAccountToken, id, opts)
+> Employee employeesRetrieve(xAccountToken, id, opts)
 
 
 
@@ -110,14 +106,12 @@ tokenAuth.apiKey = 'YOUR API KEY';
 //tokenAuth.apiKeyPrefix = 'Token';
 
 let apiInstance = new MergeHrisApi.EmployeesApi();
-let authorization = "authorization_example"; // String | Should include 'Bearer ' followed by your production API Key.
 let xAccountToken = "xAccountToken_example"; // String | Token identifying the end user.
 let id = null; // String | 
 let opts = {
-  'expand': employments,home_location,work_location,manager,team,company, // String | Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
   'includeRemoteData': true // Boolean | Whether to include the original data Merge fetched from the third-party to produce these models.
 };
-apiInstance.employeesRetrieve(authorization, xAccountToken, id, opts, (error, data, response) => {
+apiInstance.employeesRetrieve(xAccountToken, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -131,10 +125,8 @@ apiInstance.employeesRetrieve(authorization, xAccountToken, id, opts, (error, da
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Should include &#39;Bearer &#39; followed by your production API Key. | 
  **xAccountToken** | **String**| Token identifying the end user. | 
  **id** | [**String**](.md)|  | 
- **expand** | **String**| Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces. | [optional] 
  **includeRemoteData** | **Boolean**| Whether to include the original data Merge fetched from the third-party to produce these models. | [optional] 
 
 ### Return type

@@ -45,7 +45,6 @@ export default class PassthroughApi {
 
     /**
      * Pull data from an endpoint not currently supported by Merge.
-     * @param {String} authorization Should include 'Bearer ' followed by your production API Key.
      * @param {String} xAccountToken Token identifying the end user.
      * @param {module:model/DataPassthroughRequest} dataPassthroughRequest 
      * @param {Object} opts Optional parameters
@@ -53,13 +52,9 @@ export default class PassthroughApi {
      * @param {module:api/PassthroughApi~passthroughCreateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RemoteResponse}
      */
-    passthroughCreate(authorization, xAccountToken, dataPassthroughRequest, opts, callback) {
+    passthroughCreate(xAccountToken, dataPassthroughRequest, opts, callback) {
       opts = opts || {};
       let postBody = dataPassthroughRequest;
-      // verify the required parameter 'authorization' is set
-      if (authorization === undefined || authorization === null) {
-        throw new Error("Missing the required parameter 'authorization' when calling passthroughCreate");
-      }
       // verify the required parameter 'xAccountToken' is set
       if (xAccountToken === undefined || xAccountToken === null) {
         throw new Error("Missing the required parameter 'xAccountToken' when calling passthroughCreate");
@@ -75,7 +70,6 @@ export default class PassthroughApi {
         'include_remote_data': opts['includeRemoteData']
       };
       let headerParams = {
-        'Authorization': authorization,
         'X-Account-Token': xAccountToken
       };
       let formParams = {

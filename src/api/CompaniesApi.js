@@ -45,7 +45,6 @@ export default class CompaniesApi {
 
     /**
      * Returns a list of `Company` objects.
-     * @param {String} authorization Should include 'Bearer ' followed by your production API Key.
      * @param {String} xAccountToken Token identifying the end user.
      * @param {Object} opts Optional parameters
      * @param {Date} opts.createdAfter If provided, will only return objects created after this datetime.
@@ -59,13 +58,9 @@ export default class CompaniesApi {
      * @param {module:api/CompaniesApi~companiesListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedCompanyList}
      */
-    companiesList(authorization, xAccountToken, opts, callback) {
+    companiesList(xAccountToken, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'authorization' is set
-      if (authorization === undefined || authorization === null) {
-        throw new Error("Missing the required parameter 'authorization' when calling companiesList");
-      }
       // verify the required parameter 'xAccountToken' is set
       if (xAccountToken === undefined || xAccountToken === null) {
         throw new Error("Missing the required parameter 'xAccountToken' when calling companiesList");
@@ -84,7 +79,6 @@ export default class CompaniesApi {
         'remote_id': opts['remoteId']
       };
       let headerParams = {
-        'Authorization': authorization,
         'X-Account-Token': xAccountToken
       };
       let formParams = {
@@ -111,7 +105,6 @@ export default class CompaniesApi {
 
     /**
      * Returns a `Company` object with the given `id`.
-     * @param {String} authorization Should include 'Bearer ' followed by your production API Key.
      * @param {String} xAccountToken Token identifying the end user.
      * @param {String} id 
      * @param {Object} opts Optional parameters
@@ -119,13 +112,9 @@ export default class CompaniesApi {
      * @param {module:api/CompaniesApi~companiesRetrieveCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Company}
      */
-    companiesRetrieve(authorization, xAccountToken, id, opts, callback) {
+    companiesRetrieve(xAccountToken, id, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'authorization' is set
-      if (authorization === undefined || authorization === null) {
-        throw new Error("Missing the required parameter 'authorization' when calling companiesRetrieve");
-      }
       // verify the required parameter 'xAccountToken' is set
       if (xAccountToken === undefined || xAccountToken === null) {
         throw new Error("Missing the required parameter 'xAccountToken' when calling companiesRetrieve");
@@ -142,7 +131,6 @@ export default class CompaniesApi {
         'include_remote_data': opts['includeRemoteData']
       };
       let headerParams = {
-        'Authorization': authorization,
         'X-Account-Token': xAccountToken
       };
       let formParams = {

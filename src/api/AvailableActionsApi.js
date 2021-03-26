@@ -44,20 +44,15 @@ export default class AvailableActionsApi {
 
     /**
      * Returns a list of models and actions available for an account.
-     * @param {String} authorization Should include 'Bearer ' followed by your production API Key.
      * @param {String} xAccountToken Token identifying the end user.
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
      * @param {module:api/AvailableActionsApi~availableActionsRetrieveCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AvailableActions}
      */
-    availableActionsRetrieve(authorization, xAccountToken, opts, callback) {
+    availableActionsRetrieve(xAccountToken, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'authorization' is set
-      if (authorization === undefined || authorization === null) {
-        throw new Error("Missing the required parameter 'authorization' when calling availableActionsRetrieve");
-      }
       // verify the required parameter 'xAccountToken' is set
       if (xAccountToken === undefined || xAccountToken === null) {
         throw new Error("Missing the required parameter 'xAccountToken' when calling availableActionsRetrieve");
@@ -69,7 +64,6 @@ export default class AvailableActionsApi {
         'include_remote_data': opts['includeRemoteData']
       };
       let headerParams = {
-        'Authorization': authorization,
         'X-Account-Token': xAccountToken
       };
       let formParams = {

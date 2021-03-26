@@ -45,7 +45,6 @@ export default class TimeOffApi {
 
     /**
      * Returns a list of `TimeOff` objects.
-     * @param {String} authorization Should include 'Bearer ' followed by your production API Key.
      * @param {String} xAccountToken Token identifying the end user.
      * @param {Object} opts Optional parameters
      * @param {String} opts.approverId If provided, will only return time off for this approver.
@@ -53,7 +52,6 @@ export default class TimeOffApi {
      * @param {Date} opts.createdBefore If provided, will only return objects created before this datetime.
      * @param {String} opts.cursor The pagination cursor value.
      * @param {String} opts.employeeId If provided, will only return time off for this employee.
-     * @param {module:model/String} opts.expand Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
      * @param {Boolean} opts.includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
      * @param {Date} opts.modifiedAfter If provided, will only return objects modified after this datetime.
      * @param {Date} opts.modifiedBefore If provided, will only return objects modified before this datetime.
@@ -62,13 +60,9 @@ export default class TimeOffApi {
      * @param {module:api/TimeOffApi~timeOffListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedTimeOffList}
      */
-    timeOffList(authorization, xAccountToken, opts, callback) {
+    timeOffList(xAccountToken, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'authorization' is set
-      if (authorization === undefined || authorization === null) {
-        throw new Error("Missing the required parameter 'authorization' when calling timeOffList");
-      }
       // verify the required parameter 'xAccountToken' is set
       if (xAccountToken === undefined || xAccountToken === null) {
         throw new Error("Missing the required parameter 'xAccountToken' when calling timeOffList");
@@ -82,7 +76,6 @@ export default class TimeOffApi {
         'created_before': opts['createdBefore'],
         'cursor': opts['cursor'],
         'employee_id': opts['employeeId'],
-        'expand': opts['expand'],
         'include_remote_data': opts['includeRemoteData'],
         'modified_after': opts['modifiedAfter'],
         'modified_before': opts['modifiedBefore'],
@@ -90,7 +83,6 @@ export default class TimeOffApi {
         'remote_id': opts['remoteId']
       };
       let headerParams = {
-        'Authorization': authorization,
         'X-Account-Token': xAccountToken
       };
       let formParams = {
@@ -117,22 +109,16 @@ export default class TimeOffApi {
 
     /**
      * Returns an `TimeOff` object with the given `id`.
-     * @param {String} authorization Should include 'Bearer ' followed by your production API Key.
      * @param {String} xAccountToken Token identifying the end user.
      * @param {String} id 
      * @param {Object} opts Optional parameters
-     * @param {module:model/String} opts.expand Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
      * @param {Boolean} opts.includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
      * @param {module:api/TimeOffApi~timeOffRetrieveCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TimeOff}
      */
-    timeOffRetrieve(authorization, xAccountToken, id, opts, callback) {
+    timeOffRetrieve(xAccountToken, id, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'authorization' is set
-      if (authorization === undefined || authorization === null) {
-        throw new Error("Missing the required parameter 'authorization' when calling timeOffRetrieve");
-      }
       // verify the required parameter 'xAccountToken' is set
       if (xAccountToken === undefined || xAccountToken === null) {
         throw new Error("Missing the required parameter 'xAccountToken' when calling timeOffRetrieve");
@@ -146,11 +132,9 @@ export default class TimeOffApi {
         'id': id
       };
       let queryParams = {
-        'expand': opts['expand'],
         'include_remote_data': opts['includeRemoteData']
       };
       let headerParams = {
-        'Authorization': authorization,
         'X-Account-Token': xAccountToken
       };
       let formParams = {

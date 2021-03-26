@@ -45,7 +45,6 @@ export default class EmploymentsApi {
 
     /**
      * Returns a list of `Employment` objects.
-     * @param {String} authorization Should include 'Bearer ' followed by your production API Key.
      * @param {String} xAccountToken Token identifying the end user.
      * @param {Object} opts Optional parameters
      * @param {Date} opts.createdAfter If provided, will only return objects created after this datetime.
@@ -60,13 +59,9 @@ export default class EmploymentsApi {
      * @param {module:api/EmploymentsApi~employmentsListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedEmploymentList}
      */
-    employmentsList(authorization, xAccountToken, opts, callback) {
+    employmentsList(xAccountToken, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'authorization' is set
-      if (authorization === undefined || authorization === null) {
-        throw new Error("Missing the required parameter 'authorization' when calling employmentsList");
-      }
       // verify the required parameter 'xAccountToken' is set
       if (xAccountToken === undefined || xAccountToken === null) {
         throw new Error("Missing the required parameter 'xAccountToken' when calling employmentsList");
@@ -86,7 +81,6 @@ export default class EmploymentsApi {
         'remote_id': opts['remoteId']
       };
       let headerParams = {
-        'Authorization': authorization,
         'X-Account-Token': xAccountToken
       };
       let formParams = {
@@ -113,7 +107,6 @@ export default class EmploymentsApi {
 
     /**
      * Returns an `Employment` object with the given `id`.
-     * @param {String} authorization Should include 'Bearer ' followed by your production API Key.
      * @param {String} xAccountToken Token identifying the end user.
      * @param {String} id 
      * @param {Object} opts Optional parameters
@@ -121,13 +114,9 @@ export default class EmploymentsApi {
      * @param {module:api/EmploymentsApi~employmentsRetrieveCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Employment}
      */
-    employmentsRetrieve(authorization, xAccountToken, id, opts, callback) {
+    employmentsRetrieve(xAccountToken, id, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'authorization' is set
-      if (authorization === undefined || authorization === null) {
-        throw new Error("Missing the required parameter 'authorization' when calling employmentsRetrieve");
-      }
       // verify the required parameter 'xAccountToken' is set
       if (xAccountToken === undefined || xAccountToken === null) {
         throw new Error("Missing the required parameter 'xAccountToken' when calling employmentsRetrieve");
@@ -144,7 +133,6 @@ export default class EmploymentsApi {
         'include_remote_data': opts['includeRemoteData']
       };
       let headerParams = {
-        'Authorization': authorization,
         'X-Account-Token': xAccountToken
       };
       let formParams = {

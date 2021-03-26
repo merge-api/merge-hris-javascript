@@ -45,7 +45,6 @@ export default class TeamsApi {
 
     /**
      * Returns a list of `Team` objects.
-     * @param {String} authorization Should include 'Bearer ' followed by your production API Key.
      * @param {String} xAccountToken Token identifying the end user.
      * @param {Object} opts Optional parameters
      * @param {Date} opts.createdAfter If provided, will only return objects created after this datetime.
@@ -59,13 +58,9 @@ export default class TeamsApi {
      * @param {module:api/TeamsApi~teamsListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedTeamList}
      */
-    teamsList(authorization, xAccountToken, opts, callback) {
+    teamsList(xAccountToken, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'authorization' is set
-      if (authorization === undefined || authorization === null) {
-        throw new Error("Missing the required parameter 'authorization' when calling teamsList");
-      }
       // verify the required parameter 'xAccountToken' is set
       if (xAccountToken === undefined || xAccountToken === null) {
         throw new Error("Missing the required parameter 'xAccountToken' when calling teamsList");
@@ -84,7 +79,6 @@ export default class TeamsApi {
         'remote_id': opts['remoteId']
       };
       let headerParams = {
-        'Authorization': authorization,
         'X-Account-Token': xAccountToken
       };
       let formParams = {
@@ -111,7 +105,6 @@ export default class TeamsApi {
 
     /**
      * Returns a `Team` object with the given `id`.
-     * @param {String} authorization Should include 'Bearer ' followed by your production API Key.
      * @param {String} xAccountToken Token identifying the end user.
      * @param {String} id 
      * @param {Object} opts Optional parameters
@@ -119,13 +112,9 @@ export default class TeamsApi {
      * @param {module:api/TeamsApi~teamsRetrieveCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Team}
      */
-    teamsRetrieve(authorization, xAccountToken, id, opts, callback) {
+    teamsRetrieve(xAccountToken, id, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'authorization' is set
-      if (authorization === undefined || authorization === null) {
-        throw new Error("Missing the required parameter 'authorization' when calling teamsRetrieve");
-      }
       // verify the required parameter 'xAccountToken' is set
       if (xAccountToken === undefined || xAccountToken === null) {
         throw new Error("Missing the required parameter 'xAccountToken' when calling teamsRetrieve");
@@ -142,7 +131,6 @@ export default class TeamsApi {
         'include_remote_data': opts['includeRemoteData']
       };
       let headerParams = {
-        'Authorization': authorization,
         'X-Account-Token': xAccountToken
       };
       let formParams = {
