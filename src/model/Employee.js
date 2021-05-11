@@ -16,7 +16,6 @@ import convertRelatedObjectToType from '../Utils';
 import EmploymentStatusEnum from './EmploymentStatusEnum';
 import Employment from './Employment';
 import Location from './Location';
-import Employee from './Employee';
 import Team from './Team';
 import Company from './Company';
 import EthnicityEnum from './EthnicityEnum';

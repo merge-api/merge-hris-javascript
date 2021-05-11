@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import convertRelatedObjectToType from '../Utils';
 import Deduction from './Deduction';
 import Earning from './Earning';
 import Employee from './Employee';

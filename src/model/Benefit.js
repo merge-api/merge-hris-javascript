@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import convertRelatedObjectToType from '../Utils';
 import BenefitPlanTypeEnum from './BenefitPlanTypeEnum';
 import Employee from './Employee';
 import RemoteData from './RemoteData';
