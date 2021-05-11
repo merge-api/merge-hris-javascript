@@ -104,6 +104,11 @@ AccountIntegration.prototype['square_image'] = undefined;
  */
 AccountIntegration.prototype['color'] = undefined;
 
+/**
+ * @member {String} slug
+ */
+AccountIntegration.prototype['slug'] = undefined;
+
 
 
 
