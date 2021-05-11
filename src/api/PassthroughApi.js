@@ -47,13 +47,10 @@ export default class PassthroughApi {
      * Pull data from an endpoint not currently supported by Merge.
      * @param {String} xAccountToken Token identifying the end user.
      * @param {module:model/DataPassthroughRequest} dataPassthroughRequest 
-     * @param {Object} opts Optional parameters
-     * @param {Boolean} opts.includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
      * @param {module:api/PassthroughApi~passthroughCreateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RemoteResponse}
      */
-    passthroughCreate(xAccountToken, dataPassthroughRequest, opts, callback) {
-      opts = opts || {};
+    passthroughCreate(xAccountToken, dataPassthroughRequest, callback) {
       let postBody = dataPassthroughRequest;
       // verify the required parameter 'xAccountToken' is set
       if (xAccountToken === undefined || xAccountToken === null) {
@@ -67,7 +64,6 @@ export default class PassthroughApi {
       let pathParams = {
       };
       let queryParams = {
-        'include_remote_data': opts['includeRemoteData']
       };
       let headerParams = {
         'X-Account-Token': xAccountToken

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## passthroughCreate
 
-> RemoteResponse passthroughCreate(xAccountToken, dataPassthroughRequest, opts)
+> RemoteResponse passthroughCreate(xAccountToken, dataPassthroughRequest)
 
 
 
@@ -30,10 +30,7 @@ tokenAuth.apiKey = 'YOUR API KEY';
 let apiInstance = new MergeHrisApi.PassthroughApi();
 let xAccountToken = "xAccountToken_example"; // String | Token identifying the end user.
 let dataPassthroughRequest = new MergeHrisApi.DataPassthroughRequest(); // DataPassthroughRequest | 
-let opts = {
-  'includeRemoteData': true // Boolean | Whether to include the original data Merge fetched from the third-party to produce these models.
-};
-apiInstance.passthroughCreate(xAccountToken, dataPassthroughRequest, opts, (error, data, response) => {
+apiInstance.passthroughCreate(xAccountToken, dataPassthroughRequest, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -49,7 +46,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xAccountToken** | **String**| Token identifying the end user. | 
  **dataPassthroughRequest** | [**DataPassthroughRequest**](DataPassthroughRequest.md)|  | 
- **includeRemoteData** | **Boolean**| Whether to include the original data Merge fetched from the third-party to produce these models. | [optional] 
 
 ### Return type
 

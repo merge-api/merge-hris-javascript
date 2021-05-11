@@ -14,6 +14,7 @@
 
 import ApiClient from "../ApiClient";
 import Employee from '../model/Employee';
+import EmployeeRequest from '../model/EmployeeRequest';
 import PaginatedEmployeeList from '../model/PaginatedEmployeeList';
 
 /**
@@ -34,6 +35,53 @@ export default class EmployeesApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
+
+    /**
+     * Callback function to receive the result of the employeesCreate operation.
+     * @callback module:api/EmployeesApi~employeesCreateCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Employee} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Creates an `Employee` object with the given values.
+     * @param {String} xAccountToken Token identifying the end user.
+     * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.runAsync Whether or not third-party updates should be run asynchronously.
+     * @param {module:model/EmployeeRequest} opts.employeeRequest 
+     * @param {module:api/EmployeesApi~employeesCreateCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Employee}
+     */
+    employeesCreate(xAccountToken, opts, callback) {
+      opts = opts || {};
+      let postBody = opts['employeeRequest'];
+      // verify the required parameter 'xAccountToken' is set
+      if (xAccountToken === undefined || xAccountToken === null) {
+        throw new Error("Missing the required parameter 'xAccountToken' when calling employeesCreate");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'run_async': opts['runAsync']
+      };
+      let headerParams = {
+        'X-Account-Token': xAccountToken
+      };
+      let formParams = {
+      };
+
+      let authNames = ['tokenAuth'];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let accepts = ['application/json'];
+      let returnType = Employee;
+      return this.apiClient.callApi(
+        '/employees', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
 
     /**
      * Callback function to receive the result of the employeesList operation.

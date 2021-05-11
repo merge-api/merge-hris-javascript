@@ -64,6 +64,9 @@ class AccountIntegration {
             if (data.hasOwnProperty('color')) {
                 obj['color'] = ApiClient.convertToType(data['color'], 'String');
             }
+            if (data.hasOwnProperty('slug')) {
+                obj['slug'] = ApiClient.convertToType(data['slug'], 'String');
+            }
         }
         return obj;
     }

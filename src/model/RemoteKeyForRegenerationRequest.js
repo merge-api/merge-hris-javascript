@@ -21,7 +21,7 @@ import ApiClient from '../ApiClient';
 class RemoteKeyForRegenerationRequest {
     /**
      * Constructs a new <code>RemoteKeyForRegenerationRequest</code>.
-     * # The RemoteResponse Object ### Description The &#x60;RemoteResponse&#x60; object is used to represent information returned from a third-party endpoint.  ### Usage Example View the &#x60;RemoteResponse&#x60; returned from your &#x60;DataPassthrough&#x60;.
+     * # The RemoteKeyForRegeneration Object ### Description The &#x60;RemoteKeyForRegeneration&#x60; object is used to exchange an old remote key for a new one  ### Usage Example Post a &#x60;RemoteKeyForRegeneration&#x60; to swap out an old remote key for a new one
      * @alias module:model/RemoteKeyForRegenerationRequest
      * @param name {String} 
      */

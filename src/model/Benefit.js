@@ -13,6 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import BenefitPlanTypeEnum from './BenefitPlanTypeEnum';
+import Employee from './Employee';
 import RemoteData from './RemoteData';
 
 /**
@@ -57,7 +58,7 @@ class Benefit {
                 obj['remote_id'] = ApiClient.convertToType(data['remote_id'], 'String');
             }
             if (data.hasOwnProperty('employee')) {
-                obj['employee'] = ApiClient.convertToType(data['employee'], 'String');
+                obj['employee'] = convertRelatedObjectToType(data['employee'], Employee);
             }
             if (data.hasOwnProperty('provider_name')) {
                 obj['provider_name'] = ApiClient.convertToType(data['provider_name'], 'String');

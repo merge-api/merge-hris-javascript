@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **endUserOrganizationName** | **String** |  | 
 **endUserOriginId** | **String** |  | 
 **categories** | **[String]** |  | 
+**integration** | **String** |  | [optional] 
 
 
 

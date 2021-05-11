@@ -12,7 +12,13 @@
  */
 
 import ApiClient from '../ApiClient';
+import convertRelatedObjectToType from '../Utils';
 import EmploymentStatusEnum from './EmploymentStatusEnum';
+import Employment from './Employment';
+import Location from './Location';
+import Employee from './Employee';
+import Team from './Team';
+import Company from './Company';
 import EthnicityEnum from './EthnicityEnum';
 import GenderEnum from './GenderEnum';
 import MaritalStatusEnum from './MaritalStatusEnum';
@@ -59,8 +65,11 @@ class Employee {
             if (data.hasOwnProperty('remote_id')) {
                 obj['remote_id'] = ApiClient.convertToType(data['remote_id'], 'String');
             }
+            if (data.hasOwnProperty('employee_number')) {
+                obj['employee_number'] = ApiClient.convertToType(data['employee_number'], 'String');
+            }
             if (data.hasOwnProperty('company')) {
-                obj['company'] = ApiClient.convertToType(data['company'], 'String');
+                obj['company'] = convertRelatedObjectToType(data['company'], Company);
             }
             if (data.hasOwnProperty('first_name')) {
                 obj['first_name'] = ApiClient.convertToType(data['first_name'], 'String');
@@ -81,19 +90,19 @@ class Employee {
                 obj['mobile_phone_number'] = ApiClient.convertToType(data['mobile_phone_number'], 'String');
             }
             if (data.hasOwnProperty('employments')) {
-                obj['employments'] = ApiClient.convertToType(data['employments'], ['String']);
+                obj['employments'] = convertRelatedObjectToType(data['employments'], Employment);
             }
             if (data.hasOwnProperty('home_location')) {
-                obj['home_location'] = ApiClient.convertToType(data['home_location'], 'String');
+                obj['home_location'] = convertRelatedObjectToType(data['home_location'], Location);
             }
             if (data.hasOwnProperty('work_location')) {
-                obj['work_location'] = ApiClient.convertToType(data['work_location'], 'String');
+                obj['work_location'] = convertRelatedObjectToType(data['work_location'], Location);
             }
             if (data.hasOwnProperty('manager')) {
-                obj['manager'] = ApiClient.convertToType(data['manager'], 'String');
+                obj['manager'] = convertRelatedObjectToType(data['manager'], Employee);
             }
             if (data.hasOwnProperty('team')) {
-                obj['team'] = ApiClient.convertToType(data['team'], 'String');
+                obj['team'] = convertRelatedObjectToType(data['team'], Team);
             }
             if (data.hasOwnProperty('ssn')) {
                 obj['ssn'] = ApiClient.convertToType(data['ssn'], 'String');
@@ -144,7 +153,13 @@ Employee.prototype['id'] = undefined;
 Employee.prototype['remote_id'] = undefined;
 
 /**
- * The ID of the Employee's company.
+ * The employee's number that appears in the remote UI. Note: This is distinct from the remote_id field, which is a unique identifier for the employee set by the remote API, and is not exposed to the user.
+ * @member {String} employee_number
+ */
+Employee.prototype['employee_number'] = undefined;
+
+/**
+ * The ID of the employee's company.
  * @member {String} company
  */
 Employee.prototype['company'] = undefined;
@@ -203,7 +218,7 @@ Employee.prototype['home_location'] = undefined;
 Employee.prototype['work_location'] = undefined;
 
 /**
- * The employeee ID of the employee's manager.
+ * The employee ID of the employee's manager.
  * @member {String} manager
  */
 Employee.prototype['manager'] = undefined;
@@ -245,7 +260,7 @@ Employee.prototype['marital_status'] = undefined;
 Employee.prototype['date_of_birth'] = undefined;
 
 /**
- * The employee's hire date.
+ * The employee's hire date. If an employee has multiple hire dates from previous employments, this represents the most recent hire date.
  * @member {Date} hire_date
  */
 Employee.prototype['hire_date'] = undefined;

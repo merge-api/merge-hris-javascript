@@ -21,7 +21,7 @@ import ApiClient from '../ApiClient';
 class RemoteKey {
     /**
      * Constructs a new <code>RemoteKey</code>.
-     * # The RemoteResponse Object ### Description The &#x60;RemoteResponse&#x60; object is used to represent information returned from a third-party endpoint.  ### Usage Example View the &#x60;RemoteResponse&#x60; returned from your &#x60;DataPassthrough&#x60;.
+     * # The RemoteKey Object ### Description The &#x60;RemoteKey&#x60; object is used to represent a request for a new remote key.  ### Usage Example Post a &#x60;GenerateRemoteKey&#x60; to receive a new &#x60;RemoteKey&#x60;.
      * @alias module:model/RemoteKey
      * @param name {String} 
      * @param key {String} 

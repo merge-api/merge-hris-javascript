@@ -51,6 +51,7 @@ export default class EmployeePayrollRunsApi {
      * @param {Date} opts.createdBefore If provided, will only return objects created before this datetime.
      * @param {String} opts.cursor The pagination cursor value.
      * @param {String} opts.employeeId If provided, will only return time off for this employee.
+     * @param {module:model/String} opts.expand Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
      * @param {Boolean} opts.includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
      * @param {Date} opts.modifiedAfter If provided, will only return objects modified after this datetime.
      * @param {Date} opts.modifiedBefore If provided, will only return objects modified before this datetime.
@@ -75,6 +76,7 @@ export default class EmployeePayrollRunsApi {
         'created_before': opts['createdBefore'],
         'cursor': opts['cursor'],
         'employee_id': opts['employeeId'],
+        'expand': opts['expand'],
         'include_remote_data': opts['includeRemoteData'],
         'modified_after': opts['modifiedAfter'],
         'modified_before': opts['modifiedBefore'],
@@ -112,6 +114,7 @@ export default class EmployeePayrollRunsApi {
      * @param {String} xAccountToken Token identifying the end user.
      * @param {String} id 
      * @param {Object} opts Optional parameters
+     * @param {module:model/String} opts.expand Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
      * @param {Boolean} opts.includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
      * @param {module:api/EmployeePayrollRunsApi~employeePayrollRunsRetrieveCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EmployeePayrollRun}
@@ -132,6 +135,7 @@ export default class EmployeePayrollRunsApi {
         'id': id
       };
       let queryParams = {
+        'expand': opts['expand'],
         'include_remote_data': opts['includeRemoteData']
       };
       let headerParams = {
