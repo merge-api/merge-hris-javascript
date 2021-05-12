@@ -14,20 +14,20 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The RemoteKeyForRegenerationRequest model module.
- * @module model/RemoteKeyForRegenerationRequest
+ * The GenerateRemoteKeyRequest model module.
+ * @module model/GenerateRemoteKeyRequest
  * @version 1.0
  */
-class RemoteKeyForRegenerationRequest {
+class GenerateRemoteKeyRequest {
     /**
-     * Constructs a new <code>RemoteKeyForRegenerationRequest</code>.
-     * # The RemoteKeyForRegeneration Object ### Description The &#x60;RemoteKeyForRegeneration&#x60; object is used to exchange an old remote key for a new one  ### Usage Example Post a &#x60;RemoteKeyForRegeneration&#x60; to swap out an old remote key for a new one
-     * @alias module:model/RemoteKeyForRegenerationRequest
+     * Constructs a new <code>GenerateRemoteKeyRequest</code>.
+     * # The GenerateRemoteKey Object ### Description The &#x60;GenerateRemoteKey&#x60; object is used to represent a request for a new remote key.  ### Usage Example Post a &#x60;GenerateRemoteKey&#x60; to create a new remote key.
+     * @alias module:model/GenerateRemoteKeyRequest
      * @param name {String} 
      */
     constructor(name) { 
         
-        RemoteKeyForRegenerationRequest.initialize(this, name);
+        GenerateRemoteKeyRequest.initialize(this, name);
     }
 
     /**
@@ -40,15 +40,15 @@ class RemoteKeyForRegenerationRequest {
     }
 
     /**
-     * Constructs a <code>RemoteKeyForRegenerationRequest</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>GenerateRemoteKeyRequest</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RemoteKeyForRegenerationRequest} obj Optional instance to populate.
-     * @return {module:model/RemoteKeyForRegenerationRequest} The populated <code>RemoteKeyForRegenerationRequest</code> instance.
+     * @param {module:model/GenerateRemoteKeyRequest} obj Optional instance to populate.
+     * @return {module:model/GenerateRemoteKeyRequest} The populated <code>GenerateRemoteKeyRequest</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new RemoteKeyForRegenerationRequest();
+            obj = obj || new GenerateRemoteKeyRequest();
 
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -63,12 +63,12 @@ class RemoteKeyForRegenerationRequest {
 /**
  * @member {String} name
  */
-RemoteKeyForRegenerationRequest.prototype['name'] = undefined;
+GenerateRemoteKeyRequest.prototype['name'] = undefined;
 
 
 
 
 
 
-export default RemoteKeyForRegenerationRequest;
+export default GenerateRemoteKeyRequest;
 

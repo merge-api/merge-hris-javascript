@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **image** | **String** | Company logo in rectangular shape. | [optional] 
 **squareImage** | **String** | Company logo in square shape. | [optional] 
 **color** | **String** | The color of this integration used for buttons and text throughout the app and landing pages. | [optional] 
+**slug** | **String** |  | [optional] [readonly] 
 
 
 

@@ -1,20 +1,20 @@
-# MergeHrisApi.PassthroughApi
+# MergeHrisApi.GenerateKeyApi
 
 All URIs are relative to *https://api.merge.dev/api/hris/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**passthroughCreate**](PassthroughApi.md#passthroughCreate) | **POST** /passthrough | 
+[**generateKeyCreate**](GenerateKeyApi.md#generateKeyCreate) | **POST** /generate-key | 
 
 
 
-## passthroughCreate
+## generateKeyCreate
 
-> RemoteResponse passthroughCreate(xAccountToken, dataPassthroughRequest)
+> RemoteKey generateKeyCreate(generateRemoteKeyRequest)
 
 
 
-Pull data from an endpoint not currently supported by Merge.
+Create a remote key.
 
 ### Example
 
@@ -27,10 +27,9 @@ tokenAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //tokenAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new MergeHrisApi.PassthroughApi();
-let xAccountToken = "xAccountToken_example"; // String | Token identifying the end user.
-let dataPassthroughRequest = new MergeHrisApi.DataPassthroughRequest(); // DataPassthroughRequest | 
-apiInstance.passthroughCreate(xAccountToken, dataPassthroughRequest, (error, data, response) => {
+let apiInstance = new MergeHrisApi.GenerateKeyApi();
+let generateRemoteKeyRequest = new MergeHrisApi.GenerateRemoteKeyRequest(); // GenerateRemoteKeyRequest | 
+apiInstance.generateKeyCreate(generateRemoteKeyRequest, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -44,12 +43,11 @@ apiInstance.passthroughCreate(xAccountToken, dataPassthroughRequest, (error, dat
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xAccountToken** | **String**| Token identifying the end user. | 
- **dataPassthroughRequest** | [**DataPassthroughRequest**](DataPassthroughRequest.md)|  | 
+ **generateRemoteKeyRequest** | [**GenerateRemoteKeyRequest**](GenerateRemoteKeyRequest.md)|  | 
 
 ### Return type
 
-[**RemoteResponse**](RemoteResponse.md)
+[**RemoteKey**](RemoteKey.md)
 
 ### Authorization
 

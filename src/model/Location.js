@@ -14,7 +14,6 @@
 import ApiClient from '../ApiClient';
 import CountryEnum from './CountryEnum';
 import RemoteData from './RemoteData';
-import StateEnum from './StateEnum';
 
 /**
  * The Location model module.
@@ -70,7 +69,7 @@ class Location {
                 obj['city'] = ApiClient.convertToType(data['city'], 'String');
             }
             if (data.hasOwnProperty('state')) {
-                obj['state'] = ApiClient.convertToType(data['state'], StateEnum);
+                obj['state'] = ApiClient.convertToType(data['state'], 'String');
             }
             if (data.hasOwnProperty('zip_code')) {
                 obj['zip_code'] = ApiClient.convertToType(data['zip_code'], 'String');
@@ -124,8 +123,8 @@ Location.prototype['street_2'] = undefined;
 Location.prototype['city'] = undefined;
 
 /**
- * The location's state.
- * @member {module:model/StateEnum} state
+ * The location's state. Represents a region if outside of the US.
+ * @member {String} state
  */
 Location.prototype['state'] = undefined;
 

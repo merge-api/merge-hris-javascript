@@ -95,10 +95,13 @@ Class | Method | HTTP request | Description
 *MergeHrisApi.CompaniesApi* | [**companiesRetrieve**](docs/CompaniesApi.md#companiesRetrieve) | **GET** /companies/{id} | 
 *MergeHrisApi.EmployeePayrollRunsApi* | [**employeePayrollRunsList**](docs/EmployeePayrollRunsApi.md#employeePayrollRunsList) | **GET** /employee-payroll-runs | 
 *MergeHrisApi.EmployeePayrollRunsApi* | [**employeePayrollRunsRetrieve**](docs/EmployeePayrollRunsApi.md#employeePayrollRunsRetrieve) | **GET** /employee-payroll-runs/{id} | 
+*MergeHrisApi.EmployeesApi* | [**employeesCreate**](docs/EmployeesApi.md#employeesCreate) | **POST** /employees | 
 *MergeHrisApi.EmployeesApi* | [**employeesList**](docs/EmployeesApi.md#employeesList) | **GET** /employees | 
 *MergeHrisApi.EmployeesApi* | [**employeesRetrieve**](docs/EmployeesApi.md#employeesRetrieve) | **GET** /employees/{id} | 
+*MergeHrisApi.EmploymentsApi* | [**employmentsCreate**](docs/EmploymentsApi.md#employmentsCreate) | **POST** /employments | 
 *MergeHrisApi.EmploymentsApi* | [**employmentsList**](docs/EmploymentsApi.md#employmentsList) | **GET** /employments | 
 *MergeHrisApi.EmploymentsApi* | [**employmentsRetrieve**](docs/EmploymentsApi.md#employmentsRetrieve) | **GET** /employments/{id} | 
+*MergeHrisApi.GenerateKeyApi* | [**generateKeyCreate**](docs/GenerateKeyApi.md#generateKeyCreate) | **POST** /generate-key | 
 *MergeHrisApi.LinkTokenApi* | [**linkTokenCreate**](docs/LinkTokenApi.md#linkTokenCreate) | **POST** /link-token | 
 *MergeHrisApi.LocationsApi* | [**locationsList**](docs/LocationsApi.md#locationsList) | **GET** /locations | 
 *MergeHrisApi.LocationsApi* | [**locationsRetrieve**](docs/LocationsApi.md#locationsRetrieve) | **GET** /locations/{id} | 
@@ -106,6 +109,8 @@ Class | Method | HTTP request | Description
 *MergeHrisApi.PayrollRunsApi* | [**payrollRunsList**](docs/PayrollRunsApi.md#payrollRunsList) | **GET** /payroll-runs | 
 *MergeHrisApi.PayrollRunsApi* | [**payrollRunsRetrieve**](docs/PayrollRunsApi.md#payrollRunsRetrieve) | **GET** /payroll-runs/{id} | 
 *MergeHrisApi.RegenerateKeyApi* | [**regenerateKeyCreate**](docs/RegenerateKeyApi.md#regenerateKeyCreate) | **POST** /regenerate-key | 
+*MergeHrisApi.SyncStatusApi* | [**syncStatusResyncCreate**](docs/SyncStatusApi.md#syncStatusResyncCreate) | **POST** /sync-status/resync | 
+*MergeHrisApi.SyncStatusApi* | [**syncStatusRetrieve**](docs/SyncStatusApi.md#syncStatusRetrieve) | **GET** /sync-status | 
 *MergeHrisApi.TeamsApi* | [**teamsList**](docs/TeamsApi.md#teamsList) | **GET** /teams | 
 *MergeHrisApi.TeamsApi* | [**teamsRetrieve**](docs/TeamsApi.md#teamsRetrieve) | **GET** /teams/{id} | 
 *MergeHrisApi.TimeOffApi* | [**timeOffList**](docs/TimeOffApi.md#timeOffList) | **GET** /time-off | 
@@ -126,13 +131,16 @@ Class | Method | HTTP request | Description
  - [MergeHrisApi.Earning](docs/Earning.md)
  - [MergeHrisApi.Employee](docs/Employee.md)
  - [MergeHrisApi.EmployeePayrollRun](docs/EmployeePayrollRun.md)
+ - [MergeHrisApi.EmployeeRequest](docs/EmployeeRequest.md)
  - [MergeHrisApi.Employment](docs/Employment.md)
+ - [MergeHrisApi.EmploymentRequest](docs/EmploymentRequest.md)
  - [MergeHrisApi.EmploymentStatusEnum](docs/EmploymentStatusEnum.md)
  - [MergeHrisApi.EmploymentTypeEnum](docs/EmploymentTypeEnum.md)
  - [MergeHrisApi.EndUserDetailsRequest](docs/EndUserDetailsRequest.md)
  - [MergeHrisApi.EthnicityEnum](docs/EthnicityEnum.md)
  - [MergeHrisApi.FlsaStatusEnum](docs/FlsaStatusEnum.md)
  - [MergeHrisApi.GenderEnum](docs/GenderEnum.md)
+ - [MergeHrisApi.GenerateRemoteKeyRequest](docs/GenerateRemoteKeyRequest.md)
  - [MergeHrisApi.LinkToken](docs/LinkToken.md)
  - [MergeHrisApi.Location](docs/Location.md)
  - [MergeHrisApi.MaritalStatusEnum](docs/MaritalStatusEnum.md)
@@ -152,13 +160,14 @@ Class | Method | HTTP request | Description
  - [MergeHrisApi.PayPeriodEnum](docs/PayPeriodEnum.md)
  - [MergeHrisApi.PayrollRun](docs/PayrollRun.md)
  - [MergeHrisApi.RemoteData](docs/RemoteData.md)
+ - [MergeHrisApi.RemoteDataRequest](docs/RemoteDataRequest.md)
  - [MergeHrisApi.RemoteKey](docs/RemoteKey.md)
  - [MergeHrisApi.RemoteKeyForRegenerationRequest](docs/RemoteKeyForRegenerationRequest.md)
  - [MergeHrisApi.RemoteResponse](docs/RemoteResponse.md)
  - [MergeHrisApi.RequestTypeEnum](docs/RequestTypeEnum.md)
  - [MergeHrisApi.RunStateEnum](docs/RunStateEnum.md)
  - [MergeHrisApi.RunTypeEnum](docs/RunTypeEnum.md)
- - [MergeHrisApi.StateEnum](docs/StateEnum.md)
+ - [MergeHrisApi.SyncStatus](docs/SyncStatus.md)
  - [MergeHrisApi.Tax](docs/Tax.md)
  - [MergeHrisApi.Team](docs/Team.md)
  - [MergeHrisApi.TimeOff](docs/TimeOff.md)

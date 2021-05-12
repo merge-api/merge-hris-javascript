@@ -25,13 +25,16 @@ import Deduction from './model/Deduction';
 import Earning from './model/Earning';
 import Employee from './model/Employee';
 import EmployeePayrollRun from './model/EmployeePayrollRun';
+import EmployeeRequest from './model/EmployeeRequest';
 import Employment from './model/Employment';
+import EmploymentRequest from './model/EmploymentRequest';
 import EmploymentStatusEnum from './model/EmploymentStatusEnum';
 import EmploymentTypeEnum from './model/EmploymentTypeEnum';
 import EndUserDetailsRequest from './model/EndUserDetailsRequest';
 import EthnicityEnum from './model/EthnicityEnum';
 import FlsaStatusEnum from './model/FlsaStatusEnum';
 import GenderEnum from './model/GenderEnum';
+import GenerateRemoteKeyRequest from './model/GenerateRemoteKeyRequest';
 import LinkToken from './model/LinkToken';
 import Location from './model/Location';
 import MaritalStatusEnum from './model/MaritalStatusEnum';
@@ -51,13 +54,14 @@ import PayFrequencyEnum from './model/PayFrequencyEnum';
 import PayPeriodEnum from './model/PayPeriodEnum';
 import PayrollRun from './model/PayrollRun';
 import RemoteData from './model/RemoteData';
+import RemoteDataRequest from './model/RemoteDataRequest';
 import RemoteKey from './model/RemoteKey';
 import RemoteKeyForRegenerationRequest from './model/RemoteKeyForRegenerationRequest';
 import RemoteResponse from './model/RemoteResponse';
 import RequestTypeEnum from './model/RequestTypeEnum';
 import RunStateEnum from './model/RunStateEnum';
 import RunTypeEnum from './model/RunTypeEnum';
-import StateEnum from './model/StateEnum';
+import SyncStatus from './model/SyncStatus';
 import Tax from './model/Tax';
 import Team from './model/Team';
 import TimeOff from './model/TimeOff';
@@ -71,11 +75,13 @@ import CompaniesApi from './api/CompaniesApi';
 import EmployeePayrollRunsApi from './api/EmployeePayrollRunsApi';
 import EmployeesApi from './api/EmployeesApi';
 import EmploymentsApi from './api/EmploymentsApi';
+import GenerateKeyApi from './api/GenerateKeyApi';
 import LinkTokenApi from './api/LinkTokenApi';
 import LocationsApi from './api/LocationsApi';
 import PassthroughApi from './api/PassthroughApi';
 import PayrollRunsApi from './api/PayrollRunsApi';
 import RegenerateKeyApi from './api/RegenerateKeyApi';
+import SyncStatusApi from './api/SyncStatusApi';
 import TeamsApi from './api/TeamsApi';
 import TimeOffApi from './api/TimeOffApi';
 
@@ -191,10 +197,22 @@ export {
     EmployeePayrollRun,
 
     /**
+     * The EmployeeRequest model constructor.
+     * @property {module:model/EmployeeRequest}
+     */
+    EmployeeRequest,
+
+    /**
      * The Employment model constructor.
      * @property {module:model/Employment}
      */
     Employment,
+
+    /**
+     * The EmploymentRequest model constructor.
+     * @property {module:model/EmploymentRequest}
+     */
+    EmploymentRequest,
 
     /**
      * The EmploymentStatusEnum model constructor.
@@ -231,6 +249,12 @@ export {
      * @property {module:model/GenderEnum}
      */
     GenderEnum,
+
+    /**
+     * The GenerateRemoteKeyRequest model constructor.
+     * @property {module:model/GenerateRemoteKeyRequest}
+     */
+    GenerateRemoteKeyRequest,
 
     /**
      * The LinkToken model constructor.
@@ -347,6 +371,12 @@ export {
     RemoteData,
 
     /**
+     * The RemoteDataRequest model constructor.
+     * @property {module:model/RemoteDataRequest}
+     */
+    RemoteDataRequest,
+
+    /**
      * The RemoteKey model constructor.
      * @property {module:model/RemoteKey}
      */
@@ -383,10 +413,10 @@ export {
     RunTypeEnum,
 
     /**
-     * The StateEnum model constructor.
-     * @property {module:model/StateEnum}
+     * The SyncStatus model constructor.
+     * @property {module:model/SyncStatus}
      */
-    StateEnum,
+    SyncStatus,
 
     /**
      * The Tax model constructor.
@@ -467,6 +497,12 @@ export {
     EmploymentsApi,
 
     /**
+    * The GenerateKeyApi service constructor.
+    * @property {module:api/GenerateKeyApi}
+    */
+    GenerateKeyApi,
+
+    /**
     * The LinkTokenApi service constructor.
     * @property {module:api/LinkTokenApi}
     */
@@ -495,6 +531,12 @@ export {
     * @property {module:api/RegenerateKeyApi}
     */
     RegenerateKeyApi,
+
+    /**
+    * The SyncStatusApi service constructor.
+    * @property {module:api/SyncStatusApi}
+    */
+    SyncStatusApi,
 
     /**
     * The TeamsApi service constructor.

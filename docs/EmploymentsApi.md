@@ -4,9 +4,67 @@ All URIs are relative to *https://api.merge.dev/api/hris/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**employmentsCreate**](EmploymentsApi.md#employmentsCreate) | **POST** /employments | 
 [**employmentsList**](EmploymentsApi.md#employmentsList) | **GET** /employments | 
 [**employmentsRetrieve**](EmploymentsApi.md#employmentsRetrieve) | **GET** /employments/{id} | 
 
+
+
+## employmentsCreate
+
+> Employment employmentsCreate(xAccountToken, opts)
+
+
+
+Creates an &#x60;Employment&#x60; object with the given values.
+
+### Example
+
+```javascript
+import MergeHrisApi from 'merge_hris_api';
+let defaultClient = MergeHrisApi.ApiClient.instance;
+// Configure API key authorization: tokenAuth
+let tokenAuth = defaultClient.authentications['tokenAuth'];
+tokenAuth.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//tokenAuth.apiKeyPrefix = 'Token';
+
+let apiInstance = new MergeHrisApi.EmploymentsApi();
+let xAccountToken = "xAccountToken_example"; // String | Token identifying the end user.
+let opts = {
+  'runAsync': true, // Boolean | Whether or not third-party updates should be run asynchronously.
+  'employmentRequest': new MergeHrisApi.EmploymentRequest() // EmploymentRequest | 
+};
+apiInstance.employmentsCreate(xAccountToken, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xAccountToken** | **String**| Token identifying the end user. | 
+ **runAsync** | **Boolean**| Whether or not third-party updates should be run asynchronously. | [optional] 
+ **employmentRequest** | [**EmploymentRequest**](EmploymentRequest.md)|  | [optional] 
+
+### Return type
+
+[**Employment**](Employment.md)
+
+### Authorization
+
+[tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json
 
 
 ## employmentsList

@@ -12,31 +12,25 @@
  */
 
 import ApiClient from '../ApiClient';
-import convertRelatedObjectToType from '../Utils';
 import EmploymentStatusEnum from './EmploymentStatusEnum';
-import Employment from './Employment';
-import Location from './Location';
-import Team from './Team';
-import Company from './Company';
 import EthnicityEnum from './EthnicityEnum';
 import GenderEnum from './GenderEnum';
 import MaritalStatusEnum from './MaritalStatusEnum';
-import RemoteData from './RemoteData';
 
 /**
- * The Employee model module.
- * @module model/Employee
+ * The EmployeeRequest model module.
+ * @module model/EmployeeRequest
  * @version 1.0
  */
-class Employee {
+class EmployeeRequest {
     /**
-     * Constructs a new <code>Employee</code>.
+     * Constructs a new <code>EmployeeRequest</code>.
      * # The Employee Object ### Description The &#x60;Employee&#x60; object is used to represent an Employee for a company.  ### Usage Example Fetch from the &#x60;LIST Employee&#x60; endpoint and filter by &#x60;ID&#x60; to show all employees.
-     * @alias module:model/Employee
+     * @alias module:model/EmployeeRequest
      */
     constructor() { 
         
-        Employee.initialize(this);
+        EmployeeRequest.initialize(this);
     }
 
     /**
@@ -48,19 +42,16 @@ class Employee {
     }
 
     /**
-     * Constructs a <code>Employee</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>EmployeeRequest</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Employee} obj Optional instance to populate.
-     * @return {module:model/Employee} The populated <code>Employee</code> instance.
+     * @param {module:model/EmployeeRequest} obj Optional instance to populate.
+     * @return {module:model/EmployeeRequest} The populated <code>EmployeeRequest</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new Employee();
+            obj = obj || new EmployeeRequest();
 
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
-            }
             if (data.hasOwnProperty('remote_id')) {
                 obj['remote_id'] = ApiClient.convertToType(data['remote_id'], 'String');
             }
@@ -68,7 +59,7 @@ class Employee {
                 obj['employee_number'] = ApiClient.convertToType(data['employee_number'], 'String');
             }
             if (data.hasOwnProperty('company')) {
-                obj['company'] = convertRelatedObjectToType(data['company'], Company);
+                obj['company'] = ApiClient.convertToType(data['company'], 'String');
             }
             if (data.hasOwnProperty('first_name')) {
                 obj['first_name'] = ApiClient.convertToType(data['first_name'], 'String');
@@ -88,20 +79,17 @@ class Employee {
             if (data.hasOwnProperty('mobile_phone_number')) {
                 obj['mobile_phone_number'] = ApiClient.convertToType(data['mobile_phone_number'], 'String');
             }
-            if (data.hasOwnProperty('employments')) {
-                obj['employments'] = convertRelatedObjectToType(data['employments'], Employment);
-            }
             if (data.hasOwnProperty('home_location')) {
-                obj['home_location'] = convertRelatedObjectToType(data['home_location'], Location);
+                obj['home_location'] = ApiClient.convertToType(data['home_location'], 'String');
             }
             if (data.hasOwnProperty('work_location')) {
-                obj['work_location'] = convertRelatedObjectToType(data['work_location'], Location);
+                obj['work_location'] = ApiClient.convertToType(data['work_location'], 'String');
             }
             if (data.hasOwnProperty('manager')) {
-                obj['manager'] = convertRelatedObjectToType(data['manager'], Employee);
+                obj['manager'] = ApiClient.convertToType(data['manager'], 'String');
             }
             if (data.hasOwnProperty('team')) {
-                obj['team'] = convertRelatedObjectToType(data['team'], Team);
+                obj['team'] = ApiClient.convertToType(data['team'], 'String');
             }
             if (data.hasOwnProperty('ssn')) {
                 obj['ssn'] = ApiClient.convertToType(data['ssn'], 'String');
@@ -130,9 +118,6 @@ class Employee {
             if (data.hasOwnProperty('avatar')) {
                 obj['avatar'] = ApiClient.convertToType(data['avatar'], 'String');
             }
-            if (data.hasOwnProperty('remote_data')) {
-                obj['remote_data'] = ApiClient.convertToType(data['remote_data'], [RemoteData]);
-            }
         }
         return obj;
     }
@@ -141,156 +126,141 @@ class Employee {
 }
 
 /**
- * @member {String} id
- */
-Employee.prototype['id'] = undefined;
-
-/**
  * The third-party API ID of the matching object.
  * @member {String} remote_id
  */
-Employee.prototype['remote_id'] = undefined;
+EmployeeRequest.prototype['remote_id'] = undefined;
 
 /**
  * The employee's number that appears in the remote UI. Note: This is distinct from the remote_id field, which is a unique identifier for the employee set by the remote API, and is not exposed to the user.
  * @member {String} employee_number
  */
-Employee.prototype['employee_number'] = undefined;
+EmployeeRequest.prototype['employee_number'] = undefined;
 
 /**
  * The ID of the employee's company.
  * @member {String} company
  */
-Employee.prototype['company'] = undefined;
+EmployeeRequest.prototype['company'] = undefined;
 
 /**
  * The employee's first name.
  * @member {String} first_name
  */
-Employee.prototype['first_name'] = undefined;
+EmployeeRequest.prototype['first_name'] = undefined;
 
 /**
  * The employee's last name.
  * @member {String} last_name
  */
-Employee.prototype['last_name'] = undefined;
+EmployeeRequest.prototype['last_name'] = undefined;
 
 /**
  * The employee's full name, to use for display purposes.
  * @member {String} display_full_name
  */
-Employee.prototype['display_full_name'] = undefined;
+EmployeeRequest.prototype['display_full_name'] = undefined;
 
 /**
  * The employee's work email.
  * @member {String} work_email
  */
-Employee.prototype['work_email'] = undefined;
+EmployeeRequest.prototype['work_email'] = undefined;
 
 /**
  * The employee's personal email.
  * @member {String} personal_email
  */
-Employee.prototype['personal_email'] = undefined;
+EmployeeRequest.prototype['personal_email'] = undefined;
 
 /**
  * The employee's mobile phone number.
  * @member {String} mobile_phone_number
  */
-Employee.prototype['mobile_phone_number'] = undefined;
-
-/**
- * @member {Array.<String>} employments
- */
-Employee.prototype['employments'] = undefined;
+EmployeeRequest.prototype['mobile_phone_number'] = undefined;
 
 /**
  * The employee's home address.
  * @member {String} home_location
  */
-Employee.prototype['home_location'] = undefined;
+EmployeeRequest.prototype['home_location'] = undefined;
 
 /**
  * The employee's work address.
  * @member {String} work_location
  */
-Employee.prototype['work_location'] = undefined;
+EmployeeRequest.prototype['work_location'] = undefined;
 
 /**
  * The employee ID of the employee's manager.
  * @member {String} manager
  */
-Employee.prototype['manager'] = undefined;
+EmployeeRequest.prototype['manager'] = undefined;
 
 /**
  * The employee's team.
  * @member {String} team
  */
-Employee.prototype['team'] = undefined;
+EmployeeRequest.prototype['team'] = undefined;
 
 /**
  * The employee's social security number.
  * @member {String} ssn
  */
-Employee.prototype['ssn'] = undefined;
+EmployeeRequest.prototype['ssn'] = undefined;
 
 /**
  * The employee's gender.
  * @member {module:model/GenderEnum} gender
  */
-Employee.prototype['gender'] = undefined;
+EmployeeRequest.prototype['gender'] = undefined;
 
 /**
  * The employee's ethnicity.
  * @member {module:model/EthnicityEnum} ethnicity
  */
-Employee.prototype['ethnicity'] = undefined;
+EmployeeRequest.prototype['ethnicity'] = undefined;
 
 /**
  * The employee's marital status.
  * @member {module:model/MaritalStatusEnum} marital_status
  */
-Employee.prototype['marital_status'] = undefined;
+EmployeeRequest.prototype['marital_status'] = undefined;
 
 /**
  * The employee's date of birth.
  * @member {Date} date_of_birth
  */
-Employee.prototype['date_of_birth'] = undefined;
+EmployeeRequest.prototype['date_of_birth'] = undefined;
 
 /**
  * The employee's hire date. If an employee has multiple hire dates from previous employments, this represents the most recent hire date.
  * @member {Date} hire_date
  */
-Employee.prototype['hire_date'] = undefined;
+EmployeeRequest.prototype['hire_date'] = undefined;
 
 /**
  * The employment status of the employee.
  * @member {module:model/EmploymentStatusEnum} employment_status
  */
-Employee.prototype['employment_status'] = undefined;
+EmployeeRequest.prototype['employment_status'] = undefined;
 
 /**
  * The employee's termination date.
  * @member {Date} termination_date
  */
-Employee.prototype['termination_date'] = undefined;
+EmployeeRequest.prototype['termination_date'] = undefined;
 
 /**
  * The URL of the employee's avatar image.
  * @member {String} avatar
  */
-Employee.prototype['avatar'] = undefined;
-
-/**
- * @member {Array.<module:model/RemoteData>} remote_data
- */
-Employee.prototype['remote_data'] = undefined;
+EmployeeRequest.prototype['avatar'] = undefined;
 
 
 
 
 
 
-export default Employee;
+export default EmployeeRequest;
 

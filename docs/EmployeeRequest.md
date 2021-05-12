@@ -1,10 +1,9 @@
-# MergeHrisApi.Employee
+# MergeHrisApi.EmployeeRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  | [optional] [readonly] 
 **remoteId** | **String** | The third-party API ID of the matching object. | [optional] 
 **employeeNumber** | **String** | The employee&#39;s number that appears in the remote UI. Note: This is distinct from the remote_id field, which is a unique identifier for the employee set by the remote API, and is not exposed to the user. | [optional] 
 **company** | **String** | The ID of the employee&#39;s company. | [optional] 
@@ -14,7 +13,6 @@ Name | Type | Description | Notes
 **workEmail** | **String** | The employee&#39;s work email. | [optional] 
 **personalEmail** | **String** | The employee&#39;s personal email. | [optional] 
 **mobilePhoneNumber** | **String** | The employee&#39;s mobile phone number. | [optional] 
-**employments** | **[String]** |  | [optional] [readonly] 
 **homeLocation** | **String** | The employee&#39;s home address. | [optional] 
 **workLocation** | **String** | The employee&#39;s work address. | [optional] 
 **manager** | **String** | The employee ID of the employee&#39;s manager. | [optional] 
@@ -28,6 +26,5 @@ Name | Type | Description | Notes
 **employmentStatus** | [**EmploymentStatusEnum**](EmploymentStatusEnum.md) | The employment status of the employee. | [optional] 
 **terminationDate** | **Date** | The employee&#39;s termination date. | [optional] 
 **avatar** | **String** | The URL of the employee&#39;s avatar image. | [optional] 
-**remoteData** | [**[RemoteData]**](RemoteData.md) |  | [optional] [readonly] 
 
 

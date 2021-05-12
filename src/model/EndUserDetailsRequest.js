@@ -67,6 +67,9 @@ class EndUserDetailsRequest {
             if (data.hasOwnProperty('categories')) {
                 obj['categories'] = ApiClient.convertToType(data['categories'], ['String']);
             }
+            if (data.hasOwnProperty('integration')) {
+                obj['integration'] = ApiClient.convertToType(data['integration'], 'String');
+            }
         }
         return obj;
     }
@@ -93,6 +96,11 @@ EndUserDetailsRequest.prototype['end_user_origin_id'] = undefined;
  * @member {Array.<module:model/EndUserDetailsRequest.CategoriesEnum>} categories
  */
 EndUserDetailsRequest.prototype['categories'] = undefined;
+
+/**
+ * @member {String} integration
+ */
+EndUserDetailsRequest.prototype['integration'] = undefined;
 
 
 

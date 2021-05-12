@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] [readonly] 
 **remoteId** | **String** | The third-party API ID of the matching object. | [optional] 
-**employee** | **String** | The employee who&#39;s payroll is being run. | [optional] 
+**employee** | **String** | The employee whose payroll is being run. | [optional] 
 **payrollRun** | **String** | The payroll being run. | [optional] 
 **grossPay** | **Number** | The gross pay from the run. | [optional] 
 **netPay** | **Number** | The net pay from the run. | [optional] 

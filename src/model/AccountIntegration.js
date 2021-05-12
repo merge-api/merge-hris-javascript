@@ -64,6 +64,9 @@ class AccountIntegration {
             if (data.hasOwnProperty('color')) {
                 obj['color'] = ApiClient.convertToType(data['color'], 'String');
             }
+            if (data.hasOwnProperty('slug')) {
+                obj['slug'] = ApiClient.convertToType(data['slug'], 'String');
+            }
         }
         return obj;
     }
@@ -100,6 +103,11 @@ AccountIntegration.prototype['square_image'] = undefined;
  * @member {String} color
  */
 AccountIntegration.prototype['color'] = undefined;
+
+/**
+ * @member {String} slug
+ */
+AccountIntegration.prototype['slug'] = undefined;
 
 
 

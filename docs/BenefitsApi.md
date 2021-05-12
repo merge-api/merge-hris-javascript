@@ -35,6 +35,7 @@ let opts = {
   'createdBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects created before this datetime.
   'cursor': cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw, // String | The pagination cursor value.
   'employeeId': "employeeId_example", // String | If provided, will only return time off for this employee.
+  'expand': employee, // String | Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
   'includeRemoteData': true, // Boolean | Whether to include the original data Merge fetched from the third-party to produce these models.
   'modifiedAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects modified after this datetime.
   'modifiedBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects modified before this datetime.
@@ -60,6 +61,7 @@ Name | Type | Description  | Notes
  **createdBefore** | **Date**| If provided, will only return objects created before this datetime. | [optional] 
  **cursor** | **String**| The pagination cursor value. | [optional] 
  **employeeId** | **String**| If provided, will only return time off for this employee. | [optional] 
+ **expand** | **String**| Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces. | [optional] 
  **includeRemoteData** | **Boolean**| Whether to include the original data Merge fetched from the third-party to produce these models. | [optional] 
  **modifiedAfter** | **Date**| If provided, will only return objects modified after this datetime. | [optional] 
  **modifiedBefore** | **Date**| If provided, will only return objects modified before this datetime. | [optional] 
@@ -103,6 +105,7 @@ let apiInstance = new MergeHrisApi.BenefitsApi();
 let xAccountToken = "xAccountToken_example"; // String | Token identifying the end user.
 let id = null; // String | 
 let opts = {
+  'expand': employee, // String | Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
   'includeRemoteData': true // Boolean | Whether to include the original data Merge fetched from the third-party to produce these models.
 };
 apiInstance.benefitsRetrieve(xAccountToken, id, opts, (error, data, response) => {
@@ -121,6 +124,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xAccountToken** | **String**| Token identifying the end user. | 
  **id** | [**String**](.md)|  | 
+ **expand** | **String**| Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces. | [optional] 
  **includeRemoteData** | **Boolean**| Whether to include the original data Merge fetched from the third-party to produce these models. | [optional] 
 
 ### Return type

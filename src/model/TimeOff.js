@@ -12,6 +12,8 @@
  */
 
 import ApiClient from '../ApiClient';
+import convertRelatedObjectToType from '../Utils';
+import Employee from './Employee';
 import RemoteData from './RemoteData';
 import RequestTypeEnum from './RequestTypeEnum';
 import TimeOffStatusEnum from './TimeOffStatusEnum';
@@ -59,10 +61,10 @@ class TimeOff {
                 obj['remote_id'] = ApiClient.convertToType(data['remote_id'], 'String');
             }
             if (data.hasOwnProperty('employee')) {
-                obj['employee'] = ApiClient.convertToType(data['employee'], 'String');
+                obj['employee'] = convertRelatedObjectToType(data['employee'], Employee);
             }
             if (data.hasOwnProperty('approver')) {
-                obj['approver'] = ApiClient.convertToType(data['approver'], 'String');
+                obj['approver'] = convertRelatedObjectToType(data['approver'], Employee);
             }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], TimeOffStatusEnum);
@@ -119,7 +121,7 @@ TimeOff.prototype['approver'] = undefined;
 TimeOff.prototype['status'] = undefined;
 
 /**
- * The status of this time off request.
+ * The employee note for this time off request.
  * @member {String} employee_note
  */
 TimeOff.prototype['employee_note'] = undefined;
