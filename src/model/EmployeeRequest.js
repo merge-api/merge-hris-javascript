@@ -109,6 +109,9 @@ class EmployeeRequest {
             if (data.hasOwnProperty('hire_date')) {
                 obj['hire_date'] = ApiClient.convertToType(data['hire_date'], 'Date');
             }
+            if (data.hasOwnProperty('start_date')) {
+                obj['start_date'] = ApiClient.convertToType(data['start_date'], 'Date');
+            }
             if (data.hasOwnProperty('employment_status')) {
                 obj['employment_status'] = ApiClient.convertToType(data['employment_status'], EmploymentStatusEnum);
             }
@@ -238,6 +241,12 @@ EmployeeRequest.prototype['date_of_birth'] = undefined;
  * @member {Date} hire_date
  */
 EmployeeRequest.prototype['hire_date'] = undefined;
+
+/**
+ * The employee's start date.
+ * @member {Date} start_date
+ */
+EmployeeRequest.prototype['start_date'] = undefined;
 
 /**
  * The employment status of the employee.

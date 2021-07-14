@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **maritalStatus** | [**MaritalStatusEnum**](MaritalStatusEnum.md) | The employee&#39;s marital status. | [optional] 
 **dateOfBirth** | **Date** | The employee&#39;s date of birth. | [optional] 
 **hireDate** | **Date** | The employee&#39;s hire date. If an employee has multiple hire dates from previous employments, this represents the most recent hire date. | [optional] 
+**startDate** | **Date** | The employee&#39;s start date. | [optional] 
 **employmentStatus** | [**EmploymentStatusEnum**](EmploymentStatusEnum.md) | The employment status of the employee. | [optional] 
 **terminationDate** | **Date** | The employee&#39;s termination date. | [optional] 
 **avatar** | **String** | The URL of the employee&#39;s avatar image. | [optional] 

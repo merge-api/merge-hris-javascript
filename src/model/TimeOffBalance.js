@@ -15,19 +15,19 @@ import ApiClient from '../ApiClient';
 import RemoteData from './RemoteData';
 
 /**
- * The Team model module.
- * @module model/Team
+ * The TimeOffBalance model module.
+ * @module model/TimeOffBalance
  * @version 1.0
  */
-class Team {
+class TimeOffBalance {
     /**
-     * Constructs a new <code>Team</code>.
-     * # The Team Object ### Description The &#x60;Team&#x60; object is used to represent a Team within a company. &#x60;Employee&#x60; objects are often grouped this way. Note that in the Merge HRIS API, company subdivisions are all represented with &#x60;Teams&#x60;, rather than &#x60;Teams&#x60; and &#x60;Departments&#x60;.  ### Usage Example If you&#39;re building a way to filter by &#x60;Team&#x60;, you&#39;d hit the &#x60;GET Teams&#x60; endpoint to fetch the &#x60;Teams&#x60;, and then use the &#x60;ID&#x60; of the team your user selects to filter the &#x60;GET Employees&#x60; endpoint.
-     * @alias module:model/Team
+     * Constructs a new <code>TimeOffBalance</code>.
+     * # The TimeOffBalance Object ### Description The &#x60;TimeOffBalance&#x60; object is used to represent a Time Off Balance for an employee.  ### Usage Example Fetch from the &#x60;LIST TimeOffBalances&#x60; endpoint and filter by &#x60;ID&#x60; to show all time off balances.
+     * @alias module:model/TimeOffBalance
      */
     constructor() { 
         
-        Team.initialize(this);
+        TimeOffBalance.initialize(this);
     }
 
     /**
@@ -39,15 +39,15 @@ class Team {
     }
 
     /**
-     * Constructs a <code>Team</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>TimeOffBalance</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Team} obj Optional instance to populate.
-     * @return {module:model/Team} The populated <code>Team</code> instance.
+     * @param {module:model/TimeOffBalance} obj Optional instance to populate.
+     * @return {module:model/TimeOffBalance} The populated <code>TimeOffBalance</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new Team();
+            obj = obj || new TimeOffBalance();
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -55,11 +55,14 @@ class Team {
             if (data.hasOwnProperty('remote_id')) {
                 obj['remote_id'] = ApiClient.convertToType(data['remote_id'], 'String');
             }
-            if (data.hasOwnProperty('name')) {
-                obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            if (data.hasOwnProperty('employee')) {
+                obj['employee'] = ApiClient.convertToType(data['employee'], 'String');
             }
-            if (data.hasOwnProperty('parent_team')) {
-                obj['parent_team'] = ApiClient.convertToType(data['parent_team'], 'String');
+            if (data.hasOwnProperty('balance')) {
+                obj['balance'] = ApiClient.convertToType(data['balance'], 'Number');
+            }
+            if (data.hasOwnProperty('used')) {
+                obj['used'] = ApiClient.convertToType(data['used'], 'Number');
             }
             if (data.hasOwnProperty('remote_data')) {
                 obj['remote_data'] = ApiClient.convertToType(data['remote_data'], [RemoteData]);
@@ -74,35 +77,41 @@ class Team {
 /**
  * @member {String} id
  */
-Team.prototype['id'] = undefined;
+TimeOffBalance.prototype['id'] = undefined;
 
 /**
  * The third-party API ID of the matching object.
  * @member {String} remote_id
  */
-Team.prototype['remote_id'] = undefined;
+TimeOffBalance.prototype['remote_id'] = undefined;
 
 /**
- * The team's name.
- * @member {String} name
+ * The employee the balance belongs to.
+ * @member {String} employee
  */
-Team.prototype['name'] = undefined;
+TimeOffBalance.prototype['employee'] = undefined;
 
 /**
- * The team's parent team.
- * @member {String} parent_team
+ * The current PTO balance.
+ * @member {Number} balance
  */
-Team.prototype['parent_team'] = undefined;
+TimeOffBalance.prototype['balance'] = undefined;
+
+/**
+ * The amount of PTO used.
+ * @member {Number} used
+ */
+TimeOffBalance.prototype['used'] = undefined;
 
 /**
  * @member {Array.<module:model/RemoteData>} remote_data
  */
-Team.prototype['remote_data'] = undefined;
+TimeOffBalance.prototype['remote_data'] = undefined;
 
 
 
 
 
 
-export default Team;
+export default TimeOffBalance;
 

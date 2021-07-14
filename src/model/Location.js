@@ -23,7 +23,7 @@ import RemoteData from './RemoteData';
 class Location {
     /**
      * Constructs a new <code>Location</code>.
-     * # The Location Object ### Description The &#x60;Location&#x60; object is used to represent a Location for a company. This is shared across many models and is referenced whenever a location is stored.  ### Usage Example Fetch from the &#x60;LIST Locations&#x60; endpoint and filter by &#x60;ID&#x60; to show all office locations.
+     * # The Location Object ### Description The &#x60;Location&#x60; object is used to represent a Location for a Company or Employee address. This is shared across many models and is referenced whenever a location is stored.  ### Usage Example Fetch from the &#x60;LIST Locations&#x60; endpoint and filter by &#x60;ID&#x60; to show all office locations.
      * @alias module:model/Location
      */
     constructor() { 

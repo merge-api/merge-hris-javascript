@@ -18,6 +18,7 @@ import AccountToken from './model/AccountToken';
 import AvailableActions from './model/AvailableActions';
 import Benefit from './model/Benefit';
 import BenefitPlanTypeEnum from './model/BenefitPlanTypeEnum';
+import BenefitRequest from './model/BenefitRequest';
 import Company from './model/Company';
 import CountryEnum from './model/CountryEnum';
 import DataPassthroughRequest from './model/DataPassthroughRequest';
@@ -35,6 +36,8 @@ import EthnicityEnum from './model/EthnicityEnum';
 import FlsaStatusEnum from './model/FlsaStatusEnum';
 import GenderEnum from './model/GenderEnum';
 import GenerateRemoteKeyRequest from './model/GenerateRemoteKeyRequest';
+import Issue from './model/Issue';
+import IssueStatusEnum from './model/IssueStatusEnum';
 import LinkToken from './model/LinkToken';
 import Location from './model/Location';
 import MaritalStatusEnum from './model/MaritalStatusEnum';
@@ -45,9 +48,12 @@ import PaginatedCompanyList from './model/PaginatedCompanyList';
 import PaginatedEmployeeList from './model/PaginatedEmployeeList';
 import PaginatedEmployeePayrollRunList from './model/PaginatedEmployeePayrollRunList';
 import PaginatedEmploymentList from './model/PaginatedEmploymentList';
+import PaginatedIssueList from './model/PaginatedIssueList';
 import PaginatedLocationList from './model/PaginatedLocationList';
 import PaginatedPayrollRunList from './model/PaginatedPayrollRunList';
+import PaginatedSyncStatusList from './model/PaginatedSyncStatusList';
 import PaginatedTeamList from './model/PaginatedTeamList';
+import PaginatedTimeOffBalanceList from './model/PaginatedTimeOffBalanceList';
 import PaginatedTimeOffList from './model/PaginatedTimeOffList';
 import PayCurrencyEnum from './model/PayCurrencyEnum';
 import PayFrequencyEnum from './model/PayFrequencyEnum';
@@ -62,9 +68,11 @@ import RequestTypeEnum from './model/RequestTypeEnum';
 import RunStateEnum from './model/RunStateEnum';
 import RunTypeEnum from './model/RunTypeEnum';
 import SyncStatus from './model/SyncStatus';
+import SyncStatusStatusEnum from './model/SyncStatusStatusEnum';
 import Tax from './model/Tax';
 import Team from './model/Team';
 import TimeOff from './model/TimeOff';
+import TimeOffBalance from './model/TimeOffBalance';
 import TimeOffStatusEnum from './model/TimeOffStatusEnum';
 import TypeEnum from './model/TypeEnum';
 import UnitsEnum from './model/UnitsEnum';
@@ -72,10 +80,12 @@ import AccountTokenApi from './api/AccountTokenApi';
 import AvailableActionsApi from './api/AvailableActionsApi';
 import BenefitsApi from './api/BenefitsApi';
 import CompaniesApi from './api/CompaniesApi';
+import DeleteAccountApi from './api/DeleteAccountApi';
 import EmployeePayrollRunsApi from './api/EmployeePayrollRunsApi';
 import EmployeesApi from './api/EmployeesApi';
 import EmploymentsApi from './api/EmploymentsApi';
 import GenerateKeyApi from './api/GenerateKeyApi';
+import IssuesApi from './api/IssuesApi';
 import LinkTokenApi from './api/LinkTokenApi';
 import LocationsApi from './api/LocationsApi';
 import PassthroughApi from './api/PassthroughApi';
@@ -84,6 +94,7 @@ import RegenerateKeyApi from './api/RegenerateKeyApi';
 import SyncStatusApi from './api/SyncStatusApi';
 import TeamsApi from './api/TeamsApi';
 import TimeOffApi from './api/TimeOffApi';
+import TimeOffBalanceApi from './api/TimeOffBalanceApi';
 
 
 /**
@@ -153,6 +164,12 @@ export {
      * @property {module:model/BenefitPlanTypeEnum}
      */
     BenefitPlanTypeEnum,
+
+    /**
+     * The BenefitRequest model constructor.
+     * @property {module:model/BenefitRequest}
+     */
+    BenefitRequest,
 
     /**
      * The Company model constructor.
@@ -257,6 +274,18 @@ export {
     GenerateRemoteKeyRequest,
 
     /**
+     * The Issue model constructor.
+     * @property {module:model/Issue}
+     */
+    Issue,
+
+    /**
+     * The IssueStatusEnum model constructor.
+     * @property {module:model/IssueStatusEnum}
+     */
+    IssueStatusEnum,
+
+    /**
      * The LinkToken model constructor.
      * @property {module:model/LinkToken}
      */
@@ -317,6 +346,12 @@ export {
     PaginatedEmploymentList,
 
     /**
+     * The PaginatedIssueList model constructor.
+     * @property {module:model/PaginatedIssueList}
+     */
+    PaginatedIssueList,
+
+    /**
      * The PaginatedLocationList model constructor.
      * @property {module:model/PaginatedLocationList}
      */
@@ -329,10 +364,22 @@ export {
     PaginatedPayrollRunList,
 
     /**
+     * The PaginatedSyncStatusList model constructor.
+     * @property {module:model/PaginatedSyncStatusList}
+     */
+    PaginatedSyncStatusList,
+
+    /**
      * The PaginatedTeamList model constructor.
      * @property {module:model/PaginatedTeamList}
      */
     PaginatedTeamList,
+
+    /**
+     * The PaginatedTimeOffBalanceList model constructor.
+     * @property {module:model/PaginatedTimeOffBalanceList}
+     */
+    PaginatedTimeOffBalanceList,
 
     /**
      * The PaginatedTimeOffList model constructor.
@@ -419,6 +466,12 @@ export {
     SyncStatus,
 
     /**
+     * The SyncStatusStatusEnum model constructor.
+     * @property {module:model/SyncStatusStatusEnum}
+     */
+    SyncStatusStatusEnum,
+
+    /**
      * The Tax model constructor.
      * @property {module:model/Tax}
      */
@@ -435,6 +488,12 @@ export {
      * @property {module:model/TimeOff}
      */
     TimeOff,
+
+    /**
+     * The TimeOffBalance model constructor.
+     * @property {module:model/TimeOffBalance}
+     */
+    TimeOffBalance,
 
     /**
      * The TimeOffStatusEnum model constructor.
@@ -479,6 +538,12 @@ export {
     CompaniesApi,
 
     /**
+    * The DeleteAccountApi service constructor.
+    * @property {module:api/DeleteAccountApi}
+    */
+    DeleteAccountApi,
+
+    /**
     * The EmployeePayrollRunsApi service constructor.
     * @property {module:api/EmployeePayrollRunsApi}
     */
@@ -501,6 +566,12 @@ export {
     * @property {module:api/GenerateKeyApi}
     */
     GenerateKeyApi,
+
+    /**
+    * The IssuesApi service constructor.
+    * @property {module:api/IssuesApi}
+    */
+    IssuesApi,
 
     /**
     * The LinkTokenApi service constructor.
@@ -548,5 +619,11 @@ export {
     * The TimeOffApi service constructor.
     * @property {module:api/TimeOffApi}
     */
-    TimeOffApi
+    TimeOffApi,
+
+    /**
+    * The TimeOffBalanceApi service constructor.
+    * @property {module:api/TimeOffBalanceApi}
+    */
+    TimeOffBalanceApi
 };
