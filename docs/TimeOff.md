@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **units** | [**UnitsEnum**](UnitsEnum.md) | The unit of time requested. | [optional] 
 **amount** | **Number** | The number of time off units requested. | [optional] 
 **requestType** | [**RequestTypeEnum**](RequestTypeEnum.md) | The type of time off request. | [optional] 
+**startTime** | **Date** | The day and time of the start of the time requested off. | [optional] 
+**endTime** | **Date** | The day and time of the end of the time requested off. | [optional] 
 **remoteData** | [**[RemoteData]**](RemoteData.md) |  | [optional] [readonly] 
 
 

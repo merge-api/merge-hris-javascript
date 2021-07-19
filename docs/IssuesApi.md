@@ -1,21 +1,21 @@
-# MergeHrisApi.SyncStatusApi
+# MergeHrisApi.IssuesApi
 
 All URIs are relative to *https://api.merge.dev/api/hris/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**syncStatusList**](SyncStatusApi.md#syncStatusList) | **GET** /sync-status | 
-[**syncStatusResyncCreate**](SyncStatusApi.md#syncStatusResyncCreate) | **POST** /sync-status/resync | 
+[**issuesList**](IssuesApi.md#issuesList) | **GET** /issues | 
+[**issuesRetrieve**](IssuesApi.md#issuesRetrieve) | **GET** /issues/{id} | 
 
 
 
-## syncStatusList
+## issuesList
 
-> PaginatedSyncStatusList syncStatusList(xAccountToken, opts)
+> PaginatedIssueList issuesList(opts)
 
 
 
-Get syncing status.
+Gets issues.
 
 ### Example
 
@@ -28,13 +28,19 @@ tokenAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //tokenAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new MergeHrisApi.SyncStatusApi();
-let xAccountToken = "xAccountToken_example"; // String | Token identifying the end user.
+let apiInstance = new MergeHrisApi.IssuesApi();
 let opts = {
+  'accountToken': "accountToken_example", // String | account_token
   'cursor': 56, // Number | The pagination cursor value.
-  'pageSize': 56 // Number | Number of results to return per page.
+  'endDate': "endDate_example", // String | If included, will only include issues whose most recent action occurred before this time
+  'endUserOrganizationName': "endUserOrganizationName_example", // String | end_user_organization_name
+  'includeMuted': "includeMuted_example", // String | If True, will include muted issues
+  'integrationName': "integrationName_example", // String | integration_name
+  'pageSize': 56, // Number | Number of results to return per page.
+  'startDate': "startDate_example", // String | If included, will only include issues whose most recent action occurred after this time
+  'status': "status_example" // String | status
 };
-apiInstance.syncStatusList(xAccountToken, opts, (error, data, response) => {
+apiInstance.issuesList(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -48,13 +54,19 @@ apiInstance.syncStatusList(xAccountToken, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xAccountToken** | **String**| Token identifying the end user. | 
+ **accountToken** | **String**| account_token | [optional] 
  **cursor** | **Number**| The pagination cursor value. | [optional] 
+ **endDate** | **String**| If included, will only include issues whose most recent action occurred before this time | [optional] 
+ **endUserOrganizationName** | **String**| end_user_organization_name | [optional] 
+ **includeMuted** | **String**| If True, will include muted issues | [optional] 
+ **integrationName** | **String**| integration_name | [optional] 
  **pageSize** | **Number**| Number of results to return per page. | [optional] 
+ **startDate** | **String**| If included, will only include issues whose most recent action occurred after this time | [optional] 
+ **status** | **String**| status | [optional] 
 
 ### Return type
 
-[**PaginatedSyncStatusList**](PaginatedSyncStatusList.md)
+[**PaginatedIssueList**](PaginatedIssueList.md)
 
 ### Authorization
 
@@ -66,13 +78,13 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## syncStatusResyncCreate
+## issuesRetrieve
 
-> SyncStatus syncStatusResyncCreate(xAccountToken)
+> Issue issuesRetrieve(id)
 
 
 
-Force resync of all models.
+Get a specific issue.
 
 ### Example
 
@@ -85,9 +97,9 @@ tokenAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //tokenAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new MergeHrisApi.SyncStatusApi();
-let xAccountToken = "xAccountToken_example"; // String | Token identifying the end user.
-apiInstance.syncStatusResyncCreate(xAccountToken, (error, data, response) => {
+let apiInstance = new MergeHrisApi.IssuesApi();
+let id = null; // String | 
+apiInstance.issuesRetrieve(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -101,11 +113,11 @@ apiInstance.syncStatusResyncCreate(xAccountToken, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xAccountToken** | **String**| Token identifying the end user. | 
+ **id** | [**String**](.md)|  | 
 
 ### Return type
 
-[**SyncStatus**](SyncStatus.md)
+[**Issue**](Issue.md)
 
 ### Authorization
 

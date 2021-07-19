@@ -38,6 +38,7 @@ let opts = {
   'modifiedAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects modified after this datetime.
   'modifiedBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects modified before this datetime.
   'pageSize': 56, // Number | Number of results to return per page.
+  'parentTeamId': null, // String | If provided, will only return teams with this parent team.
   'remoteId': "remoteId_example" // String | The API provider's ID for the given object.
 };
 apiInstance.teamsList(xAccountToken, opts, (error, data, response) => {
@@ -62,6 +63,7 @@ Name | Type | Description  | Notes
  **modifiedAfter** | **Date**| If provided, will only return objects modified after this datetime. | [optional] 
  **modifiedBefore** | **Date**| If provided, will only return objects modified before this datetime. | [optional] 
  **pageSize** | **Number**| Number of results to return per page. | [optional] 
+ **parentTeamId** | [**String**](.md)| If provided, will only return teams with this parent team. | [optional] 
  **remoteId** | **String**| The API provider&#39;s ID for the given object. | [optional] 
 
 ### Return type

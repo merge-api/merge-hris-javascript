@@ -81,6 +81,12 @@ class TimeOff {
             if (data.hasOwnProperty('request_type')) {
                 obj['request_type'] = ApiClient.convertToType(data['request_type'], RequestTypeEnum);
             }
+            if (data.hasOwnProperty('start_time')) {
+                obj['start_time'] = ApiClient.convertToType(data['start_time'], 'Date');
+            }
+            if (data.hasOwnProperty('end_time')) {
+                obj['end_time'] = ApiClient.convertToType(data['end_time'], 'Date');
+            }
             if (data.hasOwnProperty('remote_data')) {
                 obj['remote_data'] = ApiClient.convertToType(data['remote_data'], [RemoteData]);
             }
@@ -143,6 +149,18 @@ TimeOff.prototype['amount'] = undefined;
  * @member {module:model/RequestTypeEnum} request_type
  */
 TimeOff.prototype['request_type'] = undefined;
+
+/**
+ * The day and time of the start of the time requested off.
+ * @member {Date} start_time
+ */
+TimeOff.prototype['start_time'] = undefined;
+
+/**
+ * The day and time of the end of the time requested off.
+ * @member {Date} end_time
+ */
+TimeOff.prototype['end_time'] = undefined;
 
 /**
  * @member {Array.<module:model/RemoteData>} remote_data
