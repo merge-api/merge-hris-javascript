@@ -13,6 +13,8 @@
 
 import ApiClient from '../ApiClient';
 import RemoteData from './RemoteData';
+import convertRelatedObjectToType from '../Utils';
+
 
 /**
  * The Team model module.
