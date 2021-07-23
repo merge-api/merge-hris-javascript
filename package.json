@@ -1,6 +1,6 @@
 {
   "name": "@mergeapi/merge_hris_api",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "description": "The_unified_API_for_building_rich_integrations_with_multiple_HR_Information_System_platforms_",
   "license": "Unlicense",
   "main": "dist/index.js",
