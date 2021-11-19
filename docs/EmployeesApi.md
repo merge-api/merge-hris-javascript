@@ -95,13 +95,15 @@ let opts = {
   'cursor': cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw, // String | The pagination cursor value.
   'expand': employments,home_location,work_location,manager,team,company, // String | Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
   'includeRemoteData': true, // Boolean | Whether to include the original data Merge fetched from the third-party to produce these models.
-  'includeSensitiveFields': true, // Boolean | Whether to include sensetive fields (such as social security numbers) in the response.
+  'includeSensitiveFields': true, // Boolean | Whether to include sensitive fields (such as social security numbers) in the response.
   'managerId': "managerId_example", // String | If provided, will only return employees for this manager.
   'modifiedAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects modified after this datetime.
   'modifiedBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects modified before this datetime.
   'pageSize': 56, // Number | Number of results to return per page.
+  'personalEmail': null, // String | If provided, will only return Employees with this personal email
   'remoteId': "remoteId_example", // String | The API provider's ID for the given object.
   'teamId': "teamId_example", // String | If provided, will only return employees for this team.
+  'workEmail': null, // String | If provided, will only return Employees with this work email
   'workLocationId': "workLocationId_example" // String | If provided, will only return employees for this location.
 };
 apiInstance.employeesList(xAccountToken, opts, (error, data, response) => {
@@ -125,13 +127,15 @@ Name | Type | Description  | Notes
  **cursor** | **String**| The pagination cursor value. | [optional] 
  **expand** | **String**| Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces. | [optional] 
  **includeRemoteData** | **Boolean**| Whether to include the original data Merge fetched from the third-party to produce these models. | [optional] 
- **includeSensitiveFields** | **Boolean**| Whether to include sensetive fields (such as social security numbers) in the response. | [optional] 
+ **includeSensitiveFields** | **Boolean**| Whether to include sensitive fields (such as social security numbers) in the response. | [optional] 
  **managerId** | **String**| If provided, will only return employees for this manager. | [optional] 
  **modifiedAfter** | **Date**| If provided, will only return objects modified after this datetime. | [optional] 
  **modifiedBefore** | **Date**| If provided, will only return objects modified before this datetime. | [optional] 
  **pageSize** | **Number**| Number of results to return per page. | [optional] 
+ **personalEmail** | [**String**](.md)| If provided, will only return Employees with this personal email | [optional] 
  **remoteId** | **String**| The API provider&#39;s ID for the given object. | [optional] 
  **teamId** | **String**| If provided, will only return employees for this team. | [optional] 
+ **workEmail** | [**String**](.md)| If provided, will only return Employees with this work email | [optional] 
  **workLocationId** | **String**| If provided, will only return employees for this location. | [optional] 
 
 ### Return type
@@ -173,7 +177,7 @@ let id = null; // String |
 let opts = {
   'expand': employments,home_location,work_location,manager,team,company, // String | Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
   'includeRemoteData': true, // Boolean | Whether to include the original data Merge fetched from the third-party to produce these models.
-  'includeSensitiveFields': true // Boolean | Whether to include sensetive fields (such as social security numbers) in the response.
+  'includeSensitiveFields': true // Boolean | Whether to include sensitive fields (such as social security numbers) in the response.
 };
 apiInstance.employeesRetrieve(xAccountToken, id, opts, (error, data, response) => {
   if (error) {
@@ -193,7 +197,7 @@ Name | Type | Description  | Notes
  **id** | [**String**](.md)|  | 
  **expand** | **String**| Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces. | [optional] 
  **includeRemoteData** | **Boolean**| Whether to include the original data Merge fetched from the third-party to produce these models. | [optional] 
- **includeSensitiveFields** | **Boolean**| Whether to include sensetive fields (such as social security numbers) in the response. | [optional] 
+ **includeSensitiveFields** | **Boolean**| Whether to include sensitive fields (such as social security numbers) in the response. | [optional] 
 
 ### Return type
 

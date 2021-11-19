@@ -46,15 +46,15 @@ export default class IssuesApi {
     /**
      * Gets issues.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accountToken account_token
+     * @param {String} opts.accountToken 
      * @param {Number} opts.cursor The pagination cursor value.
      * @param {String} opts.endDate If included, will only include issues whose most recent action occurred before this time
-     * @param {String} opts.endUserOrganizationName end_user_organization_name
+     * @param {String} opts.endUserOrganizationName 
      * @param {String} opts.includeMuted If True, will include muted issues
-     * @param {String} opts.integrationName integration_name
+     * @param {String} opts.integrationName 
      * @param {Number} opts.pageSize Number of results to return per page.
      * @param {String} opts.startDate If included, will only include issues whose most recent action occurred after this time
-     * @param {module:model/String} opts.status status
+     * @param {module:model/String} opts.status 
      * @param {module:api/IssuesApi~issuesListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedIssueList}
      */

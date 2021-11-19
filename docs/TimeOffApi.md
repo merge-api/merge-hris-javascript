@@ -4,9 +4,67 @@ All URIs are relative to *https://api.merge.dev/api/hris/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**timeOffCreate**](TimeOffApi.md#timeOffCreate) | **POST** /time-off | 
 [**timeOffList**](TimeOffApi.md#timeOffList) | **GET** /time-off | 
 [**timeOffRetrieve**](TimeOffApi.md#timeOffRetrieve) | **GET** /time-off/{id} | 
 
+
+
+## timeOffCreate
+
+> TimeOff timeOffCreate(xAccountToken, opts)
+
+
+
+Creates a &#x60;TimeOff&#x60; object with the given values.
+
+### Example
+
+```javascript
+import MergeHrisApi from 'merge_hris_api';
+let defaultClient = MergeHrisApi.ApiClient.instance;
+// Configure API key authorization: tokenAuth
+let tokenAuth = defaultClient.authentications['tokenAuth'];
+tokenAuth.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//tokenAuth.apiKeyPrefix = 'Token';
+
+let apiInstance = new MergeHrisApi.TimeOffApi();
+let xAccountToken = "xAccountToken_example"; // String | Token identifying the end user.
+let opts = {
+  'runAsync': true, // Boolean | Whether or not third-party updates should be run asynchronously.
+  'timeOffRequest': new MergeHrisApi.TimeOffRequest() // TimeOffRequest | 
+};
+apiInstance.timeOffCreate(xAccountToken, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xAccountToken** | **String**| Token identifying the end user. | 
+ **runAsync** | **Boolean**| Whether or not third-party updates should be run asynchronously. | [optional] 
+ **timeOffRequest** | [**TimeOffRequest**](TimeOffRequest.md)|  | [optional] 
+
+### Return type
+
+[**TimeOff**](TimeOff.md)
+
+### Authorization
+
+[tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json
 
 
 ## timeOffList
@@ -41,7 +99,9 @@ let opts = {
   'modifiedAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects modified after this datetime.
   'modifiedBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects modified before this datetime.
   'pageSize': 56, // Number | Number of results to return per page.
-  'remoteId': "remoteId_example" // String | The API provider's ID for the given object.
+  'remoteId': "remoteId_example", // String | The API provider's ID for the given object.
+  'requestType': "requestType_example", // String | If provided, will only return TimeOff with this request type. Options: ('VACATION', 'SICK', 'PERSONAL', 'JURY_DUTY', 'VOLUNTEER', 'BEREAVEMENT')
+  'status': "status_example" // String | If provided, will only return TimeOff with this status. Options: ('REQUESTED', 'APPROVED', 'DECLINED', 'CANCELLED', 'DELETED')
 };
 apiInstance.timeOffList(xAccountToken, opts, (error, data, response) => {
   if (error) {
@@ -69,6 +129,8 @@ Name | Type | Description  | Notes
  **modifiedBefore** | **Date**| If provided, will only return objects modified before this datetime. | [optional] 
  **pageSize** | **Number**| Number of results to return per page. | [optional] 
  **remoteId** | **String**| The API provider&#39;s ID for the given object. | [optional] 
+ **requestType** | **String**| If provided, will only return TimeOff with this request type. Options: (&#39;VACATION&#39;, &#39;SICK&#39;, &#39;PERSONAL&#39;, &#39;JURY_DUTY&#39;, &#39;VOLUNTEER&#39;, &#39;BEREAVEMENT&#39;) | [optional] 
+ **status** | **String**| If provided, will only return TimeOff with this status. Options: (&#39;REQUESTED&#39;, &#39;APPROVED&#39;, &#39;DECLINED&#39;, &#39;CANCELLED&#39;, &#39;DELETED&#39;) | [optional] 
 
 ### Return type
 
@@ -90,7 +152,7 @@ Name | Type | Description  | Notes
 
 
 
-Returns an &#x60;TimeOff&#x60; object with the given &#x60;id&#x60;.
+Returns a &#x60;TimeOff&#x60; object with the given &#x60;id&#x60;.
 
 ### Example
 

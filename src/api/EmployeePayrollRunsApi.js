@@ -50,7 +50,9 @@ export default class EmployeePayrollRunsApi {
      * @param {Date} opts.createdAfter If provided, will only return objects created after this datetime.
      * @param {Date} opts.createdBefore If provided, will only return objects created before this datetime.
      * @param {String} opts.cursor The pagination cursor value.
-     * @param {String} opts.employeeId If provided, will only return time off for this employee.
+     * @param {String} opts.employeeId If provided, will only return employee payroll runs for this employee.
+     * @param {Date} opts.endedAfter If provided, will only return employee payroll runs ended after this datetime.
+     * @param {Date} opts.endedBefore If provided, will only return employee payroll runs ended before this datetime.
      * @param {module:model/String} opts.expand Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
      * @param {Boolean} opts.includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
      * @param {Date} opts.modifiedAfter If provided, will only return objects modified after this datetime.
@@ -58,6 +60,8 @@ export default class EmployeePayrollRunsApi {
      * @param {Number} opts.pageSize Number of results to return per page.
      * @param {String} opts.payrollRunId If provided, will only return employee payroll runs for this employee.
      * @param {String} opts.remoteId The API provider's ID for the given object.
+     * @param {Date} opts.startedAfter If provided, will only return employee payroll runs started after this datetime.
+     * @param {Date} opts.startedBefore If provided, will only return employee payroll runs started before this datetime.
      * @param {module:api/EmployeePayrollRunsApi~employeePayrollRunsListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedEmployeePayrollRunList}
      */
@@ -76,13 +80,17 @@ export default class EmployeePayrollRunsApi {
         'created_before': opts['createdBefore'],
         'cursor': opts['cursor'],
         'employee_id': opts['employeeId'],
+        'ended_after': opts['endedAfter'],
+        'ended_before': opts['endedBefore'],
         'expand': opts['expand'],
         'include_remote_data': opts['includeRemoteData'],
         'modified_after': opts['modifiedAfter'],
         'modified_before': opts['modifiedBefore'],
         'page_size': opts['pageSize'],
         'payroll_run_id': opts['payrollRunId'],
-        'remote_id': opts['remoteId']
+        'remote_id': opts['remoteId'],
+        'started_after': opts['startedAfter'],
+        'started_before': opts['startedBefore']
       };
       let headerParams = {
         'X-Account-Token': xAccountToken

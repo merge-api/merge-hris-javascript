@@ -14,7 +14,6 @@
 
 import ApiClient from "../ApiClient";
 import Employment from '../model/Employment';
-import EmploymentRequest from '../model/EmploymentRequest';
 import PaginatedEmploymentList from '../model/PaginatedEmploymentList';
 
 /**
@@ -37,53 +36,6 @@ export default class EmploymentsApi {
 
 
     /**
-     * Callback function to receive the result of the employmentsCreate operation.
-     * @callback module:api/EmploymentsApi~employmentsCreateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Employment} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Creates an `Employment` object with the given values.
-     * @param {String} xAccountToken Token identifying the end user.
-     * @param {Object} opts Optional parameters
-     * @param {Boolean} opts.runAsync Whether or not third-party updates should be run asynchronously.
-     * @param {module:model/EmploymentRequest} opts.employmentRequest 
-     * @param {module:api/EmploymentsApi~employmentsCreateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Employment}
-     */
-    employmentsCreate(xAccountToken, opts, callback) {
-      opts = opts || {};
-      let postBody = opts['employmentRequest'];
-      // verify the required parameter 'xAccountToken' is set
-      if (xAccountToken === undefined || xAccountToken === null) {
-        throw new Error("Missing the required parameter 'xAccountToken' when calling employmentsCreate");
-      }
-
-      let pathParams = {
-      };
-      let queryParams = {
-        'run_async': opts['runAsync']
-      };
-      let headerParams = {
-        'X-Account-Token': xAccountToken
-      };
-      let formParams = {
-      };
-
-      let authNames = ['tokenAuth'];
-      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
-      let accepts = ['application/json'];
-      let returnType = Employment;
-      return this.apiClient.callApi(
-        '/employments', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
      * Callback function to receive the result of the employmentsList operation.
      * @callback module:api/EmploymentsApi~employmentsListCallback
      * @param {String} error Error message, if any.
@@ -99,9 +51,11 @@ export default class EmploymentsApi {
      * @param {Date} opts.createdBefore If provided, will only return objects created before this datetime.
      * @param {String} opts.cursor The pagination cursor value.
      * @param {String} opts.employeeId If provided, will only return employments for this employee.
+     * @param {module:model/String} opts.expand Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
      * @param {Boolean} opts.includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
      * @param {Date} opts.modifiedAfter If provided, will only return objects modified after this datetime.
      * @param {Date} opts.modifiedBefore If provided, will only return objects modified before this datetime.
+     * @param {module:model/String} opts.orderBy Overrides the default ordering for this endpoint.
      * @param {Number} opts.pageSize Number of results to return per page.
      * @param {String} opts.remoteId The API provider's ID for the given object.
      * @param {module:api/EmploymentsApi~employmentsListCallback} callback The callback function, accepting three arguments: error, data, response
@@ -122,9 +76,11 @@ export default class EmploymentsApi {
         'created_before': opts['createdBefore'],
         'cursor': opts['cursor'],
         'employee_id': opts['employeeId'],
+        'expand': opts['expand'],
         'include_remote_data': opts['includeRemoteData'],
         'modified_after': opts['modifiedAfter'],
         'modified_before': opts['modifiedBefore'],
+        'order_by': opts['orderBy'],
         'page_size': opts['pageSize'],
         'remote_id': opts['remoteId']
       };
@@ -158,6 +114,7 @@ export default class EmploymentsApi {
      * @param {String} xAccountToken Token identifying the end user.
      * @param {String} id 
      * @param {Object} opts Optional parameters
+     * @param {module:model/String} opts.expand Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
      * @param {Boolean} opts.includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
      * @param {module:api/EmploymentsApi~employmentsRetrieveCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Employment}
@@ -178,6 +135,7 @@ export default class EmploymentsApi {
         'id': id
       };
       let queryParams = {
+        'expand': opts['expand'],
         'include_remote_data': opts['includeRemoteData']
       };
       let headerParams = {

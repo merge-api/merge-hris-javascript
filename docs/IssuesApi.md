@@ -30,15 +30,15 @@ tokenAuth.apiKey = 'YOUR API KEY';
 
 let apiInstance = new MergeHrisApi.IssuesApi();
 let opts = {
-  'accountToken': "accountToken_example", // String | account_token
+  'accountToken': "accountToken_example", // String | 
   'cursor': 56, // Number | The pagination cursor value.
   'endDate': "endDate_example", // String | If included, will only include issues whose most recent action occurred before this time
-  'endUserOrganizationName': "endUserOrganizationName_example", // String | end_user_organization_name
+  'endUserOrganizationName': "endUserOrganizationName_example", // String | 
   'includeMuted': "includeMuted_example", // String | If True, will include muted issues
-  'integrationName': "integrationName_example", // String | integration_name
+  'integrationName': "integrationName_example", // String | 
   'pageSize': 56, // Number | Number of results to return per page.
   'startDate': "startDate_example", // String | If included, will only include issues whose most recent action occurred after this time
-  'status': "status_example" // String | status
+  'status': "status_example" // String | 
 };
 apiInstance.issuesList(opts, (error, data, response) => {
   if (error) {
@@ -54,15 +54,15 @@ apiInstance.issuesList(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountToken** | **String**| account_token | [optional] 
+ **accountToken** | **String**|  | [optional] 
  **cursor** | **Number**| The pagination cursor value. | [optional] 
  **endDate** | **String**| If included, will only include issues whose most recent action occurred before this time | [optional] 
- **endUserOrganizationName** | **String**| end_user_organization_name | [optional] 
+ **endUserOrganizationName** | **String**|  | [optional] 
  **includeMuted** | **String**| If True, will include muted issues | [optional] 
- **integrationName** | **String**| integration_name | [optional] 
+ **integrationName** | **String**|  | [optional] 
  **pageSize** | **Number**| Number of results to return per page. | [optional] 
  **startDate** | **String**| If included, will only include issues whose most recent action occurred after this time | [optional] 
- **status** | **String**| status | [optional] 
+ **status** | **String**|  | [optional] 
 
 ### Return type
 

@@ -34,11 +34,16 @@ let opts = {
   'createdAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects created after this datetime.
   'createdBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects created before this datetime.
   'cursor': cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw, // String | The pagination cursor value.
+  'endedAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return payroll runs ended after this datetime.
+  'endedBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return payroll runs ended before this datetime.
   'includeRemoteData': true, // Boolean | Whether to include the original data Merge fetched from the third-party to produce these models.
   'modifiedAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects modified after this datetime.
   'modifiedBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects modified before this datetime.
   'pageSize': 56, // Number | Number of results to return per page.
-  'remoteId': "remoteId_example" // String | The API provider's ID for the given object.
+  'remoteId': "remoteId_example", // String | The API provider's ID for the given object.
+  'runType': "runType_example", // String | If provided, will only return PayrollRun's with this status. Options: ('REGULAR', 'OFF_CYCLE', 'CORRECTION', 'TERMINATION', 'SIGN_ON_BONUS')
+  'startedAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return payroll runs started after this datetime.
+  'startedBefore': new Date("2013-10-20T19:20:30+01:00") // Date | If provided, will only return payroll runs started before this datetime.
 };
 apiInstance.payrollRunsList(xAccountToken, opts, (error, data, response) => {
   if (error) {
@@ -58,11 +63,16 @@ Name | Type | Description  | Notes
  **createdAfter** | **Date**| If provided, will only return objects created after this datetime. | [optional] 
  **createdBefore** | **Date**| If provided, will only return objects created before this datetime. | [optional] 
  **cursor** | **String**| The pagination cursor value. | [optional] 
+ **endedAfter** | **Date**| If provided, will only return payroll runs ended after this datetime. | [optional] 
+ **endedBefore** | **Date**| If provided, will only return payroll runs ended before this datetime. | [optional] 
  **includeRemoteData** | **Boolean**| Whether to include the original data Merge fetched from the third-party to produce these models. | [optional] 
  **modifiedAfter** | **Date**| If provided, will only return objects modified after this datetime. | [optional] 
  **modifiedBefore** | **Date**| If provided, will only return objects modified before this datetime. | [optional] 
  **pageSize** | **Number**| Number of results to return per page. | [optional] 
  **remoteId** | **String**| The API provider&#39;s ID for the given object. | [optional] 
+ **runType** | **String**| If provided, will only return PayrollRun&#39;s with this status. Options: (&#39;REGULAR&#39;, &#39;OFF_CYCLE&#39;, &#39;CORRECTION&#39;, &#39;TERMINATION&#39;, &#39;SIGN_ON_BONUS&#39;) | [optional] 
+ **startedAfter** | **Date**| If provided, will only return payroll runs started after this datetime. | [optional] 
+ **startedBefore** | **Date**| If provided, will only return payroll runs started before this datetime. | [optional] 
 
 ### Return type
 

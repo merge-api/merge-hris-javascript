@@ -15,6 +15,7 @@
 import ApiClient from "../ApiClient";
 import PaginatedTimeOffList from '../model/PaginatedTimeOffList';
 import TimeOff from '../model/TimeOff';
+import TimeOffRequest from '../model/TimeOffRequest';
 
 /**
 * TimeOff service.
@@ -34,6 +35,53 @@ export default class TimeOffApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
+
+    /**
+     * Callback function to receive the result of the timeOffCreate operation.
+     * @callback module:api/TimeOffApi~timeOffCreateCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TimeOff} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Creates a `TimeOff` object with the given values.
+     * @param {String} xAccountToken Token identifying the end user.
+     * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.runAsync Whether or not third-party updates should be run asynchronously.
+     * @param {module:model/TimeOffRequest} opts.timeOffRequest 
+     * @param {module:api/TimeOffApi~timeOffCreateCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TimeOff}
+     */
+    timeOffCreate(xAccountToken, opts, callback) {
+      opts = opts || {};
+      let postBody = opts['timeOffRequest'];
+      // verify the required parameter 'xAccountToken' is set
+      if (xAccountToken === undefined || xAccountToken === null) {
+        throw new Error("Missing the required parameter 'xAccountToken' when calling timeOffCreate");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'run_async': opts['runAsync']
+      };
+      let headerParams = {
+        'X-Account-Token': xAccountToken
+      };
+      let formParams = {
+      };
+
+      let authNames = ['tokenAuth'];
+      let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
+      let accepts = ['application/json'];
+      let returnType = TimeOff;
+      return this.apiClient.callApi(
+        '/time-off', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
 
     /**
      * Callback function to receive the result of the timeOffList operation.
@@ -58,6 +106,8 @@ export default class TimeOffApi {
      * @param {Date} opts.modifiedBefore If provided, will only return objects modified before this datetime.
      * @param {Number} opts.pageSize Number of results to return per page.
      * @param {String} opts.remoteId The API provider's ID for the given object.
+     * @param {module:model/String} opts.requestType If provided, will only return TimeOff with this request type. Options: ('VACATION', 'SICK', 'PERSONAL', 'JURY_DUTY', 'VOLUNTEER', 'BEREAVEMENT')
+     * @param {module:model/String} opts.status If provided, will only return TimeOff with this status. Options: ('REQUESTED', 'APPROVED', 'DECLINED', 'CANCELLED', 'DELETED')
      * @param {module:api/TimeOffApi~timeOffListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedTimeOffList}
      */
@@ -82,7 +132,9 @@ export default class TimeOffApi {
         'modified_after': opts['modifiedAfter'],
         'modified_before': opts['modifiedBefore'],
         'page_size': opts['pageSize'],
-        'remote_id': opts['remoteId']
+        'remote_id': opts['remoteId'],
+        'request_type': opts['requestType'],
+        'status': opts['status']
       };
       let headerParams = {
         'X-Account-Token': xAccountToken
@@ -110,7 +162,7 @@ export default class TimeOffApi {
      */
 
     /**
-     * Returns an `TimeOff` object with the given `id`.
+     * Returns a `TimeOff` object with the given `id`.
      * @param {String} xAccountToken Token identifying the end user.
      * @param {String} id 
      * @param {Object} opts Optional parameters

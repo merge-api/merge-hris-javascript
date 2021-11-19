@@ -50,11 +50,16 @@ export default class PayrollRunsApi {
      * @param {Date} opts.createdAfter If provided, will only return objects created after this datetime.
      * @param {Date} opts.createdBefore If provided, will only return objects created before this datetime.
      * @param {String} opts.cursor The pagination cursor value.
+     * @param {Date} opts.endedAfter If provided, will only return payroll runs ended after this datetime.
+     * @param {Date} opts.endedBefore If provided, will only return payroll runs ended before this datetime.
      * @param {Boolean} opts.includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
      * @param {Date} opts.modifiedAfter If provided, will only return objects modified after this datetime.
      * @param {Date} opts.modifiedBefore If provided, will only return objects modified before this datetime.
      * @param {Number} opts.pageSize Number of results to return per page.
      * @param {String} opts.remoteId The API provider's ID for the given object.
+     * @param {module:model/String} opts.runType If provided, will only return PayrollRun's with this status. Options: ('REGULAR', 'OFF_CYCLE', 'CORRECTION', 'TERMINATION', 'SIGN_ON_BONUS')
+     * @param {Date} opts.startedAfter If provided, will only return payroll runs started after this datetime.
+     * @param {Date} opts.startedBefore If provided, will only return payroll runs started before this datetime.
      * @param {module:api/PayrollRunsApi~payrollRunsListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedPayrollRunList}
      */
@@ -72,11 +77,16 @@ export default class PayrollRunsApi {
         'created_after': opts['createdAfter'],
         'created_before': opts['createdBefore'],
         'cursor': opts['cursor'],
+        'ended_after': opts['endedAfter'],
+        'ended_before': opts['endedBefore'],
         'include_remote_data': opts['includeRemoteData'],
         'modified_after': opts['modifiedAfter'],
         'modified_before': opts['modifiedBefore'],
         'page_size': opts['pageSize'],
-        'remote_id': opts['remoteId']
+        'remote_id': opts['remoteId'],
+        'run_type': opts['runType'],
+        'started_after': opts['startedAfter'],
+        'started_before': opts['startedBefore']
       };
       let headerParams = {
         'X-Account-Token': xAccountToken

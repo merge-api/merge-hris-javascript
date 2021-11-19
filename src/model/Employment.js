@@ -12,12 +12,14 @@
  */
 
 import ApiClient from '../ApiClient';
+import convertRelatedObjectToType from '../Utils';
 import EmploymentTypeEnum from './EmploymentTypeEnum';
 import FlsaStatusEnum from './FlsaStatusEnum';
 import PayCurrencyEnum from './PayCurrencyEnum';
 import PayFrequencyEnum from './PayFrequencyEnum';
 import PayPeriodEnum from './PayPeriodEnum';
 import RemoteData from './RemoteData';
+import Employee from './Employee';
 
 /**
  * The Employment model module.
@@ -59,6 +61,9 @@ class Employment {
             }
             if (data.hasOwnProperty('remote_id')) {
                 obj['remote_id'] = ApiClient.convertToType(data['remote_id'], 'String');
+            }
+            if (data.hasOwnProperty('employee')) {
+                obj['employee'] = convertRelatedObjectToType(data['employee'], Employee);
             }
             if (data.hasOwnProperty('job_title')) {
                 obj['job_title'] = ApiClient.convertToType(data['job_title'], 'String');
@@ -104,6 +109,12 @@ Employment.prototype['id'] = undefined;
  * @member {String} remote_id
  */
 Employment.prototype['remote_id'] = undefined;
+
+/**
+ * The employee holding this position.
+ * @member {String} employee
+ */
+Employment.prototype['employee'] = undefined;
 
 /**
  * The position's title.

@@ -56,6 +56,9 @@ class Location {
             if (data.hasOwnProperty('remote_id')) {
                 obj['remote_id'] = ApiClient.convertToType(data['remote_id'], 'String');
             }
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
             if (data.hasOwnProperty('phone_number')) {
                 obj['phone_number'] = ApiClient.convertToType(data['phone_number'], 'String');
             }
@@ -97,6 +100,12 @@ Location.prototype['id'] = undefined;
  * @member {String} remote_id
  */
 Location.prototype['remote_id'] = undefined;
+
+/**
+ * The location's name.
+ * @member {String} name
+ */
+Location.prototype['name'] = undefined;
 
 /**
  * The location's phone number.

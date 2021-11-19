@@ -7,4 +7,6 @@
 
 * `DONE` (value: `"DONE"`)
 
+* `FAILED` (value: `"FAILED"`)
+
 

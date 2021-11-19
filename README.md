@@ -87,6 +87,7 @@ All URIs are relative to *https://api.merge.dev/api/hris/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*MergeHrisApi.AccountDetailsApi* | [**accountDetailsRetrieve**](docs/AccountDetailsApi.md#accountDetailsRetrieve) | **GET** /account-details | 
 *MergeHrisApi.AccountTokenApi* | [**accountTokenRetrieve**](docs/AccountTokenApi.md#accountTokenRetrieve) | **GET** /account-token/{public_token} | 
 *MergeHrisApi.AvailableActionsApi* | [**availableActionsRetrieve**](docs/AvailableActionsApi.md#availableActionsRetrieve) | **GET** /available-actions | 
 *MergeHrisApi.BenefitsApi* | [**benefitsCreate**](docs/BenefitsApi.md#benefitsCreate) | **POST** /benefits | 
@@ -94,19 +95,22 @@ Class | Method | HTTP request | Description
 *MergeHrisApi.BenefitsApi* | [**benefitsRetrieve**](docs/BenefitsApi.md#benefitsRetrieve) | **GET** /benefits/{id} | 
 *MergeHrisApi.CompaniesApi* | [**companiesList**](docs/CompaniesApi.md#companiesList) | **GET** /companies | 
 *MergeHrisApi.CompaniesApi* | [**companiesRetrieve**](docs/CompaniesApi.md#companiesRetrieve) | **GET** /companies/{id} | 
+*MergeHrisApi.DeductionsApi* | [**deductionsCreate**](docs/DeductionsApi.md#deductionsCreate) | **POST** /deductions | 
+*MergeHrisApi.DeductionsApi* | [**deductionsList**](docs/DeductionsApi.md#deductionsList) | **GET** /deductions | 
+*MergeHrisApi.DeductionsApi* | [**deductionsRetrieve**](docs/DeductionsApi.md#deductionsRetrieve) | **GET** /deductions/{id} | 
 *MergeHrisApi.DeleteAccountApi* | [**deleteAccountCreate**](docs/DeleteAccountApi.md#deleteAccountCreate) | **POST** /delete-account | 
 *MergeHrisApi.EmployeePayrollRunsApi* | [**employeePayrollRunsList**](docs/EmployeePayrollRunsApi.md#employeePayrollRunsList) | **GET** /employee-payroll-runs | 
 *MergeHrisApi.EmployeePayrollRunsApi* | [**employeePayrollRunsRetrieve**](docs/EmployeePayrollRunsApi.md#employeePayrollRunsRetrieve) | **GET** /employee-payroll-runs/{id} | 
 *MergeHrisApi.EmployeesApi* | [**employeesCreate**](docs/EmployeesApi.md#employeesCreate) | **POST** /employees | 
 *MergeHrisApi.EmployeesApi* | [**employeesList**](docs/EmployeesApi.md#employeesList) | **GET** /employees | 
 *MergeHrisApi.EmployeesApi* | [**employeesRetrieve**](docs/EmployeesApi.md#employeesRetrieve) | **GET** /employees/{id} | 
-*MergeHrisApi.EmploymentsApi* | [**employmentsCreate**](docs/EmploymentsApi.md#employmentsCreate) | **POST** /employments | 
 *MergeHrisApi.EmploymentsApi* | [**employmentsList**](docs/EmploymentsApi.md#employmentsList) | **GET** /employments | 
 *MergeHrisApi.EmploymentsApi* | [**employmentsRetrieve**](docs/EmploymentsApi.md#employmentsRetrieve) | **GET** /employments/{id} | 
 *MergeHrisApi.GenerateKeyApi* | [**generateKeyCreate**](docs/GenerateKeyApi.md#generateKeyCreate) | **POST** /generate-key | 
 *MergeHrisApi.IssuesApi* | [**issuesList**](docs/IssuesApi.md#issuesList) | **GET** /issues | 
 *MergeHrisApi.IssuesApi* | [**issuesRetrieve**](docs/IssuesApi.md#issuesRetrieve) | **GET** /issues/{id} | 
 *MergeHrisApi.LinkTokenApi* | [**linkTokenCreate**](docs/LinkTokenApi.md#linkTokenCreate) | **POST** /link-token | 
+*MergeHrisApi.LinkedAccountsApi* | [**linkedAccountsList**](docs/LinkedAccountsApi.md#linkedAccountsList) | **GET** /linked-accounts | 
 *MergeHrisApi.LocationsApi* | [**locationsList**](docs/LocationsApi.md#locationsList) | **GET** /locations | 
 *MergeHrisApi.LocationsApi* | [**locationsRetrieve**](docs/LocationsApi.md#locationsRetrieve) | **GET** /locations/{id} | 
 *MergeHrisApi.PassthroughApi* | [**passthroughCreate**](docs/PassthroughApi.md#passthroughCreate) | **POST** /passthrough | 
@@ -117,6 +121,7 @@ Class | Method | HTTP request | Description
 *MergeHrisApi.SyncStatusApi* | [**syncStatusResyncCreate**](docs/SyncStatusApi.md#syncStatusResyncCreate) | **POST** /sync-status/resync | 
 *MergeHrisApi.TeamsApi* | [**teamsList**](docs/TeamsApi.md#teamsList) | **GET** /teams | 
 *MergeHrisApi.TeamsApi* | [**teamsRetrieve**](docs/TeamsApi.md#teamsRetrieve) | **GET** /teams/{id} | 
+*MergeHrisApi.TimeOffApi* | [**timeOffCreate**](docs/TimeOffApi.md#timeOffCreate) | **POST** /time-off | 
 *MergeHrisApi.TimeOffApi* | [**timeOffList**](docs/TimeOffApi.md#timeOffList) | **GET** /time-off | 
 *MergeHrisApi.TimeOffApi* | [**timeOffRetrieve**](docs/TimeOffApi.md#timeOffRetrieve) | **GET** /time-off/{id} | 
 *MergeHrisApi.TimeOffBalanceApi* | [**timeOffBalanceList**](docs/TimeOffBalanceApi.md#timeOffBalanceList) | **GET** /time-off-balance | 
@@ -125,22 +130,28 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
+ - [MergeHrisApi.AccountDetails](docs/AccountDetails.md)
+ - [MergeHrisApi.AccountDetailsAndActions](docs/AccountDetailsAndActions.md)
+ - [MergeHrisApi.AccountDetailsAndActionsIntegration](docs/AccountDetailsAndActionsIntegration.md)
+ - [MergeHrisApi.AccountDetailsAndActionsStatusEnum](docs/AccountDetailsAndActionsStatusEnum.md)
  - [MergeHrisApi.AccountIntegration](docs/AccountIntegration.md)
  - [MergeHrisApi.AccountToken](docs/AccountToken.md)
  - [MergeHrisApi.AvailableActions](docs/AvailableActions.md)
  - [MergeHrisApi.Benefit](docs/Benefit.md)
  - [MergeHrisApi.BenefitPlanTypeEnum](docs/BenefitPlanTypeEnum.md)
  - [MergeHrisApi.BenefitRequest](docs/BenefitRequest.md)
+ - [MergeHrisApi.CategoriesEnum](docs/CategoriesEnum.md)
+ - [MergeHrisApi.CategoryEnum](docs/CategoryEnum.md)
  - [MergeHrisApi.Company](docs/Company.md)
  - [MergeHrisApi.CountryEnum](docs/CountryEnum.md)
  - [MergeHrisApi.DataPassthroughRequest](docs/DataPassthroughRequest.md)
  - [MergeHrisApi.Deduction](docs/Deduction.md)
+ - [MergeHrisApi.DeductionRequest](docs/DeductionRequest.md)
  - [MergeHrisApi.Earning](docs/Earning.md)
  - [MergeHrisApi.Employee](docs/Employee.md)
  - [MergeHrisApi.EmployeePayrollRun](docs/EmployeePayrollRun.md)
  - [MergeHrisApi.EmployeeRequest](docs/EmployeeRequest.md)
  - [MergeHrisApi.Employment](docs/Employment.md)
- - [MergeHrisApi.EmploymentRequest](docs/EmploymentRequest.md)
  - [MergeHrisApi.EmploymentStatusEnum](docs/EmploymentStatusEnum.md)
  - [MergeHrisApi.EmploymentTypeEnum](docs/EmploymentTypeEnum.md)
  - [MergeHrisApi.EndUserDetailsRequest](docs/EndUserDetailsRequest.md)
@@ -155,8 +166,10 @@ Class | Method | HTTP request | Description
  - [MergeHrisApi.MaritalStatusEnum](docs/MaritalStatusEnum.md)
  - [MergeHrisApi.MethodEnum](docs/MethodEnum.md)
  - [MergeHrisApi.ModelOperation](docs/ModelOperation.md)
+ - [MergeHrisApi.PaginatedAccountDetailsAndActionsList](docs/PaginatedAccountDetailsAndActionsList.md)
  - [MergeHrisApi.PaginatedBenefitList](docs/PaginatedBenefitList.md)
  - [MergeHrisApi.PaginatedCompanyList](docs/PaginatedCompanyList.md)
+ - [MergeHrisApi.PaginatedDeductionList](docs/PaginatedDeductionList.md)
  - [MergeHrisApi.PaginatedEmployeeList](docs/PaginatedEmployeeList.md)
  - [MergeHrisApi.PaginatedEmployeePayrollRunList](docs/PaginatedEmployeePayrollRunList.md)
  - [MergeHrisApi.PaginatedEmploymentList](docs/PaginatedEmploymentList.md)
@@ -171,11 +184,13 @@ Class | Method | HTTP request | Description
  - [MergeHrisApi.PayFrequencyEnum](docs/PayFrequencyEnum.md)
  - [MergeHrisApi.PayPeriodEnum](docs/PayPeriodEnum.md)
  - [MergeHrisApi.PayrollRun](docs/PayrollRun.md)
+ - [MergeHrisApi.PolicyTypeEnum](docs/PolicyTypeEnum.md)
  - [MergeHrisApi.RemoteData](docs/RemoteData.md)
  - [MergeHrisApi.RemoteDataRequest](docs/RemoteDataRequest.md)
  - [MergeHrisApi.RemoteKey](docs/RemoteKey.md)
  - [MergeHrisApi.RemoteKeyForRegenerationRequest](docs/RemoteKeyForRegenerationRequest.md)
  - [MergeHrisApi.RemoteResponse](docs/RemoteResponse.md)
+ - [MergeHrisApi.RequestFormatEnum](docs/RequestFormatEnum.md)
  - [MergeHrisApi.RequestTypeEnum](docs/RequestTypeEnum.md)
  - [MergeHrisApi.RunStateEnum](docs/RunStateEnum.md)
  - [MergeHrisApi.RunTypeEnum](docs/RunTypeEnum.md)
@@ -185,6 +200,7 @@ Class | Method | HTTP request | Description
  - [MergeHrisApi.Team](docs/Team.md)
  - [MergeHrisApi.TimeOff](docs/TimeOff.md)
  - [MergeHrisApi.TimeOffBalance](docs/TimeOffBalance.md)
+ - [MergeHrisApi.TimeOffRequest](docs/TimeOffRequest.md)
  - [MergeHrisApi.TimeOffStatusEnum](docs/TimeOffStatusEnum.md)
  - [MergeHrisApi.TypeEnum](docs/TypeEnum.md)
  - [MergeHrisApi.UnitsEnum](docs/UnitsEnum.md)

@@ -34,14 +34,18 @@ let opts = {
   'createdAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects created after this datetime.
   'createdBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects created before this datetime.
   'cursor': cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw, // String | The pagination cursor value.
-  'employeeId': "employeeId_example", // String | If provided, will only return time off for this employee.
+  'employeeId': "employeeId_example", // String | If provided, will only return employee payroll runs for this employee.
+  'endedAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return employee payroll runs ended after this datetime.
+  'endedBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return employee payroll runs ended before this datetime.
   'expand': employee,payroll_run, // String | Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
   'includeRemoteData': true, // Boolean | Whether to include the original data Merge fetched from the third-party to produce these models.
   'modifiedAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects modified after this datetime.
   'modifiedBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects modified before this datetime.
   'pageSize': 56, // Number | Number of results to return per page.
   'payrollRunId': "payrollRunId_example", // String | If provided, will only return employee payroll runs for this employee.
-  'remoteId': "remoteId_example" // String | The API provider's ID for the given object.
+  'remoteId': "remoteId_example", // String | The API provider's ID for the given object.
+  'startedAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return employee payroll runs started after this datetime.
+  'startedBefore': new Date("2013-10-20T19:20:30+01:00") // Date | If provided, will only return employee payroll runs started before this datetime.
 };
 apiInstance.employeePayrollRunsList(xAccountToken, opts, (error, data, response) => {
   if (error) {
@@ -61,7 +65,9 @@ Name | Type | Description  | Notes
  **createdAfter** | **Date**| If provided, will only return objects created after this datetime. | [optional] 
  **createdBefore** | **Date**| If provided, will only return objects created before this datetime. | [optional] 
  **cursor** | **String**| The pagination cursor value. | [optional] 
- **employeeId** | **String**| If provided, will only return time off for this employee. | [optional] 
+ **employeeId** | **String**| If provided, will only return employee payroll runs for this employee. | [optional] 
+ **endedAfter** | **Date**| If provided, will only return employee payroll runs ended after this datetime. | [optional] 
+ **endedBefore** | **Date**| If provided, will only return employee payroll runs ended before this datetime. | [optional] 
  **expand** | **String**| Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces. | [optional] 
  **includeRemoteData** | **Boolean**| Whether to include the original data Merge fetched from the third-party to produce these models. | [optional] 
  **modifiedAfter** | **Date**| If provided, will only return objects modified after this datetime. | [optional] 
@@ -69,6 +75,8 @@ Name | Type | Description  | Notes
  **pageSize** | **Number**| Number of results to return per page. | [optional] 
  **payrollRunId** | **String**| If provided, will only return employee payroll runs for this employee. | [optional] 
  **remoteId** | **String**| The API provider&#39;s ID for the given object. | [optional] 
+ **startedAfter** | **Date**| If provided, will only return employee payroll runs started after this datetime. | [optional] 
+ **startedBefore** | **Date**| If provided, will only return employee payroll runs started before this datetime. | [optional] 
 
 ### Return type
 
