@@ -75,13 +75,6 @@ export default class PayFrequencyEnum {
         "PRO_RATA" = "PRO_RATA";
 
     
-        /**
-         * value: "NULL"
-         * @const
-         */
-        "NULL" = "NULL";
-
-    
 
     /**
     * Returns a <code>PayFrequencyEnum</code> enum value from a Javascript object name.

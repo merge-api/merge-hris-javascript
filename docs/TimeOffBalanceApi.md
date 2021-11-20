@@ -40,6 +40,7 @@ let opts = {
   'modifiedAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects modified after this datetime.
   'modifiedBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects modified before this datetime.
   'pageSize': 56, // Number | Number of results to return per page.
+  'policyType': "policyType_example", // String | If provided, will only return TimeOffBalance with this policy type. Options: ('VACATION', 'SICK', 'PERSONAL', 'JURY_DUTY', 'VOLUNTEER', 'BEREAVEMENT')
   'remoteId': "remoteId_example" // String | The API provider's ID for the given object.
 };
 apiInstance.timeOffBalanceList(xAccountToken, opts, (error, data, response) => {
@@ -66,6 +67,7 @@ Name | Type | Description  | Notes
  **modifiedAfter** | **Date**| If provided, will only return objects modified after this datetime. | [optional] 
  **modifiedBefore** | **Date**| If provided, will only return objects modified before this datetime. | [optional] 
  **pageSize** | **Number**| Number of results to return per page. | [optional] 
+ **policyType** | **String**| If provided, will only return TimeOffBalance with this policy type. Options: (&#39;VACATION&#39;, &#39;SICK&#39;, &#39;PERSONAL&#39;, &#39;JURY_DUTY&#39;, &#39;VOLUNTEER&#39;, &#39;BEREAVEMENT&#39;) | [optional] 
  **remoteId** | **String**| The API provider&#39;s ID for the given object. | [optional] 
 
 ### Return type
@@ -88,7 +90,7 @@ Name | Type | Description  | Notes
 
 
 
-Returns an &#x60;TimeOffBalance&#x60; object with the given &#x60;id&#x60;.
+Returns a &#x60;TimeOffBalance&#x60; object with the given &#x60;id&#x60;.
 
 ### Example
 

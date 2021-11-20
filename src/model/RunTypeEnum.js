@@ -20,13 +20,6 @@ import ApiClient from '../ApiClient';
 export default class RunTypeEnum {
     
         /**
-         * value: "INIT"
-         * @const
-         */
-        "INIT" = "INIT";
-
-    
-        /**
          * value: "REGULAR"
          * @const
          */
@@ -55,73 +48,10 @@ export default class RunTypeEnum {
 
     
         /**
-         * value: "RECONCILIATION"
-         * @const
-         */
-        "RECONCILIATION" = "RECONCILIATION";
-
-    
-        /**
-         * value: "NEW_HIRE"
-         * @const
-         */
-        "NEW_HIRE" = "NEW_HIRE";
-
-    
-        /**
-         * value: "POP"
-         * @const
-         */
-        "POP" = "POP";
-
-    
-        /**
-         * value: "TRANSITION"
-         * @const
-         */
-        "TRANSITION" = "TRANSITION";
-
-    
-        /**
-         * value: "CORRECTION_DISPLAY"
-         * @const
-         */
-        "CORRECTION_DISPLAY" = "CORRECTION_DISPLAY";
-
-    
-        /**
-         * value: "EXCESS_HOURS"
-         * @const
-         */
-        "EXCESS_HOURS" = "EXCESS_HOURS";
-
-    
-        /**
          * value: "SIGN_ON_BONUS"
          * @const
          */
         "SIGN_ON_BONUS" = "SIGN_ON_BONUS";
-
-    
-        /**
-         * value: "S_CORP"
-         * @const
-         */
-        "S_CORP" = "S_CORP";
-
-    
-        /**
-         * value: "FRINGE_BENEFITS"
-         * @const
-         */
-        "FRINGE_BENEFITS" = "FRINGE_BENEFITS";
-
-    
-        /**
-         * value: "CONTRACTOR_LATE_PAYMENTS"
-         * @const
-         */
-        "CONTRACTOR_LATE_PAYMENTS" = "CONTRACTOR_LATE_PAYMENTS";
 
     
 

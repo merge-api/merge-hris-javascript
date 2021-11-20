@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] [readonly] 
 **remoteId** | **String** | The third-party API ID of the matching object. | [optional] 
+**employee** | **String** | The employee holding this position. | [optional] 
 **jobTitle** | **String** | The position&#39;s title. | [optional] 
 **payRate** | **Number** | The position&#39;s pay rate in dollars. | [optional] 
 **payPeriod** | [**PayPeriodEnum**](PayPeriodEnum.md) | The time period this pay rate encompasses. | [optional] 

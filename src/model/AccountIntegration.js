@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import CategoriesEnum from './CategoriesEnum';
 
 /**
  * The AccountIntegration model module.

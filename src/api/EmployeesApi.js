@@ -101,13 +101,15 @@ export default class EmployeesApi {
      * @param {String} opts.cursor The pagination cursor value.
      * @param {module:model/String} opts.expand Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
      * @param {Boolean} opts.includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
-     * @param {Boolean} opts.includeSensitiveFields Whether to include sensetive fields (such as social security numbers) in the response.
+     * @param {Boolean} opts.includeSensitiveFields Whether to include sensitive fields (such as social security numbers) in the response.
      * @param {String} opts.managerId If provided, will only return employees for this manager.
      * @param {Date} opts.modifiedAfter If provided, will only return objects modified after this datetime.
      * @param {Date} opts.modifiedBefore If provided, will only return objects modified before this datetime.
      * @param {Number} opts.pageSize Number of results to return per page.
+     * @param {String} opts.personalEmail If provided, will only return Employees with this personal email
      * @param {String} opts.remoteId The API provider's ID for the given object.
      * @param {String} opts.teamId If provided, will only return employees for this team.
+     * @param {String} opts.workEmail If provided, will only return Employees with this work email
      * @param {String} opts.workLocationId If provided, will only return employees for this location.
      * @param {module:api/EmployeesApi~employeesListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedEmployeeList}
@@ -134,8 +136,10 @@ export default class EmployeesApi {
         'modified_after': opts['modifiedAfter'],
         'modified_before': opts['modifiedBefore'],
         'page_size': opts['pageSize'],
+        'personal_email': opts['personalEmail'],
         'remote_id': opts['remoteId'],
         'team_id': opts['teamId'],
+        'work_email': opts['workEmail'],
         'work_location_id': opts['workLocationId']
       };
       let headerParams = {
@@ -170,7 +174,7 @@ export default class EmployeesApi {
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.expand Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
      * @param {Boolean} opts.includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
-     * @param {Boolean} opts.includeSensitiveFields Whether to include sensetive fields (such as social security numbers) in the response.
+     * @param {Boolean} opts.includeSensitiveFields Whether to include sensitive fields (such as social security numbers) in the response.
      * @param {module:api/EmployeesApi~employeesRetrieveCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Employee}
      */

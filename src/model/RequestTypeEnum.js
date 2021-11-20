@@ -47,6 +47,20 @@ export default class RequestTypeEnum {
         "JURY_DUTY" = "JURY_DUTY";
 
     
+        /**
+         * value: "VOLUNTEER"
+         * @const
+         */
+        "VOLUNTEER" = "VOLUNTEER";
+
+    
+        /**
+         * value: "BEREAVEMENT"
+         * @const
+         */
+        "BEREAVEMENT" = "BEREAVEMENT";
+
+    
 
     /**
     * Returns a <code>RequestTypeEnum</code> enum value from a Javascript object name.

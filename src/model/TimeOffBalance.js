@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import PolicyTypeEnum from './PolicyTypeEnum';
 import RemoteData from './RemoteData';
 
 /**
@@ -64,6 +65,9 @@ class TimeOffBalance {
             if (data.hasOwnProperty('used')) {
                 obj['used'] = ApiClient.convertToType(data['used'], 'Number');
             }
+            if (data.hasOwnProperty('policy_type')) {
+                obj['policy_type'] = ApiClient.convertToType(data['policy_type'], PolicyTypeEnum);
+            }
             if (data.hasOwnProperty('remote_data')) {
                 obj['remote_data'] = ApiClient.convertToType(data['remote_data'], [RemoteData]);
             }
@@ -92,16 +96,22 @@ TimeOffBalance.prototype['remote_id'] = undefined;
 TimeOffBalance.prototype['employee'] = undefined;
 
 /**
- * The current PTO balance.
+ * The current PTO balance in terms of hours.
  * @member {Number} balance
  */
 TimeOffBalance.prototype['balance'] = undefined;
 
 /**
- * The amount of PTO used.
+ * The amount of PTO used in terms of hours.
  * @member {Number} used
  */
 TimeOffBalance.prototype['used'] = undefined;
+
+/**
+ * The policy type of this time off balance.
+ * @member {module:model/PolicyTypeEnum} policy_type
+ */
+TimeOffBalance.prototype['policy_type'] = undefined;
 
 /**
  * @member {Array.<module:model/RemoteData>} remote_data

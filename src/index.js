@@ -13,22 +13,28 @@
 
 
 import ApiClient from './ApiClient';
+import AccountDetails from './model/AccountDetails';
+import AccountDetailsAndActions from './model/AccountDetailsAndActions';
+import AccountDetailsAndActionsIntegration from './model/AccountDetailsAndActionsIntegration';
+import AccountDetailsAndActionsStatusEnum from './model/AccountDetailsAndActionsStatusEnum';
 import AccountIntegration from './model/AccountIntegration';
 import AccountToken from './model/AccountToken';
 import AvailableActions from './model/AvailableActions';
 import Benefit from './model/Benefit';
 import BenefitPlanTypeEnum from './model/BenefitPlanTypeEnum';
 import BenefitRequest from './model/BenefitRequest';
+import CategoriesEnum from './model/CategoriesEnum';
+import CategoryEnum from './model/CategoryEnum';
 import Company from './model/Company';
 import CountryEnum from './model/CountryEnum';
 import DataPassthroughRequest from './model/DataPassthroughRequest';
 import Deduction from './model/Deduction';
+import DeductionRequest from './model/DeductionRequest';
 import Earning from './model/Earning';
 import Employee from './model/Employee';
 import EmployeePayrollRun from './model/EmployeePayrollRun';
 import EmployeeRequest from './model/EmployeeRequest';
 import Employment from './model/Employment';
-import EmploymentRequest from './model/EmploymentRequest';
 import EmploymentStatusEnum from './model/EmploymentStatusEnum';
 import EmploymentTypeEnum from './model/EmploymentTypeEnum';
 import EndUserDetailsRequest from './model/EndUserDetailsRequest';
@@ -43,8 +49,10 @@ import Location from './model/Location';
 import MaritalStatusEnum from './model/MaritalStatusEnum';
 import MethodEnum from './model/MethodEnum';
 import ModelOperation from './model/ModelOperation';
+import PaginatedAccountDetailsAndActionsList from './model/PaginatedAccountDetailsAndActionsList';
 import PaginatedBenefitList from './model/PaginatedBenefitList';
 import PaginatedCompanyList from './model/PaginatedCompanyList';
+import PaginatedDeductionList from './model/PaginatedDeductionList';
 import PaginatedEmployeeList from './model/PaginatedEmployeeList';
 import PaginatedEmployeePayrollRunList from './model/PaginatedEmployeePayrollRunList';
 import PaginatedEmploymentList from './model/PaginatedEmploymentList';
@@ -59,11 +67,13 @@ import PayCurrencyEnum from './model/PayCurrencyEnum';
 import PayFrequencyEnum from './model/PayFrequencyEnum';
 import PayPeriodEnum from './model/PayPeriodEnum';
 import PayrollRun from './model/PayrollRun';
+import PolicyTypeEnum from './model/PolicyTypeEnum';
 import RemoteData from './model/RemoteData';
 import RemoteDataRequest from './model/RemoteDataRequest';
 import RemoteKey from './model/RemoteKey';
 import RemoteKeyForRegenerationRequest from './model/RemoteKeyForRegenerationRequest';
 import RemoteResponse from './model/RemoteResponse';
+import RequestFormatEnum from './model/RequestFormatEnum';
 import RequestTypeEnum from './model/RequestTypeEnum';
 import RunStateEnum from './model/RunStateEnum';
 import RunTypeEnum from './model/RunTypeEnum';
@@ -73,13 +83,16 @@ import Tax from './model/Tax';
 import Team from './model/Team';
 import TimeOff from './model/TimeOff';
 import TimeOffBalance from './model/TimeOffBalance';
+import TimeOffRequest from './model/TimeOffRequest';
 import TimeOffStatusEnum from './model/TimeOffStatusEnum';
 import TypeEnum from './model/TypeEnum';
 import UnitsEnum from './model/UnitsEnum';
+import AccountDetailsApi from './api/AccountDetailsApi';
 import AccountTokenApi from './api/AccountTokenApi';
 import AvailableActionsApi from './api/AvailableActionsApi';
 import BenefitsApi from './api/BenefitsApi';
 import CompaniesApi from './api/CompaniesApi';
+import DeductionsApi from './api/DeductionsApi';
 import DeleteAccountApi from './api/DeleteAccountApi';
 import EmployeePayrollRunsApi from './api/EmployeePayrollRunsApi';
 import EmployeesApi from './api/EmployeesApi';
@@ -87,6 +100,7 @@ import EmploymentsApi from './api/EmploymentsApi';
 import GenerateKeyApi from './api/GenerateKeyApi';
 import IssuesApi from './api/IssuesApi';
 import LinkTokenApi from './api/LinkTokenApi';
+import LinkedAccountsApi from './api/LinkedAccountsApi';
 import LocationsApi from './api/LocationsApi';
 import PassthroughApi from './api/PassthroughApi';
 import PayrollRunsApi from './api/PayrollRunsApi';
@@ -136,6 +150,30 @@ export {
     ApiClient,
 
     /**
+     * The AccountDetails model constructor.
+     * @property {module:model/AccountDetails}
+     */
+    AccountDetails,
+
+    /**
+     * The AccountDetailsAndActions model constructor.
+     * @property {module:model/AccountDetailsAndActions}
+     */
+    AccountDetailsAndActions,
+
+    /**
+     * The AccountDetailsAndActionsIntegration model constructor.
+     * @property {module:model/AccountDetailsAndActionsIntegration}
+     */
+    AccountDetailsAndActionsIntegration,
+
+    /**
+     * The AccountDetailsAndActionsStatusEnum model constructor.
+     * @property {module:model/AccountDetailsAndActionsStatusEnum}
+     */
+    AccountDetailsAndActionsStatusEnum,
+
+    /**
      * The AccountIntegration model constructor.
      * @property {module:model/AccountIntegration}
      */
@@ -172,6 +210,18 @@ export {
     BenefitRequest,
 
     /**
+     * The CategoriesEnum model constructor.
+     * @property {module:model/CategoriesEnum}
+     */
+    CategoriesEnum,
+
+    /**
+     * The CategoryEnum model constructor.
+     * @property {module:model/CategoryEnum}
+     */
+    CategoryEnum,
+
+    /**
      * The Company model constructor.
      * @property {module:model/Company}
      */
@@ -194,6 +244,12 @@ export {
      * @property {module:model/Deduction}
      */
     Deduction,
+
+    /**
+     * The DeductionRequest model constructor.
+     * @property {module:model/DeductionRequest}
+     */
+    DeductionRequest,
 
     /**
      * The Earning model constructor.
@@ -224,12 +280,6 @@ export {
      * @property {module:model/Employment}
      */
     Employment,
-
-    /**
-     * The EmploymentRequest model constructor.
-     * @property {module:model/EmploymentRequest}
-     */
-    EmploymentRequest,
 
     /**
      * The EmploymentStatusEnum model constructor.
@@ -316,6 +366,12 @@ export {
     ModelOperation,
 
     /**
+     * The PaginatedAccountDetailsAndActionsList model constructor.
+     * @property {module:model/PaginatedAccountDetailsAndActionsList}
+     */
+    PaginatedAccountDetailsAndActionsList,
+
+    /**
      * The PaginatedBenefitList model constructor.
      * @property {module:model/PaginatedBenefitList}
      */
@@ -326,6 +382,12 @@ export {
      * @property {module:model/PaginatedCompanyList}
      */
     PaginatedCompanyList,
+
+    /**
+     * The PaginatedDeductionList model constructor.
+     * @property {module:model/PaginatedDeductionList}
+     */
+    PaginatedDeductionList,
 
     /**
      * The PaginatedEmployeeList model constructor.
@@ -412,6 +474,12 @@ export {
     PayrollRun,
 
     /**
+     * The PolicyTypeEnum model constructor.
+     * @property {module:model/PolicyTypeEnum}
+     */
+    PolicyTypeEnum,
+
+    /**
      * The RemoteData model constructor.
      * @property {module:model/RemoteData}
      */
@@ -440,6 +508,12 @@ export {
      * @property {module:model/RemoteResponse}
      */
     RemoteResponse,
+
+    /**
+     * The RequestFormatEnum model constructor.
+     * @property {module:model/RequestFormatEnum}
+     */
+    RequestFormatEnum,
 
     /**
      * The RequestTypeEnum model constructor.
@@ -496,6 +570,12 @@ export {
     TimeOffBalance,
 
     /**
+     * The TimeOffRequest model constructor.
+     * @property {module:model/TimeOffRequest}
+     */
+    TimeOffRequest,
+
+    /**
      * The TimeOffStatusEnum model constructor.
      * @property {module:model/TimeOffStatusEnum}
      */
@@ -512,6 +592,12 @@ export {
      * @property {module:model/UnitsEnum}
      */
     UnitsEnum,
+
+    /**
+    * The AccountDetailsApi service constructor.
+    * @property {module:api/AccountDetailsApi}
+    */
+    AccountDetailsApi,
 
     /**
     * The AccountTokenApi service constructor.
@@ -536,6 +622,12 @@ export {
     * @property {module:api/CompaniesApi}
     */
     CompaniesApi,
+
+    /**
+    * The DeductionsApi service constructor.
+    * @property {module:api/DeductionsApi}
+    */
+    DeductionsApi,
 
     /**
     * The DeleteAccountApi service constructor.
@@ -578,6 +670,12 @@ export {
     * @property {module:api/LinkTokenApi}
     */
     LinkTokenApi,
+
+    /**
+    * The LinkedAccountsApi service constructor.
+    * @property {module:api/LinkedAccountsApi}
+    */
+    LinkedAccountsApi,
 
     /**
     * The LocationsApi service constructor.

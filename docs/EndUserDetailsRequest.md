@@ -7,20 +7,7 @@ Name | Type | Description | Notes
 **endUserEmailAddress** | **String** |  | 
 **endUserOrganizationName** | **String** |  | 
 **endUserOriginId** | **String** |  | 
-**categories** | **[String]** |  | [optional] 
+**categories** | [**[CategoriesEnum]**](CategoriesEnum.md) |  | [optional] 
 **integration** | **String** |  | [optional] 
-
-
-
-## Enum: [CategoriesEnum]
-
-
-* `hris` (value: `"hris"`)
-
-* `ats` (value: `"ats"`)
-
-* `accounting` (value: `"accounting"`)
-
-
 
 

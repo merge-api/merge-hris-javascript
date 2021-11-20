@@ -92,7 +92,7 @@ export default class SyncStatusApi {
      */
 
     /**
-     * Force resync of all models.
+     * Force re-sync of all models. This is only available for organizations on Merge's Grow and Expand plans.
      * @param {String} xAccountToken Token identifying the end user.
      * @param {module:api/SyncStatusApi~syncStatusResyncCreateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SyncStatus}

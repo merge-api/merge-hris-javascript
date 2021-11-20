@@ -33,6 +33,13 @@ export default class SyncStatusStatusEnum {
         "DONE" = "DONE";
 
     
+        /**
+         * value: "FAILED"
+         * @const
+         */
+        "FAILED" = "FAILED";
+
+    
 
     /**
     * Returns a <code>SyncStatusStatusEnum</code> enum value from a Javascript object name.

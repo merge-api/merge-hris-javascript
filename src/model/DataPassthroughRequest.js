@@ -13,6 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import MethodEnum from './MethodEnum';
+import RequestFormatEnum from './RequestFormatEnum';
 
 /**
  * The DataPassthroughRequest model module.
@@ -63,10 +64,13 @@ class DataPassthroughRequest {
                 obj['base_url_override'] = ApiClient.convertToType(data['base_url_override'], 'String');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], {'String': Object});
+                obj['data'] = ApiClient.convertToType(data['data'], 'String');
             }
             if (data.hasOwnProperty('headers')) {
                 obj['headers'] = ApiClient.convertToType(data['headers'], {'String': Object});
+            }
+            if (data.hasOwnProperty('request_format')) {
+                obj['request_format'] = ApiClient.convertToType(data['request_format'], RequestFormatEnum);
             }
         }
         return obj;
@@ -91,7 +95,7 @@ DataPassthroughRequest.prototype['path'] = undefined;
 DataPassthroughRequest.prototype['base_url_override'] = undefined;
 
 /**
- * @member {Object.<String, Object>} data
+ * @member {String} data
  */
 DataPassthroughRequest.prototype['data'] = undefined;
 
@@ -99,6 +103,11 @@ DataPassthroughRequest.prototype['data'] = undefined;
  * @member {Object.<String, Object>} headers
  */
 DataPassthroughRequest.prototype['headers'] = undefined;
+
+/**
+ * @member {module:model/RequestFormatEnum} request_format
+ */
+DataPassthroughRequest.prototype['request_format'] = undefined;
 
 
 

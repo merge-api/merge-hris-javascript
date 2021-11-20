@@ -56,6 +56,7 @@ export default class TimeOffBalanceApi {
      * @param {Date} opts.modifiedAfter If provided, will only return objects modified after this datetime.
      * @param {Date} opts.modifiedBefore If provided, will only return objects modified before this datetime.
      * @param {Number} opts.pageSize Number of results to return per page.
+     * @param {module:model/String} opts.policyType If provided, will only return TimeOffBalance with this policy type. Options: ('VACATION', 'SICK', 'PERSONAL', 'JURY_DUTY', 'VOLUNTEER', 'BEREAVEMENT')
      * @param {String} opts.remoteId The API provider's ID for the given object.
      * @param {module:api/TimeOffBalanceApi~timeOffBalanceListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedTimeOffBalanceList}
@@ -80,6 +81,7 @@ export default class TimeOffBalanceApi {
         'modified_after': opts['modifiedAfter'],
         'modified_before': opts['modifiedBefore'],
         'page_size': opts['pageSize'],
+        'policy_type': opts['policyType'],
         'remote_id': opts['remoteId']
       };
       let headerParams = {
@@ -108,7 +110,7 @@ export default class TimeOffBalanceApi {
      */
 
     /**
-     * Returns an `TimeOffBalance` object with the given `id`.
+     * Returns a `TimeOffBalance` object with the given `id`.
      * @param {String} xAccountToken Token identifying the end user.
      * @param {String} id 
      * @param {Object} opts Optional parameters
