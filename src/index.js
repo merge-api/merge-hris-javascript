@@ -35,6 +35,7 @@ import Employee from './model/Employee';
 import EmployeePayrollRun from './model/EmployeePayrollRun';
 import EmployeeRequest from './model/EmployeeRequest';
 import Employment from './model/Employment';
+import EmploymentRequest from './model/EmploymentRequest';
 import EmploymentStatusEnum from './model/EmploymentStatusEnum';
 import EmploymentTypeEnum from './model/EmploymentTypeEnum';
 import EndUserDetailsRequest from './model/EndUserDetailsRequest';
@@ -280,6 +281,12 @@ export {
      * @property {module:model/Employment}
      */
     Employment,
+
+    /**
+     * The EmploymentRequest model constructor.
+     * @property {module:model/EmploymentRequest}
+     */
+     EmploymentRequest,
 
     /**
      * The EmploymentStatusEnum model constructor.
