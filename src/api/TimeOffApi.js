@@ -16,6 +16,8 @@ import ApiClient from "../ApiClient";
 import PaginatedTimeOffList from '../model/PaginatedTimeOffList';
 import TimeOff from '../model/TimeOff';
 import TimeOffRequest from '../model/TimeOffRequest';
+import TimeOffEndpointRequest from '../model/TimeOffEndpointRequest';
+import TimeOffResponse from '../model/TimeOffResponse';
 
 /**
 * TimeOff service.
@@ -40,25 +42,29 @@ export default class TimeOffApi {
      * Callback function to receive the result of the timeOffCreate operation.
      * @callback module:api/TimeOffApi~timeOffCreateCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/TimeOff} data The data returned by the service call.
+     * @param {module:model/TimeOffResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * Creates a `TimeOff` object with the given values.
      * @param {String} xAccountToken Token identifying the end user.
+     * @param {module:model/TimeOffEndpointRequest} timeOffEndpointRequest 
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.runAsync Whether or not third-party updates should be run asynchronously.
-     * @param {module:model/TimeOffRequest} opts.timeOffRequest 
      * @param {module:api/TimeOffApi~timeOffCreateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TimeOff}
+     * data is of type: {@link module:model/TimeOffResponse}
      */
-    timeOffCreate(xAccountToken, opts, callback) {
+    timeOffCreate(xAccountToken, timeOffEndpointRequest, opts, callback) {
       opts = opts || {};
-      let postBody = opts['timeOffRequest'];
+      let postBody = timeOffEndpointRequest;
       // verify the required parameter 'xAccountToken' is set
       if (xAccountToken === undefined || xAccountToken === null) {
         throw new Error("Missing the required parameter 'xAccountToken' when calling timeOffCreate");
+      }
+      // verify the required parameter 'timeOffEndpointRequest' is set
+      if (timeOffEndpointRequest === undefined || timeOffEndpointRequest === null) {
+        throw new Error("Missing the required parameter 'timeOffEndpointRequest' when calling timeOffCreate");
       }
 
       let pathParams = {
