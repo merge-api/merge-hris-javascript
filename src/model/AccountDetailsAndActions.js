@@ -68,6 +68,9 @@ class AccountDetailsAndActions {
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], AccountDetailsAndActionsStatusEnum);
             }
+            if (data.hasOwnProperty('status_detail')) {
+                obj['status_detail'] = ApiClient.convertToType(data['status_detail'], 'String');
+            }
             if (data.hasOwnProperty('end_user_origin_id')) {
                 obj['end_user_origin_id'] = ApiClient.convertToType(data['end_user_origin_id'], 'String');
             }
@@ -101,6 +104,11 @@ AccountDetailsAndActions.prototype['category'] = undefined;
  * @member {module:model/AccountDetailsAndActionsStatusEnum} status
  */
 AccountDetailsAndActions.prototype['status'] = undefined;
+
+/**
+ * @member {String} status_detail
+ */
+AccountDetailsAndActions.prototype['status_detail'] = undefined;
 
 /**
  * @member {String} end_user_origin_id

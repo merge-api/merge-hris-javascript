@@ -25,7 +25,7 @@ class AccountDetailsAndActionsIntegration {
      * Constructs a new <code>AccountDetailsAndActionsIntegration</code>.
      * @alias module:model/AccountDetailsAndActionsIntegration
      * @param name {String} 
-     * @param categories {module:model/CategoriesEnum} 
+     * @param categories {Array.<module:model/CategoriesEnum>} 
      * @param color {String} 
      * @param slug {String} 
      * @param passthroughAvailable {Boolean} 
@@ -63,7 +63,7 @@ class AccountDetailsAndActionsIntegration {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('categories')) {
-                obj['categories'] = CategoriesEnum.constructFromObject(data['categories']);
+                obj['categories'] = ApiClient.convertToType(data['categories'], [CategoriesEnum]);
             }
             if (data.hasOwnProperty('image')) {
                 obj['image'] = ApiClient.convertToType(data['image'], 'String');
@@ -96,7 +96,7 @@ class AccountDetailsAndActionsIntegration {
 AccountDetailsAndActionsIntegration.prototype['name'] = undefined;
 
 /**
- * @member {module:model/CategoriesEnum} categories
+ * @member {Array.<module:model/CategoriesEnum>} categories
  */
 AccountDetailsAndActionsIntegration.prototype['categories'] = undefined;
 

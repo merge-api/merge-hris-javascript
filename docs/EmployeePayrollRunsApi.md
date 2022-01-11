@@ -38,6 +38,7 @@ let opts = {
   'endedAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return employee payroll runs ended after this datetime.
   'endedBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return employee payroll runs ended before this datetime.
   'expand': employee,payroll_run, // String | Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
+  'includeDeletedData': true, // Boolean | Whether to include data that was deleted in the third-party service.
   'includeRemoteData': true, // Boolean | Whether to include the original data Merge fetched from the third-party to produce these models.
   'modifiedAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects modified after this datetime.
   'modifiedBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects modified before this datetime.
@@ -69,6 +70,7 @@ Name | Type | Description  | Notes
  **endedAfter** | **Date**| If provided, will only return employee payroll runs ended after this datetime. | [optional] 
  **endedBefore** | **Date**| If provided, will only return employee payroll runs ended before this datetime. | [optional] 
  **expand** | **String**| Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces. | [optional] 
+ **includeDeletedData** | **Boolean**| Whether to include data that was deleted in the third-party service. | [optional] 
  **includeRemoteData** | **Boolean**| Whether to include the original data Merge fetched from the third-party to produce these models. | [optional] 
  **modifiedAfter** | **Date**| If provided, will only return objects modified after this datetime. | [optional] 
  **modifiedBefore** | **Date**| If provided, will only return objects modified before this datetime. | [optional] 

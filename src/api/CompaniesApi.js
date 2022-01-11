@@ -50,6 +50,7 @@ export default class CompaniesApi {
      * @param {Date} opts.createdAfter If provided, will only return objects created after this datetime.
      * @param {Date} opts.createdBefore If provided, will only return objects created before this datetime.
      * @param {String} opts.cursor The pagination cursor value.
+     * @param {Boolean} opts.includeDeletedData Whether to include data that was deleted in the third-party service.
      * @param {Boolean} opts.includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
      * @param {Date} opts.modifiedAfter If provided, will only return objects modified after this datetime.
      * @param {Date} opts.modifiedBefore If provided, will only return objects modified before this datetime.
@@ -72,6 +73,7 @@ export default class CompaniesApi {
         'created_after': opts['createdAfter'],
         'created_before': opts['createdBefore'],
         'cursor': opts['cursor'],
+        'include_deleted_data': opts['includeDeletedData'],
         'include_remote_data': opts['includeRemoteData'],
         'modified_after': opts['modifiedAfter'],
         'modified_before': opts['modifiedBefore'],

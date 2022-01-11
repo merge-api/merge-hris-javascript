@@ -54,7 +54,7 @@ class AccountIntegration {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('categories')) {
-                obj['categories'] = ApiClient.convertToType(data['categories'], ['String']);
+                obj['categories'] = ApiClient.convertToType(data['categories'], [CategoriesEnum]);
             }
             if (data.hasOwnProperty('image')) {
                 obj['image'] = ApiClient.convertToType(data['image'], 'String');

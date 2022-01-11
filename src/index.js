@@ -51,6 +51,7 @@ import MaritalStatusEnum from './model/MaritalStatusEnum';
 import MethodEnum from './model/MethodEnum';
 import ModelOperation from './model/ModelOperation';
 import PaginatedAccountDetailsAndActionsList from './model/PaginatedAccountDetailsAndActionsList';
+import PaginatedBankInfoList from './model/PaginatedBankInfoList';
 import PaginatedBenefitList from './model/PaginatedBenefitList';
 import PaginatedCompanyList from './model/PaginatedCompanyList';
 import PaginatedDeductionList from './model/PaginatedDeductionList';
@@ -59,6 +60,7 @@ import PaginatedEmployeePayrollRunList from './model/PaginatedEmployeePayrollRun
 import PaginatedEmploymentList from './model/PaginatedEmploymentList';
 import PaginatedIssueList from './model/PaginatedIssueList';
 import PaginatedLocationList from './model/PaginatedLocationList';
+import PaginatedPayGroupList from './model/PaginatedPayGroupList';
 import PaginatedPayrollRunList from './model/PaginatedPayrollRunList';
 import PaginatedSyncStatusList from './model/PaginatedSyncStatusList';
 import PaginatedTeamList from './model/PaginatedTeamList';
@@ -66,6 +68,7 @@ import PaginatedTimeOffBalanceList from './model/PaginatedTimeOffBalanceList';
 import PaginatedTimeOffList from './model/PaginatedTimeOffList';
 import PayCurrencyEnum from './model/PayCurrencyEnum';
 import PayFrequencyEnum from './model/PayFrequencyEnum';
+import PayGroup from './model/PayGroup';
 import PayPeriodEnum from './model/PayPeriodEnum';
 import PayrollRun from './model/PayrollRun';
 import PolicyTypeEnum from './model/PolicyTypeEnum';
@@ -84,13 +87,18 @@ import Tax from './model/Tax';
 import Team from './model/Team';
 import TimeOff from './model/TimeOff';
 import TimeOffBalance from './model/TimeOffBalance';
+import TimeOffEndpointRequest from './model/TimeOffEndpointRequest';
 import TimeOffRequest from './model/TimeOffRequest';
+import TimeOffResponse from './model/TimeOffResponse';
 import TimeOffStatusEnum from './model/TimeOffStatusEnum';
 import TypeEnum from './model/TypeEnum';
 import UnitsEnum from './model/UnitsEnum';
+import ValidationProblemSource from './model/ValidationProblemSource';
+import WarningValidationProblem from './model/WarningValidationProblem';
 import AccountDetailsApi from './api/AccountDetailsApi';
 import AccountTokenApi from './api/AccountTokenApi';
 import AvailableActionsApi from './api/AvailableActionsApi';
+import BankInfoApi from './api/BankInfoApi';
 import BenefitsApi from './api/BenefitsApi';
 import CompaniesApi from './api/CompaniesApi';
 import DeductionsApi from './api/DeductionsApi';
@@ -187,10 +195,22 @@ export {
     AccountToken,
 
     /**
+     * The AccountTypeEnum model constructor.
+     * @property {module:model/AccountTypeEnum}
+     */
+    AccountTypeEnum,
+
+    /**
      * The AvailableActions model constructor.
      * @property {module:model/AvailableActions}
      */
     AvailableActions,
+
+    /**
+     * The BankInfo model constructor.
+     * @property {module:model/BankInfo}
+     */
+    BankInfo,
 
     /**
      * The Benefit model constructor.
@@ -203,12 +223,6 @@ export {
      * @property {module:model/BenefitPlanTypeEnum}
      */
     BenefitPlanTypeEnum,
-
-    /**
-     * The BenefitRequest model constructor.
-     * @property {module:model/BenefitRequest}
-     */
-    BenefitRequest,
 
     /**
      * The CategoriesEnum model constructor.
@@ -247,12 +261,6 @@ export {
     Deduction,
 
     /**
-     * The DeductionRequest model constructor.
-     * @property {module:model/DeductionRequest}
-     */
-    DeductionRequest,
-
-    /**
      * The Earning model constructor.
      * @property {module:model/Earning}
      */
@@ -271,22 +279,10 @@ export {
     EmployeePayrollRun,
 
     /**
-     * The EmployeeRequest model constructor.
-     * @property {module:model/EmployeeRequest}
-     */
-    EmployeeRequest,
-
-    /**
      * The Employment model constructor.
      * @property {module:model/Employment}
      */
     Employment,
-
-    /**
-     * The EmploymentRequest model constructor.
-     * @property {module:model/EmploymentRequest}
-     */
-     EmploymentRequest,
 
     /**
      * The EmploymentStatusEnum model constructor.
@@ -305,6 +301,12 @@ export {
      * @property {module:model/EndUserDetailsRequest}
      */
     EndUserDetailsRequest,
+
+    /**
+     * The ErrorValidationProblem model constructor.
+     * @property {module:model/ErrorValidationProblem}
+     */
+    ErrorValidationProblem,
 
     /**
      * The EthnicityEnum model constructor.
@@ -379,6 +381,12 @@ export {
     PaginatedAccountDetailsAndActionsList,
 
     /**
+     * The PaginatedBankInfoList model constructor.
+     * @property {module:model/PaginatedBankInfoList}
+     */
+    PaginatedBankInfoList,
+
+    /**
      * The PaginatedBenefitList model constructor.
      * @property {module:model/PaginatedBenefitList}
      */
@@ -427,6 +435,12 @@ export {
     PaginatedLocationList,
 
     /**
+     * The PaginatedPayGroupList model constructor.
+     * @property {module:model/PaginatedPayGroupList}
+     */
+    PaginatedPayGroupList,
+
+    /**
      * The PaginatedPayrollRunList model constructor.
      * @property {module:model/PaginatedPayrollRunList}
      */
@@ -467,6 +481,12 @@ export {
      * @property {module:model/PayFrequencyEnum}
      */
     PayFrequencyEnum,
+
+    /**
+     * The PayGroup model constructor.
+     * @property {module:model/PayGroup}
+     */
+    PayGroup,
 
     /**
      * The PayPeriodEnum model constructor.
@@ -577,10 +597,22 @@ export {
     TimeOffBalance,
 
     /**
+     * The TimeOffEndpointRequest model constructor.
+     * @property {module:model/TimeOffEndpointRequest}
+     */
+    TimeOffEndpointRequest,
+
+    /**
      * The TimeOffRequest model constructor.
      * @property {module:model/TimeOffRequest}
      */
     TimeOffRequest,
+
+    /**
+     * The TimeOffResponse model constructor.
+     * @property {module:model/TimeOffResponse}
+     */
+    TimeOffResponse,
 
     /**
      * The TimeOffStatusEnum model constructor.
@@ -601,6 +633,18 @@ export {
     UnitsEnum,
 
     /**
+     * The ValidationProblemSource model constructor.
+     * @property {module:model/ValidationProblemSource}
+     */
+    ValidationProblemSource,
+
+    /**
+     * The WarningValidationProblem model constructor.
+     * @property {module:model/WarningValidationProblem}
+     */
+    WarningValidationProblem,
+
+    /**
     * The AccountDetailsApi service constructor.
     * @property {module:api/AccountDetailsApi}
     */
@@ -617,6 +661,12 @@ export {
     * @property {module:api/AvailableActionsApi}
     */
     AvailableActionsApi,
+
+    /**
+    * The BankInfoApi service constructor.
+    * @property {module:api/BankInfoApi}
+    */
+    BankInfoApi,
 
     /**
     * The BenefitsApi service constructor.
@@ -661,6 +711,12 @@ export {
     EmploymentsApi,
 
     /**
+    * The ForceResyncApi service constructor.
+    * @property {module:api/ForceResyncApi}
+    */
+    ForceResyncApi,
+
+    /**
     * The GenerateKeyApi service constructor.
     * @property {module:api/GenerateKeyApi}
     */
@@ -697,6 +753,12 @@ export {
     PassthroughApi,
 
     /**
+    * The PayGroupsApi service constructor.
+    * @property {module:api/PayGroupsApi}
+    */
+    PayGroupsApi,
+
+    /**
     * The PayrollRunsApi service constructor.
     * @property {module:api/PayrollRunsApi}
     */
@@ -727,8 +789,8 @@ export {
     TimeOffApi,
 
     /**
-    * The TimeOffBalanceApi service constructor.
-    * @property {module:api/TimeOffBalanceApi}
+    * The TimeOffBalancesApi service constructor.
+    * @property {module:api/TimeOffBalancesApi}
     */
-    TimeOffBalanceApi
+    TimeOffBalancesApi
 };

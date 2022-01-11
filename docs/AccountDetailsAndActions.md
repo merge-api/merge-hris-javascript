@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **id** | **String** |  | 
 **category** | [**CategoryEnum**](CategoryEnum.md) |  | [optional] 
 **status** | [**AccountDetailsAndActionsStatusEnum**](AccountDetailsAndActionsStatusEnum.md) |  | 
+**statusDetail** | **String** |  | [optional] 
 **endUserOriginId** | **String** |  | [optional] 
 **endUserOrganizationName** | **String** |  | 
 **endUserEmailAddress** | **String** |  | 
