@@ -16,6 +16,8 @@ import ApiClient from "../ApiClient";
 import PaginatedTimeOffList from '../model/PaginatedTimeOffList';
 import TimeOff from '../model/TimeOff';
 import TimeOffRequest from '../model/TimeOffRequest';
+import TimeOffEndpointRequest from '../model/TimeOffEndpointRequest';
+import TimeOffResponse from '../model/TimeOffResponse';
 
 /**
 * TimeOff service.
@@ -40,25 +42,29 @@ export default class TimeOffApi {
      * Callback function to receive the result of the timeOffCreate operation.
      * @callback module:api/TimeOffApi~timeOffCreateCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/TimeOff} data The data returned by the service call.
+     * @param {module:model/TimeOffResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * Creates a `TimeOff` object with the given values.
      * @param {String} xAccountToken Token identifying the end user.
+     * @param {module:model/TimeOffEndpointRequest} timeOffEndpointRequest 
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.runAsync Whether or not third-party updates should be run asynchronously.
-     * @param {module:model/TimeOffRequest} opts.timeOffRequest 
      * @param {module:api/TimeOffApi~timeOffCreateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TimeOff}
+     * data is of type: {@link module:model/TimeOffResponse}
      */
-    timeOffCreate(xAccountToken, opts, callback) {
+    timeOffCreate(xAccountToken, timeOffEndpointRequest, opts, callback) {
       opts = opts || {};
-      let postBody = opts['timeOffRequest'];
+      let postBody = timeOffEndpointRequest;
       // verify the required parameter 'xAccountToken' is set
       if (xAccountToken === undefined || xAccountToken === null) {
         throw new Error("Missing the required parameter 'xAccountToken' when calling timeOffCreate");
+      }
+      // verify the required parameter 'timeOffEndpointRequest' is set
+      if (timeOffEndpointRequest === undefined || timeOffEndpointRequest === null) {
+        throw new Error("Missing the required parameter 'timeOffEndpointRequest' when calling timeOffCreate");
       }
 
       let pathParams = {
@@ -75,7 +81,7 @@ export default class TimeOffApi {
       let authNames = ['tokenAuth'];
       let contentTypes = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'];
       let accepts = ['application/json'];
-      let returnType = TimeOff;
+      let returnType = TimeOffResponse;
       return this.apiClient.callApi(
         '/time-off', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -101,6 +107,7 @@ export default class TimeOffApi {
      * @param {String} opts.cursor The pagination cursor value.
      * @param {String} opts.employeeId If provided, will only return time off for this employee.
      * @param {module:model/String} opts.expand Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
+     * @param {Boolean} opts.includeDeletedData Whether to include data that was deleted in the third-party service.
      * @param {Boolean} opts.includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
      * @param {Date} opts.modifiedAfter If provided, will only return objects modified after this datetime.
      * @param {Date} opts.modifiedBefore If provided, will only return objects modified before this datetime.
@@ -128,6 +135,7 @@ export default class TimeOffApi {
         'cursor': opts['cursor'],
         'employee_id': opts['employeeId'],
         'expand': opts['expand'],
+        'include_deleted_data': opts['includeDeletedData'],
         'include_remote_data': opts['includeRemoteData'],
         'modified_after': opts['modifiedAfter'],
         'modified_before': opts['modifiedBefore'],

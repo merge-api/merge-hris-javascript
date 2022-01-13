@@ -4,67 +4,9 @@ All URIs are relative to *https://api.merge.dev/api/hris/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**benefitsCreate**](BenefitsApi.md#benefitsCreate) | **POST** /benefits | 
 [**benefitsList**](BenefitsApi.md#benefitsList) | **GET** /benefits | 
 [**benefitsRetrieve**](BenefitsApi.md#benefitsRetrieve) | **GET** /benefits/{id} | 
 
-
-
-## benefitsCreate
-
-> Benefit benefitsCreate(xAccountToken, opts)
-
-
-
-Creates a &#x60;Benefit&#x60; object with the given values.
-
-### Example
-
-```javascript
-import MergeHrisApi from 'merge_hris_api';
-let defaultClient = MergeHrisApi.ApiClient.instance;
-// Configure API key authorization: tokenAuth
-let tokenAuth = defaultClient.authentications['tokenAuth'];
-tokenAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//tokenAuth.apiKeyPrefix = 'Token';
-
-let apiInstance = new MergeHrisApi.BenefitsApi();
-let xAccountToken = "xAccountToken_example"; // String | Token identifying the end user.
-let opts = {
-  'runAsync': true, // Boolean | Whether or not third-party updates should be run asynchronously.
-  'benefitRequest': new MergeHrisApi.BenefitRequest() // BenefitRequest | 
-};
-apiInstance.benefitsCreate(xAccountToken, opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xAccountToken** | **String**| Token identifying the end user. | 
- **runAsync** | **Boolean**| Whether or not third-party updates should be run asynchronously. | [optional] 
- **benefitRequest** | [**BenefitRequest**](BenefitRequest.md)|  | [optional] 
-
-### Return type
-
-[**Benefit**](Benefit.md)
-
-### Authorization
-
-[tokenAuth](../README.md#tokenAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
-- **Accept**: application/json
 
 
 ## benefitsList
@@ -94,6 +36,7 @@ let opts = {
   'cursor': cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw, // String | The pagination cursor value.
   'employeeId': "employeeId_example", // String | If provided, will only return time off for this employee.
   'expand': employee, // String | Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
+  'includeDeletedData': true, // Boolean | Whether to include data that was deleted in the third-party service.
   'includeRemoteData': true, // Boolean | Whether to include the original data Merge fetched from the third-party to produce these models.
   'modifiedAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects modified after this datetime.
   'modifiedBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects modified before this datetime.
@@ -120,6 +63,7 @@ Name | Type | Description  | Notes
  **cursor** | **String**| The pagination cursor value. | [optional] 
  **employeeId** | **String**| If provided, will only return time off for this employee. | [optional] 
  **expand** | **String**| Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces. | [optional] 
+ **includeDeletedData** | **Boolean**| Whether to include data that was deleted in the third-party service. | [optional] 
  **includeRemoteData** | **Boolean**| Whether to include the original data Merge fetched from the third-party to produce these models. | [optional] 
  **modifiedAfter** | **Date**| If provided, will only return objects modified after this datetime. | [optional] 
  **modifiedBefore** | **Date**| If provided, will only return objects modified before this datetime. | [optional] 

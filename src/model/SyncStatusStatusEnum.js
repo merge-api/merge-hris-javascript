@@ -40,6 +40,13 @@ export default class SyncStatusStatusEnum {
         "FAILED" = "FAILED";
 
     
+        /**
+         * value: "DISABLED"
+         * @const
+         */
+        "DISABLED" = "DISABLED";
+
+    
 
     /**
     * Returns a <code>SyncStatusStatusEnum</code> enum value from a Javascript object name.

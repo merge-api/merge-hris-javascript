@@ -18,6 +18,7 @@ import Employment from './Employment';
 import Location from './Location';
 import Team from './Team';
 import Company from './Company';
+import PayGroup from './PayGroup';
 import EthnicityEnum from './EthnicityEnum';
 import GenderEnum from './GenderEnum';
 import MaritalStatusEnum from './MaritalStatusEnum';
@@ -103,6 +104,9 @@ class Employee {
             if (data.hasOwnProperty('team')) {
                 obj['team'] = convertRelatedObjectToType(data['team'], Team);
             }
+            if (data.hasOwnProperty('pay_group')) {
+                obj['pay_group'] = convertRelatedObjectToType(data['pay_group'], PayGroup);
+            }
             if (data.hasOwnProperty('ssn')) {
                 obj['ssn'] = ApiClient.convertToType(data['ssn'], 'String');
             }
@@ -182,7 +186,7 @@ Employee.prototype['first_name'] = undefined;
 Employee.prototype['last_name'] = undefined;
 
 /**
- * The employee's full name, to use for display purposes.
+ * The employee's full name, to use for display purposes. If a preferred first name is available, the full name will include the preferred first name.
  * @member {String} display_full_name
  */
 Employee.prototype['display_full_name'] = undefined;
@@ -234,6 +238,12 @@ Employee.prototype['manager'] = undefined;
  * @member {String} team
  */
 Employee.prototype['team'] = undefined;
+
+/**
+ * The employee's pay group
+ * @member {String} pay_group
+ */
+Employee.prototype['pay_group'] = undefined;
 
 /**
  * The employee's social security number.

@@ -36,6 +36,7 @@ let opts = {
   'cursor': cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw, // String | The pagination cursor value.
   'employeeId': "employeeId_example", // String | If provided, will only return employments for this employee.
   'expand': employee, // String | Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
+  'includeDeletedData': true, // Boolean | Whether to include data that was deleted in the third-party service.
   'includeRemoteData': true, // Boolean | Whether to include the original data Merge fetched from the third-party to produce these models.
   'modifiedAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects modified after this datetime.
   'modifiedBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects modified before this datetime.
@@ -63,6 +64,7 @@ Name | Type | Description  | Notes
  **cursor** | **String**| The pagination cursor value. | [optional] 
  **employeeId** | **String**| If provided, will only return employments for this employee. | [optional] 
  **expand** | **String**| Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces. | [optional] 
+ **includeDeletedData** | **Boolean**| Whether to include data that was deleted in the third-party service. | [optional] 
  **includeRemoteData** | **Boolean**| Whether to include the original data Merge fetched from the third-party to produce these models. | [optional] 
  **modifiedAfter** | **Date**| If provided, will only return objects modified after this datetime. | [optional] 
  **modifiedBefore** | **Date**| If provided, will only return objects modified before this datetime. | [optional] 

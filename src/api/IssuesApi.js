@@ -47,7 +47,7 @@ export default class IssuesApi {
      * Gets issues.
      * @param {Object} opts Optional parameters
      * @param {String} opts.accountToken 
-     * @param {Number} opts.cursor The pagination cursor value.
+     * @param {String} opts.cursor The pagination cursor value.
      * @param {String} opts.endDate If included, will only include issues whose most recent action occurred before this time
      * @param {String} opts.endUserOrganizationName 
      * @param {String} opts.includeMuted If True, will include muted issues

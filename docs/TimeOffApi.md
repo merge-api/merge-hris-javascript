@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## timeOffCreate
 
-> TimeOff timeOffCreate(xAccountToken, opts)
+> TimeOffResponse timeOffCreate(xAccountToken, timeOffEndpointRequest, opts)
 
 
 
@@ -31,11 +31,11 @@ tokenAuth.apiKey = 'YOUR API KEY';
 
 let apiInstance = new MergeHrisApi.TimeOffApi();
 let xAccountToken = "xAccountToken_example"; // String | Token identifying the end user.
+let timeOffEndpointRequest = new MergeHrisApi.TimeOffEndpointRequest(); // TimeOffEndpointRequest | 
 let opts = {
-  'runAsync': true, // Boolean | Whether or not third-party updates should be run asynchronously.
-  'timeOffRequest': new MergeHrisApi.TimeOffRequest() // TimeOffRequest | 
+  'runAsync': true // Boolean | Whether or not third-party updates should be run asynchronously.
 };
-apiInstance.timeOffCreate(xAccountToken, opts, (error, data, response) => {
+apiInstance.timeOffCreate(xAccountToken, timeOffEndpointRequest, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -50,12 +50,12 @@ apiInstance.timeOffCreate(xAccountToken, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xAccountToken** | **String**| Token identifying the end user. | 
+ **timeOffEndpointRequest** | [**TimeOffEndpointRequest**](TimeOffEndpointRequest.md)|  | 
  **runAsync** | **Boolean**| Whether or not third-party updates should be run asynchronously. | [optional] 
- **timeOffRequest** | [**TimeOffRequest**](TimeOffRequest.md)|  | [optional] 
 
 ### Return type
 
-[**TimeOff**](TimeOff.md)
+[**TimeOffResponse**](TimeOffResponse.md)
 
 ### Authorization
 
@@ -95,6 +95,7 @@ let opts = {
   'cursor': cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw, // String | The pagination cursor value.
   'employeeId': "employeeId_example", // String | If provided, will only return time off for this employee.
   'expand': employee,approver, // String | Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
+  'includeDeletedData': true, // Boolean | Whether to include data that was deleted in the third-party service.
   'includeRemoteData': true, // Boolean | Whether to include the original data Merge fetched from the third-party to produce these models.
   'modifiedAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects modified after this datetime.
   'modifiedBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects modified before this datetime.
@@ -124,6 +125,7 @@ Name | Type | Description  | Notes
  **cursor** | **String**| The pagination cursor value. | [optional] 
  **employeeId** | **String**| If provided, will only return time off for this employee. | [optional] 
  **expand** | **String**| Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces. | [optional] 
+ **includeDeletedData** | **Boolean**| Whether to include data that was deleted in the third-party service. | [optional] 
  **includeRemoteData** | **Boolean**| Whether to include the original data Merge fetched from the third-party to produce these models. | [optional] 
  **modifiedAfter** | **Date**| If provided, will only return objects modified after this datetime. | [optional] 
  **modifiedBefore** | **Date**| If provided, will only return objects modified before this datetime. | [optional] 

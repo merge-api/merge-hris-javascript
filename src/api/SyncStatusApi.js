@@ -14,7 +14,6 @@
 
 import ApiClient from "../ApiClient";
 import PaginatedSyncStatusList from '../model/PaginatedSyncStatusList';
-import SyncStatus from '../model/SyncStatus';
 
 /**
 * SyncStatus service.
@@ -44,10 +43,10 @@ export default class SyncStatusApi {
      */
 
     /**
-     * Get syncing status.
+     * Get syncing status. Possible values: `DISABLED`, `DONE`, `FAILED`, `SYNCING`
      * @param {String} xAccountToken Token identifying the end user.
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.cursor The pagination cursor value.
+     * @param {String} opts.cursor The pagination cursor value.
      * @param {Number} opts.pageSize Number of results to return per page.
      * @param {module:api/SyncStatusApi~syncStatusListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedSyncStatusList}
@@ -78,48 +77,6 @@ export default class SyncStatusApi {
       let returnType = PaginatedSyncStatusList;
       return this.apiClient.callApi(
         '/sync-status', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the syncStatusResyncCreate operation.
-     * @callback module:api/SyncStatusApi~syncStatusResyncCreateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/SyncStatus} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Force re-sync of all models. This is only available for organizations on Merge's Grow and Expand plans.
-     * @param {String} xAccountToken Token identifying the end user.
-     * @param {module:api/SyncStatusApi~syncStatusResyncCreateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/SyncStatus}
-     */
-    syncStatusResyncCreate(xAccountToken, callback) {
-      let postBody = null;
-      // verify the required parameter 'xAccountToken' is set
-      if (xAccountToken === undefined || xAccountToken === null) {
-        throw new Error("Missing the required parameter 'xAccountToken' when calling syncStatusResyncCreate");
-      }
-
-      let pathParams = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-        'X-Account-Token': xAccountToken
-      };
-      let formParams = {
-      };
-
-      let authNames = ['tokenAuth'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = SyncStatus;
-      return this.apiClient.callApi(
-        '/sync-status/resync', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

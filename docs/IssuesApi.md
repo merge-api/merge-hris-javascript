@@ -31,7 +31,7 @@ tokenAuth.apiKey = 'YOUR API KEY';
 let apiInstance = new MergeHrisApi.IssuesApi();
 let opts = {
   'accountToken': "accountToken_example", // String | 
-  'cursor': 56, // Number | The pagination cursor value.
+  'cursor': cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw, // String | The pagination cursor value.
   'endDate': "endDate_example", // String | If included, will only include issues whose most recent action occurred before this time
   'endUserOrganizationName': "endUserOrganizationName_example", // String | 
   'includeMuted': "includeMuted_example", // String | If True, will include muted issues
@@ -55,7 +55,7 @@ apiInstance.issuesList(opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountToken** | **String**|  | [optional] 
- **cursor** | **Number**| The pagination cursor value. | [optional] 
+ **cursor** | **String**| The pagination cursor value. | [optional] 
  **endDate** | **String**| If included, will only include issues whose most recent action occurred before this time | [optional] 
  **endUserOrganizationName** | **String**|  | [optional] 
  **includeMuted** | **String**| If True, will include muted issues | [optional] 

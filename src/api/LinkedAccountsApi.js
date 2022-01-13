@@ -46,7 +46,7 @@ export default class LinkedAccountsApi {
      * List linked accounts for your organization.
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.category 
-     * @param {Number} opts.cursor The pagination cursor value.
+     * @param {String} opts.cursor The pagination cursor value.
      * @param {String} opts.endUserEmailAddress 
      * @param {String} opts.endUserOrganizationName 
      * @param {String} opts.endUserOriginId 

@@ -30,7 +30,7 @@ tokenAuth.apiKey = 'YOUR API KEY';
 let apiInstance = new MergeHrisApi.LinkedAccountsApi();
 let opts = {
   'category': "category_example", // String | 
-  'cursor': 56, // Number | The pagination cursor value.
+  'cursor': cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw, // String | The pagination cursor value.
   'endUserEmailAddress': "endUserEmailAddress_example", // String | 
   'endUserOrganizationName': "endUserOrganizationName_example", // String | 
   'endUserOriginId': "endUserOriginId_example", // String | 
@@ -57,7 +57,7 @@ apiInstance.linkedAccountsList(opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **category** | **String**|  | [optional] 
- **cursor** | **Number**| The pagination cursor value. | [optional] 
+ **cursor** | **String**| The pagination cursor value. | [optional] 
  **endUserEmailAddress** | **String**|  | [optional] 
  **endUserOrganizationName** | **String**|  | [optional] 
  **endUserOriginId** | **String**|  | [optional] 
