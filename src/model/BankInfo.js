@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 import AccountTypeEnum from './AccountTypeEnum';
 import RemoteData from './RemoteData';
 import Employee from './Employee';
+import convertRelatedObjectToType from '../Utils';
 
 /**
  * The BankInfo model module.
