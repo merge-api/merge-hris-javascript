@@ -23,12 +23,12 @@ class AccountToken {
     /**
      * Constructs a new <code>AccountToken</code>.
      * @alias module:model/AccountToken
-     * @param accountToken {String} 
+     * @param account_token {String} 
      * @param integration {module:model/AccountIntegration} 
      */
-    constructor(accountToken, integration) { 
+    constructor(account_token, integration) { 
         
-        AccountToken.initialize(this, accountToken, integration);
+        AccountToken.initialize(this, account_token, integration);
     }
 
     /**
@@ -36,8 +36,8 @@ class AccountToken {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, accountToken, integration) { 
-        obj['account_token'] = accountToken;
+    static initialize(obj, account_token, integration) { 
+        obj['account_token'] = account_token;
         obj['integration'] = integration;
     }
 

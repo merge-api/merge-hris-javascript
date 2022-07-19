@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## availableActionsRetrieve
 
-> AvailableActions availableActionsRetrieve(xAccountToken)
+> AvailableActions availableActionsRetrieve(x_account_token)
 
 
 
@@ -28,8 +28,8 @@ tokenAuth.apiKey = 'YOUR API KEY';
 //tokenAuth.apiKeyPrefix = 'Token';
 
 let apiInstance = new MergeHrisApi.AvailableActionsApi();
-let xAccountToken = "xAccountToken_example"; // String | Token identifying the end user.
-apiInstance.availableActionsRetrieve(xAccountToken, (error, data, response) => {
+let x_account_token = "x_account_token_example"; // String | Token identifying the end user.
+apiInstance.availableActionsRetrieve(x_account_token, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -43,7 +43,7 @@ apiInstance.availableActionsRetrieve(xAccountToken, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xAccountToken** | **String**| Token identifying the end user. | 
+ **x_account_token** | **String**| Token identifying the end user. | 
 
 ### Return type
 

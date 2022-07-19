@@ -82,25 +82,25 @@ class AccountIntegration {
 AccountIntegration.prototype['name'] = undefined;
 
 /**
- * Category or categories this integration belongs to.
- * @member {Array.<module:model/AccountIntegration.CategoriesEnum>} categories
+ * Category or categories this integration belongs to. Multiple categories should be comma separated.<br/><br>Example: For [ats, hris], enter <i>ats,hris</i>
+ * @member {Array.<module:model/CategoriesEnum>} categories
  */
 AccountIntegration.prototype['categories'] = undefined;
 
 /**
- * Company logo in rectangular shape.
+ * Company logo in rectangular shape. <b>Upload an image with a clear background.</b>
  * @member {String} image
  */
 AccountIntegration.prototype['image'] = undefined;
 
 /**
- * Company logo in square shape.
+ * Company logo in square shape. <b>Upload an image with a white background.</b>
  * @member {String} square_image
  */
 AccountIntegration.prototype['square_image'] = undefined;
 
 /**
- * The color of this integration used for buttons and text throughout the app and landing pages.
+ * The color of this integration used for buttons and text throughout the app and landing pages. <b>Choose a darker, saturated color.</b>
  * @member {String} color
  */
 AccountIntegration.prototype['color'] = undefined;
@@ -112,33 +112,6 @@ AccountIntegration.prototype['slug'] = undefined;
 
 
 
-
-
-/**
- * Allowed values for the <code>categories</code> property.
- * @enum {String}
- * @readonly
- */
-AccountIntegration['CategoriesEnum'] = {
-
-    /**
-     * value: "hris"
-     * @const
-     */
-    "hris": "hris",
-
-    /**
-     * value: "ats"
-     * @const
-     */
-    "ats": "ats",
-
-    /**
-     * value: "accounting"
-     * @const
-     */
-    "accounting": "accounting"
-};
 
 
 

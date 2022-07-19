@@ -13,6 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import CountryEnum from './CountryEnum';
+import LocationTypeEnum from './LocationTypeEnum';
 import RemoteData from './RemoteData';
 
 /**
@@ -80,8 +81,14 @@ class Location {
             if (data.hasOwnProperty('country')) {
                 obj['country'] = ApiClient.convertToType(data['country'], CountryEnum);
             }
+            if (data.hasOwnProperty('location_type')) {
+                obj['location_type'] = ApiClient.convertToType(data['location_type'], LocationTypeEnum);
+            }
             if (data.hasOwnProperty('remote_data')) {
                 obj['remote_data'] = ApiClient.convertToType(data['remote_data'], [RemoteData]);
+            }
+            if (data.hasOwnProperty('remote_was_deleted')) {
+                obj['remote_was_deleted'] = ApiClient.convertToType(data['remote_was_deleted'], 'Boolean');
             }
         }
         return obj;
@@ -138,7 +145,7 @@ Location.prototype['city'] = undefined;
 Location.prototype['state'] = undefined;
 
 /**
- * The location's zip code.
+ * The location's zip code or postal code.
  * @member {String} zip_code
  */
 Location.prototype['zip_code'] = undefined;
@@ -150,9 +157,21 @@ Location.prototype['zip_code'] = undefined;
 Location.prototype['country'] = undefined;
 
 /**
+ * The location's type. Can be either WORK or HOME
+ * @member {module:model/LocationTypeEnum} location_type
+ */
+Location.prototype['location_type'] = undefined;
+
+/**
  * @member {Array.<module:model/RemoteData>} remote_data
  */
 Location.prototype['remote_data'] = undefined;
+
+/**
+ * Indicates whether or not this object has been deleted by third party webhooks.
+ * @member {Boolean} remote_was_deleted
+ */
+Location.prototype['remote_was_deleted'] = undefined;
 
 
 

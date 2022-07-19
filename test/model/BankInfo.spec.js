@@ -60,8 +60,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property remoteId (base name: "remote_id")', function() {
-      // uncomment below and update the code to test the property remoteId
+    it('should have the property remote_id (base name: "remote_id")', function() {
+      // uncomment below and update the code to test the property remote_id
       //var instance = new MergeHrisApi.BankInfo();
       //expect(instance).to.be();
     });
@@ -72,38 +72,44 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property accountNumber (base name: "account_number")', function() {
-      // uncomment below and update the code to test the property accountNumber
+    it('should have the property account_number (base name: "account_number")', function() {
+      // uncomment below and update the code to test the property account_number
       //var instance = new MergeHrisApi.BankInfo();
       //expect(instance).to.be();
     });
 
-    it('should have the property routingNumber (base name: "routing_number")', function() {
-      // uncomment below and update the code to test the property routingNumber
+    it('should have the property routing_number (base name: "routing_number")', function() {
+      // uncomment below and update the code to test the property routing_number
       //var instance = new MergeHrisApi.BankInfo();
       //expect(instance).to.be();
     });
 
-    it('should have the property bankName (base name: "bank_name")', function() {
-      // uncomment below and update the code to test the property bankName
+    it('should have the property bank_name (base name: "bank_name")', function() {
+      // uncomment below and update the code to test the property bank_name
       //var instance = new MergeHrisApi.BankInfo();
       //expect(instance).to.be();
     });
 
-    it('should have the property accountType (base name: "account_type")', function() {
-      // uncomment below and update the code to test the property accountType
+    it('should have the property account_type (base name: "account_type")', function() {
+      // uncomment below and update the code to test the property account_type
       //var instance = new MergeHrisApi.BankInfo();
       //expect(instance).to.be();
     });
 
-    it('should have the property remoteCreatedAt (base name: "remote_created_at")', function() {
-      // uncomment below and update the code to test the property remoteCreatedAt
+    it('should have the property remote_created_at (base name: "remote_created_at")', function() {
+      // uncomment below and update the code to test the property remote_created_at
       //var instance = new MergeHrisApi.BankInfo();
       //expect(instance).to.be();
     });
 
-    it('should have the property remoteData (base name: "remote_data")', function() {
-      // uncomment below and update the code to test the property remoteData
+    it('should have the property remote_data (base name: "remote_data")', function() {
+      // uncomment below and update the code to test the property remote_data
+      //var instance = new MergeHrisApi.BankInfo();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property remote_was_deleted (base name: "remote_was_deleted")', function() {
+      // uncomment below and update the code to test the property remote_was_deleted
       //var instance = new MergeHrisApi.BankInfo();
       //expect(instance).to.be();
     });

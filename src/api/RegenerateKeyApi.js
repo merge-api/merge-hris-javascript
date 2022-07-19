@@ -45,15 +45,15 @@ export default class RegenerateKeyApi {
 
     /**
      * Exchange remote keys.
-     * @param {module:model/RemoteKeyForRegenerationRequest} remoteKeyForRegenerationRequest 
+     * @param {module:model/RemoteKeyForRegenerationRequest} remote_key_for_regeneration_request 
      * @param {module:api/RegenerateKeyApi~regenerateKeyCreateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RemoteKey}
      */
-    regenerateKeyCreate(remoteKeyForRegenerationRequest, callback) {
-      let postBody = remoteKeyForRegenerationRequest;
-      // verify the required parameter 'remoteKeyForRegenerationRequest' is set
-      if (remoteKeyForRegenerationRequest === undefined || remoteKeyForRegenerationRequest === null) {
-        throw new Error("Missing the required parameter 'remoteKeyForRegenerationRequest' when calling regenerateKeyCreate");
+    regenerateKeyCreate(remote_key_for_regeneration_request, callback) {
+      let postBody = remote_key_for_regeneration_request;
+      // verify the required parameter 'remote_key_for_regeneration_request' is set
+      if (remote_key_for_regeneration_request === undefined || remote_key_for_regeneration_request === null) {
+        throw new Error("Missing the required parameter 'remote_key_for_regeneration_request' when calling regenerateKeyCreate");
       }
 
       let pathParams = {

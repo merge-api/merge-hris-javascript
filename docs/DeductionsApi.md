@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## deductionsList
 
-> PaginatedDeductionList deductionsList(xAccountToken, opts)
+> PaginatedDeductionList deductionsList(x_account_token, opts)
 
 
 
@@ -29,20 +29,20 @@ tokenAuth.apiKey = 'YOUR API KEY';
 //tokenAuth.apiKeyPrefix = 'Token';
 
 let apiInstance = new MergeHrisApi.DeductionsApi();
-let xAccountToken = "xAccountToken_example"; // String | Token identifying the end user.
+let x_account_token = "x_account_token_example"; // String | Token identifying the end user.
 let opts = {
-  'createdAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects created after this datetime.
-  'createdBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects created before this datetime.
+  'created_after': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects created after this datetime.
+  'created_before': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects created before this datetime.
   'cursor': cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw, // String | The pagination cursor value.
-  'employeePayrollRunId': "employeePayrollRunId_example", // String | If provided, will only return deductions for this employee payroll run.
-  'includeDeletedData': true, // Boolean | Whether to include data that was deleted in the third-party service.
-  'includeRemoteData': true, // Boolean | Whether to include the original data Merge fetched from the third-party to produce these models.
-  'modifiedAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects modified after this datetime.
-  'modifiedBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects modified before this datetime.
-  'pageSize': 56, // Number | Number of results to return per page.
-  'remoteId': "remoteId_example" // String | The API provider's ID for the given object.
+  'employee_payroll_run_id': "employee_payroll_run_id_example", // String | If provided, will only return deductions for this employee payroll run.
+  'include_deleted_data': true, // Boolean | Whether to include data that was marked as deleted by third party webhooks.
+  'include_remote_data': true, // Boolean | Whether to include the original data Merge fetched from the third-party to produce these models.
+  'modified_after': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects modified after this datetime.
+  'modified_before': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects modified before this datetime.
+  'page_size': 56, // Number | Number of results to return per page.
+  'remote_id': "remote_id_example" // String | The API provider's ID for the given object.
 };
-apiInstance.deductionsList(xAccountToken, opts, (error, data, response) => {
+apiInstance.deductionsList(x_account_token, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -56,17 +56,17 @@ apiInstance.deductionsList(xAccountToken, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xAccountToken** | **String**| Token identifying the end user. | 
- **createdAfter** | **Date**| If provided, will only return objects created after this datetime. | [optional] 
- **createdBefore** | **Date**| If provided, will only return objects created before this datetime. | [optional] 
+ **x_account_token** | **String**| Token identifying the end user. | 
+ **created_after** | **Date**| If provided, will only return objects created after this datetime. | [optional] 
+ **created_before** | **Date**| If provided, will only return objects created before this datetime. | [optional] 
  **cursor** | **String**| The pagination cursor value. | [optional] 
- **employeePayrollRunId** | **String**| If provided, will only return deductions for this employee payroll run. | [optional] 
- **includeDeletedData** | **Boolean**| Whether to include data that was deleted in the third-party service. | [optional] 
- **includeRemoteData** | **Boolean**| Whether to include the original data Merge fetched from the third-party to produce these models. | [optional] 
- **modifiedAfter** | **Date**| If provided, will only return objects modified after this datetime. | [optional] 
- **modifiedBefore** | **Date**| If provided, will only return objects modified before this datetime. | [optional] 
- **pageSize** | **Number**| Number of results to return per page. | [optional] 
- **remoteId** | **String**| The API provider&#39;s ID for the given object. | [optional] 
+ **employee_payroll_run_id** | **String**| If provided, will only return deductions for this employee payroll run. | [optional] 
+ **include_deleted_data** | **Boolean**| Whether to include data that was marked as deleted by third party webhooks. | [optional] 
+ **include_remote_data** | **Boolean**| Whether to include the original data Merge fetched from the third-party to produce these models. | [optional] 
+ **modified_after** | **Date**| If provided, will only return objects modified after this datetime. | [optional] 
+ **modified_before** | **Date**| If provided, will only return objects modified before this datetime. | [optional] 
+ **page_size** | **Number**| Number of results to return per page. | [optional] 
+ **remote_id** | **String**| The API provider&#39;s ID for the given object. | [optional] 
 
 ### Return type
 
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 ## deductionsRetrieve
 
-> Deduction deductionsRetrieve(xAccountToken, id, opts)
+> Deduction deductionsRetrieve(x_account_token, id, opts)
 
 
 
@@ -102,12 +102,12 @@ tokenAuth.apiKey = 'YOUR API KEY';
 //tokenAuth.apiKeyPrefix = 'Token';
 
 let apiInstance = new MergeHrisApi.DeductionsApi();
-let xAccountToken = "xAccountToken_example"; // String | Token identifying the end user.
+let x_account_token = "x_account_token_example"; // String | Token identifying the end user.
 let id = null; // String | 
 let opts = {
-  'includeRemoteData': true // Boolean | Whether to include the original data Merge fetched from the third-party to produce these models.
+  'include_remote_data': true // Boolean | Whether to include the original data Merge fetched from the third-party to produce these models.
 };
-apiInstance.deductionsRetrieve(xAccountToken, id, opts, (error, data, response) => {
+apiInstance.deductionsRetrieve(x_account_token, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -121,9 +121,9 @@ apiInstance.deductionsRetrieve(xAccountToken, id, opts, (error, data, response) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xAccountToken** | **String**| Token identifying the end user. | 
+ **x_account_token** | **String**| Token identifying the end user. | 
  **id** | [**String**](.md)|  | 
- **includeRemoteData** | **Boolean**| Whether to include the original data Merge fetched from the third-party to produce these models. | [optional] 
+ **include_remote_data** | **Boolean**| Whether to include the original data Merge fetched from the third-party to produce these models. | [optional] 
 
 ### Return type
 

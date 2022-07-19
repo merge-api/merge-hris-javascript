@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import RemoteData from './RemoteData';
 
 /**
  * The Deduction model module.
@@ -64,7 +65,10 @@ class Deduction {
                 obj['company_deduction'] = ApiClient.convertToType(data['company_deduction'], 'Number');
             }
             if (data.hasOwnProperty('remote_data')) {
-                obj['remote_data'] = ApiClient.convertToType(data['remote_data'], [{'String': Object}]);
+                obj['remote_data'] = ApiClient.convertToType(data['remote_data'], [RemoteData]);
+            }
+            if (data.hasOwnProperty('remote_was_deleted')) {
+                obj['remote_was_deleted'] = ApiClient.convertToType(data['remote_was_deleted'], 'Boolean');
             }
         }
         return obj;
@@ -79,7 +83,6 @@ class Deduction {
 Deduction.prototype['id'] = undefined;
 
 /**
- * The deduction's employee payroll run.
  * @member {String} employee_payroll_run
  */
 Deduction.prototype['employee_payroll_run'] = undefined;
@@ -103,9 +106,15 @@ Deduction.prototype['employee_deduction'] = undefined;
 Deduction.prototype['company_deduction'] = undefined;
 
 /**
- * @member {Array.<Object.<String, Object>>} remote_data
+ * @member {Array.<module:model/RemoteData>} remote_data
  */
 Deduction.prototype['remote_data'] = undefined;
+
+/**
+ * Indicates whether or not this object has been deleted by third party webhooks.
+ * @member {Boolean} remote_was_deleted
+ */
+Deduction.prototype['remote_was_deleted'] = undefined;
 
 
 

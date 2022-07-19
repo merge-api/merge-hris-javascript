@@ -54,8 +54,14 @@
       //expect(instance).to.be.a(MergeHrisApi.AccountToken);
     });
 
-    it('should have the property accountToken (base name: "account_token")', function() {
-      // uncomment below and update the code to test the property accountToken
+    it('should have the property account_token (base name: "account_token")', function() {
+      // uncomment below and update the code to test the property account_token
+      //var instance = new MergeHrisApi.AccountToken();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property integration (base name: "integration")', function() {
+      // uncomment below and update the code to test the property integration
       //var instance = new MergeHrisApi.AccountToken();
       //expect(instance).to.be();
     });

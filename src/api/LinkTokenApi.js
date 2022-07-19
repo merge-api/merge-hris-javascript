@@ -45,15 +45,15 @@ export default class LinkTokenApi {
 
     /**
      * Creates a link token to be used when linking a new end user.
-     * @param {module:model/EndUserDetailsRequest} endUserDetailsRequest 
+     * @param {module:model/EndUserDetailsRequest} end_user_details_request 
      * @param {module:api/LinkTokenApi~linkTokenCreateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/LinkToken}
      */
-    linkTokenCreate(endUserDetailsRequest, callback) {
-      let postBody = endUserDetailsRequest;
-      // verify the required parameter 'endUserDetailsRequest' is set
-      if (endUserDetailsRequest === undefined || endUserDetailsRequest === null) {
-        throw new Error("Missing the required parameter 'endUserDetailsRequest' when calling linkTokenCreate");
+    linkTokenCreate(end_user_details_request, callback) {
+      let postBody = end_user_details_request;
+      // verify the required parameter 'end_user_details_request' is set
+      if (end_user_details_request === undefined || end_user_details_request === null) {
+        throw new Error("Missing the required parameter 'end_user_details_request' when calling linkTokenCreate");
       }
 
       let pathParams = {

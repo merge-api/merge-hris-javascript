@@ -60,44 +60,50 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property remoteId (base name: "remote_id")', function() {
-      // uncomment below and update the code to test the property remoteId
+    it('should have the property remote_id (base name: "remote_id")', function() {
+      // uncomment below and update the code to test the property remote_id
       //var instance = new MergeHrisApi.PayrollRun();
       //expect(instance).to.be();
     });
 
-    it('should have the property runState (base name: "run_state")', function() {
-      // uncomment below and update the code to test the property runState
+    it('should have the property run_state (base name: "run_state")', function() {
+      // uncomment below and update the code to test the property run_state
       //var instance = new MergeHrisApi.PayrollRun();
       //expect(instance).to.be();
     });
 
-    it('should have the property runType (base name: "run_type")', function() {
-      // uncomment below and update the code to test the property runType
+    it('should have the property run_type (base name: "run_type")', function() {
+      // uncomment below and update the code to test the property run_type
       //var instance = new MergeHrisApi.PayrollRun();
       //expect(instance).to.be();
     });
 
-    it('should have the property startDate (base name: "start_date")', function() {
-      // uncomment below and update the code to test the property startDate
+    it('should have the property start_date (base name: "start_date")', function() {
+      // uncomment below and update the code to test the property start_date
       //var instance = new MergeHrisApi.PayrollRun();
       //expect(instance).to.be();
     });
 
-    it('should have the property endDate (base name: "end_date")', function() {
-      // uncomment below and update the code to test the property endDate
+    it('should have the property end_date (base name: "end_date")', function() {
+      // uncomment below and update the code to test the property end_date
       //var instance = new MergeHrisApi.PayrollRun();
       //expect(instance).to.be();
     });
 
-    it('should have the property checkDate (base name: "check_date")', function() {
-      // uncomment below and update the code to test the property checkDate
+    it('should have the property check_date (base name: "check_date")', function() {
+      // uncomment below and update the code to test the property check_date
       //var instance = new MergeHrisApi.PayrollRun();
       //expect(instance).to.be();
     });
 
-    it('should have the property remoteData (base name: "remote_data")', function() {
-      // uncomment below and update the code to test the property remoteData
+    it('should have the property remote_data (base name: "remote_data")', function() {
+      // uncomment below and update the code to test the property remote_data
+      //var instance = new MergeHrisApi.PayrollRun();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property remote_was_deleted (base name: "remote_was_deleted")', function() {
+      // uncomment below and update the code to test the property remote_was_deleted
       //var instance = new MergeHrisApi.PayrollRun();
       //expect(instance).to.be();
     });

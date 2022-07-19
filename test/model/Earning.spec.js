@@ -60,8 +60,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property employeePayrollRun (base name: "employee_payroll_run")', function() {
-      // uncomment below and update the code to test the property employeePayrollRun
+    it('should have the property employee_payroll_run (base name: "employee_payroll_run")', function() {
+      // uncomment below and update the code to test the property employee_payroll_run
       //var instance = new MergeHrisApi.Earning();
       //expect(instance).to.be();
     });
@@ -78,8 +78,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property remoteData (base name: "remote_data")', function() {
-      // uncomment below and update the code to test the property remoteData
+    it('should have the property remote_was_deleted (base name: "remote_was_deleted")', function() {
+      // uncomment below and update the code to test the property remote_was_deleted
       //var instance = new MergeHrisApi.Earning();
       //expect(instance).to.be();
     });

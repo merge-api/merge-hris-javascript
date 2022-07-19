@@ -72,14 +72,20 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property squareImage (base name: "square_image")', function() {
-      // uncomment below and update the code to test the property squareImage
+    it('should have the property square_image (base name: "square_image")', function() {
+      // uncomment below and update the code to test the property square_image
       //var instance = new MergeHrisApi.AccountIntegration();
       //expect(instance).to.be();
     });
 
     it('should have the property color (base name: "color")', function() {
       // uncomment below and update the code to test the property color
+      //var instance = new MergeHrisApi.AccountIntegration();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property slug (base name: "slug")', function() {
+      // uncomment below and update the code to test the property slug
       //var instance = new MergeHrisApi.AccountIntegration();
       //expect(instance).to.be();
     });

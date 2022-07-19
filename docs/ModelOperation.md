@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**modelName** | **String** |  | 
-**availableOperations** | **[String]** |  | 
-**requiredPostParameters** | **[String]** |  | 
-**supportedFields** | **[String]** |  | 
+**model_name** | **String** |  | 
+**available_operations** | **[String]** |  | 
+**required_post_parameters** | **[String]** |  | 
+**supported_fields** | **[String]** |  | 
 
 

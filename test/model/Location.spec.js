@@ -60,26 +60,32 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property remoteId (base name: "remote_id")', function() {
-      // uncomment below and update the code to test the property remoteId
+    it('should have the property remote_id (base name: "remote_id")', function() {
+      // uncomment below and update the code to test the property remote_id
       //var instance = new MergeHrisApi.Location();
       //expect(instance).to.be();
     });
 
-    it('should have the property phoneNumber (base name: "phone_number")', function() {
-      // uncomment below and update the code to test the property phoneNumber
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
       //var instance = new MergeHrisApi.Location();
       //expect(instance).to.be();
     });
 
-    it('should have the property street1 (base name: "street_1")', function() {
-      // uncomment below and update the code to test the property street1
+    it('should have the property phone_number (base name: "phone_number")', function() {
+      // uncomment below and update the code to test the property phone_number
       //var instance = new MergeHrisApi.Location();
       //expect(instance).to.be();
     });
 
-    it('should have the property street2 (base name: "street_2")', function() {
-      // uncomment below and update the code to test the property street2
+    it('should have the property street_1 (base name: "street_1")', function() {
+      // uncomment below and update the code to test the property street_1
+      //var instance = new MergeHrisApi.Location();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property street_2 (base name: "street_2")', function() {
+      // uncomment below and update the code to test the property street_2
       //var instance = new MergeHrisApi.Location();
       //expect(instance).to.be();
     });
@@ -96,8 +102,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property zipCode (base name: "zip_code")', function() {
-      // uncomment below and update the code to test the property zipCode
+    it('should have the property zip_code (base name: "zip_code")', function() {
+      // uncomment below and update the code to test the property zip_code
       //var instance = new MergeHrisApi.Location();
       //expect(instance).to.be();
     });
@@ -108,8 +114,20 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property remoteData (base name: "remote_data")', function() {
-      // uncomment below and update the code to test the property remoteData
+    it('should have the property location_type (base name: "location_type")', function() {
+      // uncomment below and update the code to test the property location_type
+      //var instance = new MergeHrisApi.Location();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property remote_data (base name: "remote_data")', function() {
+      // uncomment below and update the code to test the property remote_data
+      //var instance = new MergeHrisApi.Location();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property remote_was_deleted (base name: "remote_was_deleted")', function() {
+      // uncomment below and update the code to test the property remote_was_deleted
       //var instance = new MergeHrisApi.Location();
       //expect(instance).to.be();
     });

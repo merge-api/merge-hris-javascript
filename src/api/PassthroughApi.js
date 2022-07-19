@@ -45,20 +45,20 @@ export default class PassthroughApi {
 
     /**
      * Pull data from an endpoint not currently supported by Merge.
-     * @param {String} xAccountToken Token identifying the end user.
-     * @param {module:model/DataPassthroughRequest} dataPassthroughRequest 
+     * @param {String} x_account_token Token identifying the end user.
+     * @param {module:model/DataPassthroughRequest} data_passthrough_request 
      * @param {module:api/PassthroughApi~passthroughCreateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RemoteResponse}
      */
-    passthroughCreate(xAccountToken, dataPassthroughRequest, callback) {
-      let postBody = dataPassthroughRequest;
-      // verify the required parameter 'xAccountToken' is set
-      if (xAccountToken === undefined || xAccountToken === null) {
-        throw new Error("Missing the required parameter 'xAccountToken' when calling passthroughCreate");
+    passthroughCreate(x_account_token, data_passthrough_request, callback) {
+      let postBody = data_passthrough_request;
+      // verify the required parameter 'x_account_token' is set
+      if (x_account_token === undefined || x_account_token === null) {
+        throw new Error("Missing the required parameter 'x_account_token' when calling passthroughCreate");
       }
-      // verify the required parameter 'dataPassthroughRequest' is set
-      if (dataPassthroughRequest === undefined || dataPassthroughRequest === null) {
-        throw new Error("Missing the required parameter 'dataPassthroughRequest' when calling passthroughCreate");
+      // verify the required parameter 'data_passthrough_request' is set
+      if (data_passthrough_request === undefined || data_passthrough_request === null) {
+        throw new Error("Missing the required parameter 'data_passthrough_request' when calling passthroughCreate");
       }
 
       let pathParams = {
@@ -66,7 +66,7 @@ export default class PassthroughApi {
       let queryParams = {
       };
       let headerParams = {
-        'X-Account-Token': xAccountToken
+        'X-Account-Token': x_account_token
       };
       let formParams = {
       };

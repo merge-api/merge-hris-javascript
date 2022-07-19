@@ -66,32 +66,32 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property errorDescription (base name: "error_description")', function() {
-      // uncomment below and update the code to test the property errorDescription
+    it('should have the property error_description (base name: "error_description")', function() {
+      // uncomment below and update the code to test the property error_description
       //var instance = new MergeHrisApi.Issue();
       //expect(instance).to.be();
     });
 
-    it('should have the property endUser (base name: "end_user")', function() {
-      // uncomment below and update the code to test the property endUser
+    it('should have the property end_user (base name: "end_user")', function() {
+      // uncomment below and update the code to test the property end_user
       //var instance = new MergeHrisApi.Issue();
       //expect(instance).to.be();
     });
 
-    it('should have the property firstIncidentTime (base name: "first_incident_time")', function() {
-      // uncomment below and update the code to test the property firstIncidentTime
+    it('should have the property first_incident_time (base name: "first_incident_time")', function() {
+      // uncomment below and update the code to test the property first_incident_time
       //var instance = new MergeHrisApi.Issue();
       //expect(instance).to.be();
     });
 
-    it('should have the property lastIncidentTime (base name: "last_incident_time")', function() {
-      // uncomment below and update the code to test the property lastIncidentTime
+    it('should have the property last_incident_time (base name: "last_incident_time")', function() {
+      // uncomment below and update the code to test the property last_incident_time
       //var instance = new MergeHrisApi.Issue();
       //expect(instance).to.be();
     });
 
-    it('should have the property isMuted (base name: "is_muted")', function() {
-      // uncomment below and update the code to test the property isMuted
+    it('should have the property is_muted (base name: "is_muted")', function() {
+      // uncomment below and update the code to test the property is_muted
       //var instance = new MergeHrisApi.Issue();
       //expect(instance).to.be();
     });

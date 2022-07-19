@@ -13,9 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
+import MetaResponse from '../model/MetaResponse';
 import PaginatedTimeOffList from '../model/PaginatedTimeOffList';
 import TimeOff from '../model/TimeOff';
-import TimeOffRequest from '../model/TimeOffRequest';
 import TimeOffEndpointRequest from '../model/TimeOffEndpointRequest';
 import TimeOffResponse from '../model/TimeOffResponse';
 
@@ -48,32 +48,34 @@ export default class TimeOffApi {
 
     /**
      * Creates a `TimeOff` object with the given values.
-     * @param {String} xAccountToken Token identifying the end user.
-     * @param {module:model/TimeOffEndpointRequest} timeOffEndpointRequest 
+     * @param {String} x_account_token Token identifying the end user.
+     * @param {module:model/TimeOffEndpointRequest} time_off_endpoint_request 
      * @param {Object} opts Optional parameters
-     * @param {Boolean} opts.runAsync Whether or not third-party updates should be run asynchronously.
+     * @param {Boolean} opts.is_debug_mode Whether to include debug fields (such as log file links) in the response.
+     * @param {Boolean} opts.run_async Whether or not third-party updates should be run asynchronously.
      * @param {module:api/TimeOffApi~timeOffCreateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TimeOffResponse}
      */
-    timeOffCreate(xAccountToken, timeOffEndpointRequest, opts, callback) {
+    timeOffCreate(x_account_token, time_off_endpoint_request, opts, callback) {
       opts = opts || {};
-      let postBody = timeOffEndpointRequest;
-      // verify the required parameter 'xAccountToken' is set
-      if (xAccountToken === undefined || xAccountToken === null) {
-        throw new Error("Missing the required parameter 'xAccountToken' when calling timeOffCreate");
+      let postBody = time_off_endpoint_request;
+      // verify the required parameter 'x_account_token' is set
+      if (x_account_token === undefined || x_account_token === null) {
+        throw new Error("Missing the required parameter 'x_account_token' when calling timeOffCreate");
       }
-      // verify the required parameter 'timeOffEndpointRequest' is set
-      if (timeOffEndpointRequest === undefined || timeOffEndpointRequest === null) {
-        throw new Error("Missing the required parameter 'timeOffEndpointRequest' when calling timeOffCreate");
+      // verify the required parameter 'time_off_endpoint_request' is set
+      if (time_off_endpoint_request === undefined || time_off_endpoint_request === null) {
+        throw new Error("Missing the required parameter 'time_off_endpoint_request' when calling timeOffCreate");
       }
 
       let pathParams = {
       };
       let queryParams = {
-        'run_async': opts['runAsync']
+        'is_debug_mode': opts['is_debug_mode'],
+        'run_async': opts['run_async']
       };
       let headerParams = {
-        'X-Account-Token': xAccountToken
+        'X-Account-Token': x_account_token
       };
       let formParams = {
       };
@@ -99,53 +101,55 @@ export default class TimeOffApi {
 
     /**
      * Returns a list of `TimeOff` objects.
-     * @param {String} xAccountToken Token identifying the end user.
+     * @param {String} x_account_token Token identifying the end user.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.approverId If provided, will only return time off for this approver.
-     * @param {Date} opts.createdAfter If provided, will only return objects created after this datetime.
-     * @param {Date} opts.createdBefore If provided, will only return objects created before this datetime.
+     * @param {String} opts.approver_id If provided, will only return time off for this approver.
+     * @param {Date} opts.created_after If provided, will only return objects created after this datetime.
+     * @param {Date} opts.created_before If provided, will only return objects created before this datetime.
      * @param {String} opts.cursor The pagination cursor value.
-     * @param {String} opts.employeeId If provided, will only return time off for this employee.
+     * @param {String} opts.employee_id If provided, will only return time off for this employee.
      * @param {module:model/String} opts.expand Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
-     * @param {Boolean} opts.includeDeletedData Whether to include data that was deleted in the third-party service.
-     * @param {Boolean} opts.includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
-     * @param {Date} opts.modifiedAfter If provided, will only return objects modified after this datetime.
-     * @param {Date} opts.modifiedBefore If provided, will only return objects modified before this datetime.
-     * @param {Number} opts.pageSize Number of results to return per page.
-     * @param {String} opts.remoteId The API provider's ID for the given object.
-     * @param {module:model/String} opts.requestType If provided, will only return TimeOff with this request type. Options: ('VACATION', 'SICK', 'PERSONAL', 'JURY_DUTY', 'VOLUNTEER', 'BEREAVEMENT')
+     * @param {Boolean} opts.include_deleted_data Whether to include data that was marked as deleted by third party webhooks.
+     * @param {Boolean} opts.include_remote_data Whether to include the original data Merge fetched from the third-party to produce these models.
+     * @param {Date} opts.modified_after If provided, will only return objects modified after this datetime.
+     * @param {Date} opts.modified_before If provided, will only return objects modified before this datetime.
+     * @param {Number} opts.page_size Number of results to return per page.
+     * @param {module:model/String} opts.remote_fields Which fields should be returned in non-normalized form.
+     * @param {String} opts.remote_id The API provider's ID for the given object.
+     * @param {module:model/String} opts.request_type If provided, will only return TimeOff with this request type. Options: ('VACATION', 'SICK', 'PERSONAL', 'JURY_DUTY', 'VOLUNTEER', 'BEREAVEMENT')
      * @param {module:model/String} opts.status If provided, will only return TimeOff with this status. Options: ('REQUESTED', 'APPROVED', 'DECLINED', 'CANCELLED', 'DELETED')
      * @param {module:api/TimeOffApi~timeOffListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedTimeOffList}
      */
-    timeOffList(xAccountToken, opts, callback) {
+    timeOffList(x_account_token, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'xAccountToken' is set
-      if (xAccountToken === undefined || xAccountToken === null) {
-        throw new Error("Missing the required parameter 'xAccountToken' when calling timeOffList");
+      // verify the required parameter 'x_account_token' is set
+      if (x_account_token === undefined || x_account_token === null) {
+        throw new Error("Missing the required parameter 'x_account_token' when calling timeOffList");
       }
 
       let pathParams = {
       };
       let queryParams = {
-        'approver_id': opts['approverId'],
-        'created_after': opts['createdAfter'],
-        'created_before': opts['createdBefore'],
+        'approver_id': opts['approver_id'],
+        'created_after': opts['created_after'],
+        'created_before': opts['created_before'],
         'cursor': opts['cursor'],
-        'employee_id': opts['employeeId'],
+        'employee_id': opts['employee_id'],
         'expand': opts['expand'],
-        'include_deleted_data': opts['includeDeletedData'],
-        'include_remote_data': opts['includeRemoteData'],
-        'modified_after': opts['modifiedAfter'],
-        'modified_before': opts['modifiedBefore'],
-        'page_size': opts['pageSize'],
-        'remote_id': opts['remoteId'],
-        'request_type': opts['requestType'],
+        'include_deleted_data': opts['include_deleted_data'],
+        'include_remote_data': opts['include_remote_data'],
+        'modified_after': opts['modified_after'],
+        'modified_before': opts['modified_before'],
+        'page_size': opts['page_size'],
+        'remote_fields': opts['remote_fields'],
+        'remote_id': opts['remote_id'],
+        'request_type': opts['request_type'],
         'status': opts['status']
       };
       let headerParams = {
-        'X-Account-Token': xAccountToken
+        'X-Account-Token': x_account_token
       };
       let formParams = {
       };
@@ -162,6 +166,48 @@ export default class TimeOffApi {
     }
 
     /**
+     * Callback function to receive the result of the timeOffMetaPostRetrieve operation.
+     * @callback module:api/TimeOffApi~timeOffMetaPostRetrieveCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/MetaResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Returns metadata for `TimeOff` POSTs.
+     * @param {String} x_account_token Token identifying the end user.
+     * @param {module:api/TimeOffApi~timeOffMetaPostRetrieveCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/MetaResponse}
+     */
+    timeOffMetaPostRetrieve(x_account_token, callback) {
+      let postBody = null;
+      // verify the required parameter 'x_account_token' is set
+      if (x_account_token === undefined || x_account_token === null) {
+        throw new Error("Missing the required parameter 'x_account_token' when calling timeOffMetaPostRetrieve");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+        'X-Account-Token': x_account_token
+      };
+      let formParams = {
+      };
+
+      let authNames = ['tokenAuth'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = MetaResponse;
+      return this.apiClient.callApi(
+        '/time-off/meta/post', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the timeOffRetrieve operation.
      * @callback module:api/TimeOffApi~timeOffRetrieveCallback
      * @param {String} error Error message, if any.
@@ -171,20 +217,21 @@ export default class TimeOffApi {
 
     /**
      * Returns a `TimeOff` object with the given `id`.
-     * @param {String} xAccountToken Token identifying the end user.
+     * @param {String} x_account_token Token identifying the end user.
      * @param {String} id 
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.expand Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
-     * @param {Boolean} opts.includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
+     * @param {Boolean} opts.include_remote_data Whether to include the original data Merge fetched from the third-party to produce these models.
+     * @param {module:model/String} opts.remote_fields Which fields should be returned in non-normalized form.
      * @param {module:api/TimeOffApi~timeOffRetrieveCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TimeOff}
      */
-    timeOffRetrieve(xAccountToken, id, opts, callback) {
+    timeOffRetrieve(x_account_token, id, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'xAccountToken' is set
-      if (xAccountToken === undefined || xAccountToken === null) {
-        throw new Error("Missing the required parameter 'xAccountToken' when calling timeOffRetrieve");
+      // verify the required parameter 'x_account_token' is set
+      if (x_account_token === undefined || x_account_token === null) {
+        throw new Error("Missing the required parameter 'x_account_token' when calling timeOffRetrieve");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -196,10 +243,11 @@ export default class TimeOffApi {
       };
       let queryParams = {
         'expand': opts['expand'],
-        'include_remote_data': opts['includeRemoteData']
+        'include_remote_data': opts['include_remote_data'],
+        'remote_fields': opts['remote_fields']
       };
       let headerParams = {
-        'X-Account-Token': xAccountToken
+        'X-Account-Token': x_account_token
       };
       let formParams = {
       };

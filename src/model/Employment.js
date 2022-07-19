@@ -12,14 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import convertRelatedObjectToType from '../Utils';
 import EmploymentTypeEnum from './EmploymentTypeEnum';
 import FlsaStatusEnum from './FlsaStatusEnum';
 import PayCurrencyEnum from './PayCurrencyEnum';
 import PayFrequencyEnum from './PayFrequencyEnum';
 import PayPeriodEnum from './PayPeriodEnum';
 import RemoteData from './RemoteData';
-import Employee from './Employee';
 
 /**
  * The Employment model module.
@@ -29,7 +27,7 @@ import Employee from './Employee';
 class Employment {
     /**
      * Constructs a new <code>Employment</code>.
-     * # The Employment Object ### Description The &#x60;Employment&#x60; object is used to represent an employment position at a company. These are associated with the employee filling the role.  ### Usage Example Fetch from the &#x60;LIST Employments&#x60; endpoint and filter by &#x60;ID&#x60; to show all employees.
+     * # The Employment Object ### Description The &#x60;Employment&#x60; object is used to represent an employment position at a company. These are associated with the employee filling the role.  Please note: Employment objects are constructed if the object does not exist in the remote system.  ### Usage Example Fetch from the &#x60;LIST Employments&#x60; endpoint and filter by &#x60;ID&#x60; to show all employees.
      * @alias module:model/Employment
      */
     constructor() { 
@@ -63,7 +61,7 @@ class Employment {
                 obj['remote_id'] = ApiClient.convertToType(data['remote_id'], 'String');
             }
             if (data.hasOwnProperty('employee')) {
-                obj['employee'] = convertRelatedObjectToType(data['employee'], Employee);
+                obj['employee'] = ApiClient.convertToType(data['employee'], 'String');
             }
             if (data.hasOwnProperty('job_title')) {
                 obj['job_title'] = ApiClient.convertToType(data['job_title'], 'String');
@@ -80,6 +78,9 @@ class Employment {
             if (data.hasOwnProperty('pay_currency')) {
                 obj['pay_currency'] = ApiClient.convertToType(data['pay_currency'], PayCurrencyEnum);
             }
+            if (data.hasOwnProperty('pay_group')) {
+                obj['pay_group'] = ApiClient.convertToType(data['pay_group'], 'String');
+            }
             if (data.hasOwnProperty('flsa_status')) {
                 obj['flsa_status'] = ApiClient.convertToType(data['flsa_status'], FlsaStatusEnum);
             }
@@ -91,6 +92,9 @@ class Employment {
             }
             if (data.hasOwnProperty('remote_data')) {
                 obj['remote_data'] = ApiClient.convertToType(data['remote_data'], [RemoteData]);
+            }
+            if (data.hasOwnProperty('remote_was_deleted')) {
+                obj['remote_was_deleted'] = ApiClient.convertToType(data['remote_was_deleted'], 'Boolean');
             }
         }
         return obj;
@@ -111,7 +115,6 @@ Employment.prototype['id'] = undefined;
 Employment.prototype['remote_id'] = undefined;
 
 /**
- * The employee holding this position.
  * @member {String} employee
  */
 Employment.prototype['employee'] = undefined;
@@ -147,6 +150,11 @@ Employment.prototype['pay_frequency'] = undefined;
 Employment.prototype['pay_currency'] = undefined;
 
 /**
+ * @member {String} pay_group
+ */
+Employment.prototype['pay_group'] = undefined;
+
+/**
  * The position's FLSA status.
  * @member {module:model/FlsaStatusEnum} flsa_status
  */
@@ -168,6 +176,12 @@ Employment.prototype['employment_type'] = undefined;
  * @member {Array.<module:model/RemoteData>} remote_data
  */
 Employment.prototype['remote_data'] = undefined;
+
+/**
+ * Indicates whether or not this object has been deleted by third party webhooks.
+ * @member {Boolean} remote_was_deleted
+ */
+Employment.prototype['remote_was_deleted'] = undefined;
 
 
 

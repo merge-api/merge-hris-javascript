@@ -38,21 +38,21 @@ export default class ForceResyncApi {
      * Callback function to receive the result of the syncStatusResyncCreate operation.
      * @callback module:api/ForceResyncApi~syncStatusResyncCreateCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/SyncStatus} data The data returned by the service call.
+     * @param {Array.<module:model/SyncStatus>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * Force re-sync of all models. This is only available for organizations on Merge's Grow and Expand plans.
-     * @param {String} xAccountToken Token identifying the end user.
+     * @param {String} x_account_token Token identifying the end user.
      * @param {module:api/ForceResyncApi~syncStatusResyncCreateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/SyncStatus}
+     * data is of type: {@link Array.<module:model/SyncStatus>}
      */
-    syncStatusResyncCreate(xAccountToken, callback) {
+    syncStatusResyncCreate(x_account_token, callback) {
       let postBody = null;
-      // verify the required parameter 'xAccountToken' is set
-      if (xAccountToken === undefined || xAccountToken === null) {
-        throw new Error("Missing the required parameter 'xAccountToken' when calling syncStatusResyncCreate");
+      // verify the required parameter 'x_account_token' is set
+      if (x_account_token === undefined || x_account_token === null) {
+        throw new Error("Missing the required parameter 'x_account_token' when calling syncStatusResyncCreate");
       }
 
       let pathParams = {
@@ -60,7 +60,7 @@ export default class ForceResyncApi {
       let queryParams = {
       };
       let headerParams = {
-        'X-Account-Token': xAccountToken
+        'X-Account-Token': x_account_token
       };
       let formParams = {
       };
@@ -68,7 +68,7 @@ export default class ForceResyncApi {
       let authNames = ['tokenAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = SyncStatus;
+      let returnType = [SyncStatus];
       return this.apiClient.callApi(
         '/sync-status/resync', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,

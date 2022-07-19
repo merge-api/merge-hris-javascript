@@ -60,8 +60,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property remoteId (base name: "remote_id")', function() {
-      // uncomment below and update the code to test the property remoteId
+    it('should have the property remote_id (base name: "remote_id")', function() {
+      // uncomment below and update the code to test the property remote_id
       //var instance = new MergeHrisApi.Benefit();
       //expect(instance).to.be();
     });
@@ -72,32 +72,38 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property providerName (base name: "provider_name")', function() {
-      // uncomment below and update the code to test the property providerName
+    it('should have the property provider_name (base name: "provider_name")', function() {
+      // uncomment below and update the code to test the property provider_name
       //var instance = new MergeHrisApi.Benefit();
       //expect(instance).to.be();
     });
 
-    it('should have the property benefitPlanType (base name: "benefit_plan_type")', function() {
-      // uncomment below and update the code to test the property benefitPlanType
+    it('should have the property benefit_plan_type (base name: "benefit_plan_type")', function() {
+      // uncomment below and update the code to test the property benefit_plan_type
       //var instance = new MergeHrisApi.Benefit();
       //expect(instance).to.be();
     });
 
-    it('should have the property employeeContribution (base name: "employee_contribution")', function() {
-      // uncomment below and update the code to test the property employeeContribution
+    it('should have the property employee_contribution (base name: "employee_contribution")', function() {
+      // uncomment below and update the code to test the property employee_contribution
       //var instance = new MergeHrisApi.Benefit();
       //expect(instance).to.be();
     });
 
-    it('should have the property companyContribution (base name: "company_contribution")', function() {
-      // uncomment below and update the code to test the property companyContribution
+    it('should have the property company_contribution (base name: "company_contribution")', function() {
+      // uncomment below and update the code to test the property company_contribution
       //var instance = new MergeHrisApi.Benefit();
       //expect(instance).to.be();
     });
 
-    it('should have the property remoteData (base name: "remote_data")', function() {
-      // uncomment below and update the code to test the property remoteData
+    it('should have the property remote_data (base name: "remote_data")', function() {
+      // uncomment below and update the code to test the property remote_data
+      //var instance = new MergeHrisApi.Benefit();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property remote_was_deleted (base name: "remote_was_deleted")', function() {
+      // uncomment below and update the code to test the property remote_was_deleted
       //var instance = new MergeHrisApi.Benefit();
       //expect(instance).to.be();
     });

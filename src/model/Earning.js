@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import TypeEnum from './TypeEnum';
+import EarningTypeEnum from './EarningTypeEnum';
 
 /**
  * The Earning model module.
@@ -59,10 +59,10 @@ class Earning {
                 obj['amount'] = ApiClient.convertToType(data['amount'], 'Number');
             }
             if (data.hasOwnProperty('type')) {
-                obj['type'] = ApiClient.convertToType(data['type'], TypeEnum);
+                obj['type'] = ApiClient.convertToType(data['type'], EarningTypeEnum);
             }
-            if (data.hasOwnProperty('remote_data')) {
-                obj['remote_data'] = ApiClient.convertToType(data['remote_data'], [{'String': Object}]);
+            if (data.hasOwnProperty('remote_was_deleted')) {
+                obj['remote_was_deleted'] = ApiClient.convertToType(data['remote_was_deleted'], 'Boolean');
             }
         }
         return obj;
@@ -77,7 +77,6 @@ class Earning {
 Earning.prototype['id'] = undefined;
 
 /**
- * The earning's employee payroll run.
  * @member {String} employee_payroll_run
  */
 Earning.prototype['employee_payroll_run'] = undefined;
@@ -90,14 +89,15 @@ Earning.prototype['amount'] = undefined;
 
 /**
  * The type of earning.
- * @member {module:model/TypeEnum} type
+ * @member {module:model/EarningTypeEnum} type
  */
 Earning.prototype['type'] = undefined;
 
 /**
- * @member {Array.<Object.<String, Object>>} remote_data
+ * Indicates whether or not this object has been deleted by third party webhooks.
+ * @member {Boolean} remote_was_deleted
  */
-Earning.prototype['remote_data'] = undefined;
+Earning.prototype['remote_was_deleted'] = undefined;
 
 
 

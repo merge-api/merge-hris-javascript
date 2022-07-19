@@ -22,7 +22,7 @@ import RemoteData from './RemoteData';
 class Company {
     /**
      * Constructs a new <code>Company</code>.
-     * # The Company Object ### Description The &#x60;Company&#x60; object is used to represent a Company.  ### Usage Example Fetch from the &#x60;LIST Companies&#x60; endpoint and filter by &#x60;ID&#x60; to show all companies.
+     * # The Company Object ### Description The &#x60;Company&#x60; object is used to represent a Company within the HRIS / Payroll system.  ### Usage Example Fetch from the &#x60;LIST Companies&#x60; endpoint and filter by &#x60;ID&#x60; to show all companies.
      * @alias module:model/Company
      */
     constructor() { 
@@ -67,6 +67,9 @@ class Company {
             if (data.hasOwnProperty('remote_data')) {
                 obj['remote_data'] = ApiClient.convertToType(data['remote_data'], [RemoteData]);
             }
+            if (data.hasOwnProperty('remote_was_deleted')) {
+                obj['remote_was_deleted'] = ApiClient.convertToType(data['remote_was_deleted'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -107,6 +110,12 @@ Company.prototype['eins'] = undefined;
  * @member {Array.<module:model/RemoteData>} remote_data
  */
 Company.prototype['remote_data'] = undefined;
+
+/**
+ * Indicates whether or not this object has been deleted by third party webhooks.
+ * @member {Boolean} remote_was_deleted
+ */
+Company.prototype['remote_was_deleted'] = undefined;
 
 
 

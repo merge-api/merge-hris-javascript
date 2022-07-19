@@ -24,7 +24,7 @@ import RunTypeEnum from './RunTypeEnum';
 class PayrollRun {
     /**
      * Constructs a new <code>PayrollRun</code>.
-     * # The PayrollRun Object ### Description The &#x60;PayrollRun&#x60; object is used to represent a payroll run.  ### Usage Example Fetch from the &#x60;LIST PayrollRuns&#x60; endpoint and filter by &#x60;ID&#x60; to show all payroll runs.
+     * # The PayrollRun Object ### Description The &#x60;PayrollRun&#x60; object is used to represent a payroll run. This payroll run is not specific to an employee.  ### Usage Example Fetch from the &#x60;LIST PayrollRuns&#x60; endpoint and filter by &#x60;ID&#x60; to show all payroll runs.
      * @alias module:model/PayrollRun
      */
     constructor() { 
@@ -74,6 +74,9 @@ class PayrollRun {
             }
             if (data.hasOwnProperty('remote_data')) {
                 obj['remote_data'] = ApiClient.convertToType(data['remote_data'], [RemoteData]);
+            }
+            if (data.hasOwnProperty('remote_was_deleted')) {
+                obj['remote_was_deleted'] = ApiClient.convertToType(data['remote_was_deleted'], 'Boolean');
             }
         }
         return obj;
@@ -127,6 +130,12 @@ PayrollRun.prototype['check_date'] = undefined;
  * @member {Array.<module:model/RemoteData>} remote_data
  */
 PayrollRun.prototype['remote_data'] = undefined;
+
+/**
+ * Indicates whether or not this object has been deleted by third party webhooks.
+ * @member {Boolean} remote_was_deleted
+ */
+PayrollRun.prototype['remote_was_deleted'] = undefined;
 
 
 

@@ -24,16 +24,16 @@ class SyncStatus {
      * Constructs a new <code>SyncStatus</code>.
      * # The SyncStatus Object ### Description The &#x60;SyncStatus&#x60; object is used to represent the syncing state of an account  ### Usage Example View the &#x60;SyncStatus&#x60; for an account to see how recently its models were synced.
      * @alias module:model/SyncStatus
-     * @param modelName {String} 
-     * @param modelId {String} 
-     * @param lastSyncStart {Date} 
-     * @param nextSyncStart {Date} 
+     * @param model_name {String} 
+     * @param model_id {String} 
+     * @param last_sync_start {Date} 
+     * @param next_sync_start {Date} 
      * @param status {module:model/SyncStatusStatusEnum} 
-     * @param isInitialSync {Boolean} 
+     * @param is_initial_sync {Boolean} 
      */
-    constructor(modelName, modelId, lastSyncStart, nextSyncStart, status, isInitialSync) { 
+    constructor(model_name, model_id, last_sync_start, next_sync_start, status, is_initial_sync) { 
         
-        SyncStatus.initialize(this, modelName, modelId, lastSyncStart, nextSyncStart, status, isInitialSync);
+        SyncStatus.initialize(this, model_name, model_id, last_sync_start, next_sync_start, status, is_initial_sync);
     }
 
     /**
@@ -41,13 +41,13 @@ class SyncStatus {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, modelName, modelId, lastSyncStart, nextSyncStart, status, isInitialSync) { 
-        obj['model_name'] = modelName;
-        obj['model_id'] = modelId;
-        obj['last_sync_start'] = lastSyncStart;
-        obj['next_sync_start'] = nextSyncStart;
+    static initialize(obj, model_name, model_id, last_sync_start, next_sync_start, status, is_initial_sync) { 
+        obj['model_name'] = model_name;
+        obj['model_id'] = model_id;
+        obj['last_sync_start'] = last_sync_start;
+        obj['next_sync_start'] = next_sync_start;
         obj['status'] = status;
-        obj['is_initial_sync'] = isInitialSync;
+        obj['is_initial_sync'] = is_initial_sync;
     }
 
     /**

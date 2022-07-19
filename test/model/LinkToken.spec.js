@@ -54,14 +54,20 @@
       //expect(instance).to.be.a(MergeHrisApi.LinkToken);
     });
 
-    it('should have the property linkToken (base name: "link_token")', function() {
-      // uncomment below and update the code to test the property linkToken
+    it('should have the property link_token (base name: "link_token")', function() {
+      // uncomment below and update the code to test the property link_token
       //var instance = new MergeHrisApi.LinkToken();
       //expect(instance).to.be();
     });
 
-    it('should have the property integrationName (base name: "integration_name")', function() {
-      // uncomment below and update the code to test the property integrationName
+    it('should have the property integration_name (base name: "integration_name")', function() {
+      // uncomment below and update the code to test the property integration_name
+      //var instance = new MergeHrisApi.LinkToken();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property magic_link_url (base name: "magic_link_url")', function() {
+      // uncomment below and update the code to test the property magic_link_url
       //var instance = new MergeHrisApi.LinkToken();
       //expect(instance).to.be();
     });

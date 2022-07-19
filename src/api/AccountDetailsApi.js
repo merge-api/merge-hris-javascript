@@ -44,17 +44,23 @@ export default class AccountDetailsApi {
 
     /**
      * Get details for a linked account.
+     * @param {String} x_account_token Token identifying the end user.
      * @param {module:api/AccountDetailsApi~accountDetailsRetrieveCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccountDetails}
      */
-    accountDetailsRetrieve(callback) {
+    accountDetailsRetrieve(x_account_token, callback) {
       let postBody = null;
+      // verify the required parameter 'x_account_token' is set
+      if (x_account_token === undefined || x_account_token === null) {
+        throw new Error("Missing the required parameter 'x_account_token' when calling accountDetailsRetrieve");
+      }
 
       let pathParams = {
       };
       let queryParams = {
       };
       let headerParams = {
+        'X-Account-Token': x_account_token
       };
       let formParams = {
       };

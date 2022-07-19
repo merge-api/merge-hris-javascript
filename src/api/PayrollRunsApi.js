@@ -45,53 +45,55 @@ export default class PayrollRunsApi {
 
     /**
      * Returns a list of `PayrollRun` objects.
-     * @param {String} xAccountToken Token identifying the end user.
+     * @param {String} x_account_token Token identifying the end user.
      * @param {Object} opts Optional parameters
-     * @param {Date} opts.createdAfter If provided, will only return objects created after this datetime.
-     * @param {Date} opts.createdBefore If provided, will only return objects created before this datetime.
+     * @param {Date} opts.created_after If provided, will only return objects created after this datetime.
+     * @param {Date} opts.created_before If provided, will only return objects created before this datetime.
      * @param {String} opts.cursor The pagination cursor value.
-     * @param {Date} opts.endedAfter If provided, will only return payroll runs ended after this datetime.
-     * @param {Date} opts.endedBefore If provided, will only return payroll runs ended before this datetime.
-     * @param {Boolean} opts.includeDeletedData Whether to include data that was deleted in the third-party service.
-     * @param {Boolean} opts.includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
-     * @param {Date} opts.modifiedAfter If provided, will only return objects modified after this datetime.
-     * @param {Date} opts.modifiedBefore If provided, will only return objects modified before this datetime.
-     * @param {Number} opts.pageSize Number of results to return per page.
-     * @param {String} opts.remoteId The API provider's ID for the given object.
-     * @param {module:model/String} opts.runType If provided, will only return PayrollRun's with this status. Options: ('REGULAR', 'OFF_CYCLE', 'CORRECTION', 'TERMINATION', 'SIGN_ON_BONUS')
-     * @param {Date} opts.startedAfter If provided, will only return payroll runs started after this datetime.
-     * @param {Date} opts.startedBefore If provided, will only return payroll runs started before this datetime.
+     * @param {Date} opts.ended_after If provided, will only return payroll runs ended after this datetime.
+     * @param {Date} opts.ended_before If provided, will only return payroll runs ended before this datetime.
+     * @param {Boolean} opts.include_deleted_data Whether to include data that was marked as deleted by third party webhooks.
+     * @param {Boolean} opts.include_remote_data Whether to include the original data Merge fetched from the third-party to produce these models.
+     * @param {Date} opts.modified_after If provided, will only return objects modified after this datetime.
+     * @param {Date} opts.modified_before If provided, will only return objects modified before this datetime.
+     * @param {Number} opts.page_size Number of results to return per page.
+     * @param {module:model/String} opts.remote_fields Which fields should be returned in non-normalized form.
+     * @param {String} opts.remote_id The API provider's ID for the given object.
+     * @param {module:model/String} opts.run_type If provided, will only return PayrollRun's with this status. Options: ('REGULAR', 'OFF_CYCLE', 'CORRECTION', 'TERMINATION', 'SIGN_ON_BONUS')
+     * @param {Date} opts.started_after If provided, will only return payroll runs started after this datetime.
+     * @param {Date} opts.started_before If provided, will only return payroll runs started before this datetime.
      * @param {module:api/PayrollRunsApi~payrollRunsListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedPayrollRunList}
      */
-    payrollRunsList(xAccountToken, opts, callback) {
+    payrollRunsList(x_account_token, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'xAccountToken' is set
-      if (xAccountToken === undefined || xAccountToken === null) {
-        throw new Error("Missing the required parameter 'xAccountToken' when calling payrollRunsList");
+      // verify the required parameter 'x_account_token' is set
+      if (x_account_token === undefined || x_account_token === null) {
+        throw new Error("Missing the required parameter 'x_account_token' when calling payrollRunsList");
       }
 
       let pathParams = {
       };
       let queryParams = {
-        'created_after': opts['createdAfter'],
-        'created_before': opts['createdBefore'],
+        'created_after': opts['created_after'],
+        'created_before': opts['created_before'],
         'cursor': opts['cursor'],
-        'ended_after': opts['endedAfter'],
-        'ended_before': opts['endedBefore'],
-        'include_deleted_data': opts['includeDeletedData'],
-        'include_remote_data': opts['includeRemoteData'],
-        'modified_after': opts['modifiedAfter'],
-        'modified_before': opts['modifiedBefore'],
-        'page_size': opts['pageSize'],
-        'remote_id': opts['remoteId'],
-        'run_type': opts['runType'],
-        'started_after': opts['startedAfter'],
-        'started_before': opts['startedBefore']
+        'ended_after': opts['ended_after'],
+        'ended_before': opts['ended_before'],
+        'include_deleted_data': opts['include_deleted_data'],
+        'include_remote_data': opts['include_remote_data'],
+        'modified_after': opts['modified_after'],
+        'modified_before': opts['modified_before'],
+        'page_size': opts['page_size'],
+        'remote_fields': opts['remote_fields'],
+        'remote_id': opts['remote_id'],
+        'run_type': opts['run_type'],
+        'started_after': opts['started_after'],
+        'started_before': opts['started_before']
       };
       let headerParams = {
-        'X-Account-Token': xAccountToken
+        'X-Account-Token': x_account_token
       };
       let formParams = {
       };
@@ -117,19 +119,20 @@ export default class PayrollRunsApi {
 
     /**
      * Returns a `PayrollRun` object with the given `id`.
-     * @param {String} xAccountToken Token identifying the end user.
+     * @param {String} x_account_token Token identifying the end user.
      * @param {String} id 
      * @param {Object} opts Optional parameters
-     * @param {Boolean} opts.includeRemoteData Whether to include the original data Merge fetched from the third-party to produce these models.
+     * @param {Boolean} opts.include_remote_data Whether to include the original data Merge fetched from the third-party to produce these models.
+     * @param {module:model/String} opts.remote_fields Which fields should be returned in non-normalized form.
      * @param {module:api/PayrollRunsApi~payrollRunsRetrieveCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PayrollRun}
      */
-    payrollRunsRetrieve(xAccountToken, id, opts, callback) {
+    payrollRunsRetrieve(x_account_token, id, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'xAccountToken' is set
-      if (xAccountToken === undefined || xAccountToken === null) {
-        throw new Error("Missing the required parameter 'xAccountToken' when calling payrollRunsRetrieve");
+      // verify the required parameter 'x_account_token' is set
+      if (x_account_token === undefined || x_account_token === null) {
+        throw new Error("Missing the required parameter 'x_account_token' when calling payrollRunsRetrieve");
       }
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -140,10 +143,11 @@ export default class PayrollRunsApi {
         'id': id
       };
       let queryParams = {
-        'include_remote_data': opts['includeRemoteData']
+        'include_remote_data': opts['include_remote_data'],
+        'remote_fields': opts['remote_fields']
       };
       let headerParams = {
-        'X-Account-Token': xAccountToken
+        'X-Account-Token': x_account_token
       };
       let formParams = {
       };

@@ -12,11 +12,8 @@
  */
 
 import ApiClient from '../ApiClient';
-import convertRelatedObjectToType from '../Utils';
 import Deduction from './Deduction';
 import Earning from './Earning';
-import Employee from './Employee';
-import PayrollRun from './PayrollRun';
 import RemoteData from './RemoteData';
 import Tax from './Tax';
 
@@ -62,10 +59,10 @@ class EmployeePayrollRun {
                 obj['remote_id'] = ApiClient.convertToType(data['remote_id'], 'String');
             }
             if (data.hasOwnProperty('employee')) {
-                obj['employee'] = convertRelatedObjectToType(data['employee'], Employee);
+                obj['employee'] = ApiClient.convertToType(data['employee'], 'String');
             }
             if (data.hasOwnProperty('payroll_run')) {
-                obj['payroll_run'] = convertRelatedObjectToType(data['payroll_run'], PayrollRun);
+                obj['payroll_run'] = ApiClient.convertToType(data['payroll_run'], 'String');
             }
             if (data.hasOwnProperty('gross_pay')) {
                 obj['gross_pay'] = ApiClient.convertToType(data['gross_pay'], 'Number');
@@ -94,6 +91,9 @@ class EmployeePayrollRun {
             if (data.hasOwnProperty('remote_data')) {
                 obj['remote_data'] = ApiClient.convertToType(data['remote_data'], [RemoteData]);
             }
+            if (data.hasOwnProperty('remote_was_deleted')) {
+                obj['remote_was_deleted'] = ApiClient.convertToType(data['remote_was_deleted'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -113,13 +113,11 @@ EmployeePayrollRun.prototype['id'] = undefined;
 EmployeePayrollRun.prototype['remote_id'] = undefined;
 
 /**
- * The employee whose payroll is being run.
  * @member {String} employee
  */
 EmployeePayrollRun.prototype['employee'] = undefined;
 
 /**
- * The payroll being run.
  * @member {String} payroll_run
  */
 EmployeePayrollRun.prototype['payroll_run'] = undefined;
@@ -173,6 +171,12 @@ EmployeePayrollRun.prototype['taxes'] = undefined;
  * @member {Array.<module:model/RemoteData>} remote_data
  */
 EmployeePayrollRun.prototype['remote_data'] = undefined;
+
+/**
+ * Indicates whether or not this object has been deleted by third party webhooks.
+ * @member {Boolean} remote_was_deleted
+ */
+EmployeePayrollRun.prototype['remote_was_deleted'] = undefined;
 
 
 

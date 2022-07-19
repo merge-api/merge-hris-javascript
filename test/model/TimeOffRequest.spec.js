@@ -54,8 +54,8 @@
       //expect(instance).to.be.a(MergeHrisApi.TimeOffRequest);
     });
 
-    it('should have the property remoteId (base name: "remote_id")', function() {
-      // uncomment below and update the code to test the property remoteId
+    it('should have the property remote_id (base name: "remote_id")', function() {
+      // uncomment below and update the code to test the property remote_id
       //var instance = new MergeHrisApi.TimeOffRequest();
       //expect(instance).to.be();
     });
@@ -78,8 +78,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property employeeNote (base name: "employee_note")', function() {
-      // uncomment below and update the code to test the property employeeNote
+    it('should have the property employee_note (base name: "employee_note")', function() {
+      // uncomment below and update the code to test the property employee_note
       //var instance = new MergeHrisApi.TimeOffRequest();
       //expect(instance).to.be();
     });
@@ -96,20 +96,20 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property requestType (base name: "request_type")', function() {
-      // uncomment below and update the code to test the property requestType
+    it('should have the property request_type (base name: "request_type")', function() {
+      // uncomment below and update the code to test the property request_type
       //var instance = new MergeHrisApi.TimeOffRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property startTime (base name: "start_time")', function() {
-      // uncomment below and update the code to test the property startTime
+    it('should have the property start_time (base name: "start_time")', function() {
+      // uncomment below and update the code to test the property start_time
       //var instance = new MergeHrisApi.TimeOffRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property endTime (base name: "end_time")', function() {
-      // uncomment below and update the code to test the property endTime
+    it('should have the property end_time (base name: "end_time")', function() {
+      // uncomment below and update the code to test the property end_time
       //var instance = new MergeHrisApi.TimeOffRequest();
       //expect(instance).to.be();
     });

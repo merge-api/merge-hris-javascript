@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## employmentsList
 
-> PaginatedEmploymentList employmentsList(xAccountToken, opts)
+> PaginatedEmploymentList employmentsList(x_account_token, opts)
 
 
 
@@ -29,22 +29,23 @@ tokenAuth.apiKey = 'YOUR API KEY';
 //tokenAuth.apiKeyPrefix = 'Token';
 
 let apiInstance = new MergeHrisApi.EmploymentsApi();
-let xAccountToken = "xAccountToken_example"; // String | Token identifying the end user.
+let x_account_token = "x_account_token_example"; // String | Token identifying the end user.
 let opts = {
-  'createdAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects created after this datetime.
-  'createdBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects created before this datetime.
+  'created_after': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects created after this datetime.
+  'created_before': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects created before this datetime.
   'cursor': cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw, // String | The pagination cursor value.
-  'employeeId': "employeeId_example", // String | If provided, will only return employments for this employee.
-  'expand': employee, // String | Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
-  'includeDeletedData': true, // Boolean | Whether to include data that was deleted in the third-party service.
-  'includeRemoteData': true, // Boolean | Whether to include the original data Merge fetched from the third-party to produce these models.
-  'modifiedAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects modified after this datetime.
-  'modifiedBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects modified before this datetime.
-  'orderBy': "orderBy_example", // String | Overrides the default ordering for this endpoint.
-  'pageSize': 56, // Number | Number of results to return per page.
-  'remoteId': "remoteId_example" // String | The API provider's ID for the given object.
+  'employee_id': "employee_id_example", // String | If provided, will only return employments for this employee.
+  'expand': employee,pay_group, // String | Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
+  'include_deleted_data': true, // Boolean | Whether to include data that was marked as deleted by third party webhooks.
+  'include_remote_data': true, // Boolean | Whether to include the original data Merge fetched from the third-party to produce these models.
+  'modified_after': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects modified after this datetime.
+  'modified_before': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects modified before this datetime.
+  'order_by': "order_by_example", // String | Overrides the default ordering for this endpoint.
+  'page_size': 56, // Number | Number of results to return per page.
+  'remote_fields': employment_type,flsa_status,pay_frequency,pay_period, // String | Which fields should be returned in non-normalized form.
+  'remote_id': "remote_id_example" // String | The API provider's ID for the given object.
 };
-apiInstance.employmentsList(xAccountToken, opts, (error, data, response) => {
+apiInstance.employmentsList(x_account_token, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -58,19 +59,20 @@ apiInstance.employmentsList(xAccountToken, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xAccountToken** | **String**| Token identifying the end user. | 
- **createdAfter** | **Date**| If provided, will only return objects created after this datetime. | [optional] 
- **createdBefore** | **Date**| If provided, will only return objects created before this datetime. | [optional] 
+ **x_account_token** | **String**| Token identifying the end user. | 
+ **created_after** | **Date**| If provided, will only return objects created after this datetime. | [optional] 
+ **created_before** | **Date**| If provided, will only return objects created before this datetime. | [optional] 
  **cursor** | **String**| The pagination cursor value. | [optional] 
- **employeeId** | **String**| If provided, will only return employments for this employee. | [optional] 
+ **employee_id** | **String**| If provided, will only return employments for this employee. | [optional] 
  **expand** | **String**| Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces. | [optional] 
- **includeDeletedData** | **Boolean**| Whether to include data that was deleted in the third-party service. | [optional] 
- **includeRemoteData** | **Boolean**| Whether to include the original data Merge fetched from the third-party to produce these models. | [optional] 
- **modifiedAfter** | **Date**| If provided, will only return objects modified after this datetime. | [optional] 
- **modifiedBefore** | **Date**| If provided, will only return objects modified before this datetime. | [optional] 
- **orderBy** | **String**| Overrides the default ordering for this endpoint. | [optional] 
- **pageSize** | **Number**| Number of results to return per page. | [optional] 
- **remoteId** | **String**| The API provider&#39;s ID for the given object. | [optional] 
+ **include_deleted_data** | **Boolean**| Whether to include data that was marked as deleted by third party webhooks. | [optional] 
+ **include_remote_data** | **Boolean**| Whether to include the original data Merge fetched from the third-party to produce these models. | [optional] 
+ **modified_after** | **Date**| If provided, will only return objects modified after this datetime. | [optional] 
+ **modified_before** | **Date**| If provided, will only return objects modified before this datetime. | [optional] 
+ **order_by** | **String**| Overrides the default ordering for this endpoint. | [optional] 
+ **page_size** | **Number**| Number of results to return per page. | [optional] 
+ **remote_fields** | **String**| Which fields should be returned in non-normalized form. | [optional] 
+ **remote_id** | **String**| The API provider&#39;s ID for the given object. | [optional] 
 
 ### Return type
 
@@ -88,7 +90,7 @@ Name | Type | Description  | Notes
 
 ## employmentsRetrieve
 
-> Employment employmentsRetrieve(xAccountToken, id, opts)
+> Employment employmentsRetrieve(x_account_token, id, opts)
 
 
 
@@ -106,13 +108,14 @@ tokenAuth.apiKey = 'YOUR API KEY';
 //tokenAuth.apiKeyPrefix = 'Token';
 
 let apiInstance = new MergeHrisApi.EmploymentsApi();
-let xAccountToken = "xAccountToken_example"; // String | Token identifying the end user.
+let x_account_token = "x_account_token_example"; // String | Token identifying the end user.
 let id = null; // String | 
 let opts = {
-  'expand': employee, // String | Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
-  'includeRemoteData': true // Boolean | Whether to include the original data Merge fetched from the third-party to produce these models.
+  'expand': employee,pay_group, // String | Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
+  'include_remote_data': true, // Boolean | Whether to include the original data Merge fetched from the third-party to produce these models.
+  'remote_fields': employment_type,flsa_status,pay_frequency,pay_period // String | Which fields should be returned in non-normalized form.
 };
-apiInstance.employmentsRetrieve(xAccountToken, id, opts, (error, data, response) => {
+apiInstance.employmentsRetrieve(x_account_token, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -126,10 +129,11 @@ apiInstance.employmentsRetrieve(xAccountToken, id, opts, (error, data, response)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xAccountToken** | **String**| Token identifying the end user. | 
+ **x_account_token** | **String**| Token identifying the end user. | 
  **id** | [**String**](.md)|  | 
  **expand** | **String**| Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces. | [optional] 
- **includeRemoteData** | **Boolean**| Whether to include the original data Merge fetched from the third-party to produce these models. | [optional] 
+ **include_remote_data** | **Boolean**| Whether to include the original data Merge fetched from the third-party to produce these models. | [optional] 
+ **remote_fields** | **String**| Which fields should be returned in non-normalized form. | [optional] 
 
 ### Return type
 

@@ -47,15 +47,15 @@ export default class LinkedAccountsApi {
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.category 
      * @param {String} opts.cursor The pagination cursor value.
-     * @param {String} opts.endUserEmailAddress 
-     * @param {String} opts.endUserOrganizationName 
-     * @param {String} opts.endUserOriginId 
-     * @param {String} opts.endUserOriginIds Comma-separated list of EndUser origin IDs, making it possible to specify multiple EndUsers at once
+     * @param {String} opts.end_user_email_address If provided, will only return linked accounts associated with the given email address.
+     * @param {String} opts.end_user_organization_name If provided, will only return linked accounts associated with the given organization name.
+     * @param {String} opts.end_user_origin_id If provided, will only return linked accounts associated with the given origin ID.
+     * @param {String} opts.end_user_origin_ids Comma-separated list of EndUser origin IDs, making it possible to specify multiple EndUsers at once.
      * @param {String} opts.id 
-     * @param {String} opts.ids Comma-separated list of LinkedAccount IDs, making it possible to specify multiple LinkedAccounts at once
-     * @param {String} opts.integrationName 
-     * @param {String} opts.isTestAccount If included, will only include test linked accounts. If not included, will only include non-test linked accounts
-     * @param {Number} opts.pageSize Number of results to return per page.
+     * @param {String} opts.ids Comma-separated list of LinkedAccount IDs, making it possible to specify multiple LinkedAccounts at once.
+     * @param {String} opts.integration_name If provided, will only return linked accounts associated with the given integration name.
+     * @param {String} opts.is_test_account If included, will only include test linked accounts. If not included, will only include non-test linked accounts.
+     * @param {Number} opts.page_size Number of results to return per page.
      * @param {String} opts.status Filter by status. Options: `COMPLETE`, `INCOMPLETE`, `RELINK_NEEDED`
      * @param {module:api/LinkedAccountsApi~linkedAccountsListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedAccountDetailsAndActionsList}
@@ -69,15 +69,15 @@ export default class LinkedAccountsApi {
       let queryParams = {
         'category': opts['category'],
         'cursor': opts['cursor'],
-        'end_user_email_address': opts['endUserEmailAddress'],
-        'end_user_organization_name': opts['endUserOrganizationName'],
-        'end_user_origin_id': opts['endUserOriginId'],
-        'end_user_origin_ids': opts['endUserOriginIds'],
+        'end_user_email_address': opts['end_user_email_address'],
+        'end_user_organization_name': opts['end_user_organization_name'],
+        'end_user_origin_id': opts['end_user_origin_id'],
+        'end_user_origin_ids': opts['end_user_origin_ids'],
         'id': opts['id'],
         'ids': opts['ids'],
-        'integration_name': opts['integrationName'],
-        'is_test_account': opts['isTestAccount'],
-        'page_size': opts['pageSize'],
+        'integration_name': opts['integration_name'],
+        'is_test_account': opts['is_test_account'],
+        'page_size': opts['page_size'],
         'status': opts['status']
       };
       let headerParams = {

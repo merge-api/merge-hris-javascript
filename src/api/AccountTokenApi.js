@@ -44,19 +44,19 @@ export default class AccountTokenApi {
 
     /**
      * Returns the account token for the end user with the provided public token.
-     * @param {String} publicToken 
+     * @param {String} public_token 
      * @param {module:api/AccountTokenApi~accountTokenRetrieveCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccountToken}
      */
-    accountTokenRetrieve(publicToken, callback) {
+    accountTokenRetrieve(public_token, callback) {
       let postBody = null;
-      // verify the required parameter 'publicToken' is set
-      if (publicToken === undefined || publicToken === null) {
-        throw new Error("Missing the required parameter 'publicToken' when calling accountTokenRetrieve");
+      // verify the required parameter 'public_token' is set
+      if (public_token === undefined || public_token === null) {
+        throw new Error("Missing the required parameter 'public_token' when calling accountTokenRetrieve");
       }
 
       let pathParams = {
-        'public_token': publicToken
+        'public_token': public_token
       };
       let queryParams = {
       };

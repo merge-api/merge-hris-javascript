@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## passthroughCreate
 
-> RemoteResponse passthroughCreate(xAccountToken, dataPassthroughRequest)
+> RemoteResponse passthroughCreate(x_account_token, data_passthrough_request)
 
 
 
@@ -28,9 +28,9 @@ tokenAuth.apiKey = 'YOUR API KEY';
 //tokenAuth.apiKeyPrefix = 'Token';
 
 let apiInstance = new MergeHrisApi.PassthroughApi();
-let xAccountToken = "xAccountToken_example"; // String | Token identifying the end user.
-let dataPassthroughRequest = new MergeHrisApi.DataPassthroughRequest(); // DataPassthroughRequest | 
-apiInstance.passthroughCreate(xAccountToken, dataPassthroughRequest, (error, data, response) => {
+let x_account_token = "x_account_token_example"; // String | Token identifying the end user.
+let data_passthrough_request = new MergeHrisApi.DataPassthroughRequest(); // DataPassthroughRequest | 
+apiInstance.passthroughCreate(x_account_token, data_passthrough_request, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -44,8 +44,8 @@ apiInstance.passthroughCreate(xAccountToken, dataPassthroughRequest, (error, dat
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xAccountToken** | **String**| Token identifying the end user. | 
- **dataPassthroughRequest** | [**DataPassthroughRequest**](DataPassthroughRequest.md)|  | 
+ **x_account_token** | **String**| Token identifying the end user. | 
+ **data_passthrough_request** | [**DataPassthroughRequest**](DataPassthroughRequest.md)|  | 
 
 ### Return type
 

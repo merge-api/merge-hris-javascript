@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **integration** | [**AccountIntegration**](AccountIntegration.md) |  | 
-**passthroughAvailable** | **Boolean** |  | 
-**availableModelOperations** | [**[ModelOperation]**](ModelOperation.md) |  | [optional] 
+**passthrough_available** | **Boolean** |  | 
+**available_model_operations** | [**[ModelOperation]**](ModelOperation.md) |  | [optional] 
 
 

@@ -26,11 +26,11 @@ class AvailableActions {
      * # The AvailableActions Object ### Description The &#x60;Activity&#x60; object is used to see all available model/operation combinations for an integration.  ### Usage Example Fetch all the actions available for the &#x60;Zenefits&#x60; integration.
      * @alias module:model/AvailableActions
      * @param integration {module:model/AccountIntegration} 
-     * @param passthroughAvailable {Boolean} 
+     * @param passthrough_available {Boolean} 
      */
-    constructor(integration, passthroughAvailable) { 
+    constructor(integration, passthrough_available) { 
         
-        AvailableActions.initialize(this, integration, passthroughAvailable);
+        AvailableActions.initialize(this, integration, passthrough_available);
     }
 
     /**
@@ -38,9 +38,9 @@ class AvailableActions {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, integration, passthroughAvailable) { 
+    static initialize(obj, integration, passthrough_available) { 
         obj['integration'] = integration;
-        obj['passthrough_available'] = passthroughAvailable;
+        obj['passthrough_available'] = passthrough_available;
     }
 
     /**

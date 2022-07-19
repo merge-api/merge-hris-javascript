@@ -60,62 +60,80 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property remoteId (base name: "remote_id")', function() {
-      // uncomment below and update the code to test the property remoteId
+    it('should have the property remote_id (base name: "remote_id")', function() {
+      // uncomment below and update the code to test the property remote_id
       //var instance = new MergeHrisApi.Employment();
       //expect(instance).to.be();
     });
 
-    it('should have the property jobTitle (base name: "job_title")', function() {
-      // uncomment below and update the code to test the property jobTitle
+    it('should have the property employee (base name: "employee")', function() {
+      // uncomment below and update the code to test the property employee
       //var instance = new MergeHrisApi.Employment();
       //expect(instance).to.be();
     });
 
-    it('should have the property payRate (base name: "pay_rate")', function() {
-      // uncomment below and update the code to test the property payRate
+    it('should have the property job_title (base name: "job_title")', function() {
+      // uncomment below and update the code to test the property job_title
       //var instance = new MergeHrisApi.Employment();
       //expect(instance).to.be();
     });
 
-    it('should have the property payPeriod (base name: "pay_period")', function() {
-      // uncomment below and update the code to test the property payPeriod
+    it('should have the property pay_rate (base name: "pay_rate")', function() {
+      // uncomment below and update the code to test the property pay_rate
       //var instance = new MergeHrisApi.Employment();
       //expect(instance).to.be();
     });
 
-    it('should have the property payFrequency (base name: "pay_frequency")', function() {
-      // uncomment below and update the code to test the property payFrequency
+    it('should have the property pay_period (base name: "pay_period")', function() {
+      // uncomment below and update the code to test the property pay_period
       //var instance = new MergeHrisApi.Employment();
       //expect(instance).to.be();
     });
 
-    it('should have the property payCurrency (base name: "pay_currency")', function() {
-      // uncomment below and update the code to test the property payCurrency
+    it('should have the property pay_frequency (base name: "pay_frequency")', function() {
+      // uncomment below and update the code to test the property pay_frequency
       //var instance = new MergeHrisApi.Employment();
       //expect(instance).to.be();
     });
 
-    it('should have the property flsaStatus (base name: "flsa_status")', function() {
-      // uncomment below and update the code to test the property flsaStatus
+    it('should have the property pay_currency (base name: "pay_currency")', function() {
+      // uncomment below and update the code to test the property pay_currency
       //var instance = new MergeHrisApi.Employment();
       //expect(instance).to.be();
     });
 
-    it('should have the property effectiveDate (base name: "effective_date")', function() {
-      // uncomment below and update the code to test the property effectiveDate
+    it('should have the property pay_group (base name: "pay_group")', function() {
+      // uncomment below and update the code to test the property pay_group
       //var instance = new MergeHrisApi.Employment();
       //expect(instance).to.be();
     });
 
-    it('should have the property employmentType (base name: "employment_type")', function() {
-      // uncomment below and update the code to test the property employmentType
+    it('should have the property flsa_status (base name: "flsa_status")', function() {
+      // uncomment below and update the code to test the property flsa_status
       //var instance = new MergeHrisApi.Employment();
       //expect(instance).to.be();
     });
 
-    it('should have the property remoteData (base name: "remote_data")', function() {
-      // uncomment below and update the code to test the property remoteData
+    it('should have the property effective_date (base name: "effective_date")', function() {
+      // uncomment below and update the code to test the property effective_date
+      //var instance = new MergeHrisApi.Employment();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property employment_type (base name: "employment_type")', function() {
+      // uncomment below and update the code to test the property employment_type
+      //var instance = new MergeHrisApi.Employment();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property remote_data (base name: "remote_data")', function() {
+      // uncomment below and update the code to test the property remote_data
+      //var instance = new MergeHrisApi.Employment();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property remote_was_deleted (base name: "remote_was_deleted")', function() {
+      // uncomment below and update the code to test the property remote_was_deleted
       //var instance = new MergeHrisApi.Employment();
       //expect(instance).to.be();
     });

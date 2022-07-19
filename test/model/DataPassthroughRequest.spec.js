@@ -66,8 +66,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property baseUrlOverride (base name: "base_url_override")', function() {
-      // uncomment below and update the code to test the property baseUrlOverride
+    it('should have the property base_url_override (base name: "base_url_override")', function() {
+      // uncomment below and update the code to test the property base_url_override
       //var instance = new MergeHrisApi.DataPassthroughRequest();
       //expect(instance).to.be();
     });
@@ -78,8 +78,26 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property multipart_form_data (base name: "multipart_form_data")', function() {
+      // uncomment below and update the code to test the property multipart_form_data
+      //var instance = new MergeHrisApi.DataPassthroughRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property headers (base name: "headers")', function() {
       // uncomment below and update the code to test the property headers
+      //var instance = new MergeHrisApi.DataPassthroughRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property request_format (base name: "request_format")', function() {
+      // uncomment below and update the code to test the property request_format
+      //var instance = new MergeHrisApi.DataPassthroughRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property normalize_response (base name: "normalize_response")', function() {
+      // uncomment below and update the code to test the property normalize_response
       //var instance = new MergeHrisApi.DataPassthroughRequest();
       //expect(instance).to.be();
     });

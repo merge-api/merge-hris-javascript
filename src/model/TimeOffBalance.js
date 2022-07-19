@@ -71,6 +71,9 @@ class TimeOffBalance {
             if (data.hasOwnProperty('remote_data')) {
                 obj['remote_data'] = ApiClient.convertToType(data['remote_data'], [RemoteData]);
             }
+            if (data.hasOwnProperty('remote_was_deleted')) {
+                obj['remote_was_deleted'] = ApiClient.convertToType(data['remote_was_deleted'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -90,13 +93,12 @@ TimeOffBalance.prototype['id'] = undefined;
 TimeOffBalance.prototype['remote_id'] = undefined;
 
 /**
- * The employee the balance belongs to.
  * @member {String} employee
  */
 TimeOffBalance.prototype['employee'] = undefined;
 
 /**
- * The current PTO balance in terms of hours.
+ * The current remaining PTO balance in terms of hours. This does not represent the starting PTO balance. If the API provider only provides PTO balance in terms of days, we estimate 8 hours per day.
  * @member {Number} balance
  */
 TimeOffBalance.prototype['balance'] = undefined;
@@ -117,6 +119,12 @@ TimeOffBalance.prototype['policy_type'] = undefined;
  * @member {Array.<module:model/RemoteData>} remote_data
  */
 TimeOffBalance.prototype['remote_data'] = undefined;
+
+/**
+ * Indicates whether or not this object has been deleted by third party webhooks.
+ * @member {Boolean} remote_was_deleted
+ */
+TimeOffBalance.prototype['remote_was_deleted'] = undefined;
 
 
 

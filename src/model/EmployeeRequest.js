@@ -70,6 +70,12 @@ class EmployeeRequest {
             if (data.hasOwnProperty('display_full_name')) {
                 obj['display_full_name'] = ApiClient.convertToType(data['display_full_name'], 'String');
             }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
+            }
+            if (data.hasOwnProperty('groups')) {
+                obj['groups'] = ApiClient.convertToType(data['groups'], ['String']);
+            }
             if (data.hasOwnProperty('work_email')) {
                 obj['work_email'] = ApiClient.convertToType(data['work_email'], 'String');
             }
@@ -78,6 +84,9 @@ class EmployeeRequest {
             }
             if (data.hasOwnProperty('mobile_phone_number')) {
                 obj['mobile_phone_number'] = ApiClient.convertToType(data['mobile_phone_number'], 'String');
+            }
+            if (data.hasOwnProperty('employments')) {
+                obj['employments'] = ApiClient.convertToType(data['employments'], ['String']);
             }
             if (data.hasOwnProperty('home_location')) {
                 obj['home_location'] = ApiClient.convertToType(data['home_location'], 'String');
@@ -90,6 +99,9 @@ class EmployeeRequest {
             }
             if (data.hasOwnProperty('team')) {
                 obj['team'] = ApiClient.convertToType(data['team'], 'String');
+            }
+            if (data.hasOwnProperty('pay_group')) {
+                obj['pay_group'] = ApiClient.convertToType(data['pay_group'], 'String');
             }
             if (data.hasOwnProperty('ssn')) {
                 obj['ssn'] = ApiClient.convertToType(data['ssn'], 'String');
@@ -111,6 +123,9 @@ class EmployeeRequest {
             }
             if (data.hasOwnProperty('start_date')) {
                 obj['start_date'] = ApiClient.convertToType(data['start_date'], 'Date');
+            }
+            if (data.hasOwnProperty('remote_created_at')) {
+                obj['remote_created_at'] = ApiClient.convertToType(data['remote_created_at'], 'Date');
             }
             if (data.hasOwnProperty('employment_status')) {
                 obj['employment_status'] = ApiClient.convertToType(data['employment_status'], EmploymentStatusEnum);
@@ -138,13 +153,12 @@ class EmployeeRequest {
 EmployeeRequest.prototype['remote_id'] = undefined;
 
 /**
- * The employee's number that appears in the remote UI. Note: This is distinct from the remote_id field, which is a unique identifier for the employee set by the remote API, and is not exposed to the user.
+ * The employee's number that appears in the remote UI. Note: This is distinct from the remote_id field, which is a unique identifier for the employee set by the remote API, and is not exposed to the user. This value can also change in many API providers.
  * @member {String} employee_number
  */
 EmployeeRequest.prototype['employee_number'] = undefined;
 
 /**
- * The ID of the employee's company.
  * @member {String} company
  */
 EmployeeRequest.prototype['company'] = undefined;
@@ -162,10 +176,21 @@ EmployeeRequest.prototype['first_name'] = undefined;
 EmployeeRequest.prototype['last_name'] = undefined;
 
 /**
- * The employee's full name, to use for display purposes.
+ * The employee's full name, to use for display purposes. If a preferred first name is available, the full name will include the preferred first name.
  * @member {String} display_full_name
  */
 EmployeeRequest.prototype['display_full_name'] = undefined;
+
+/**
+ * The employee's username that appears in the remote UI.
+ * @member {String} username
+ */
+EmployeeRequest.prototype['username'] = undefined;
+
+/**
+ * @member {Array.<String>} groups
+ */
+EmployeeRequest.prototype['groups'] = undefined;
 
 /**
  * The employee's work email.
@@ -186,28 +211,35 @@ EmployeeRequest.prototype['personal_email'] = undefined;
 EmployeeRequest.prototype['mobile_phone_number'] = undefined;
 
 /**
- * The employee's home address.
+ * Array of `Employment` IDs for this Employee.
+ * @member {Array.<String>} employments
+ */
+EmployeeRequest.prototype['employments'] = undefined;
+
+/**
  * @member {String} home_location
  */
 EmployeeRequest.prototype['home_location'] = undefined;
 
 /**
- * The employee's work address.
  * @member {String} work_location
  */
 EmployeeRequest.prototype['work_location'] = undefined;
 
 /**
- * The employee ID of the employee's manager.
  * @member {String} manager
  */
 EmployeeRequest.prototype['manager'] = undefined;
 
 /**
- * The employee's team.
  * @member {String} team
  */
 EmployeeRequest.prototype['team'] = undefined;
+
+/**
+ * @member {String} pay_group
+ */
+EmployeeRequest.prototype['pay_group'] = undefined;
 
 /**
  * The employee's social security number.
@@ -250,6 +282,12 @@ EmployeeRequest.prototype['hire_date'] = undefined;
  * @member {Date} start_date
  */
 EmployeeRequest.prototype['start_date'] = undefined;
+
+/**
+ * When the third party's employee was created.
+ * @member {Date} remote_created_at
+ */
+EmployeeRequest.prototype['remote_created_at'] = undefined;
 
 /**
  * The employment status of the employee.

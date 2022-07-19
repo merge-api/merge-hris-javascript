@@ -54,26 +54,26 @@
       //expect(instance).to.be.a(MergeHrisApi.SyncStatus);
     });
 
-    it('should have the property modelName (base name: "model_name")', function() {
-      // uncomment below and update the code to test the property modelName
+    it('should have the property model_name (base name: "model_name")', function() {
+      // uncomment below and update the code to test the property model_name
       //var instance = new MergeHrisApi.SyncStatus();
       //expect(instance).to.be();
     });
 
-    it('should have the property modelId (base name: "model_id")', function() {
-      // uncomment below and update the code to test the property modelId
+    it('should have the property model_id (base name: "model_id")', function() {
+      // uncomment below and update the code to test the property model_id
       //var instance = new MergeHrisApi.SyncStatus();
       //expect(instance).to.be();
     });
 
-    it('should have the property lastSyncStart (base name: "last_sync_start")', function() {
-      // uncomment below and update the code to test the property lastSyncStart
+    it('should have the property last_sync_start (base name: "last_sync_start")', function() {
+      // uncomment below and update the code to test the property last_sync_start
       //var instance = new MergeHrisApi.SyncStatus();
       //expect(instance).to.be();
     });
 
-    it('should have the property nextSyncStart (base name: "next_sync_start")', function() {
-      // uncomment below and update the code to test the property nextSyncStart
+    it('should have the property next_sync_start (base name: "next_sync_start")', function() {
+      // uncomment below and update the code to test the property next_sync_start
       //var instance = new MergeHrisApi.SyncStatus();
       //expect(instance).to.be();
     });
@@ -84,8 +84,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property isInitialSync (base name: "is_initial_sync")', function() {
-      // uncomment below and update the code to test the property isInitialSync
+    it('should have the property is_initial_sync (base name: "is_initial_sync")', function() {
+      // uncomment below and update the code to test the property is_initial_sync
       //var instance = new MergeHrisApi.SyncStatus();
       //expect(instance).to.be();
     });

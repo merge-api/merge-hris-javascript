@@ -23,11 +23,11 @@ class Issue {
     /**
      * Constructs a new <code>Issue</code>.
      * @alias module:model/Issue
-     * @param errorDescription {String} 
+     * @param error_description {String} 
      */
-    constructor(errorDescription) { 
+    constructor(error_description) { 
         
-        Issue.initialize(this, errorDescription);
+        Issue.initialize(this, error_description);
     }
 
     /**
@@ -35,8 +35,8 @@ class Issue {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, errorDescription) { 
-        obj['error_description'] = errorDescription;
+    static initialize(obj, error_description) { 
+        obj['error_description'] = error_description;
     }
 
     /**

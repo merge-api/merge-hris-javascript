@@ -12,13 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import convertRelatedObjectToType from '../Utils';
 import EmploymentStatusEnum from './EmploymentStatusEnum';
-import Employment from './Employment';
-import Location from './Location';
-import Team from './Team';
-import Company from './Company';
-import PayGroup from './PayGroup';
 import EthnicityEnum from './EthnicityEnum';
 import GenderEnum from './GenderEnum';
 import MaritalStatusEnum from './MaritalStatusEnum';
@@ -69,7 +63,7 @@ class Employee {
                 obj['employee_number'] = ApiClient.convertToType(data['employee_number'], 'String');
             }
             if (data.hasOwnProperty('company')) {
-                obj['company'] = convertRelatedObjectToType(data['company'], Company);
+                obj['company'] = ApiClient.convertToType(data['company'], 'String');
             }
             if (data.hasOwnProperty('first_name')) {
                 obj['first_name'] = ApiClient.convertToType(data['first_name'], 'String');
@@ -79,6 +73,12 @@ class Employee {
             }
             if (data.hasOwnProperty('display_full_name')) {
                 obj['display_full_name'] = ApiClient.convertToType(data['display_full_name'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
+            }
+            if (data.hasOwnProperty('groups')) {
+                obj['groups'] = ApiClient.convertToType(data['groups'], ['String']);
             }
             if (data.hasOwnProperty('work_email')) {
                 obj['work_email'] = ApiClient.convertToType(data['work_email'], 'String');
@@ -90,22 +90,22 @@ class Employee {
                 obj['mobile_phone_number'] = ApiClient.convertToType(data['mobile_phone_number'], 'String');
             }
             if (data.hasOwnProperty('employments')) {
-                obj['employments'] = convertRelatedObjectToType(data['employments'], Employment);
+                obj['employments'] = ApiClient.convertToType(data['employments'], ['String']);
             }
             if (data.hasOwnProperty('home_location')) {
-                obj['home_location'] = convertRelatedObjectToType(data['home_location'], Location);
+                obj['home_location'] = ApiClient.convertToType(data['home_location'], 'String');
             }
             if (data.hasOwnProperty('work_location')) {
-                obj['work_location'] = convertRelatedObjectToType(data['work_location'], Location);
+                obj['work_location'] = ApiClient.convertToType(data['work_location'], 'String');
             }
             if (data.hasOwnProperty('manager')) {
-                obj['manager'] = convertRelatedObjectToType(data['manager'], Employee);
+                obj['manager'] = ApiClient.convertToType(data['manager'], 'String');
             }
             if (data.hasOwnProperty('team')) {
-                obj['team'] = convertRelatedObjectToType(data['team'], Team);
+                obj['team'] = ApiClient.convertToType(data['team'], 'String');
             }
             if (data.hasOwnProperty('pay_group')) {
-                obj['pay_group'] = convertRelatedObjectToType(data['pay_group'], PayGroup);
+                obj['pay_group'] = ApiClient.convertToType(data['pay_group'], 'String');
             }
             if (data.hasOwnProperty('ssn')) {
                 obj['ssn'] = ApiClient.convertToType(data['ssn'], 'String');
@@ -128,6 +128,9 @@ class Employee {
             if (data.hasOwnProperty('start_date')) {
                 obj['start_date'] = ApiClient.convertToType(data['start_date'], 'Date');
             }
+            if (data.hasOwnProperty('remote_created_at')) {
+                obj['remote_created_at'] = ApiClient.convertToType(data['remote_created_at'], 'Date');
+            }
             if (data.hasOwnProperty('employment_status')) {
                 obj['employment_status'] = ApiClient.convertToType(data['employment_status'], EmploymentStatusEnum);
             }
@@ -142,6 +145,9 @@ class Employee {
             }
             if (data.hasOwnProperty('custom_fields')) {
                 obj['custom_fields'] = ApiClient.convertToType(data['custom_fields'], {'String': Object});
+            }
+            if (data.hasOwnProperty('remote_was_deleted')) {
+                obj['remote_was_deleted'] = ApiClient.convertToType(data['remote_was_deleted'], 'Boolean');
             }
         }
         return obj;
@@ -162,13 +168,12 @@ Employee.prototype['id'] = undefined;
 Employee.prototype['remote_id'] = undefined;
 
 /**
- * The employee's number that appears in the remote UI. Note: This is distinct from the remote_id field, which is a unique identifier for the employee set by the remote API, and is not exposed to the user.
+ * The employee's number that appears in the remote UI. Note: This is distinct from the remote_id field, which is a unique identifier for the employee set by the remote API, and is not exposed to the user. This value can also change in many API providers.
  * @member {String} employee_number
  */
 Employee.prototype['employee_number'] = undefined;
 
 /**
- * The ID of the employee's company.
  * @member {String} company
  */
 Employee.prototype['company'] = undefined;
@@ -190,6 +195,17 @@ Employee.prototype['last_name'] = undefined;
  * @member {String} display_full_name
  */
 Employee.prototype['display_full_name'] = undefined;
+
+/**
+ * The employee's username that appears in the remote UI.
+ * @member {String} username
+ */
+Employee.prototype['username'] = undefined;
+
+/**
+ * @member {Array.<String>} groups
+ */
+Employee.prototype['groups'] = undefined;
 
 /**
  * The employee's work email.
@@ -216,31 +232,26 @@ Employee.prototype['mobile_phone_number'] = undefined;
 Employee.prototype['employments'] = undefined;
 
 /**
- * The employee's home address.
  * @member {String} home_location
  */
 Employee.prototype['home_location'] = undefined;
 
 /**
- * The employee's work address.
  * @member {String} work_location
  */
 Employee.prototype['work_location'] = undefined;
 
 /**
- * The employee ID of the employee's manager.
  * @member {String} manager
  */
 Employee.prototype['manager'] = undefined;
 
 /**
- * The employee's team.
  * @member {String} team
  */
 Employee.prototype['team'] = undefined;
 
 /**
- * The employee's pay group
  * @member {String} pay_group
  */
 Employee.prototype['pay_group'] = undefined;
@@ -288,6 +299,12 @@ Employee.prototype['hire_date'] = undefined;
 Employee.prototype['start_date'] = undefined;
 
 /**
+ * When the third party's employee was created.
+ * @member {Date} remote_created_at
+ */
+Employee.prototype['remote_created_at'] = undefined;
+
+/**
  * The employment status of the employee.
  * @member {module:model/EmploymentStatusEnum} employment_status
  */
@@ -315,6 +332,11 @@ Employee.prototype['remote_data'] = undefined;
  * @member {Object.<String, Object>} custom_fields
  */
 Employee.prototype['custom_fields'] = undefined;
+
+/**
+ * @member {Boolean} remote_was_deleted
+ */
+Employee.prototype['remote_was_deleted'] = undefined;
 
 
 

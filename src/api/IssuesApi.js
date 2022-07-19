@@ -46,14 +46,18 @@ export default class IssuesApi {
     /**
      * Gets issues.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accountToken 
+     * @param {String} opts.account_token 
      * @param {String} opts.cursor The pagination cursor value.
-     * @param {String} opts.endDate If included, will only include issues whose most recent action occurred before this time
-     * @param {String} opts.endUserOrganizationName 
-     * @param {String} opts.includeMuted If True, will include muted issues
-     * @param {String} opts.integrationName 
-     * @param {Number} opts.pageSize Number of results to return per page.
-     * @param {String} opts.startDate If included, will only include issues whose most recent action occurred after this time
+     * @param {String} opts.end_date If included, will only include issues whose most recent action occurred before this time
+     * @param {String} opts.end_user_organization_name 
+     * @param {Date} opts.first_incident_time_after If provided, will only return issues whose first incident time was after this datetime.
+     * @param {Date} opts.first_incident_time_before If provided, will only return issues whose first incident time was before this datetime.
+     * @param {String} opts.include_muted If True, will include muted issues
+     * @param {String} opts.integration_name 
+     * @param {Date} opts.last_incident_time_after If provided, will only return issues whose first incident time was after this datetime.
+     * @param {Date} opts.last_incident_time_before If provided, will only return issues whose first incident time was before this datetime.
+     * @param {Number} opts.page_size Number of results to return per page.
+     * @param {String} opts.start_date If included, will only include issues whose most recent action occurred after this time
      * @param {module:model/String} opts.status 
      * @param {module:api/IssuesApi~issuesListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedIssueList}
@@ -65,14 +69,18 @@ export default class IssuesApi {
       let pathParams = {
       };
       let queryParams = {
-        'account_token': opts['accountToken'],
+        'account_token': opts['account_token'],
         'cursor': opts['cursor'],
-        'end_date': opts['endDate'],
-        'end_user_organization_name': opts['endUserOrganizationName'],
-        'include_muted': opts['includeMuted'],
-        'integration_name': opts['integrationName'],
-        'page_size': opts['pageSize'],
-        'start_date': opts['startDate'],
+        'end_date': opts['end_date'],
+        'end_user_organization_name': opts['end_user_organization_name'],
+        'first_incident_time_after': opts['first_incident_time_after'],
+        'first_incident_time_before': opts['first_incident_time_before'],
+        'include_muted': opts['include_muted'],
+        'integration_name': opts['integration_name'],
+        'last_incident_time_after': opts['last_incident_time_after'],
+        'last_incident_time_before': opts['last_incident_time_before'],
+        'page_size': opts['page_size'],
+        'start_date': opts['start_date'],
         'status': opts['status']
       };
       let headerParams = {

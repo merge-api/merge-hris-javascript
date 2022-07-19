@@ -10,11 +10,11 @@ Method | HTTP request | Description
 
 ## syncStatusList
 
-> PaginatedSyncStatusList syncStatusList(xAccountToken, opts)
+> PaginatedSyncStatusList syncStatusList(x_account_token, opts)
 
 
 
-Get syncing status. Possible values: &#x60;DISABLED&#x60;, &#x60;DONE&#x60;, &#x60;FAILED&#x60;, &#x60;SYNCING&#x60;
+Get syncing status. Possible values: &#x60;DISABLED&#x60;, &#x60;DONE&#x60;, &#x60;FAILED&#x60;, &#x60;PAUSED&#x60;, &#x60;SYNCING&#x60;
 
 ### Example
 
@@ -28,12 +28,12 @@ tokenAuth.apiKey = 'YOUR API KEY';
 //tokenAuth.apiKeyPrefix = 'Token';
 
 let apiInstance = new MergeHrisApi.SyncStatusApi();
-let xAccountToken = "xAccountToken_example"; // String | Token identifying the end user.
+let x_account_token = "x_account_token_example"; // String | Token identifying the end user.
 let opts = {
   'cursor': cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw, // String | The pagination cursor value.
-  'pageSize': 56 // Number | Number of results to return per page.
+  'page_size': 56 // Number | Number of results to return per page.
 };
-apiInstance.syncStatusList(xAccountToken, opts, (error, data, response) => {
+apiInstance.syncStatusList(x_account_token, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -47,9 +47,9 @@ apiInstance.syncStatusList(xAccountToken, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xAccountToken** | **String**| Token identifying the end user. | 
+ **x_account_token** | **String**| Token identifying the end user. | 
  **cursor** | **String**| The pagination cursor value. | [optional] 
- **pageSize** | **Number**| Number of results to return per page. | [optional] 
+ **page_size** | **Number**| Number of results to return per page. | [optional] 
 
 ### Return type
 

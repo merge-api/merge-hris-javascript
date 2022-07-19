@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**linkToken** | **String** |  | 
-**integrationName** | **String** |  | 
+**link_token** | **String** |  | 
+**integration_name** | **String** |  | 
+**magic_link_url** | **String** |  | [optional] 
 
 

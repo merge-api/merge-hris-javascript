@@ -54,20 +54,26 @@
       //expect(instance).to.be.a(MergeHrisApi.ModelOperation);
     });
 
-    it('should have the property modelName (base name: "model_name")', function() {
-      // uncomment below and update the code to test the property modelName
+    it('should have the property model_name (base name: "model_name")', function() {
+      // uncomment below and update the code to test the property model_name
       //var instance = new MergeHrisApi.ModelOperation();
       //expect(instance).to.be();
     });
 
-    it('should have the property availableOperations (base name: "available_operations")', function() {
-      // uncomment below and update the code to test the property availableOperations
+    it('should have the property available_operations (base name: "available_operations")', function() {
+      // uncomment below and update the code to test the property available_operations
       //var instance = new MergeHrisApi.ModelOperation();
       //expect(instance).to.be();
     });
 
-    it('should have the property requiredPostParameters (base name: "required_post_parameters")', function() {
-      // uncomment below and update the code to test the property requiredPostParameters
+    it('should have the property required_post_parameters (base name: "required_post_parameters")', function() {
+      // uncomment below and update the code to test the property required_post_parameters
+      //var instance = new MergeHrisApi.ModelOperation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property supported_fields (base name: "supported_fields")', function() {
+      // uncomment below and update the code to test the property supported_fields
       //var instance = new MergeHrisApi.ModelOperation();
       //expect(instance).to.be();
     });
