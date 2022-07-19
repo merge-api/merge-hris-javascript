@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## accountDetailsRetrieve
 
-> AccountDetails accountDetailsRetrieve()
+> AccountDetails accountDetailsRetrieve(x_account_token)
 
 
 
@@ -28,7 +28,8 @@ tokenAuth.apiKey = 'YOUR API KEY';
 //tokenAuth.apiKeyPrefix = 'Token';
 
 let apiInstance = new MergeHrisApi.AccountDetailsApi();
-apiInstance.accountDetailsRetrieve((error, data, response) => {
+let x_account_token = "x_account_token_example"; // String | Token identifying the end user.
+apiInstance.accountDetailsRetrieve(x_account_token, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -39,7 +40,10 @@ apiInstance.accountDetailsRetrieve((error, data, response) => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **x_account_token** | **String**| Token identifying the end user. | 
 
 ### Return type
 

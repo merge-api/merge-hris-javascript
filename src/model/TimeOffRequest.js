@@ -95,13 +95,11 @@ class TimeOffRequest {
 TimeOffRequest.prototype['remote_id'] = undefined;
 
 /**
- * The employee requesting time off.
  * @member {String} employee
  */
 TimeOffRequest.prototype['employee'] = undefined;
 
 /**
- * The employee approving the time off request.
  * @member {String} approver
  */
 TimeOffRequest.prototype['approver'] = undefined;

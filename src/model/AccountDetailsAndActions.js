@@ -28,12 +28,13 @@ class AccountDetailsAndActions {
      * @alias module:model/AccountDetailsAndActions
      * @param id {String} 
      * @param status {module:model/AccountDetailsAndActionsStatusEnum} 
-     * @param endUserOrganizationName {String} 
-     * @param endUserEmailAddress {String} 
+     * @param end_user_organization_name {String} 
+     * @param end_user_email_address {String} 
+     * @param webhook_listener_url {String} 
      */
-    constructor(id, status, endUserOrganizationName, endUserEmailAddress) { 
+    constructor(id, status, end_user_organization_name, end_user_email_address, webhook_listener_url) { 
         
-        AccountDetailsAndActions.initialize(this, id, status, endUserOrganizationName, endUserEmailAddress);
+        AccountDetailsAndActions.initialize(this, id, status, end_user_organization_name, end_user_email_address, webhook_listener_url);
     }
 
     /**
@@ -41,11 +42,12 @@ class AccountDetailsAndActions {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, id, status, endUserOrganizationName, endUserEmailAddress) { 
+    static initialize(obj, id, status, end_user_organization_name, end_user_email_address, webhook_listener_url) { 
         obj['id'] = id;
         obj['status'] = status;
-        obj['end_user_organization_name'] = endUserOrganizationName;
-        obj['end_user_email_address'] = endUserEmailAddress;
+        obj['end_user_organization_name'] = end_user_organization_name;
+        obj['end_user_email_address'] = end_user_email_address;
+        obj['webhook_listener_url'] = webhook_listener_url;
     }
 
     /**
@@ -79,6 +81,9 @@ class AccountDetailsAndActions {
             }
             if (data.hasOwnProperty('end_user_email_address')) {
                 obj['end_user_email_address'] = ApiClient.convertToType(data['end_user_email_address'], 'String');
+            }
+            if (data.hasOwnProperty('webhook_listener_url')) {
+                obj['webhook_listener_url'] = ApiClient.convertToType(data['webhook_listener_url'], 'String');
             }
             if (data.hasOwnProperty('integration')) {
                 obj['integration'] = AccountDetailsAndActionsIntegration.constructFromObject(data['integration']);
@@ -124,6 +129,11 @@ AccountDetailsAndActions.prototype['end_user_organization_name'] = undefined;
  * @member {String} end_user_email_address
  */
 AccountDetailsAndActions.prototype['end_user_email_address'] = undefined;
+
+/**
+ * @member {String} webhook_listener_url
+ */
+AccountDetailsAndActions.prototype['webhook_listener_url'] = undefined;
 
 /**
  * @member {module:model/AccountDetailsAndActionsIntegration} integration

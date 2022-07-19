@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**modelName** | **String** |  | 
-**modelId** | **String** |  | 
-**lastSyncStart** | **Date** |  | 
-**nextSyncStart** | **Date** |  | 
+**model_name** | **String** |  | 
+**model_id** | **String** |  | 
+**last_sync_start** | **Date** |  | 
+**next_sync_start** | **Date** |  | 
 **status** | [**SyncStatusStatusEnum**](SyncStatusStatusEnum.md) |  | 
-**isInitialSync** | **Boolean** |  | 
+**is_initial_sync** | **Boolean** |  | 
 
 

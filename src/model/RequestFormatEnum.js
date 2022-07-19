@@ -33,6 +33,13 @@ export default class RequestFormatEnum {
         "XML" = "XML";
 
     
+        /**
+         * value: "MULTIPART"
+         * @const
+         */
+        "MULTIPART" = "MULTIPART";
+
+    
 
     /**
     * Returns a <code>RequestFormatEnum</code> enum value from a Javascript object name.

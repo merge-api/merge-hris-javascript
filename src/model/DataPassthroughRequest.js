@@ -13,6 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import MethodEnum from './MethodEnum';
+import MultipartFormFieldRequest from './MultipartFormFieldRequest';
 import RequestFormatEnum from './RequestFormatEnum';
 
 /**
@@ -66,11 +67,17 @@ class DataPassthroughRequest {
             if (data.hasOwnProperty('data')) {
                 obj['data'] = ApiClient.convertToType(data['data'], 'String');
             }
+            if (data.hasOwnProperty('multipart_form_data')) {
+                obj['multipart_form_data'] = ApiClient.convertToType(data['multipart_form_data'], [MultipartFormFieldRequest]);
+            }
             if (data.hasOwnProperty('headers')) {
                 obj['headers'] = ApiClient.convertToType(data['headers'], {'String': Object});
             }
             if (data.hasOwnProperty('request_format')) {
                 obj['request_format'] = ApiClient.convertToType(data['request_format'], RequestFormatEnum);
+            }
+            if (data.hasOwnProperty('normalize_response')) {
+                obj['normalize_response'] = ApiClient.convertToType(data['normalize_response'], 'Boolean');
             }
         }
         return obj;
@@ -100,6 +107,13 @@ DataPassthroughRequest.prototype['base_url_override'] = undefined;
 DataPassthroughRequest.prototype['data'] = undefined;
 
 /**
+ * Pass an array of `MultipartFormField` objects in here instead of using the `data` param if `request_format` is set to `MULTIPART`.
+ * @member {Array.<module:model/MultipartFormFieldRequest>} multipart_form_data
+ */
+DataPassthroughRequest.prototype['multipart_form_data'] = undefined;
+
+/**
+ * The headers to use for the request (Merge will handle the account's authorization headers). `Content-Type` header is required for passthrough. Choose content type corresponding to expected format of receiving server.
  * @member {Object.<String, Object>} headers
  */
 DataPassthroughRequest.prototype['headers'] = undefined;
@@ -108,6 +122,11 @@ DataPassthroughRequest.prototype['headers'] = undefined;
  * @member {module:model/RequestFormatEnum} request_format
  */
 DataPassthroughRequest.prototype['request_format'] = undefined;
+
+/**
+ * @member {Boolean} normalize_response
+ */
+DataPassthroughRequest.prototype['normalize_response'] = undefined;
 
 
 

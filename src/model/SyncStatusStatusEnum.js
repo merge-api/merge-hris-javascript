@@ -47,6 +47,13 @@ export default class SyncStatusStatusEnum {
         "DISABLED" = "DISABLED";
 
     
+        /**
+         * value: "PAUSED"
+         * @const
+         */
+        "PAUSED" = "PAUSED";
+
+    
 
     /**
     * Returns a <code>SyncStatusStatusEnum</code> enum value from a Javascript object name.

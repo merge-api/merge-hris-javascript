@@ -54,14 +54,14 @@
       //expect(instance).to.be.a(MergeHrisApi.EmployeeRequest);
     });
 
-    it('should have the property remoteId (base name: "remote_id")', function() {
-      // uncomment below and update the code to test the property remoteId
+    it('should have the property remote_id (base name: "remote_id")', function() {
+      // uncomment below and update the code to test the property remote_id
       //var instance = new MergeHrisApi.EmployeeRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property employeeNumber (base name: "employee_number")', function() {
-      // uncomment below and update the code to test the property employeeNumber
+    it('should have the property employee_number (base name: "employee_number")', function() {
+      // uncomment below and update the code to test the property employee_number
       //var instance = new MergeHrisApi.EmployeeRequest();
       //expect(instance).to.be();
     });
@@ -72,50 +72,68 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property firstName (base name: "first_name")', function() {
-      // uncomment below and update the code to test the property firstName
+    it('should have the property first_name (base name: "first_name")', function() {
+      // uncomment below and update the code to test the property first_name
       //var instance = new MergeHrisApi.EmployeeRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property lastName (base name: "last_name")', function() {
-      // uncomment below and update the code to test the property lastName
+    it('should have the property last_name (base name: "last_name")', function() {
+      // uncomment below and update the code to test the property last_name
       //var instance = new MergeHrisApi.EmployeeRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property displayFullName (base name: "display_full_name")', function() {
-      // uncomment below and update the code to test the property displayFullName
+    it('should have the property display_full_name (base name: "display_full_name")', function() {
+      // uncomment below and update the code to test the property display_full_name
       //var instance = new MergeHrisApi.EmployeeRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property workEmail (base name: "work_email")', function() {
-      // uncomment below and update the code to test the property workEmail
+    it('should have the property username (base name: "username")', function() {
+      // uncomment below and update the code to test the property username
       //var instance = new MergeHrisApi.EmployeeRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property personalEmail (base name: "personal_email")', function() {
-      // uncomment below and update the code to test the property personalEmail
+    it('should have the property groups (base name: "groups")', function() {
+      // uncomment below and update the code to test the property groups
       //var instance = new MergeHrisApi.EmployeeRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property mobilePhoneNumber (base name: "mobile_phone_number")', function() {
-      // uncomment below and update the code to test the property mobilePhoneNumber
+    it('should have the property work_email (base name: "work_email")', function() {
+      // uncomment below and update the code to test the property work_email
       //var instance = new MergeHrisApi.EmployeeRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property homeLocation (base name: "home_location")', function() {
-      // uncomment below and update the code to test the property homeLocation
+    it('should have the property personal_email (base name: "personal_email")', function() {
+      // uncomment below and update the code to test the property personal_email
       //var instance = new MergeHrisApi.EmployeeRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property workLocation (base name: "work_location")', function() {
-      // uncomment below and update the code to test the property workLocation
+    it('should have the property mobile_phone_number (base name: "mobile_phone_number")', function() {
+      // uncomment below and update the code to test the property mobile_phone_number
+      //var instance = new MergeHrisApi.EmployeeRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property employments (base name: "employments")', function() {
+      // uncomment below and update the code to test the property employments
+      //var instance = new MergeHrisApi.EmployeeRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property home_location (base name: "home_location")', function() {
+      // uncomment below and update the code to test the property home_location
+      //var instance = new MergeHrisApi.EmployeeRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property work_location (base name: "work_location")', function() {
+      // uncomment below and update the code to test the property work_location
       //var instance = new MergeHrisApi.EmployeeRequest();
       //expect(instance).to.be();
     });
@@ -128,6 +146,12 @@
 
     it('should have the property team (base name: "team")', function() {
       // uncomment below and update the code to test the property team
+      //var instance = new MergeHrisApi.EmployeeRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property pay_group (base name: "pay_group")', function() {
+      // uncomment below and update the code to test the property pay_group
       //var instance = new MergeHrisApi.EmployeeRequest();
       //expect(instance).to.be();
     });
@@ -150,38 +174,56 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property maritalStatus (base name: "marital_status")', function() {
-      // uncomment below and update the code to test the property maritalStatus
+    it('should have the property marital_status (base name: "marital_status")', function() {
+      // uncomment below and update the code to test the property marital_status
       //var instance = new MergeHrisApi.EmployeeRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property dateOfBirth (base name: "date_of_birth")', function() {
-      // uncomment below and update the code to test the property dateOfBirth
+    it('should have the property date_of_birth (base name: "date_of_birth")', function() {
+      // uncomment below and update the code to test the property date_of_birth
       //var instance = new MergeHrisApi.EmployeeRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property hireDate (base name: "hire_date")', function() {
-      // uncomment below and update the code to test the property hireDate
+    it('should have the property hire_date (base name: "hire_date")', function() {
+      // uncomment below and update the code to test the property hire_date
       //var instance = new MergeHrisApi.EmployeeRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property employmentStatus (base name: "employment_status")', function() {
-      // uncomment below and update the code to test the property employmentStatus
+    it('should have the property start_date (base name: "start_date")', function() {
+      // uncomment below and update the code to test the property start_date
       //var instance = new MergeHrisApi.EmployeeRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property terminationDate (base name: "termination_date")', function() {
-      // uncomment below and update the code to test the property terminationDate
+    it('should have the property remote_created_at (base name: "remote_created_at")', function() {
+      // uncomment below and update the code to test the property remote_created_at
+      //var instance = new MergeHrisApi.EmployeeRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property employment_status (base name: "employment_status")', function() {
+      // uncomment below and update the code to test the property employment_status
+      //var instance = new MergeHrisApi.EmployeeRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property termination_date (base name: "termination_date")', function() {
+      // uncomment below and update the code to test the property termination_date
       //var instance = new MergeHrisApi.EmployeeRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property avatar (base name: "avatar")', function() {
       // uncomment below and update the code to test the property avatar
+      //var instance = new MergeHrisApi.EmployeeRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property custom_fields (base name: "custom_fields")', function() {
+      // uncomment below and update the code to test the property custom_fields
       //var instance = new MergeHrisApi.EmployeeRequest();
       //expect(instance).to.be();
     });

@@ -72,20 +72,32 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property endUserOriginId (base name: "end_user_origin_id")', function() {
-      // uncomment below and update the code to test the property endUserOriginId
+    it('should have the property status_detail (base name: "status_detail")', function() {
+      // uncomment below and update the code to test the property status_detail
       //var instance = new MergeHrisApi.AccountDetailsAndActions();
       //expect(instance).to.be();
     });
 
-    it('should have the property endUserOrganizationName (base name: "end_user_organization_name")', function() {
-      // uncomment below and update the code to test the property endUserOrganizationName
+    it('should have the property end_user_origin_id (base name: "end_user_origin_id")', function() {
+      // uncomment below and update the code to test the property end_user_origin_id
       //var instance = new MergeHrisApi.AccountDetailsAndActions();
       //expect(instance).to.be();
     });
 
-    it('should have the property endUserEmailAddress (base name: "end_user_email_address")', function() {
-      // uncomment below and update the code to test the property endUserEmailAddress
+    it('should have the property end_user_organization_name (base name: "end_user_organization_name")', function() {
+      // uncomment below and update the code to test the property end_user_organization_name
+      //var instance = new MergeHrisApi.AccountDetailsAndActions();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property end_user_email_address (base name: "end_user_email_address")', function() {
+      // uncomment below and update the code to test the property end_user_email_address
+      //var instance = new MergeHrisApi.AccountDetailsAndActions();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property webhook_listener_url (base name: "webhook_listener_url")', function() {
+      // uncomment below and update the code to test the property webhook_listener_url
       //var instance = new MergeHrisApi.AccountDetailsAndActions();
       //expect(instance).to.be();
     });

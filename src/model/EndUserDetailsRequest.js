@@ -23,14 +23,14 @@ class EndUserDetailsRequest {
     /**
      * Constructs a new <code>EndUserDetailsRequest</code>.
      * @alias module:model/EndUserDetailsRequest
-     * @param endUserEmailAddress {String} 
-     * @param endUserOrganizationName {String} 
-     * @param endUserOriginId {String} 
-     * @param categories {Array.<module:model/EndUserDetailsRequest.CategoriesEnum>} 
+     * @param end_user_email_address {String} 
+     * @param end_user_organization_name {String} 
+     * @param end_user_origin_id {String} 
+     * @param categories {Array.<module:model/CategoriesEnum>} 
      */
-    constructor(endUserEmailAddress, endUserOrganizationName, endUserOriginId, categories) { 
+    constructor(end_user_email_address, end_user_organization_name, end_user_origin_id, categories) { 
         
-        EndUserDetailsRequest.initialize(this, endUserEmailAddress, endUserOrganizationName, endUserOriginId, categories);
+        EndUserDetailsRequest.initialize(this, end_user_email_address, end_user_organization_name, end_user_origin_id, categories);
     }
 
     /**
@@ -38,10 +38,10 @@ class EndUserDetailsRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, endUserEmailAddress, endUserOrganizationName, endUserOriginId, categories) { 
-        obj['end_user_email_address'] = endUserEmailAddress;
-        obj['end_user_organization_name'] = endUserOrganizationName;
-        obj['end_user_origin_id'] = endUserOriginId;
+    static initialize(obj, end_user_email_address, end_user_organization_name, end_user_origin_id, categories) { 
+        obj['end_user_email_address'] = end_user_email_address;
+        obj['end_user_organization_name'] = end_user_organization_name;
+        obj['end_user_origin_id'] = end_user_origin_id;
         obj['categories'] = categories;
     }
 
@@ -71,6 +71,12 @@ class EndUserDetailsRequest {
             if (data.hasOwnProperty('integration')) {
                 obj['integration'] = ApiClient.convertToType(data['integration'], 'String');
             }
+            if (data.hasOwnProperty('link_expiry_mins')) {
+                obj['link_expiry_mins'] = ApiClient.convertToType(data['link_expiry_mins'], 'Number');
+            }
+            if (data.hasOwnProperty('should_create_magic_link_url')) {
+                obj['should_create_magic_link_url'] = ApiClient.convertToType(data['should_create_magic_link_url'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -99,33 +105,27 @@ EndUserDetailsRequest.prototype['end_user_origin_id'] = undefined;
 EndUserDetailsRequest.prototype['categories'] = undefined;
 
 /**
+ * The slug of a specific pre-selected integration for this linking flow token, for examples of slugs see https://www.merge.dev/docs/basics/integration-metadata
  * @member {String} integration
  */
 EndUserDetailsRequest.prototype['integration'] = undefined;
 
-
-
-
+/**
+ * An integer number of minutes between [30, 720 or 10080 if for a Magic Link URL] for how long this token is valid. Defaults to 30
+ * @member {Number} link_expiry_mins
+ * @default 30
+ */
+EndUserDetailsRequest.prototype['link_expiry_mins'] = 30;
 
 /**
- * Allowed values for the <code>categories</code> property.
- * @enum {String}
- * @readonly
+ * Whether to generate a Magic Link URL. Defaults to false
+ * @member {Boolean} should_create_magic_link_url
+ * @default false
  */
-EndUserDetailsRequest['CategoriesEnum'] = {
+EndUserDetailsRequest.prototype['should_create_magic_link_url'] = false;
 
-    /**
-     * value: "hris"
-     * @const
-     */
-    "hris": "hris",
 
-    /**
-     * value: "ats"
-     * @const
-     */
-    "ats": "ats"
-};
+
 
 
 

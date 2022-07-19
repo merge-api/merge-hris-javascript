@@ -60,14 +60,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property passthroughAvailable (base name: "passthrough_available")', function() {
-      // uncomment below and update the code to test the property passthroughAvailable
+    it('should have the property passthrough_available (base name: "passthrough_available")', function() {
+      // uncomment below and update the code to test the property passthrough_available
       //var instance = new MergeHrisApi.AvailableActions();
       //expect(instance).to.be();
     });
 
-    it('should have the property availableModelOperations (base name: "available_model_operations")', function() {
-      // uncomment below and update the code to test the property availableModelOperations
+    it('should have the property available_model_operations (base name: "available_model_operations")', function() {
+      // uncomment below and update the code to test the property available_model_operations
       //var instance = new MergeHrisApi.AvailableActions();
       //expect(instance).to.be();
     });

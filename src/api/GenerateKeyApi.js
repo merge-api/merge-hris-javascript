@@ -45,15 +45,15 @@ export default class GenerateKeyApi {
 
     /**
      * Create a remote key.
-     * @param {module:model/GenerateRemoteKeyRequest} generateRemoteKeyRequest 
+     * @param {module:model/GenerateRemoteKeyRequest} generate_remote_key_request 
      * @param {module:api/GenerateKeyApi~generateKeyCreateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RemoteKey}
      */
-    generateKeyCreate(generateRemoteKeyRequest, callback) {
-      let postBody = generateRemoteKeyRequest;
-      // verify the required parameter 'generateRemoteKeyRequest' is set
-      if (generateRemoteKeyRequest === undefined || generateRemoteKeyRequest === null) {
-        throw new Error("Missing the required parameter 'generateRemoteKeyRequest' when calling generateKeyCreate");
+    generateKeyCreate(generate_remote_key_request, callback) {
+      let postBody = generate_remote_key_request;
+      // verify the required parameter 'generate_remote_key_request' is set
+      if (generate_remote_key_request === undefined || generate_remote_key_request === null) {
+        throw new Error("Missing the required parameter 'generate_remote_key_request' when calling generateKeyCreate");
       }
 
       let pathParams = {

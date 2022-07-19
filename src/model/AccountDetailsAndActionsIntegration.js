@@ -28,11 +28,11 @@ class AccountDetailsAndActionsIntegration {
      * @param categories {Array.<module:model/CategoriesEnum>} 
      * @param color {String} 
      * @param slug {String} 
-     * @param passthroughAvailable {Boolean} 
+     * @param passthrough_available {Boolean} 
      */
-    constructor(name, categories, color, slug, passthroughAvailable) { 
+    constructor(name, categories, color, slug, passthrough_available) { 
         
-        AccountDetailsAndActionsIntegration.initialize(this, name, categories, color, slug, passthroughAvailable);
+        AccountDetailsAndActionsIntegration.initialize(this, name, categories, color, slug, passthrough_available);
     }
 
     /**
@@ -40,12 +40,12 @@ class AccountDetailsAndActionsIntegration {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, categories, color, slug, passthroughAvailable) { 
+    static initialize(obj, name, categories, color, slug, passthrough_available) { 
         obj['name'] = name;
         obj['categories'] = categories;
         obj['color'] = color;
         obj['slug'] = slug;
-        obj['passthrough_available'] = passthroughAvailable;
+        obj['passthrough_available'] = passthrough_available;
     }
 
     /**

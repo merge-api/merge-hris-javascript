@@ -72,8 +72,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property problemType (base name: "problem_type")', function() {
-      // uncomment below and update the code to test the property problemType
+    it('should have the property problem_type (base name: "problem_type")', function() {
+      // uncomment below and update the code to test the property problem_type
       //var instance = new MergeHrisApi.ErrorValidationProblem();
       //expect(instance).to.be();
     });

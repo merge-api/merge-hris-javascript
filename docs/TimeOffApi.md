@@ -6,13 +6,14 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**timeOffCreate**](TimeOffApi.md#timeOffCreate) | **POST** /time-off | 
 [**timeOffList**](TimeOffApi.md#timeOffList) | **GET** /time-off | 
+[**timeOffMetaPostRetrieve**](TimeOffApi.md#timeOffMetaPostRetrieve) | **GET** /time-off/meta/post | 
 [**timeOffRetrieve**](TimeOffApi.md#timeOffRetrieve) | **GET** /time-off/{id} | 
 
 
 
 ## timeOffCreate
 
-> TimeOffResponse timeOffCreate(xAccountToken, timeOffEndpointRequest, opts)
+> TimeOffResponse timeOffCreate(x_account_token, time_off_endpoint_request, opts)
 
 
 
@@ -30,12 +31,13 @@ tokenAuth.apiKey = 'YOUR API KEY';
 //tokenAuth.apiKeyPrefix = 'Token';
 
 let apiInstance = new MergeHrisApi.TimeOffApi();
-let xAccountToken = "xAccountToken_example"; // String | Token identifying the end user.
-let timeOffEndpointRequest = new MergeHrisApi.TimeOffEndpointRequest(); // TimeOffEndpointRequest | 
+let x_account_token = "x_account_token_example"; // String | Token identifying the end user.
+let time_off_endpoint_request = new MergeHrisApi.TimeOffEndpointRequest(); // TimeOffEndpointRequest | 
 let opts = {
-  'runAsync': true // Boolean | Whether or not third-party updates should be run asynchronously.
+  'is_debug_mode': true, // Boolean | Whether to include debug fields (such as log file links) in the response.
+  'run_async': true // Boolean | Whether or not third-party updates should be run asynchronously.
 };
-apiInstance.timeOffCreate(xAccountToken, timeOffEndpointRequest, opts, (error, data, response) => {
+apiInstance.timeOffCreate(x_account_token, time_off_endpoint_request, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -49,9 +51,10 @@ apiInstance.timeOffCreate(xAccountToken, timeOffEndpointRequest, opts, (error, d
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xAccountToken** | **String**| Token identifying the end user. | 
- **timeOffEndpointRequest** | [**TimeOffEndpointRequest**](TimeOffEndpointRequest.md)|  | 
- **runAsync** | **Boolean**| Whether or not third-party updates should be run asynchronously. | [optional] 
+ **x_account_token** | **String**| Token identifying the end user. | 
+ **time_off_endpoint_request** | [**TimeOffEndpointRequest**](TimeOffEndpointRequest.md)|  | 
+ **is_debug_mode** | **Boolean**| Whether to include debug fields (such as log file links) in the response. | [optional] 
+ **run_async** | **Boolean**| Whether or not third-party updates should be run asynchronously. | [optional] 
 
 ### Return type
 
@@ -69,7 +72,7 @@ Name | Type | Description  | Notes
 
 ## timeOffList
 
-> PaginatedTimeOffList timeOffList(xAccountToken, opts)
+> PaginatedTimeOffList timeOffList(x_account_token, opts)
 
 
 
@@ -87,24 +90,25 @@ tokenAuth.apiKey = 'YOUR API KEY';
 //tokenAuth.apiKeyPrefix = 'Token';
 
 let apiInstance = new MergeHrisApi.TimeOffApi();
-let xAccountToken = "xAccountToken_example"; // String | Token identifying the end user.
+let x_account_token = "x_account_token_example"; // String | Token identifying the end user.
 let opts = {
-  'approverId': "approverId_example", // String | If provided, will only return time off for this approver.
-  'createdAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects created after this datetime.
-  'createdBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects created before this datetime.
+  'approver_id': "approver_id_example", // String | If provided, will only return time off for this approver.
+  'created_after': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects created after this datetime.
+  'created_before': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects created before this datetime.
   'cursor': cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw, // String | The pagination cursor value.
-  'employeeId': "employeeId_example", // String | If provided, will only return time off for this employee.
+  'employee_id': "employee_id_example", // String | If provided, will only return time off for this employee.
   'expand': employee,approver, // String | Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
-  'includeDeletedData': true, // Boolean | Whether to include data that was deleted in the third-party service.
-  'includeRemoteData': true, // Boolean | Whether to include the original data Merge fetched from the third-party to produce these models.
-  'modifiedAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects modified after this datetime.
-  'modifiedBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects modified before this datetime.
-  'pageSize': 56, // Number | Number of results to return per page.
-  'remoteId': "remoteId_example", // String | The API provider's ID for the given object.
-  'requestType': "requestType_example", // String | If provided, will only return TimeOff with this request type. Options: ('VACATION', 'SICK', 'PERSONAL', 'JURY_DUTY', 'VOLUNTEER', 'BEREAVEMENT')
+  'include_deleted_data': true, // Boolean | Whether to include data that was marked as deleted by third party webhooks.
+  'include_remote_data': true, // Boolean | Whether to include the original data Merge fetched from the third-party to produce these models.
+  'modified_after': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects modified after this datetime.
+  'modified_before': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return objects modified before this datetime.
+  'page_size': 56, // Number | Number of results to return per page.
+  'remote_fields': request_type,status,units, // String | Which fields should be returned in non-normalized form.
+  'remote_id': "remote_id_example", // String | The API provider's ID for the given object.
+  'request_type': "request_type_example", // String | If provided, will only return TimeOff with this request type. Options: ('VACATION', 'SICK', 'PERSONAL', 'JURY_DUTY', 'VOLUNTEER', 'BEREAVEMENT')
   'status': "status_example" // String | If provided, will only return TimeOff with this status. Options: ('REQUESTED', 'APPROVED', 'DECLINED', 'CANCELLED', 'DELETED')
 };
-apiInstance.timeOffList(xAccountToken, opts, (error, data, response) => {
+apiInstance.timeOffList(x_account_token, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -118,20 +122,21 @@ apiInstance.timeOffList(xAccountToken, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xAccountToken** | **String**| Token identifying the end user. | 
- **approverId** | **String**| If provided, will only return time off for this approver. | [optional] 
- **createdAfter** | **Date**| If provided, will only return objects created after this datetime. | [optional] 
- **createdBefore** | **Date**| If provided, will only return objects created before this datetime. | [optional] 
+ **x_account_token** | **String**| Token identifying the end user. | 
+ **approver_id** | **String**| If provided, will only return time off for this approver. | [optional] 
+ **created_after** | **Date**| If provided, will only return objects created after this datetime. | [optional] 
+ **created_before** | **Date**| If provided, will only return objects created before this datetime. | [optional] 
  **cursor** | **String**| The pagination cursor value. | [optional] 
- **employeeId** | **String**| If provided, will only return time off for this employee. | [optional] 
+ **employee_id** | **String**| If provided, will only return time off for this employee. | [optional] 
  **expand** | **String**| Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces. | [optional] 
- **includeDeletedData** | **Boolean**| Whether to include data that was deleted in the third-party service. | [optional] 
- **includeRemoteData** | **Boolean**| Whether to include the original data Merge fetched from the third-party to produce these models. | [optional] 
- **modifiedAfter** | **Date**| If provided, will only return objects modified after this datetime. | [optional] 
- **modifiedBefore** | **Date**| If provided, will only return objects modified before this datetime. | [optional] 
- **pageSize** | **Number**| Number of results to return per page. | [optional] 
- **remoteId** | **String**| The API provider&#39;s ID for the given object. | [optional] 
- **requestType** | **String**| If provided, will only return TimeOff with this request type. Options: (&#39;VACATION&#39;, &#39;SICK&#39;, &#39;PERSONAL&#39;, &#39;JURY_DUTY&#39;, &#39;VOLUNTEER&#39;, &#39;BEREAVEMENT&#39;) | [optional] 
+ **include_deleted_data** | **Boolean**| Whether to include data that was marked as deleted by third party webhooks. | [optional] 
+ **include_remote_data** | **Boolean**| Whether to include the original data Merge fetched from the third-party to produce these models. | [optional] 
+ **modified_after** | **Date**| If provided, will only return objects modified after this datetime. | [optional] 
+ **modified_before** | **Date**| If provided, will only return objects modified before this datetime. | [optional] 
+ **page_size** | **Number**| Number of results to return per page. | [optional] 
+ **remote_fields** | **String**| Which fields should be returned in non-normalized form. | [optional] 
+ **remote_id** | **String**| The API provider&#39;s ID for the given object. | [optional] 
+ **request_type** | **String**| If provided, will only return TimeOff with this request type. Options: (&#39;VACATION&#39;, &#39;SICK&#39;, &#39;PERSONAL&#39;, &#39;JURY_DUTY&#39;, &#39;VOLUNTEER&#39;, &#39;BEREAVEMENT&#39;) | [optional] 
  **status** | **String**| If provided, will only return TimeOff with this status. Options: (&#39;REQUESTED&#39;, &#39;APPROVED&#39;, &#39;DECLINED&#39;, &#39;CANCELLED&#39;, &#39;DELETED&#39;) | [optional] 
 
 ### Return type
@@ -148,9 +153,60 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## timeOffMetaPostRetrieve
+
+> MetaResponse timeOffMetaPostRetrieve(x_account_token)
+
+
+
+Returns metadata for &#x60;TimeOff&#x60; POSTs.
+
+### Example
+
+```javascript
+import MergeHrisApi from 'merge_hris_api';
+let defaultClient = MergeHrisApi.ApiClient.instance;
+// Configure API key authorization: tokenAuth
+let tokenAuth = defaultClient.authentications['tokenAuth'];
+tokenAuth.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//tokenAuth.apiKeyPrefix = 'Token';
+
+let apiInstance = new MergeHrisApi.TimeOffApi();
+let x_account_token = "x_account_token_example"; // String | Token identifying the end user.
+apiInstance.timeOffMetaPostRetrieve(x_account_token, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **x_account_token** | **String**| Token identifying the end user. | 
+
+### Return type
+
+[**MetaResponse**](MetaResponse.md)
+
+### Authorization
+
+[tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## timeOffRetrieve
 
-> TimeOff timeOffRetrieve(xAccountToken, id, opts)
+> TimeOff timeOffRetrieve(x_account_token, id, opts)
 
 
 
@@ -168,13 +224,14 @@ tokenAuth.apiKey = 'YOUR API KEY';
 //tokenAuth.apiKeyPrefix = 'Token';
 
 let apiInstance = new MergeHrisApi.TimeOffApi();
-let xAccountToken = "xAccountToken_example"; // String | Token identifying the end user.
+let x_account_token = "x_account_token_example"; // String | Token identifying the end user.
 let id = null; // String | 
 let opts = {
   'expand': employee,approver, // String | Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces.
-  'includeRemoteData': true // Boolean | Whether to include the original data Merge fetched from the third-party to produce these models.
+  'include_remote_data': true, // Boolean | Whether to include the original data Merge fetched from the third-party to produce these models.
+  'remote_fields': request_type,status,units // String | Which fields should be returned in non-normalized form.
 };
-apiInstance.timeOffRetrieve(xAccountToken, id, opts, (error, data, response) => {
+apiInstance.timeOffRetrieve(x_account_token, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -188,10 +245,11 @@ apiInstance.timeOffRetrieve(xAccountToken, id, opts, (error, data, response) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xAccountToken** | **String**| Token identifying the end user. | 
+ **x_account_token** | **String**| Token identifying the end user. | 
  **id** | [**String**](.md)|  | 
  **expand** | **String**| Which relations should be returned in expanded form. Multiple relation names should be comma separated without spaces. | [optional] 
- **includeRemoteData** | **Boolean**| Whether to include the original data Merge fetched from the third-party to produce these models. | [optional] 
+ **include_remote_data** | **Boolean**| Whether to include the original data Merge fetched from the third-party to produce these models. | [optional] 
+ **remote_fields** | **String**| Which fields should be returned in non-normalized form. | [optional] 
 
 ### Return type
 

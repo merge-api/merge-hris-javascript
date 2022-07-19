@@ -14,8 +14,6 @@
 import ApiClient from '../ApiClient';
 import AccountTypeEnum from './AccountTypeEnum';
 import RemoteData from './RemoteData';
-import Employee from './Employee';
-import convertRelatedObjectToType from '../Utils';
 
 /**
  * The BankInfo model module.
@@ -59,7 +57,7 @@ class BankInfo {
                 obj['remote_id'] = ApiClient.convertToType(data['remote_id'], 'String');
             }
             if (data.hasOwnProperty('employee')) {
-                obj['employee'] = convertRelatedObjectToType(data['employee'], Employee);
+                obj['employee'] = ApiClient.convertToType(data['employee'], 'String');
             }
             if (data.hasOwnProperty('account_number')) {
                 obj['account_number'] = ApiClient.convertToType(data['account_number'], 'String');
@@ -78,6 +76,9 @@ class BankInfo {
             }
             if (data.hasOwnProperty('remote_data')) {
                 obj['remote_data'] = ApiClient.convertToType(data['remote_data'], [RemoteData]);
+            }
+            if (data.hasOwnProperty('remote_was_deleted')) {
+                obj['remote_was_deleted'] = ApiClient.convertToType(data['remote_was_deleted'], 'Boolean');
             }
         }
         return obj;
@@ -98,7 +99,6 @@ BankInfo.prototype['id'] = undefined;
 BankInfo.prototype['remote_id'] = undefined;
 
 /**
- * The employee with this bank account.
  * @member {String} employee
  */
 BankInfo.prototype['employee'] = undefined;
@@ -137,6 +137,12 @@ BankInfo.prototype['remote_created_at'] = undefined;
  * @member {Array.<module:model/RemoteData>} remote_data
  */
 BankInfo.prototype['remote_data'] = undefined;
+
+/**
+ * Indicates whether or not this object has been deleted by third party webhooks.
+ * @member {Boolean} remote_was_deleted
+ */
+BankInfo.prototype['remote_was_deleted'] = undefined;
 
 
 

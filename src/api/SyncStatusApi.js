@@ -43,30 +43,30 @@ export default class SyncStatusApi {
      */
 
     /**
-     * Get syncing status. Possible values: `DISABLED`, `DONE`, `FAILED`, `SYNCING`
-     * @param {String} xAccountToken Token identifying the end user.
+     * Get syncing status. Possible values: `DISABLED`, `DONE`, `FAILED`, `PAUSED`, `SYNCING`
+     * @param {String} x_account_token Token identifying the end user.
      * @param {Object} opts Optional parameters
      * @param {String} opts.cursor The pagination cursor value.
-     * @param {Number} opts.pageSize Number of results to return per page.
+     * @param {Number} opts.page_size Number of results to return per page.
      * @param {module:api/SyncStatusApi~syncStatusListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedSyncStatusList}
      */
-    syncStatusList(xAccountToken, opts, callback) {
+    syncStatusList(x_account_token, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'xAccountToken' is set
-      if (xAccountToken === undefined || xAccountToken === null) {
-        throw new Error("Missing the required parameter 'xAccountToken' when calling syncStatusList");
+      // verify the required parameter 'x_account_token' is set
+      if (x_account_token === undefined || x_account_token === null) {
+        throw new Error("Missing the required parameter 'x_account_token' when calling syncStatusList");
       }
 
       let pathParams = {
       };
       let queryParams = {
         'cursor': opts['cursor'],
-        'page_size': opts['pageSize']
+        'page_size': opts['page_size']
       };
       let headerParams = {
-        'X-Account-Token': xAccountToken
+        'X-Account-Token': x_account_token
       };
       let formParams = {
       };

@@ -25,11 +25,11 @@ class ErrorValidationProblem {
      * @alias module:model/ErrorValidationProblem
      * @param title {String} 
      * @param detail {String} 
-     * @param problemType {String} 
+     * @param problem_type {String} 
      */
-    constructor(title, detail, problemType) { 
+    constructor(title, detail, problem_type) { 
         
-        ErrorValidationProblem.initialize(this, title, detail, problemType);
+        ErrorValidationProblem.initialize(this, title, detail, problem_type);
     }
 
     /**
@@ -37,10 +37,10 @@ class ErrorValidationProblem {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, title, detail, problemType) { 
+    static initialize(obj, title, detail, problem_type) { 
         obj['title'] = title;
         obj['detail'] = detail;
-        obj['problem_type'] = problemType;
+        obj['problem_type'] = problem_type;
     }
 
     /**

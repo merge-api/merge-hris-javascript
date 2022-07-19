@@ -72,6 +72,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property logs (base name: "logs")', function() {
+      // uncomment below and update the code to test the property logs
+      //var instance = new MergeHrisApi.TimeOffResponse();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

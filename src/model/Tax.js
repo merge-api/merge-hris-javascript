@@ -63,8 +63,8 @@ class Tax {
             if (data.hasOwnProperty('employer_tax')) {
                 obj['employer_tax'] = ApiClient.convertToType(data['employer_tax'], 'Boolean');
             }
-            if (data.hasOwnProperty('remote_data')) {
-                obj['remote_data'] = ApiClient.convertToType(data['remote_data'], [{'String': Object}]);
+            if (data.hasOwnProperty('remote_was_deleted')) {
+                obj['remote_was_deleted'] = ApiClient.convertToType(data['remote_was_deleted'], 'Boolean');
             }
         }
         return obj;
@@ -79,7 +79,6 @@ class Tax {
 Tax.prototype['id'] = undefined;
 
 /**
- * The tax's employee payroll run.
  * @member {String} employee_payroll_run
  */
 Tax.prototype['employee_payroll_run'] = undefined;
@@ -103,9 +102,10 @@ Tax.prototype['amount'] = undefined;
 Tax.prototype['employer_tax'] = undefined;
 
 /**
- * @member {Array.<Object.<String, Object>>} remote_data
+ * Indicates whether or not this object has been deleted by third party webhooks.
+ * @member {Boolean} remote_was_deleted
  */
-Tax.prototype['remote_data'] = undefined;
+Tax.prototype['remote_was_deleted'] = undefined;
 
 
 

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## generateKeyCreate
 
-> RemoteKey generateKeyCreate(generateRemoteKeyRequest)
+> RemoteKey generateKeyCreate(generate_remote_key_request)
 
 
 
@@ -28,8 +28,8 @@ tokenAuth.apiKey = 'YOUR API KEY';
 //tokenAuth.apiKeyPrefix = 'Token';
 
 let apiInstance = new MergeHrisApi.GenerateKeyApi();
-let generateRemoteKeyRequest = new MergeHrisApi.GenerateRemoteKeyRequest(); // GenerateRemoteKeyRequest | 
-apiInstance.generateKeyCreate(generateRemoteKeyRequest, (error, data, response) => {
+let generate_remote_key_request = new MergeHrisApi.GenerateRemoteKeyRequest(); // GenerateRemoteKeyRequest | 
+apiInstance.generateKeyCreate(generate_remote_key_request, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -43,7 +43,7 @@ apiInstance.generateKeyCreate(generateRemoteKeyRequest, (error, data, response) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **generateRemoteKeyRequest** | [**GenerateRemoteKeyRequest**](GenerateRemoteKeyRequest.md)|  | 
+ **generate_remote_key_request** | [**GenerateRemoteKeyRequest**](GenerateRemoteKeyRequest.md)|  | 
 
 ### Return type
 

@@ -78,6 +78,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property response_headers (base name: "response_headers")', function() {
+      // uncomment below and update the code to test the property response_headers
+      //var instance = new MergeHrisApi.RemoteResponse();
+      //expect(instance).to.be();
+    });
+
     it('should have the property headers (base name: "headers")', function() {
       // uncomment below and update the code to test the property headers
       //var instance = new MergeHrisApi.RemoteResponse();

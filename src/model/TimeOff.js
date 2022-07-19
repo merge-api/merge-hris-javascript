@@ -12,8 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import convertRelatedObjectToType from '../Utils';
-import Employee from './Employee';
 import RemoteData from './RemoteData';
 import RequestTypeEnum from './RequestTypeEnum';
 import TimeOffStatusEnum from './TimeOffStatusEnum';
@@ -61,10 +59,10 @@ class TimeOff {
                 obj['remote_id'] = ApiClient.convertToType(data['remote_id'], 'String');
             }
             if (data.hasOwnProperty('employee')) {
-                obj['employee'] = convertRelatedObjectToType(data['employee'], Employee);
+                obj['employee'] = ApiClient.convertToType(data['employee'], 'String');
             }
             if (data.hasOwnProperty('approver')) {
-                obj['approver'] = convertRelatedObjectToType(data['approver'], Employee);
+                obj['approver'] = ApiClient.convertToType(data['approver'], 'String');
             }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], TimeOffStatusEnum);
@@ -90,6 +88,9 @@ class TimeOff {
             if (data.hasOwnProperty('remote_data')) {
                 obj['remote_data'] = ApiClient.convertToType(data['remote_data'], [RemoteData]);
             }
+            if (data.hasOwnProperty('remote_was_deleted')) {
+                obj['remote_was_deleted'] = ApiClient.convertToType(data['remote_was_deleted'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -109,13 +110,11 @@ TimeOff.prototype['id'] = undefined;
 TimeOff.prototype['remote_id'] = undefined;
 
 /**
- * The employee requesting time off.
  * @member {String} employee
  */
 TimeOff.prototype['employee'] = undefined;
 
 /**
- * The employee approving the time off request.
  * @member {String} approver
  */
 TimeOff.prototype['approver'] = undefined;
@@ -166,6 +165,11 @@ TimeOff.prototype['end_time'] = undefined;
  * @member {Array.<module:model/RemoteData>} remote_data
  */
 TimeOff.prototype['remote_data'] = undefined;
+
+/**
+ * @member {Boolean} remote_was_deleted
+ */
+TimeOff.prototype['remote_was_deleted'] = undefined;
 
 
 

@@ -61,6 +61,9 @@ class PayGroup {
             if (data.hasOwnProperty('remote_data')) {
                 obj['remote_data'] = ApiClient.convertToType(data['remote_data'], [RemoteData]);
             }
+            if (data.hasOwnProperty('remote_was_deleted')) {
+                obj['remote_was_deleted'] = ApiClient.convertToType(data['remote_was_deleted'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -89,6 +92,12 @@ PayGroup.prototype['pay_group_name'] = undefined;
  * @member {Array.<module:model/RemoteData>} remote_data
  */
 PayGroup.prototype['remote_data'] = undefined;
+
+/**
+ * Indicates whether or not this object has been deleted by third party webhooks.
+ * @member {Boolean} remote_was_deleted
+ */
+PayGroup.prototype['remote_was_deleted'] = undefined;
 
 
 

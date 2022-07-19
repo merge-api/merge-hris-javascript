@@ -48,10 +48,40 @@
   }
 
   describe('EmployeesApi', function() {
+    describe('employeesCreate', function() {
+      it('should call employeesCreate successfully', function(done) {
+        //uncomment below and update the code to test employeesCreate
+        //instance.employeesCreate(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('employeesIgnoreCreate', function() {
+      it('should call employeesIgnoreCreate successfully', function(done) {
+        //uncomment below and update the code to test employeesIgnoreCreate
+        //instance.employeesIgnoreCreate(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('employeesList', function() {
       it('should call employeesList successfully', function(done) {
         //uncomment below and update the code to test employeesList
         //instance.employeesList(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('employeesMetaPostRetrieve', function() {
+      it('should call employeesMetaPostRetrieve successfully', function(done) {
+        //uncomment below and update the code to test employeesMetaPostRetrieve
+        //instance.employeesMetaPostRetrieve(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

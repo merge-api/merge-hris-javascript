@@ -22,12 +22,12 @@ class LinkToken {
     /**
      * Constructs a new <code>LinkToken</code>.
      * @alias module:model/LinkToken
-     * @param linkToken {String} 
-     * @param integrationName {String} 
+     * @param link_token {String} 
+     * @param integration_name {String} 
      */
-    constructor(linkToken, integrationName) { 
+    constructor(link_token, integration_name) { 
         
-        LinkToken.initialize(this, linkToken, integrationName);
+        LinkToken.initialize(this, link_token, integration_name);
     }
 
     /**
@@ -35,9 +35,9 @@ class LinkToken {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, linkToken, integrationName) { 
-        obj['link_token'] = linkToken;
-        obj['integration_name'] = integrationName;
+    static initialize(obj, link_token, integration_name) { 
+        obj['link_token'] = link_token;
+        obj['integration_name'] = integration_name;
     }
 
     /**
@@ -57,6 +57,9 @@ class LinkToken {
             if (data.hasOwnProperty('integration_name')) {
                 obj['integration_name'] = ApiClient.convertToType(data['integration_name'], 'String');
             }
+            if (data.hasOwnProperty('magic_link_url')) {
+                obj['magic_link_url'] = ApiClient.convertToType(data['magic_link_url'], 'String');
+            }
         }
         return obj;
     }
@@ -73,6 +76,11 @@ LinkToken.prototype['link_token'] = undefined;
  * @member {String} integration_name
  */
 LinkToken.prototype['integration_name'] = undefined;
+
+/**
+ * @member {String} magic_link_url
+ */
+LinkToken.prototype['magic_link_url'] = undefined;
 
 
 

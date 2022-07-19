@@ -12,9 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import convertRelatedObjectToType from '../Utils';
-import BenefitPlanTypeEnum from './BenefitPlanTypeEnum';
-import Employee from './Employee';
 import RemoteData from './RemoteData';
 
 /**
@@ -59,13 +56,13 @@ class Benefit {
                 obj['remote_id'] = ApiClient.convertToType(data['remote_id'], 'String');
             }
             if (data.hasOwnProperty('employee')) {
-                obj['employee'] = convertRelatedObjectToType(data['employee'], Employee);
+                obj['employee'] = ApiClient.convertToType(data['employee'], 'String');
             }
             if (data.hasOwnProperty('provider_name')) {
                 obj['provider_name'] = ApiClient.convertToType(data['provider_name'], 'String');
             }
             if (data.hasOwnProperty('benefit_plan_type')) {
-                obj['benefit_plan_type'] = ApiClient.convertToType(data['benefit_plan_type'], BenefitPlanTypeEnum);
+                obj['benefit_plan_type'] = ApiClient.convertToType(data['benefit_plan_type'], 'String');
             }
             if (data.hasOwnProperty('employee_contribution')) {
                 obj['employee_contribution'] = ApiClient.convertToType(data['employee_contribution'], 'Number');
@@ -75,6 +72,9 @@ class Benefit {
             }
             if (data.hasOwnProperty('remote_data')) {
                 obj['remote_data'] = ApiClient.convertToType(data['remote_data'], [RemoteData]);
+            }
+            if (data.hasOwnProperty('remote_was_deleted')) {
+                obj['remote_was_deleted'] = ApiClient.convertToType(data['remote_was_deleted'], 'Boolean');
             }
         }
         return obj;
@@ -95,7 +95,6 @@ Benefit.prototype['id'] = undefined;
 Benefit.prototype['remote_id'] = undefined;
 
 /**
- * The employee on the plan.
  * @member {String} employee
  */
 Benefit.prototype['employee'] = undefined;
@@ -108,7 +107,7 @@ Benefit.prototype['provider_name'] = undefined;
 
 /**
  * The type of benefit plan
- * @member {module:model/BenefitPlanTypeEnum} benefit_plan_type
+ * @member {String} benefit_plan_type
  */
 Benefit.prototype['benefit_plan_type'] = undefined;
 
@@ -128,6 +127,12 @@ Benefit.prototype['company_contribution'] = undefined;
  * @member {Array.<module:model/RemoteData>} remote_data
  */
 Benefit.prototype['remote_data'] = undefined;
+
+/**
+ * Indicates whether or not this object has been deleted by third party webhooks.
+ * @member {Boolean} remote_was_deleted
+ */
+Benefit.prototype['remote_was_deleted'] = undefined;
 
 
 

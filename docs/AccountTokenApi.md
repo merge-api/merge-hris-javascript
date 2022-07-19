@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## accountTokenRetrieve
 
-> AccountToken accountTokenRetrieve(publicToken)
+> AccountToken accountTokenRetrieve(public_token)
 
 
 
@@ -28,8 +28,8 @@ tokenAuth.apiKey = 'YOUR API KEY';
 //tokenAuth.apiKeyPrefix = 'Token';
 
 let apiInstance = new MergeHrisApi.AccountTokenApi();
-let publicToken = "publicToken_example"; // String | 
-apiInstance.accountTokenRetrieve(publicToken, (error, data, response) => {
+let public_token = "public_token_example"; // String | 
+apiInstance.accountTokenRetrieve(public_token, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -43,7 +43,7 @@ apiInstance.accountTokenRetrieve(publicToken, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **publicToken** | **String**|  | 
+ **public_token** | **String**|  | 
 
 ### Return type
 

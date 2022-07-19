@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **path** | **String** |  | 
 **status** | **Number** |  | 
 **response** | **{String: Object}** |  | 
+**response_headers** | **{String: Object}** |  | [optional] 
 **headers** | **{String: Object}** |  | [optional] 
 
 

@@ -54,6 +54,9 @@ class AccountDetails {
             if (data.hasOwnProperty('integration')) {
                 obj['integration'] = ApiClient.convertToType(data['integration'], 'String');
             }
+            if (data.hasOwnProperty('integration_slug')) {
+                obj['integration_slug'] = ApiClient.convertToType(data['integration_slug'], 'String');
+            }
             if (data.hasOwnProperty('category')) {
                 obj['category'] = ApiClient.convertToType(data['category'], CategoryEnum);
             }
@@ -68,6 +71,9 @@ class AccountDetails {
             }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
+            }
+            if (data.hasOwnProperty('webhook_listener_url')) {
+                obj['webhook_listener_url'] = ApiClient.convertToType(data['webhook_listener_url'], 'String');
             }
         }
         return obj;
@@ -85,6 +91,11 @@ AccountDetails.prototype['id'] = undefined;
  * @member {String} integration
  */
 AccountDetails.prototype['integration'] = undefined;
+
+/**
+ * @member {String} integration_slug
+ */
+AccountDetails.prototype['integration_slug'] = undefined;
 
 /**
  * @member {module:model/CategoryEnum} category
@@ -110,6 +121,11 @@ AccountDetails.prototype['end_user_email_address'] = undefined;
  * @member {String} status
  */
 AccountDetails.prototype['status'] = undefined;
+
+/**
+ * @member {String} webhook_listener_url
+ */
+AccountDetails.prototype['webhook_listener_url'] = undefined;
 
 
 

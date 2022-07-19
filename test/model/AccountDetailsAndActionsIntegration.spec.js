@@ -72,8 +72,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property squareImage (base name: "square_image")', function() {
-      // uncomment below and update the code to test the property squareImage
+    it('should have the property square_image (base name: "square_image")', function() {
+      // uncomment below and update the code to test the property square_image
       //var instance = new MergeHrisApi.AccountDetailsAndActionsIntegration();
       //expect(instance).to.be();
     });
@@ -90,14 +90,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property passthroughAvailable (base name: "passthrough_available")', function() {
-      // uncomment below and update the code to test the property passthroughAvailable
+    it('should have the property passthrough_available (base name: "passthrough_available")', function() {
+      // uncomment below and update the code to test the property passthrough_available
       //var instance = new MergeHrisApi.AccountDetailsAndActionsIntegration();
       //expect(instance).to.be();
     });
 
-    it('should have the property availableModelOperations (base name: "available_model_operations")', function() {
-      // uncomment below and update the code to test the property availableModelOperations
+    it('should have the property available_model_operations (base name: "available_model_operations")', function() {
+      // uncomment below and update the code to test the property available_model_operations
       //var instance = new MergeHrisApi.AccountDetailsAndActionsIntegration();
       //expect(instance).to.be();
     });

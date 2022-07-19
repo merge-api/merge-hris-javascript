@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import DebugModeLog from './DebugModeLog';
 import ErrorValidationProblem from './ErrorValidationProblem';
 import TimeOff from './TimeOff';
 import WarningValidationProblem from './WarningValidationProblem';
@@ -65,6 +66,9 @@ class TimeOffResponse {
             if (data.hasOwnProperty('errors')) {
                 obj['errors'] = ApiClient.convertToType(data['errors'], [ErrorValidationProblem]);
             }
+            if (data.hasOwnProperty('logs')) {
+                obj['logs'] = ApiClient.convertToType(data['logs'], [DebugModeLog]);
+            }
         }
         return obj;
     }
@@ -86,6 +90,11 @@ TimeOffResponse.prototype['warnings'] = undefined;
  * @member {Array.<module:model/ErrorValidationProblem>} errors
  */
 TimeOffResponse.prototype['errors'] = undefined;
+
+/**
+ * @member {Array.<module:model/DebugModeLog>} logs
+ */
+TimeOffResponse.prototype['logs'] = undefined;
 
 
 

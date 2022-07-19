@@ -13,8 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import RemoteData from './RemoteData';
-import convertRelatedObjectToType from '../Utils';
-
 
 /**
  * The Team model module.
@@ -61,10 +59,13 @@ class Team {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('parent_team')) {
-                obj['parent_team'] = convertRelatedObjectToType(data['parent_team'], Team);
+                obj['parent_team'] = ApiClient.convertToType(data['parent_team'], 'String');
             }
             if (data.hasOwnProperty('remote_data')) {
                 obj['remote_data'] = ApiClient.convertToType(data['remote_data'], [RemoteData]);
+            }
+            if (data.hasOwnProperty('remote_was_deleted')) {
+                obj['remote_was_deleted'] = ApiClient.convertToType(data['remote_was_deleted'], 'Boolean');
             }
         }
         return obj;
@@ -91,7 +92,6 @@ Team.prototype['remote_id'] = undefined;
 Team.prototype['name'] = undefined;
 
 /**
- * The team's parent team.
  * @member {String} parent_team
  */
 Team.prototype['parent_team'] = undefined;
@@ -100,6 +100,12 @@ Team.prototype['parent_team'] = undefined;
  * @member {Array.<module:model/RemoteData>} remote_data
  */
 Team.prototype['remote_data'] = undefined;
+
+/**
+ * Indicates whether or not this object has been deleted by third party webhooks.
+ * @member {Boolean} remote_was_deleted
+ */
+Team.prototype['remote_was_deleted'] = undefined;
 
 
 

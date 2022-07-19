@@ -30,14 +30,18 @@ tokenAuth.apiKey = 'YOUR API KEY';
 
 let apiInstance = new MergeHrisApi.IssuesApi();
 let opts = {
-  'accountToken': "accountToken_example", // String | 
+  'account_token': "account_token_example", // String | 
   'cursor': cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw, // String | The pagination cursor value.
-  'endDate': "endDate_example", // String | If included, will only include issues whose most recent action occurred before this time
-  'endUserOrganizationName': "endUserOrganizationName_example", // String | 
-  'includeMuted': "includeMuted_example", // String | If True, will include muted issues
-  'integrationName': "integrationName_example", // String | 
-  'pageSize': 56, // Number | Number of results to return per page.
-  'startDate': "startDate_example", // String | If included, will only include issues whose most recent action occurred after this time
+  'end_date': "end_date_example", // String | If included, will only include issues whose most recent action occurred before this time
+  'end_user_organization_name': "end_user_organization_name_example", // String | 
+  'first_incident_time_after': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return issues whose first incident time was after this datetime.
+  'first_incident_time_before': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return issues whose first incident time was before this datetime.
+  'include_muted': "include_muted_example", // String | If True, will include muted issues
+  'integration_name': "integration_name_example", // String | 
+  'last_incident_time_after': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return issues whose first incident time was after this datetime.
+  'last_incident_time_before': new Date("2013-10-20T19:20:30+01:00"), // Date | If provided, will only return issues whose first incident time was before this datetime.
+  'page_size': 56, // Number | Number of results to return per page.
+  'start_date': "start_date_example", // String | If included, will only include issues whose most recent action occurred after this time
   'status': "status_example" // String | 
 };
 apiInstance.issuesList(opts, (error, data, response) => {
@@ -54,14 +58,18 @@ apiInstance.issuesList(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountToken** | **String**|  | [optional] 
+ **account_token** | **String**|  | [optional] 
  **cursor** | **String**| The pagination cursor value. | [optional] 
- **endDate** | **String**| If included, will only include issues whose most recent action occurred before this time | [optional] 
- **endUserOrganizationName** | **String**|  | [optional] 
- **includeMuted** | **String**| If True, will include muted issues | [optional] 
- **integrationName** | **String**|  | [optional] 
- **pageSize** | **Number**| Number of results to return per page. | [optional] 
- **startDate** | **String**| If included, will only include issues whose most recent action occurred after this time | [optional] 
+ **end_date** | **String**| If included, will only include issues whose most recent action occurred before this time | [optional] 
+ **end_user_organization_name** | **String**|  | [optional] 
+ **first_incident_time_after** | **Date**| If provided, will only return issues whose first incident time was after this datetime. | [optional] 
+ **first_incident_time_before** | **Date**| If provided, will only return issues whose first incident time was before this datetime. | [optional] 
+ **include_muted** | **String**| If True, will include muted issues | [optional] 
+ **integration_name** | **String**|  | [optional] 
+ **last_incident_time_after** | **Date**| If provided, will only return issues whose first incident time was after this datetime. | [optional] 
+ **last_incident_time_before** | **Date**| If provided, will only return issues whose first incident time was before this datetime. | [optional] 
+ **page_size** | **Number**| Number of results to return per page. | [optional] 
+ **start_date** | **String**| If included, will only include issues whose most recent action occurred after this time | [optional] 
  **status** | **String**|  | [optional] 
 
 ### Return type

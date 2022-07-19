@@ -40,6 +40,20 @@ export default class CategoryEnum {
         "accounting" = "accounting";
 
     
+        /**
+         * value: "ticketing"
+         * @const
+         */
+        "ticketing" = "ticketing";
+
+    
+        /**
+         * value: "crm"
+         * @const
+         */
+        "crm" = "crm";
+
+    
 
     /**
     * Returns a <code>CategoryEnum</code> enum value from a Javascript object name.

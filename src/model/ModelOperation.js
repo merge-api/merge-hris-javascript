@@ -23,14 +23,14 @@ class ModelOperation {
      * Constructs a new <code>ModelOperation</code>.
      * # The ModelOperation Object ### Description The &#x60;ModelOperation&#x60; object is used to represent the operations that are currently supported for a given model.  ### Usage Example View what operations are supported for the &#x60;Candidate&#x60; endpoint.
      * @alias module:model/ModelOperation
-     * @param modelName {String} 
-     * @param availableOperations {Array.<String>} 
-     * @param requiredPostParameters {Array.<String>} 
-     * @param supportedFields {Array.<String>} 
+     * @param model_name {String} 
+     * @param available_operations {Array.<String>} 
+     * @param required_post_parameters {Array.<String>} 
+     * @param supported_fields {Array.<String>} 
      */
-    constructor(modelName, availableOperations, requiredPostParameters, supportedFields) { 
+    constructor(model_name, available_operations, required_post_parameters, supported_fields) { 
         
-        ModelOperation.initialize(this, modelName, availableOperations, requiredPostParameters, supportedFields);
+        ModelOperation.initialize(this, model_name, available_operations, required_post_parameters, supported_fields);
     }
 
     /**
@@ -38,11 +38,11 @@ class ModelOperation {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, modelName, availableOperations, requiredPostParameters, supportedFields) { 
-        obj['model_name'] = modelName;
-        obj['available_operations'] = availableOperations;
-        obj['required_post_parameters'] = requiredPostParameters;
-        obj['supported_fields'] = supportedFields;
+    static initialize(obj, model_name, available_operations, required_post_parameters, supported_fields) { 
+        obj['model_name'] = model_name;
+        obj['available_operations'] = available_operations;
+        obj['required_post_parameters'] = required_post_parameters;
+        obj['supported_fields'] = supported_fields;
     }
 
     /**

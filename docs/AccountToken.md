@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**accountToken** | **String** |  | 
+**account_token** | **String** |  | 
 **integration** | [**AccountIntegration**](AccountIntegration.md) |  | 
 
 

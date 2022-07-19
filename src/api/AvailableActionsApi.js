@@ -44,15 +44,15 @@ export default class AvailableActionsApi {
 
     /**
      * Returns a list of models and actions available for an account.
-     * @param {String} xAccountToken Token identifying the end user.
+     * @param {String} x_account_token Token identifying the end user.
      * @param {module:api/AvailableActionsApi~availableActionsRetrieveCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AvailableActions}
      */
-    availableActionsRetrieve(xAccountToken, callback) {
+    availableActionsRetrieve(x_account_token, callback) {
       let postBody = null;
-      // verify the required parameter 'xAccountToken' is set
-      if (xAccountToken === undefined || xAccountToken === null) {
-        throw new Error("Missing the required parameter 'xAccountToken' when calling availableActionsRetrieve");
+      // verify the required parameter 'x_account_token' is set
+      if (x_account_token === undefined || x_account_token === null) {
+        throw new Error("Missing the required parameter 'x_account_token' when calling availableActionsRetrieve");
       }
 
       let pathParams = {
@@ -60,7 +60,7 @@ export default class AvailableActionsApi {
       let queryParams = {
       };
       let headerParams = {
-        'X-Account-Token': xAccountToken
+        'X-Account-Token': x_account_token
       };
       let formParams = {
       };

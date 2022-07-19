@@ -60,20 +60,20 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property remoteId (base name: "remote_id")', function() {
-      // uncomment below and update the code to test the property remoteId
+    it('should have the property remote_id (base name: "remote_id")', function() {
+      // uncomment below and update the code to test the property remote_id
       //var instance = new MergeHrisApi.Company();
       //expect(instance).to.be();
     });
 
-    it('should have the property legalName (base name: "legal_name")', function() {
-      // uncomment below and update the code to test the property legalName
+    it('should have the property legal_name (base name: "legal_name")', function() {
+      // uncomment below and update the code to test the property legal_name
       //var instance = new MergeHrisApi.Company();
       //expect(instance).to.be();
     });
 
-    it('should have the property displayName (base name: "display_name")', function() {
-      // uncomment below and update the code to test the property displayName
+    it('should have the property display_name (base name: "display_name")', function() {
+      // uncomment below and update the code to test the property display_name
       //var instance = new MergeHrisApi.Company();
       //expect(instance).to.be();
     });
@@ -84,8 +84,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property remoteData (base name: "remote_data")', function() {
-      // uncomment below and update the code to test the property remoteData
+    it('should have the property remote_data (base name: "remote_data")', function() {
+      // uncomment below and update the code to test the property remote_data
+      //var instance = new MergeHrisApi.Company();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property remote_was_deleted (base name: "remote_was_deleted")', function() {
+      // uncomment below and update the code to test the property remote_was_deleted
       //var instance = new MergeHrisApi.Company();
       //expect(instance).to.be();
     });

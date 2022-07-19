@@ -60,8 +60,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property employeePayrollRun (base name: "employee_payroll_run")', function() {
-      // uncomment below and update the code to test the property employeePayrollRun
+    it('should have the property employee_payroll_run (base name: "employee_payroll_run")', function() {
+      // uncomment below and update the code to test the property employee_payroll_run
       //var instance = new MergeHrisApi.Deduction();
       //expect(instance).to.be();
     });
@@ -72,20 +72,26 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property employeeDeduction (base name: "employee_deduction")', function() {
-      // uncomment below and update the code to test the property employeeDeduction
+    it('should have the property employee_deduction (base name: "employee_deduction")', function() {
+      // uncomment below and update the code to test the property employee_deduction
       //var instance = new MergeHrisApi.Deduction();
       //expect(instance).to.be();
     });
 
-    it('should have the property companyDeduction (base name: "company_deduction")', function() {
-      // uncomment below and update the code to test the property companyDeduction
+    it('should have the property company_deduction (base name: "company_deduction")', function() {
+      // uncomment below and update the code to test the property company_deduction
       //var instance = new MergeHrisApi.Deduction();
       //expect(instance).to.be();
     });
 
-    it('should have the property remoteData (base name: "remote_data")', function() {
-      // uncomment below and update the code to test the property remoteData
+    it('should have the property remote_data (base name: "remote_data")', function() {
+      // uncomment below and update the code to test the property remote_data
+      //var instance = new MergeHrisApi.Deduction();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property remote_was_deleted (base name: "remote_was_deleted")', function() {
+      // uncomment below and update the code to test the property remote_was_deleted
       //var instance = new MergeHrisApi.Deduction();
       //expect(instance).to.be();
     });

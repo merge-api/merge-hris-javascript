@@ -48,20 +48,10 @@
   }
 
   describe('SyncStatusApi', function() {
-    describe('syncStatusResyncCreate', function() {
-      it('should call syncStatusResyncCreate successfully', function(done) {
-        //uncomment below and update the code to test syncStatusResyncCreate
-        //instance.syncStatusResyncCreate(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('syncStatusRetrieve', function() {
-      it('should call syncStatusRetrieve successfully', function(done) {
-        //uncomment below and update the code to test syncStatusRetrieve
-        //instance.syncStatusRetrieve(function(error) {
+    describe('syncStatusList', function() {
+      it('should call syncStatusList successfully', function(done) {
+        //uncomment below and update the code to test syncStatusList
+        //instance.syncStatusList(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

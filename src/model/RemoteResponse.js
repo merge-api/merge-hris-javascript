@@ -68,6 +68,9 @@ class RemoteResponse {
             if (data.hasOwnProperty('response')) {
                 obj['response'] = ApiClient.convertToType(data['response'], {'String': Object});
             }
+            if (data.hasOwnProperty('response_headers')) {
+                obj['response_headers'] = ApiClient.convertToType(data['response_headers'], {'String': Object});
+            }
             if (data.hasOwnProperty('headers')) {
                 obj['headers'] = ApiClient.convertToType(data['headers'], {'String': Object});
             }
@@ -97,6 +100,11 @@ RemoteResponse.prototype['status'] = undefined;
  * @member {Object.<String, Object>} response
  */
 RemoteResponse.prototype['response'] = undefined;
+
+/**
+ * @member {Object.<String, Object>} response_headers
+ */
+RemoteResponse.prototype['response_headers'] = undefined;
 
 /**
  * @member {Object.<String, Object>} headers

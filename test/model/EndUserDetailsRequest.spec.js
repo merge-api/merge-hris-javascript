@@ -54,26 +54,44 @@
       //expect(instance).to.be.a(MergeHrisApi.EndUserDetailsRequest);
     });
 
-    it('should have the property endUserEmailAddress (base name: "end_user_email_address")', function() {
-      // uncomment below and update the code to test the property endUserEmailAddress
+    it('should have the property end_user_email_address (base name: "end_user_email_address")', function() {
+      // uncomment below and update the code to test the property end_user_email_address
       //var instance = new MergeHrisApi.EndUserDetailsRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property endUserOrganizationName (base name: "end_user_organization_name")', function() {
-      // uncomment below and update the code to test the property endUserOrganizationName
+    it('should have the property end_user_organization_name (base name: "end_user_organization_name")', function() {
+      // uncomment below and update the code to test the property end_user_organization_name
       //var instance = new MergeHrisApi.EndUserDetailsRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property endUserOriginId (base name: "end_user_origin_id")', function() {
-      // uncomment below and update the code to test the property endUserOriginId
+    it('should have the property end_user_origin_id (base name: "end_user_origin_id")', function() {
+      // uncomment below and update the code to test the property end_user_origin_id
       //var instance = new MergeHrisApi.EndUserDetailsRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property categories (base name: "categories")', function() {
       // uncomment below and update the code to test the property categories
+      //var instance = new MergeHrisApi.EndUserDetailsRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property integration (base name: "integration")', function() {
+      // uncomment below and update the code to test the property integration
+      //var instance = new MergeHrisApi.EndUserDetailsRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property link_expiry_mins (base name: "link_expiry_mins")', function() {
+      // uncomment below and update the code to test the property link_expiry_mins
+      //var instance = new MergeHrisApi.EndUserDetailsRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property should_create_magic_link_url (base name: "should_create_magic_link_url")', function() {
+      // uncomment below and update the code to test the property should_create_magic_link_url
       //var instance = new MergeHrisApi.EndUserDetailsRequest();
       //expect(instance).to.be();
     });
