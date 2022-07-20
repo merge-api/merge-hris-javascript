@@ -12,10 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
+import Company from './Company';
+import convertRelatedObjectToType from '../Utils';
+import Employment from './Employment';
 import EmploymentStatusEnum from './EmploymentStatusEnum';
 import EthnicityEnum from './EthnicityEnum';
 import GenderEnum from './GenderEnum';
+import Location from './Location';
 import MaritalStatusEnum from './MaritalStatusEnum';
+import PayGroup from './PayGroup';
+import Team from './Team';
 import RemoteData from './RemoteData';
 
 /**
@@ -63,7 +69,7 @@ class Employee {
                 obj['employee_number'] = ApiClient.convertToType(data['employee_number'], 'String');
             }
             if (data.hasOwnProperty('company')) {
-                obj['company'] = ApiClient.convertToType(data['company'], 'String');
+                obj['company'] = convertRelatedObjectToType(data['company'], Company);
             }
             if (data.hasOwnProperty('first_name')) {
                 obj['first_name'] = ApiClient.convertToType(data['first_name'], 'String');
@@ -90,22 +96,22 @@ class Employee {
                 obj['mobile_phone_number'] = ApiClient.convertToType(data['mobile_phone_number'], 'String');
             }
             if (data.hasOwnProperty('employments')) {
-                obj['employments'] = ApiClient.convertToType(data['employments'], ['String']);
+                obj['employments'] = convertRelatedObjectToType(data['employments'], Employment);
             }
             if (data.hasOwnProperty('home_location')) {
-                obj['home_location'] = ApiClient.convertToType(data['home_location'], 'String');
+                obj['home_location'] = convertRelatedObjectToType(data['home_location'], Location);
             }
             if (data.hasOwnProperty('work_location')) {
-                obj['work_location'] = ApiClient.convertToType(data['work_location'], 'String');
+                obj['work_location'] = convertRelatedObjectToType(data['work_location'], Location);
             }
             if (data.hasOwnProperty('manager')) {
-                obj['manager'] = ApiClient.convertToType(data['manager'], 'String');
+                obj['manager'] = convertRelatedObjectToType(data['manager'], Employee);
             }
             if (data.hasOwnProperty('team')) {
-                obj['team'] = ApiClient.convertToType(data['team'], 'String');
+                obj['team'] = convertRelatedObjectToType(data['team'], Team);
             }
             if (data.hasOwnProperty('pay_group')) {
-                obj['pay_group'] = ApiClient.convertToType(data['pay_group'], 'String');
+                obj['pay_group'] = convertRelatedObjectToType(data['pay_group'], PayGroup);
             }
             if (data.hasOwnProperty('ssn')) {
                 obj['ssn'] = ApiClient.convertToType(data['ssn'], 'String');

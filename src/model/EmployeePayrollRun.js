@@ -12,8 +12,11 @@
  */
 
 import ApiClient from '../ApiClient';
+import convertRelatedObjectToType from '../Utils';
 import Deduction from './Deduction';
 import Earning from './Earning';
+import Employee from './Employee';
+import PayrollRun from './PayrollRun';
 import RemoteData from './RemoteData';
 import Tax from './Tax';
 
@@ -59,10 +62,10 @@ class EmployeePayrollRun {
                 obj['remote_id'] = ApiClient.convertToType(data['remote_id'], 'String');
             }
             if (data.hasOwnProperty('employee')) {
-                obj['employee'] = ApiClient.convertToType(data['employee'], 'String');
+                obj['employee'] = convertRelatedObjectToType(data['employee'], Employee);
             }
             if (data.hasOwnProperty('payroll_run')) {
-                obj['payroll_run'] = ApiClient.convertToType(data['payroll_run'], 'String');
+                obj['payroll_run'] = convertRelatedObjectToType(data['payroll_run'], PayrollRun);
             }
             if (data.hasOwnProperty('gross_pay')) {
                 obj['gross_pay'] = ApiClient.convertToType(data['gross_pay'], 'Number');

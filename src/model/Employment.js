@@ -12,6 +12,8 @@
  */
 
 import ApiClient from '../ApiClient';
+import convertRelatedObjectToType from '../Utils';
+import Employee from './Employee';
 import EmploymentTypeEnum from './EmploymentTypeEnum';
 import FlsaStatusEnum from './FlsaStatusEnum';
 import PayCurrencyEnum from './PayCurrencyEnum';
@@ -61,7 +63,7 @@ class Employment {
                 obj['remote_id'] = ApiClient.convertToType(data['remote_id'], 'String');
             }
             if (data.hasOwnProperty('employee')) {
-                obj['employee'] = ApiClient.convertToType(data['employee'], 'String');
+                obj['employee'] = convertRelatedObjectToType(data['employee'], Employee);
             }
             if (data.hasOwnProperty('job_title')) {
                 obj['job_title'] = ApiClient.convertToType(data['job_title'], 'String');

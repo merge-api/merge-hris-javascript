@@ -12,7 +12,9 @@
  */
 
 import ApiClient from '../ApiClient';
+import convertRelatedObjectToType from '../Utils';
 import AccountTypeEnum from './AccountTypeEnum';
+import Employee from './Employee';
 import RemoteData from './RemoteData';
 
 /**
@@ -57,7 +59,7 @@ class BankInfo {
                 obj['remote_id'] = ApiClient.convertToType(data['remote_id'], 'String');
             }
             if (data.hasOwnProperty('employee')) {
-                obj['employee'] = ApiClient.convertToType(data['employee'], 'String');
+                obj['employee'] = convertRelatedObjectToType(data['employee'], Employee);
             }
             if (data.hasOwnProperty('account_number')) {
                 obj['account_number'] = ApiClient.convertToType(data['account_number'], 'String');
