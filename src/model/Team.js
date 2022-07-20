@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import convertRelatedObjectToType from '../Utils';
 import RemoteData from './RemoteData';
 
 /**
@@ -59,7 +60,7 @@ class Team {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('parent_team')) {
-                obj['parent_team'] = ApiClient.convertToType(data['parent_team'], 'String');
+                obj['parent_team'] = convertRelatedObjectToType(data['parent_team'], Team);
             }
             if (data.hasOwnProperty('remote_data')) {
                 obj['remote_data'] = ApiClient.convertToType(data['remote_data'], [RemoteData]);
